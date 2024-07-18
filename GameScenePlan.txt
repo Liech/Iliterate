@@ -1,0 +1,218 @@
+This is the Game Scene Plan. It contain major spoilers.
+
+
+Introduction:
+  The Goal is to set the Scene and offer the expected Gameplay experience in one short bite.
+    
+	Scene 1 - Godot:
+	  Schedule:
+        Self Painted Godot symbol appears identical to the original one. The Music starts.
+	  Why:
+	    Show that this game takes some unecessary Extra Steps.
+		Present Artstyle and Music before the Game starts.		
+
+    Scene 2 - Trigger Warning:
+	  Schedule:
+        Black Screen Slowly reveal white line by line
+        --------
+        Trigger Warning:
+	      Confusion
+	      True Love
+	      Buglessnes
+	    --------
+	    Game waits for you to select one. Game remembers this for weird things like background music.
+	  Why:
+	    Set the Tone: this Game tries to defy your expectation. You should look out for weird stuff
+		Some weirdness could be interpreted as Bug. Setting the Tone beforehand and actually stating that this game contains no bugs may adjust the expectations towards a shitty gamejam game.
+		Hopefully it makes someone laugh.
+		
+	Scene 3:
+	  Schedule:
+	    A regular Start Screen appears.
+		A Start Screen Intro Video explains the Setting of the "Game"
+		Everything is in the Wrong undecipherable Language. Some weird hints to what everything means are given (Gear/Cockworklike symbol in the option button)
+		In different Languages it is different.
+		The Player can only Proceed and "Press Start", but its a weird key.
+	  Why:
+	    Navigating through Menus in wrong languages is a real and relatable puzzle.
+		Not expecting Game Jam Games to have different Languages might hurt.
+		Also it reveals the Optios Menu, a core Location of the game.
+		Changing the Language is also a Core Mechanic of the Game.
+
+	Scene 4 - Main Menu:
+	  Schedule:
+	    Depending on the actual scope of the game more things might appear.
+		The follwoing Buttons are shown (In the "chosen" language):
+		-----------
+		Start Game / Continue Game
+		Memory
+		Options
+		About
+		Back
+      	----------
+		The Buttons lead to further Scenes. 
+		The Background depicts a classical edge Lord MMO Titlescreen and might be interactable depending on further puzzles.
+	  Why:
+	    Should feel like home here, every game needs a Main Menu
+	
+	Scene 5 - Options Menu:
+	  Schedule:	  
+	    ----------
+        Localization
+		  - Weird Undecipherable (islandic? hebreic? some selfbuild stuff?)
+		  - English
+		  - German
+		  - UwU
+		  - Cat Sign Language
+		V-Sync On/Off
+		Sound/Music Meter
+		  Sound
+		  Music
+		  Speed
+		Keybindings
+		Menu Opacity
+		Brightness
+		Hints On/Off
+		Graphic Preset:
+		  Megafluid Ultraepic Limit Break Overdrive
+		  High
+		  Low
+		  
+		----------
+	  Why:
+	    A Plethora of puzzle pieces.
+		Localizations:
+          UwU: Turns every Button Press in a Dating Sim. You can otherwise convince greyed out buttons to aid you.
+          Cat Sign Language: Toss Buttons on the ground to break them (Start Game becomes "Start" and "Game")
+		  English: plain english
+		  German: because i speak german
+		V-Sync On/Off: Ingame v-sync has real physic consequences -> Navigation Method
+		Sound: as expected and normal
+		  speed is maybe also game speed?
+		Menu Opacity: 
+		  some things are hidden behind menus
+		  some things want to be hidden behind menus
+		Brightness:
+		  Is asked later while starting the game, can be readjusted here
+		Keybindings:
+		  Greyed out with tooltip that hints on does not like you and does not want to interact -> hint to uwu
+		Hints On/Off: In game are sign posts that block the way when this is activated
+		Invert Y Axis: In game the mouse y axis is wrong
+	
+	Scene 6 - Terms and Services:
+	  Schedule:
+	    Hour Player has chosen a decipherable language and pressed Start Game
+		He is shortly ask to comply to terms and conditions by writing "agree". 
+		He must comprehend the language of this dialog to proceed
+		He can go back if he does not understand.
+	  Why:
+	    Give motivation to change language in case he just continues.
+		
+	Scene 7 - Hide the Fish:
+	  Schedule:
+	    Classical Chose Brightness dialog. 
+		The Fish should not be visible anymore.
+		Fish Mocks Player.
+		Brightness Change keeps fish bright. He also starts to glow.
+		You can Move the +/-/back/proceed menu over fish
+		if opacity <90 fish mocks hints to opacity
+        if fully hidden proceed is clickable
+	
+	Scene 8 - Character Creator:
+	  Schedule:
+	    Player has very very basic character creator
+		has to chose some unnecessary things that are remembered. Maybe even localization dependent.
+		important part is the name, which has to be edgy, otherwise he cannot proceed.
+		left bottom is global chat, which shows example of good edgy names "xXShadowChopinXx"
+		The symmetric symbols are important.
+	  Why:
+	    Easy puzzle to set the tone of the "game"
+		
+	Scene 9 - Actual Game
+	  Schedule:
+	    An actual 2d platformer starts.
+		a pit is to the left of the player.
+		If vsync is on vsync moves player to the right, he falls through the pit.
+		Not enough time to prohibit this. Has to enable vsync to solve this.
+		Also it "lags" when graphic settings are too high
+	  Why:
+	    This is the real experience. Graphic Settings on a Potato are a form of eding. After the 30 hour cutscene you are generously allowed to play the game, except you dont. First invert Y axis and stop the lag. Also comprehend graphic terms like "Multi Frog Spatial Sensory Agnostics" and "Anti Space Partition Pawn Managment Cast Polarity"
+	
+	Scene 10 - Where is the Jump Button?
+	  Schedule:
+	    Obstacle appears
+		Tutorialized bottom message "Press 'spiderbro' to jump. You can rebind keys in options menu"
+		Keybinding button states tooltip "Is in a sad Mood and refuses to work"
+		Change to UwU and date him
+		Sweet Choice based short dating sim with his kids. You can assign one kid/key to the jump by convincing the keybinding button.
+		  Kids need passion projects.
+		If you do everthing right the button is in love.
+		Sometimes reminds you not to overstress the button.
+	  Why:
+	    I think this is fewerdreamwaifu material. Can't think of something more cursed.
+		
+	Scene 11 - Hint
+	  Schedule: 
+	    A Big Signpost appears. You can'T jump over it or go through it.
+		It states "go down the well"
+		You have to turn it off in the options menu. 
+		it is clearly visible that this is missing here
+		
+	Scene 12 - Back to VSync
+	  Schedule: 
+	    the well is something with a lid you cant enter
+		you can glitch you through with vsync
+		you drown, but you see that a signpost could prevent you from falling into water
+		
+	Scene 13 - Discussion
+	  Schedule:
+	    you encounter a dialog if you want the macguffin
+		there is only a goodbye button
+		the dialog hints at memories (if i only remember what answers you could possibly gave)
+		aquire a "Yes" on a Button to proceed.
+		
+	Scene 14 - Memories
+	  Schedule:
+	    Memories is disabled everywhere but english
+        Tutorialized way to show you how to make screenshots by dragging anything and pressing strg C + strg V
+		Cute Rain Scene should be fotographed
+		rain falls out of copy -> hinting realities are connected
+        Instead of back button the weird dude tells you that he forgot what you could say to exit.
+        you can create/delete memories
+        If you made one a prompt
+        "Great, you made a Memory!" and a weird plethora of Button options, containing "Back"
+		Back, Ok, Cancel, Submit, Dominate, Cringe, Escape, Learn, Malignate
+        Some of them are needed later, back is important now.
+	  Why:
+	    This is the hardest leap.
+		Without caging the player he will never get it.
+        I hope he gets it when he sees the weird button choice.		
+		But with it a lot of weird stuff is possible.
+	
+	Scenee 15 - Yes
+	  Schedule:
+	    going back to the dude
+		bring a yes button and press it
+	  Why:
+	    This is just to guardkey check the puzzle before.
+		
+	Scene 16 - Chekovs Gun
+	  Schedule:
+		He gives you a "Motor of Roll the Credits and Win"
+		You can use it with Jump. it opens a Menu with just "Close"
+		Hint that you should start the motor somehow. Hints on feline.
+		Catpaw the "Start Game", break it into "Start"
+		carry it in this menu
+		press start
+	  Why:
+	    if enough time the machine will just lead to further puzzles
+		i just like the break button logic and think this will be the hardest of all feverdream leaps
+		
+	Scene 17 - Credits Roll
+	  Schedule:
+	    You win screen without secrets
+
+
+More Ideas:
+  Bug Report Icon on right bottom.
+  It is not a Bugsplat feature but a ~real bug
