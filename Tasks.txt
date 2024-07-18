@@ -2,9 +2,9 @@
  || ===============================================================================
  || Godot Scene                        ||        ||
  || Trigger Warning Scene              ||        ||
- ||   True Love Effects                ||        ||
- ||   Buglessnes Effects               ||        ||
- ||   Confusion Effects                ||        ||
+ ||   True Love Effects                || Done   ||
+ ||   Buglessnes Effects               || Done   ||
+ ||   Confusion Effects                || Done   ||
  || Start Screen                       ||        ||
  || Snap Mechanic                      ||        ||
  || Language Mechainc                  ||        ||
@@ -66,17 +66,19 @@
  ||     Cat Cursor                     || Done   ||
  ||   Cat Sign Language Interpreter    || Done   ||
  ||   Waifus                           ||        ||
- ||   Signpost                         ||        ||
+ ||   Signpost                         || Done   ||
  ||   Well                             ||        ||
  ||   Character                        ||        ||
- ||   Title Screen                     ||        ||
+ ||   Title Screen                     || Done   ||
  ||   Win Screen                       ||        ||
- ||   Main Menu Background             ||        ||
+ ||   Main Menu Background             || Done   ||
  ||   Godot Logo                       || Done   ||
  ||   Motor of Roll the credits        || Done   ||
- ||   Broken button                    ||        ||
- ||   Memories Background              ||        ||
- ||   Snap Graphic                     ||        ||
+ ||   Button                           || Done   ||
+ ||   Broken button                    || Done   ||
+ ||   UwU    button                    || Done   ||
+ ||   Memories Background              || Done   ||
+ ||   Snap Graphic                     || Done   ||
  ||   Memory Menu                      ||        ||
  ||     Rain                           || Done   ||
  ||   About Menu                       ||        ||
@@ -86,7 +88,7 @@
  ||   Keycaps                          || Done   ||
  ||   Leveldesign                      ||        ||
  ||   Levelbackground                  ||        ||
- ||   Potato                           ||        ||
+ ||   Potato                           || Done   ||
  ||   Loose Screen                     ||        ||
  ||                                    ||        ||
  ||                                    ||        ||
