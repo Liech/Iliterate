@@ -83,7 +83,7 @@
  ||   Fish                             || Done   ||
  ||   Character selector               ||        ||
  ||   Old Man                          || Done   ||
- ||   Keycaps                          || In Progress   ||
+ ||   Keycaps                          || Done   ||
  ||   Leveldesign                      ||        ||
  ||   Levelbackground                  ||        ||
  ||   Potato                           ||        ||
