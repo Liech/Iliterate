@@ -1,0 +1,4 @@
+Quality: Shitty
+Outline: Mandatory
+Outline Size: 34 Pixel
+Resolution if it does not matter: 800x800

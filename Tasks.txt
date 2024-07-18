@@ -61,8 +61,10 @@
  ||  Art                               ||        ||
  ||   Menu English                     ||        ||
  ||   Menu UwU                         ||        ||
+ ||     UwU Cursor                     || Done   ||
  ||   Menu Cat                         ||        ||
- ||   Cat Sign Language Interpreter    ||        ||
+ ||     Cat Cursor                     || Done   ||
+ ||   Cat Sign Language Interpreter    || Done   ||
  ||   Waifus                           ||        ||
  ||   Signpost                         ||        ||
  ||   Well                             ||        ||
@@ -70,18 +72,18 @@
  ||   Title Screen                     ||        ||
  ||   Win Screen                       ||        ||
  ||   Main Menu Background             ||        ||
- ||   Godot Logo                       ||        ||
- ||   Motor of Roll the credits        ||        ||
+ ||   Godot Logo                       || Done   ||
+ ||   Motor of Roll the credits        || Done   ||
  ||   Broken button                    ||        ||
  ||   Memories Background              ||        ||
  ||   Snap Graphic                     ||        ||
  ||   Memory Menu                      ||        ||
- ||     Rain                           ||        ||
+ ||     Rain                           || Done   ||
  ||   About Menu                       ||        ||
- ||   Fish                             ||        ||
+ ||   Fish                             || Done   ||
  ||   Character selector               ||        ||
- ||   Old Man                          ||        ||
- ||   Keycaps                          ||        ||
+ ||   Old Man                          || Done   ||
+ ||   Keycaps                          || In Progress   ||
  ||   Leveldesign                      ||        ||
  ||   Levelbackground                  ||        ||
  ||   Potato                           ||        ||
