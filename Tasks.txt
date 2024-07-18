@@ -40,4 +40,58 @@
  ||   Old Man Dialog                   ||        ||
  ||   Motor of Roll the Credits and Win||        ||
  || Win Screen                         ||        ||
+ || Presentation                       ||        ||
+ ||   Itch Page                        ||        ||
+ ||   Godot Web Compile                ||        ||
+ ||   Submit Game                      ||        ||
+ ||  Audio                             ||        ||
+ ||    English Sounds                  ||        ||
+ ||    UwU Sounds                      ||        ||
+ ||    Cat Sign Language Sounds        ||        ||
+ ||    Soundtrack English              ||        ||
+ ||    Soundtrack UwU                  ||        ||
+ ||    Soundtrack Cat                  ||        ||
+ ||                  Button Press      ||        ||
+ ||                  Character Noise   ||        ||
+ ||                  Intoscene         ||        ||
+ ||                  Gamestart         ||        ||
+ ||                  Death             ||        ||
+ ||                  Error Sound       ||        ||
+ ||                  Snap Sound        ||        ||
+ ||  Art                               ||        ||
+ ||   Menu English                     ||        ||
+ ||   Menu UwU                         ||        ||
+ ||   Menu Cat                         ||        ||
+ ||   Cat Sign Language Interpreter    ||        ||
+ ||   Waifus                           ||        ||
+ ||   Signpost                         ||        ||
+ ||   Well                             ||        ||
+ ||   Character                        ||        ||
+ ||   Title Screen                     ||        ||
+ ||   Win Screen                       ||        ||
+ ||   Main Menu Background             ||        ||
+ ||   Godot Logo                       ||        ||
+ ||   Motor of Roll the credits        ||        ||
+ ||   Broken button                    ||        ||
+ ||   Memories Background              ||        ||
+ ||   Snap Graphic                     ||        ||
+ ||   Memory Menu                      ||        ||
+ ||     Rain                           ||        ||
+ ||   About Menu                       ||        ||
+ ||   Fish                             ||        ||
+ ||   Character selector               ||        ||
+ ||   Old Man                          ||        ||
+ ||   Keycaps                          ||        ||
+ ||   Leveldesign                      ||        ||
+ ||   Levelbackground                  ||        ||
+ ||   Potato                           ||        ||
+ ||   Loose Screen                     ||        ||
+ ||                                    ||        ||
+ ||                                    ||        ||
+ ||                                    ||        ||
+ ||                                    ||        ||
+ ||                                    ||        ||
+ ||                                    ||        ||
+ ||                                    ||        ||
+ ||                                    ||        ||
  || ===============================================================================
