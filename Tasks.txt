@@ -1,0 +1,43 @@
+ || Task Name                          || Status || Comment
+ || ===============================================================================
+ || Godot Scene                        ||        ||
+ || Trigger Warning Scene              ||        ||
+ ||   True Love Effects                ||        ||
+ ||   Buglessnes Effects               ||        ||
+ ||   Confusion Effects                ||        ||
+ || Start Screen                       ||        ||
+ || Snap Mechanic                      ||        ||
+ || Language Mechainc                  ||        ||
+ || UwU                                ||        ||
+ ||   Dialog for everything            ||        ||
+ ||   Anime Sounds                     ||        ||
+ ||   Anime Music                      ||        ||
+ ||   Keybinding Dialog                ||        ||
+ ||   Keybinding reminder              ||        ||
+ || Cat Sign Language                  ||        ||
+ ||   Sign Language Cat Animation      ||        ||
+ ||   Cat Paw Cursor                   ||        ||
+ ||   Meow Sounds                      ||        ||
+ ||   Meow Music                       ||        ||
+ ||   Button Physics                   ||        ||
+ || Undecipherable Language            ||        ||
+ || Main Menu                          ||        ||
+ ||   Background                       ||        ||
+ || About                              ||        ||
+ || Options                            ||        ||
+ ||   Brightness                       ||        ||
+ ||   Menu Opacity                     ||        ||
+ ||   Soundmeter                       ||        ||
+ || Terms and Services                 ||        ||
+ || Hide the Fish                      ||        ||
+ ||   Audio                            ||        ||
+ || Character Creator                  ||        ||
+ || Actual Game                        ||        ||
+ ||   2d Platformer                    ||        ||
+ ||   VSync                            ||        ||
+ ||   Hints                            ||        ||
+ ||   Graphics Presets                 ||        ||
+ ||   Old Man Dialog                   ||        ||
+ ||   Motor of Roll the Credits and Win||        ||
+ || Win Screen                         ||        ||
+ || ===============================================================================

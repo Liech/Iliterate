@@ -26,7 +26,7 @@ Introduction:
 		Some weirdness could be interpreted as Bug. Setting the Tone beforehand and actually stating that this game contains no bugs may adjust the expectations towards a shitty gamejam game.
 		Hopefully it makes someone laugh.
 		
-	Scene 3:
+	Scene 3 - What?:
 	  Schedule:
 	    A regular Start Screen appears.
 		A Start Screen Intro Video explains the Setting of the "Game"
