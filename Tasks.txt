@@ -76,6 +76,7 @@
  ||   Motor of Roll the credits        || Done   ||
  ||   Button                           || Done   ||
  ||   Broken button                    || Done   ||
+ ||   Dust Particles                   ||        ||
  ||   UwU    button                    || Done   ||
  ||   Memories Background              || Done   ||
  ||   Snap Graphic                     || Done   ||
@@ -84,6 +85,7 @@
  ||   About Menu                       ||        ||
  ||   Fish                             || Done   ||
  ||   Character selector               ||        ||
+ ||      Left Right Arrows             ||        ||
  ||   Old Man                          || Done   ||
  ||   Keycaps                          || Done   ||
  ||   Leveldesign                      ||        ||
