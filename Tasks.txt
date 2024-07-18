@@ -60,17 +60,17 @@
  ||                  Snap Sound        ||        ||
  ||  Art                               ||        ||
  ||   Menu English                     ||        ||
- ||   Menu UwU                         ||        ||
+ ||   Menu UwU                         || Done   ||
  ||     UwU Cursor                     || Done   ||
- ||   Menu Cat                         ||        ||
+ ||   Menu Cat                         || Done   ||
  ||     Cat Cursor                     || Done   ||
  ||   Cat Sign Language Interpreter    || Done   ||
- ||   Waifus                           ||        ||
+ ||   Waifus                           || Done   ||
  ||   Signpost                         || Done   ||
  ||   Well                             ||        ||
- ||   Character                        ||        ||
+ ||   Character                        || Done   ||
  ||   Title Screen                     || Done   ||
- ||   Win Screen                       ||        ||
+ ||   Win Screen                       || Done   ||
  ||   Main Menu Background             || Done   ||
  ||   Godot Logo                       || Done   ||
  ||   Motor of Roll the credits        || Done   ||
@@ -89,9 +89,9 @@
  ||   Leveldesign                      ||        ||
  ||   Levelbackground                  ||        ||
  ||   Potato                           || Done   ||
- ||   Loose Screen                     ||        ||
- ||                                    ||        ||
- ||                                    ||        ||
+ ||   Loose Screen                     || Done   ||
+ ||   Checkbox                         || Done   ||
+ ||   Slider                           || Done   ||
  ||                                    ||        ||
  ||                                    ||        ||
  ||                                    ||        ||
