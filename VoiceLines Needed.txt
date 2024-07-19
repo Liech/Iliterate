@@ -1,157 +1,156 @@
-|    Style    | Text                     |
+|    Style    | Text                                     | Status
 | =========== | ============================================== 
-|  Iliterate  |               
-|  EdgeLord   | 
-|  UwU        | 
-|  Effect     | 
-|  Fish       | 
-|  Cat        |
-| =========== |
-|  Cat        | Miau
-|  Effect     | Rocket start
-|  Effect     | TriggerWarning Hover
-|  Effect     | TriggerWarning Press
-|  Iliterate  | Iliterate Titel Intro
-|  EdgeLord   | Iliterate Titel Intro
-|  UwU        | Iliterate Titel Intro
-|  Iliterate  | Start Game
-|  EdgeLord   | Start Game
-|  Iliterate  | Start
-|  EdgeLord   | Start
-|  Iliterate  | Game
-|  EdgeLord   | Game
-|  Iliterate  | Memory
-|  EdgeLord   | Memory
-|  Iliterate  | Mem
-|  EdgeLord   | Mem
-|  Iliterate  | Ory
-|  EdgeLord   | Ory
-|  Iliterate  | Options
-|  EdgeLord   | Options
-|  Iliterate  | About
-|  EdgeLord   | About
-|  Iliterate  | Abo
-|  EdgeLord   | Abo
-|  Iliterate  | ut
-|  EdgeLord   | ut
-|  Iliterate  | Back
-|  EdgeLord   | Back
-|  Iliterate  | Ba
-|  EdgeLord   | Ba
-|  Iliterate  | Ck
-|  EdgeLord   | Ck
-|  Iliterate  | VSync On 
-|  EdgeLord   | VSync On 
-|  Iliterate  | VSync Off
-|  EdgeLord   | VSync Off
-|  Iliterate  | Hints On 
-|  EdgeLord   | Hints On 
-|  Iliterate  | Hints Off
-|  EdgeLord   | Hints Off
-|  Iliterate  | Potato
-|  EdgeLord   | Potato
-|  Iliterate  | High
-|  EdgeLord   | High
-|  Iliterate  | Low
-|  EdgeLord   | Low
-|  Iliterate  | Megafluid Ultraepic Limit Break Overdrive
-|  EdgeLord   | Megafluid Ultraepic Limit Break Overdrive
-|  Iliterate  | Dialog Speed Off
-|  EdgeLord   | Dialog Speed Off
-|  Iliterate  | Dialog Speed Low
-|  EdgeLord   | Dialog Speed Low
-|  Iliterate  | Dialog Speed High
-|  EdgeLord   | Dialog Speed High
-|  Iliterate  | Brightness
-|  EdgeLord   | Brightness
-|  Iliterate  | Menu Opacity
-|  EdgeLord   | Menu Opacity
-|  Iliterate  | Terms and Services
-|  EdgeLord   | Terms and Services
-|  Iliterate  | Agree
-|  EdgeLord   | Agree
-|  Effect     | Fish Glowing 
-|  Fish       | Muffled Insults (x10)
-|  Iliterate  | Proceed
-|  EdgeLord   | Proceed
-|  Iliterate  | Create your Character
-|  EdgeLord   | Create your Character
-|  Iliterate  | Mage
-|  EdgeLord   | Mage
-|  Iliterate  | Knight
-|  EdgeLord   | Knight
-|  Iliterate  | Alchemist
-|  EdgeLord   | Alchemist
-|  Iliterate  | You died
-|  EdgeLord   | You died
-|  Iliterate  | Level Start
-|  EdgeLord   | Level Start
-|  Iliterate  | Learn To Jump
-|  EdgeLord   | Learn To Jump
-|  Iliterate  | Main Menu
-|  EdgeLord   | Main Menu
-|  Iliterate  | Hint: Go Down
-|  EdgeLord   | Hint: Go Down
-|  Iliterate  | Hint: Go Right
-|  EdgeLord   | Hint: Go Right
-|  Iliterate  | Back
-|  EdgeLord   | Back
-|  Iliterate  | Aggree
-|  EdgeLord   | Aggree
-|  Iliterate  | Old Man
-|  EdgeLord   | Old Man
-|  Iliterate  | Mac Guffin
-|  EdgeLord   | Mac Guffin
-|  Iliterate  | Rolling Credits
-|  EdgeLord   | Rolling Credits
-|  Iliterate  | Memories
-|  EdgeLord   | Memories
-|  Iliterate  | Ok
-|  EdgeLord   | Ok
-|  Iliterate  | Cancel
-|  EdgeLord   | Cancel
-|  Iliterate  | Submit
-|  EdgeLord   | Submit
-|  Iliterate  | Dominate
-|  EdgeLord   | Dominate
-|  Iliterate  | Cringe
-|  EdgeLord   | Cringe
-|  Iliterate  | Escape
-|  EdgeLord   | Escape
-|  Iliterate  | Learn
-|  EdgeLord   | Learn
-|  Iliterate  | Malignate
-|  EdgeLord   | Malignate
-|  Iliterate  | Success
-|  EdgeLord   | Success
-|  Iliterate  | You Win
-|  EdgeLord   | You Win
-|  Effect     | Button Crash
-|  Effect     | Engine Start
-|  Effect     | Water
-|  EdgeLord   | Smash
-|  Iliterate  | Smash
-|  Fish st1   | Hello
-|  Fish st1   | Nice Light
-|  Fish st1   | Leave it bright
-|  Fish st1   | Whats your problem?
-|  Fish st1   | Don't touch that slider
-|  Fish st2   | I am eternal
-|  Fish st2   | Your days are counted
-|  Fish st2   | Liiiight
-|  Fish st2   | The Beacons are lit
-|  Fish st2   | I am inevitable
-|  Fish st2   | I am Legion
-|  Fish st2   | Light shall Rain
-|  Fish st2   | Shadow will Fade
-|  Fish st2   | Light shall Rain
-|  Fish st3   | still see you
-|  Fish st3   | pathetic
-|  Fish st3   | i am visible
-|  Fish st4   | naawww
-|  Fish st4   | until next time
-|  Fish st4   | this time you won
-
+|  Iliterate  |                                          |
+|  EdgeLord   |                                          |
+|  UwU        |                                          |
+|  Effect     |                                          |
+|  Fish       |                                          |
+|  Cat        |                                          |
+| =========== |                                          |
+|  Cat        | Miau                                     |
+|  Effect     | Rocket start                             |
+|  Effect     | TriggerWarning Hover                     |
+|  Effect     | TriggerWarning Press                     |
+|  Iliterate  | Iliterate Titel Intro                    |
+|  EdgeLord   | Iliterate Titel Intro                    |
+|  UwU        | Iliterate Titel Intro                    |
+|  Iliterate  | Start Game                               |
+|  EdgeLord   | Start Game                               |
+|  Iliterate  | Start                                    |
+|  EdgeLord   | Start                                    |
+|  Iliterate  | Game                                     |
+|  EdgeLord   | Game                                     |
+|  Iliterate  | Memory                                   |
+|  EdgeLord   | Memory                                   |
+|  Iliterate  | Mem                                      |
+|  EdgeLord   | Mem                                      |
+|  Iliterate  | Ory                                      |
+|  EdgeLord   | Ory                                      |
+|  Iliterate  | Options                                  |
+|  EdgeLord   | Options                                  |
+|  Iliterate  | About                                    |
+|  EdgeLord   | About                                    |
+|  Iliterate  | Abo                                      |
+|  EdgeLord   | Abo                                      |
+|  Iliterate  | ut                                       |
+|  EdgeLord   | ut                                       |
+|  Iliterate  | Back                                     |
+|  EdgeLord   | Back                                     |
+|  Iliterate  | Ba                                       |
+|  EdgeLord   | Ba                                       |
+|  Iliterate  | Ck                                       |
+|  EdgeLord   | Ck                                       |
+|  Iliterate  | VSync On                                 |
+|  EdgeLord   | VSync On                                 |
+|  Iliterate  | VSync Off                                |
+|  EdgeLord   | VSync Off                                |
+|  Iliterate  | Hints On                                 |
+|  EdgeLord   | Hints On                                 |
+|  Iliterate  | Hints Off                                |
+|  EdgeLord   | Hints Off                                |
+|  Iliterate  | Potato                                   |
+|  EdgeLord   | Potato                                   |
+|  Iliterate  | High                                     |
+|  EdgeLord   | High                                     |
+|  Iliterate  | Low                                      |
+|  EdgeLord   | Low                                      |
+|  Iliterate  | Megafluid Ultraepic Limit Break Overdrive|
+|  EdgeLord   | Megafluid Ultraepic Limit Break Overdrive|
+|  Iliterate  | Dialog Speed Off                         |
+|  EdgeLord   | Dialog Speed Off                         |
+|  Iliterate  | Dialog Speed Low                         |
+|  EdgeLord   | Dialog Speed Low                         |
+|  Iliterate  | Dialog Speed High                        |
+|  EdgeLord   | Dialog Speed High                        |
+|  Iliterate  | Brightness                               |
+|  EdgeLord   | Brightness                               |
+|  Iliterate  | Menu Opacity                             |
+|  EdgeLord   | Menu Opacity                             |
+|  Iliterate  | Terms and Services                       |
+|  EdgeLord   | Terms and Services                       |
+|  Iliterate  | Agree                                    |
+|  EdgeLord   | Agree                                    |
+|  Effect     | Fish Glowing                             |
+|  Fish       | Muffled Insults (x10)                    |
+|  Iliterate  | Proceed                                  |
+|  EdgeLord   | Proceed                                  |
+|  Iliterate  | Create your Character                    |
+|  EdgeLord   | Create your Character                    |
+|  Iliterate  | Mage                                     |
+|  EdgeLord   | Mage                                     |
+|  Iliterate  | Knight                                   |
+|  EdgeLord   | Knight                                   |
+|  Iliterate  | Alchemist                                |
+|  EdgeLord   | Alchemist                                |
+|  Iliterate  | You died                                 |
+|  EdgeLord   | You died                                 |
+|  Iliterate  | Level Start                              |
+|  EdgeLord   | Level Start                              |
+|  Iliterate  | Learn To Jump                            |
+|  EdgeLord   | Learn To Jump                            |
+|  Iliterate  | Main Menu                                |
+|  EdgeLord   | Main Menu                                |
+|  Iliterate  | Hint: Go Down                            |
+|  EdgeLord   | Hint: Go Down                            |
+|  Iliterate  | Hint: Go Right                           |
+|  EdgeLord   | Hint: Go Right                           |
+|  Iliterate  | Back                                     |
+|  EdgeLord   | Back                                     |
+|  Iliterate  | Aggree                                   |
+|  EdgeLord   | Aggree                                   |
+|  Iliterate  | Old Man                                  |
+|  EdgeLord   | Old Man                                  |
+|  Iliterate  | Mac Guffin                               |
+|  EdgeLord   | Mac Guffin                               |
+|  Iliterate  | Rolling Credits                          |
+|  EdgeLord   | Rolling Credits                          |
+|  Iliterate  | Memories                                 |
+|  EdgeLord   | Memories                                 |
+|  Iliterate  | Ok                                       |
+|  EdgeLord   | Ok                                       |
+|  Iliterate  | Cancel                                   |
+|  EdgeLord   | Cancel                                   |
+|  Iliterate  | Submit                                   |
+|  EdgeLord   | Submit                                   |
+|  Iliterate  | Dominate                                 |
+|  EdgeLord   | Dominate                                 |
+|  Iliterate  | Cringe                                   |
+|  EdgeLord   | Cringe                                   |
+|  Iliterate  | Escape                                   |
+|  EdgeLord   | Escape                                   |
+|  Iliterate  | Learn                                    |
+|  EdgeLord   | Learn                                    |
+|  Iliterate  | Malignate                                |
+|  EdgeLord   | Malignate                                |
+|  Iliterate  | Success                                  |
+|  EdgeLord   | Success                                  |
+|  Iliterate  | You Win                                  |
+|  EdgeLord   | You Win                                  |
+|  Effect     | Button Crash                             |
+|  Effect     | Engine Start                             |
+|  Effect     | Water                                    |
+|  EdgeLord   | Smash                                    |
+|  Iliterate  | Smash                                    |
+|  Fish st1   | Hello                                    | Done
+|  Fish st1   | Nice Light                               | Done
+|  Fish st1   | Leave it bright                          | Done
+|  Fish st1   | Whats your problem?                      | Done
+|  Fish st1   | Don't touch that slider                  | Done
+|  Fish st2   | I am eternal                             | Done
+|  Fish st2   | Your days are counted                    | Done
+|  Fish st2   | Liiiight                                 | Done
+|  Fish st2   | The Beacons are lit                      | Done
+|  Fish st2   | I am inevitable                          | Done
+|  Fish st2   | I am Legion                              | Done
+|  Fish st2   | Light shall Rain                         | Done
+|  Fish st2   | Shadow will Fade                         | Done
+|  Fish st3   | still see you                            | Done
+|  Fish st3   | pathetic                                 | Done
+|  Fish st3   | i am visible                             | Done
+|  Fish st4   | naawww                                   | Done
+|  Fish st4   | until next time                          | Done
+|  Fish st4   | this time you won                        | Done
+														 | Done
 
 
 
