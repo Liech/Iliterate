@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://b45vfqcxcwe4q"]
 
-[ext_resource type="Texture2D" uid="uid://dxk323p2hap2c" path="res://Art/Background/Background.png" id="1_f3ksj"]
-[ext_resource type="Script" path="res://QuitOnEscape.gd" id="1_xlpq8"]
-[ext_resource type="Texture2D" uid="uid://m2dbb5s7avis" path="res://Art/Background/Mage.png" id="2_qlbj1"]
-[ext_resource type="Texture2D" uid="uid://bsynd6xnwhvs1" path="res://Art/Background/Title.png" id="3_6q3fq"]
+[ext_resource type="Script" path="res://QuitOnEscape.gd" id="1_b6yj1"]
+[ext_resource type="Texture2D" uid="uid://dxk323p2hap2c" path="res://Art/Background/Background.png" id="2_ne1kl"]
+[ext_resource type="Texture2D" uid="uid://m2dbb5s7avis" path="res://Art/Background/Mage.png" id="3_aou8y"]
+[ext_resource type="Texture2D" uid="uid://bsynd6xnwhvs1" path="res://Art/Background/Title.png" id="4_8woe1"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -15,7 +15,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-script = ExtResource("1_xlpq8")
+script = ExtResource("1_b6yj1")
 
 [node name="Mage" type="TextureRect" parent="."]
 layout_mode = 1
@@ -24,7 +24,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_f3ksj")
+texture = ExtResource("2_ne1kl")
 expand_mode = 3
 stretch_mode = 4
 
@@ -35,7 +35,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_qlbj1")
+texture = ExtResource("3_aou8y")
 expand_mode = 3
 stretch_mode = 4
 
@@ -48,6 +48,6 @@ offset_left = -23.0
 offset_bottom = -0.245972
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("3_6q3fq")
+texture = ExtResource("4_8woe1")
 expand_mode = 3
 stretch_mode = 4

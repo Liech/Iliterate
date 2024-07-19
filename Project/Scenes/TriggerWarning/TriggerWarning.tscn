@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://cyofkd801gjyg"]
+[gd_scene load_steps=6 format=3 uid="uid://cyofkd801gjyg"]
 
-[ext_resource type="Theme" uid="uid://d2hv2jx01084f" path="res://mainTheme.tres" id="1_d4w5r"]
+[ext_resource type="Theme" uid="uid://d2hv2jx01084f" path="res://mainTheme.tres" id="1_q0ijb"]
+[ext_resource type="Script" path="res://Scenes/TriggerWarning/Audio.gd" id="2_kswra"]
+[ext_resource type="Script" path="res://Scenes/TriggerWarning/Confusion.gd" id="2_l4w44"]
+[ext_resource type="Script" path="res://Scenes/TriggerWarning/Buglessnes.gd" id="2_s3yi5"]
+[ext_resource type="Script" path="res://Scenes/TriggerWarning/TrueLove.gd" id="3_1xlc7"]
 
 [node name="TriggerWarning" type="Control"]
 layout_mode = 3
@@ -9,7 +13,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("1_d4w5r")
+theme = ExtResource("1_q0ijb")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -46,9 +50,14 @@ theme_override_constants/margin_top = 15
 theme_override_constants/margin_right = 100
 theme_override_constants/margin_bottom = 15
 
-[node name="Label" type="Label" parent="VBoxContainer/Confusion"]
+[node name="Button" type="Button" parent="VBoxContainer/Confusion"]
 layout_mode = 2
+shortcut_feedback = false
+shortcut_in_tooltip = false
 text = "Confusion"
+flat = true
+alignment = 0
+script = ExtResource("2_l4w44")
 
 [node name="True Love" type="MarginContainer" parent="VBoxContainer"]
 layout_mode = 2
@@ -57,9 +66,14 @@ theme_override_constants/margin_top = 15
 theme_override_constants/margin_right = 100
 theme_override_constants/margin_bottom = 15
 
-[node name="Label" type="Label" parent="VBoxContainer/True Love"]
+[node name="Button" type="Button" parent="VBoxContainer/True Love"]
 layout_mode = 2
+shortcut_feedback = false
+shortcut_in_tooltip = false
 text = "True Love"
+flat = true
+alignment = 0
+script = ExtResource("3_1xlc7")
 
 [node name="Audio" type="MarginContainer" parent="VBoxContainer"]
 layout_mode = 2
@@ -68,9 +82,14 @@ theme_override_constants/margin_top = 15
 theme_override_constants/margin_right = 100
 theme_override_constants/margin_bottom = 15
 
-[node name="Label" type="Label" parent="VBoxContainer/Audio"]
+[node name="Button" type="Button" parent="VBoxContainer/Audio"]
 layout_mode = 2
+shortcut_feedback = false
+shortcut_in_tooltip = false
 text = "Audio"
+flat = true
+alignment = 0
+script = ExtResource("2_kswra")
 
 [node name="Buglessnes" type="MarginContainer" parent="VBoxContainer"]
 layout_mode = 2
@@ -79,6 +98,16 @@ theme_override_constants/margin_top = 15
 theme_override_constants/margin_right = 100
 theme_override_constants/margin_bottom = 15
 
-[node name="Label" type="Label" parent="VBoxContainer/Buglessnes"]
+[node name="Button" type="Button" parent="VBoxContainer/Buglessnes"]
 layout_mode = 2
+shortcut_feedback = false
+shortcut_in_tooltip = false
 text = "Buglessnes"
+flat = true
+alignment = 0
+script = ExtResource("2_s3yi5")
+
+[connection signal="pressed" from="VBoxContainer/Confusion/Button" to="VBoxContainer/Confusion/Button" method="_on_pressed"]
+[connection signal="pressed" from="VBoxContainer/True Love/Button" to="VBoxContainer/True Love/Button" method="_on_pressed"]
+[connection signal="pressed" from="VBoxContainer/Audio/Button" to="VBoxContainer/Audio/Button" method="_on_pressed"]
+[connection signal="pressed" from="VBoxContainer/Buglessnes/Button" to="VBoxContainer/Buglessnes/Button" method="_on_pressed"]
