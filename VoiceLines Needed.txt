@@ -70,7 +70,6 @@
 |  EdgeLord   | Terms and Services
 |  Iliterate  | Agree
 |  EdgeLord   | Agree
-|  Fish       | Insults (x30)
 |  Effect     | Fish Glowing 
 |  Fish       | Muffled Insults (x10)
 |  Iliterate  | Proceed
@@ -132,3 +131,30 @@
 |  Effect     | Water
 |  EdgeLord   | Smash
 |  Iliterate  | Smash
+|  Fish st1   | Hello
+|  Fish st1   | Nice Light
+|  Fish st1   | Leave it bright
+|  Fish st1   | Whats your problem?
+|  Fish st1   | Don't touch that slider
+|  Fish st2   | I am eternal
+|  Fish st2   | Your days are counted
+|  Fish st2   | Liiiight
+|  Fish st2   | The Beacons are lit
+|  Fish st2   | I am inevitable
+|  Fish st2   | I am Legion
+|  Fish st2   | Light shall Rain
+|  Fish st2   | Shadow will Fade
+|  Fish st2   | Light shall Rain
+|  Fish st3   | still see you
+|  Fish st3   | pathetic
+|  Fish st3   | i am visible
+|  Fish st4   | naawww
+|  Fish st4   | until next time
+|  Fish st4   | this time you won
+
+
+
+
+
+
+
