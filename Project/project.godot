@@ -16,6 +16,10 @@ config/features=PackedStringArray("4.2", "GL Compatibility")
 boot_splash/image="res://Art/GodotLogo.png"
 boot_splash/fullsize=false
 
+[autoload]
+
+gamestate="*res://Scenes/gamestate.gd"
+
 [display]
 
 window/size/viewport_width=1920
