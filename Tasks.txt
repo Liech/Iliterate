@@ -95,7 +95,7 @@
  ||   Checkbox                         || Done   ||
  ||   Slider                           || Done   ||
  ||   DialogSpeed Rocket               || Done   ||
- ||                                    ||        ||
+ ||   Anime Hair for UwW Characters    ||        ||
  ||                                    ||        ||
  ||                                    ||        ||
  ||                                    ||        ||
