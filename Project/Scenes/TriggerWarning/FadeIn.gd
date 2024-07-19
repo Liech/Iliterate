@@ -11,5 +11,5 @@ func _ready():
 	# Built in Godots Colors (There's a lot to choose from)
 	await get_tree().create_timer(startdelay).timeout
 	var tween = get_tree().create_tween();
-	await tween.tween_property(self,"modulate:a",0,fadetime).finished
+	await tween.tween_property(self,"modulate:a",0.01,fadetime).finished
 	self.queue_free()

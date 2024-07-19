@@ -126,7 +126,7 @@ flat = true
 alignment = 0
 script = ExtResource("2_kswra")
 
-[node name="ColorRect" type="ColorRect" parent="VBoxContainer/Audio"]
+[node name="AudioFade" type="ColorRect" parent="VBoxContainer/Audio"]
 layout_mode = 2
 color = Color(0, 0, 0, 1)
 script = ExtResource("4_kgqfq")
@@ -153,6 +153,16 @@ layout_mode = 2
 color = Color(0, 0, 0, 1)
 script = ExtResource("4_kgqfq")
 startdelay = 8
+
+[node name="FadeOut" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0.0156863)
 
 [connection signal="pressed" from="VBoxContainer/Confusion/Button" to="VBoxContainer/Confusion/Button" method="_on_pressed"]
 [connection signal="pressed" from="VBoxContainer/True Love/Button" to="VBoxContainer/True Love/Button" method="_on_pressed"]
