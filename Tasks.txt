@@ -67,7 +67,7 @@
  ||   Cat Sign Language Interpreter    || Done   ||
  ||   Waifus                           || Done   ||
  ||   Signpost                         || Done   ||
- ||   Well                             ||        ||
+ ||   Well                             || Done   ||
  ||   Character                        || Done   ||
  ||   Title Screen                     || Done   ||
  ||   Win Screen                       || Done   ||
@@ -84,17 +84,17 @@
  ||     Rain                           || Done   ||
  ||   About Menu                       ||        ||
  ||   Fish                             || Done   ||
- ||   Character selector               ||        ||
- ||      Left Right Arrows             ||        ||
+ ||   Character selector               || Done   ||
+ ||      Left Right Arrows             || Done   ||
  ||   Old Man                          || Done   ||
  ||   Keycaps                          || Done   ||
- ||   Leveldesign                      ||        ||
- ||   Levelbackground                  ||        ||
+ ||   Leveldesign                      || Done   ||
+ ||   Levelbackground                  || Done   ||
  ||   Potato                           || Done   ||
  ||   Loose Screen                     || Done   ||
  ||   Checkbox                         || Done   ||
  ||   Slider                           || Done   ||
- ||                                    ||        ||
+ ||   DialogSpeed Rocket               || Done   ||
  ||                                    ||        ||
  ||                                    ||        ||
  ||                                    ||        ||

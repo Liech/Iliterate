@@ -26,6 +26,14 @@ Introduction:
 		Some weirdness could be interpreted as Bug. Setting the Tone beforehand and actually stating that this game contains no bugs may adjust the expectations towards a shitty gamejam game.
 		Hopefully it makes someone laugh.
 		
+    Scene 2.1 - This Game was produced:
+	  Schedule:
+	    The Ubisoft Game "This Game was produced by a lot of different People" unskippable screen
+	  Why:
+	    just a cheap reference to unskippable cutscenes.
+        Like a "Filler Episode"
+		Highly Optional		
+	
 	Scene 3 - What?:
 	  Schedule:
 	    A regular Start Screen appears.
@@ -78,7 +86,7 @@ Introduction:
 		  High
 		  Low
 		  Potato (Replace all textures with potato)
-		  
+		Dialog Speed
 		----------
 	  Why:
 	    A Plethora of puzzle pieces.
@@ -99,6 +107,7 @@ Introduction:
 		  Greyed out with tooltip that hints on does not like you and does not want to interact -> hint to uwu
 		Hints On/Off: In game are sign posts that block the way when this is activated
 		Invert Y Axis: In game the mouse y axis is wrong
+		Dialog Speed: The Movement Speed of the Dialog. It runs away and is not readable if not 0
 	
 	Scene 6 - Terms and Services:
 	  Schedule:
