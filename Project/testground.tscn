@@ -1,0 +1,46 @@
+[gd_scene load_steps=4 format=3 uid="uid://b45vfqcxcwe4q"]
+
+[ext_resource type="Texture2D" uid="uid://dxk323p2hap2c" path="res://Art/Background/Background.png" id="1_f3ksj"]
+[ext_resource type="Texture2D" uid="uid://m2dbb5s7avis" path="res://Art/Background/Mage.png" id="2_qlbj1"]
+[ext_resource type="Texture2D" uid="uid://bsynd6xnwhvs1" path="res://Art/Background/Title.png" id="3_6q3fq"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Mage" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_f3ksj")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_qlbj1")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="Title" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_6q3fq")
+expand_mode = 3
+stretch_mode = 4
