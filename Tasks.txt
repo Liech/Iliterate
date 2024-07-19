@@ -1,9 +1,10 @@
  || Task Name                          || Status || Comment
  || ===============================================================================
  || Godot Scene                        ||        ||
- || Trigger Warning Scene              ||        ||
+ || Trigger Warning Scene              || Done   ||
  ||   True Love Effects                || Done   ||
  ||   Buglessnes Effects               || Done   ||
+ ||   Audio Effects                    ||        ||
  ||   Confusion Effects                || Done   ||
  || Start Screen                       ||        ||
  || Snap Mechanic                      ||        ||
