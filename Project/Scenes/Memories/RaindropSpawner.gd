@@ -4,8 +4,11 @@ extends Panel
 @export var propability = 0.05
 var rng = RandomNumberGenerator.new()
 # Called when the node enters the scene tree for the first time.
+var isClone = false
+
 func _ready():
-	add_to_group("Copyable");
+	if (not isClone):
+		add_to_group("Copyable");
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -20,6 +23,7 @@ func cloneObject(panel, move,ppos):
 	var result = self.duplicate();
 	result.size  = self.size
 	result.theme = self.theme
+	result.isClone = true
 	panel.add_child(result);
 	if (move):
 		result.position = result.position - panel.position

@@ -3,9 +3,11 @@ extends TextureRect
 var pasteReality = false;
 var moveto;
 var body;
+var isClone = false
 
 func _ready():
-	add_to_group("Copyable");
+	if (not isClone):
+		add_to_group("Copyable");
 	
 	if (pasteReality):
 		var oldpos = get_parent().position
@@ -29,5 +31,6 @@ func cloneObject(panel, captureReality, ppos):
 	result.pasteReality = not captureReality
 	result.moveto = ppos;
 	result.position = self.position
+	result.isClone = true
 	panel.add_child(result)
 	return result
