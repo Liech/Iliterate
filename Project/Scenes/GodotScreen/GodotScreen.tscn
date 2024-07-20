@@ -12,7 +12,7 @@ radius = 33.541
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hlsih"]
 size = Vector2(8771.25, 17)
 
-[node name="Control" type="Control"]
+[node name="Godot" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -36,6 +36,8 @@ color = Color(0.145266, 0.145266, 0.145266, 1)
 [node name="GodotSymbol" type="RigidBody2D" parent="."]
 position = Vector2(963, 550)
 freeze = true
+max_contacts_reported = 1
+contact_monitor = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GodotSymbol"]
 position = Vector2(1, -16)
@@ -101,4 +103,8 @@ theme_override_colors/icon_focus_color = Color(0, 0, 0, 0)
 theme_override_colors/icon_disabled_color = Color(0, 0, 0, 0)
 flat = true
 
+[node name="Audio" type="AudioStreamPlayer2D" parent="."]
+max_distance = 100000.0
+
+[connection signal="body_shape_entered" from="GodotSymbol" to="." method="_on_godot_symbol_body_shape_entered"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
