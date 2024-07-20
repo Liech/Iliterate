@@ -8,7 +8,11 @@
  ||   Confusion Effects                || Done   ||
  || Ubiscene                           || Done   ||
  || Start Screen                       ||        ||
- || Snap Mechanic                      ||        ||
+ || Snap Mechanic                      || Done   ||
+ || Memories                           ||        ||
+ || Popup Dialogs                      ||        ||
+ || Global ButtonCalls                 ||        ||
+ || Global ButtonCalls                 ||        ||
  || Language Mechainc                  ||        ||
  || UwU                                ||        ||
  ||   Dialog for everything            ||        ||
