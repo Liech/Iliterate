@@ -89,3 +89,12 @@ func doPaste():
 		rect.position = mouse
 		var imgtex = ImageTexture.create_from_image(screenshot.get_image())
 		rect.texture = imgtex
+
+func getallnodes(node):
+	for N in node.get_children():
+		if N.get_child_count() > 0:
+			print("["+N.get_name()+"]")
+			getallnodes(N)
+		else:
+			# Do something
+			print("- "+N.get_name())

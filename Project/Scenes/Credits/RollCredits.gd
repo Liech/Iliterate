@@ -8,6 +8,5 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	print(str(position.y + size.y))
 	if (position.y + size.y > 1080): 
-		position += Vector2(0, -0.8)
+		position += Vector2(0, -1.6)

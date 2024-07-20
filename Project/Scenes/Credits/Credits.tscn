@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dqbxf45lkgpgo"]
+[gd_scene load_steps=10 format=3 uid="uid://dqbxf45lkgpgo"]
 
 [ext_resource type="Theme" uid="uid://d2hv2jx01084f" path="res://mainTheme.tres" id="1_chx1x"]
 [ext_resource type="Script" path="res://Scenes/Credits/RollCredits.gd" id="2_ak1k0"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://Scenes/Credits/EscapeChangeScene.gd" id="2_jyfd5"]
 [ext_resource type="Texture2D" uid="uid://dnuo5ietwwchh" path="res://Art/Logos/EngineLogo.png" id="3_yk00n"]
 [ext_resource type="Texture2D" uid="uid://r5o3wo0f3w6y" path="res://Art/Logos/painttool.png" id="4_7yvxn"]
+[ext_resource type="Texture2D" uid="uid://bljnxprblhku7" path="res://Art/Logos/FontLogo.png" id="4_uyvpy"]
 [ext_resource type="Texture2D" uid="uid://0ry0ct1dikxl" path="res://Art/Logos/AudioTool.png" id="5_1hcdi"]
 [ext_resource type="Texture2D" uid="uid://d33dlcmqu4nb2" path="res://Art/Logos/AudioTool2.png" id="6_w3yrq"]
 
@@ -153,6 +154,33 @@ text = "Nessi"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Font" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 200
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 15
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/Font"]
+layout_mode = 2
+theme_override_constants/margin_top = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Font/MarginContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/Font/MarginContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("4_uyvpy")
+
+[node name="Label" type="Label" parent="VBoxContainer/Font/MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Font
+
+m6x11
+Daniel Linssen
+https://managore.itch.io/"
+
 [node name="Engine" type="MarginContainer" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_constants/margin_left = 200
@@ -286,7 +314,9 @@ text = "Game Jam Host
 
 Pirate Software
 https://gopiratesoftware.com/
-Not Free (For Use, might be consider himself as free person)"
+Probably also Free. 
+But a Human. Humans are handled 
+differently than Software"
 
 [node name="Thanks for playing" type="MarginContainer" parent="VBoxContainer"]
 layout_mode = 2
@@ -319,6 +349,6 @@ vertical_alignment = 1
 [node name="Label" type="Label" parent="VBoxContainer/Thanks for playing/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
-text = "hope it was fun"
+text = "hope it was fun :3"
 horizontal_alignment = 1
 vertical_alignment = 1
