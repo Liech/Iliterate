@@ -139,6 +139,13 @@ Introduction:
 	  Why:
 	    Easy puzzle to set the tone of the "game"
 		
+	Scene 8.1 - When you see this symbol (Optional)
+		Schedule:
+			Screen for 5 Seconds
+			 When you see this symbol do not close the game and think of something cute
+		Why:
+			Just Mock AAA Games a little bnit more
+		
 	Scene 9 - Actual Game
 	  Schedule:
 	    An actual 2d platformer starts.
