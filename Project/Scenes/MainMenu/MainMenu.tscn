@@ -1,0 +1,98 @@
+[gd_scene load_steps=9 format=3 uid="uid://cch5ed86qkrt4"]
+
+[ext_resource type="Script" path="res://QuitOnEscape.gd" id="1_fjm6i"]
+[ext_resource type="Texture2D" uid="uid://dxk323p2hap2c" path="res://Art/Background/Background.png" id="2_i0bjb"]
+[ext_resource type="Texture2D" uid="uid://m2dbb5s7avis" path="res://Art/Background/Mage.png" id="3_kqgqu"]
+[ext_resource type="Texture2D" uid="uid://bsynd6xnwhvs1" path="res://Art/Background/Title.png" id="4_1dype"]
+[ext_resource type="Theme" uid="uid://d2hv2jx01084f" path="res://mainTheme.tres" id="5_1o4bo"]
+[ext_resource type="StyleBox" uid="uid://bdktf0xccluh5" path="res://Scenes/MainMenu/new_style_box_texture.tres" id="6_kavg7"]
+[ext_resource type="Script" path="res://Scenes/MainMenu/GoToCredits.gd" id="7_fbqfy"]
+[ext_resource type="Texture2D" uid="uid://vc0f42xth06n" path="res://Art/Button/Button.png" id="7_vc7f2"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("5_1o4bo")
+script = ExtResource("1_fjm6i")
+
+[node name="Mage" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 831.0
+offset_top = -4.0
+offset_right = 834.556
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_i0bjb")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 895.0
+offset_top = -9.0
+offset_right = 898.556
+offset_bottom = -9.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_kqgqu")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="Title" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.003
+offset_left = 852.0
+offset_top = 27.0
+offset_right = 875.0
+offset_bottom = 26.754
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_1dype")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_styles/normal = ExtResource("6_kavg7")
+text = "About"
+flat = true
+script = ExtResource("7_fbqfy")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="VBoxContainer/Button"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_vc7f2")
+region_rect = Rect2(0.447113, 1.15751, 198.079, 182.684)
+patch_margin_left = 120
+patch_margin_top = 58
+patch_margin_right = 83
+patch_margin_bottom = 46
+
+[connection signal="pressed" from="VBoxContainer/Button" to="VBoxContainer/Button" method="_on_pressed"]

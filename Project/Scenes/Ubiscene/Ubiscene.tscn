@@ -128,7 +128,7 @@ theme_override_constants/margin_top = 200
 [node name="Label" type="Label" parent="VBoxContainer/Link/MarginContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
-text = "Visit https://github.com/Liech/Iliterate for the Tips & Sourcecode      "
+text = "Visit https://github.com/Liech/Iliterate for Tips & Sourcecode      "
 horizontal_alignment = 1
 vertical_alignment = 1
 

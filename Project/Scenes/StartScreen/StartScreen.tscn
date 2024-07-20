@@ -1,11 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://b45vfqcxcwe4q"]
+[gd_scene load_steps=6 format=3 uid="uid://b45vfqcxcwe4q"]
 
 [ext_resource type="Script" path="res://QuitOnEscape.gd" id="1_nfdel"]
 [ext_resource type="Texture2D" uid="uid://dxk323p2hap2c" path="res://Art/Background/Background.png" id="2_krb0y"]
 [ext_resource type="Texture2D" uid="uid://m2dbb5s7avis" path="res://Art/Background/Mage.png" id="3_vsfb3"]
 [ext_resource type="Texture2D" uid="uid://bsynd6xnwhvs1" path="res://Art/Background/Title.png" id="4_7evq1"]
+[ext_resource type="Script" path="res://Scenes/StartScreen/ToMainMenu.gd" id="5_ylrcl"]
 
-[node name="Control" type="Control"]
+[node name="StartScreen" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -51,3 +52,15 @@ grow_vertical = 2
 texture = ExtResource("4_7evq1")
 expand_mode = 3
 stretch_mode = 4
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+flat = true
+script = ExtResource("5_ylrcl")
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]

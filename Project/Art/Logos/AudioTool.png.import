@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d33dlcmqu4nb2"
-path="res://.godot/imported/AudioTool2.png-de6019a6149721df6a02501847447e60.ctex"
+uid="uid://0ry0ct1dikxl"
+path="res://.godot/imported/AudioTool.png-427f05735fe46832ebfdc3a5e60706dc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/AudioTool2.png"
-dest_files=["res://.godot/imported/AudioTool2.png-de6019a6149721df6a02501847447e60.ctex"]
+source_file="res://Art/Logos/AudioTool.png"
+dest_files=["res://.godot/imported/AudioTool.png-427f05735fe46832ebfdc3a5e60706dc.ctex"]
 
 [params]
 

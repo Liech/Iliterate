@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bs0tppbr8r4nw"
-path="res://.godot/imported/Buglessness.png-36d79eb28b0d7aff3e6f2348db9a7c0e.ctex"
+uid="uid://bia5jsnmij008"
+path="res://.godot/imported/godotStartup.png-fe9d47cb151a4ff9921e2e1605cd3c90.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Buglessness.png"
-dest_files=["res://.godot/imported/Buglessness.png-36d79eb28b0d7aff3e6f2348db9a7c0e.ctex"]
+source_file="res://Art/godotStartup.png"
+dest_files=["res://.godot/imported/godotStartup.png-fe9d47cb151a4ff9921e2e1605cd3c90.ctex"]
 
 [params]
 

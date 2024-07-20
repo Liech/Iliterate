@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bm06pkrqldn0t"
-path="res://.godot/imported/Confusion.png-7b54ee400e0c51d3ac209acfc356177e.ctex"
+uid="uid://bs0tppbr8r4nw"
+path="res://.godot/imported/Buglessness.png-b373639fbf2b52f53a5556ac5cbe290b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Confusion.png"
-dest_files=["res://.godot/imported/Confusion.png-7b54ee400e0c51d3ac209acfc356177e.ctex"]
+source_file="res://Art/TWSymbols/Buglessness.png"
+dest_files=["res://.godot/imported/Buglessness.png-b373639fbf2b52f53a5556ac5cbe290b.ctex"]
 
 [params]
 
