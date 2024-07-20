@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://ds1y7027xjuah"]
+[gd_scene load_steps=10 format=3 uid="uid://ds1y7027xjuah"]
 
 [ext_resource type="Texture2D" uid="uid://c4jdbmn3dmdw4" path="res://Art/LevelBackground.png" id="1_udsne"]
 [ext_resource type="Script" path="res://Scenes/MasterScene/Cloneable.gd" id="2_il4sm"]
@@ -7,6 +7,8 @@
 [ext_resource type="StyleBox" uid="uid://bdktf0xccluh5" path="res://Scenes/MainMenu/new_style_box_texture.tres" id="5_pncrj"]
 [ext_resource type="Texture2D" uid="uid://vc0f42xth06n" path="res://Art/Button/Button.png" id="6_4jo0q"]
 [ext_resource type="Script" path="res://Scenes/Memories/RaindropSpawner.gd" id="7_aoglo"]
+[ext_resource type="Texture2D" uid="uid://c0tmkfpmwnmej" path="res://Art/Raindrop.png" id="8_sn8m2"]
+[ext_resource type="Script" path="res://Scenes/Memories/Raindrop.gd" id="9_kixef"]
 
 [node name="Memories" type="Control"]
 layout_mode = 3
@@ -63,5 +65,17 @@ offset_top = 117.0
 offset_right = 1345.0
 offset_bottom = 157.0
 script = ExtResource("7_aoglo")
+
+[node name="Raindrop" type="TextureRect" parent="Raincloud"]
+process_mode = 4
+visible = false
+layout_mode = 0
+offset_left = -961.0
+offset_top = -108.0
+offset_right = -861.0
+offset_bottom = -7.99997
+scale = Vector2(0.318182, 0.329268)
+texture = ExtResource("8_sn8m2")
+script = ExtResource("9_kixef")
 
 [connection signal="pressed" from="Back" to="Back" method="_on_pressed"]

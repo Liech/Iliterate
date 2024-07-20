@@ -126,6 +126,10 @@
 |  EdgeLord   | Success                                  |
 |  Iliterate  | You Win                                  |
 |  EdgeLord   | You Win                                  |
+|  Iliterate  | Copy                                     |
+|  EdgeLord   | Copy                                     |
+|  Iliterate  | Paste                                    |
+|  EdgeLord   | Paste                                    |
 |  Effect     | Button Crash                             |
 |  Effect     | Engine Start                             |
 |  Effect     | Water                                    |

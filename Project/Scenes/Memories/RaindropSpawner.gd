@@ -14,10 +14,12 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if (rng.randf_range(0,1)< propability):
-		var drop = ResourceLoader.load("res://Scenes/Memories/Raindrop.tscn")
-		var dropi = drop.instantiate();		
-		gamestate.currentScene.add_child(dropi)
-		dropi.global_position = Vector2(rng.randf_range(global_position.x,global_position.x+size.x),global_position.y)
+		var drop = get_child(0).cloneObject(gamestate.currentScene,false,Vector2(0,0))
+		drop.isClone = false
+		drop.process_mode = PROCESS_MODE_INHERIT
+		drop.visible = true
+		drop.add_to_group("Copyable");
+		drop.global_position = Vector2(rng.randf_range(global_position.x,global_position.x+size.x),global_position.y)
 
 func cloneObject(panel, move,ppos):
 	var result = self.duplicate();
