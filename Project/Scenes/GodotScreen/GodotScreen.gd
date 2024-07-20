@@ -24,4 +24,4 @@ func _on_button_pressed():
 	await get_tree().create_timer(deletepindelay).timeout
 	$PinJoint2D.queue_free();
 	await get_tree().create_timer(nextscenedelay).timeout
-	gamestate.fadeTo(gamestate.Scenes.Triggerwarning);
+	gamestate.fadeTo(gamestate.Scenes.MainMenu);

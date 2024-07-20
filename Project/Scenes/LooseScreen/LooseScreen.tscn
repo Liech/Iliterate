@@ -1,9 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://b45vfqcxcwe4q"]
+[gd_scene load_steps=5 format=3 uid="uid://u1urh4dk8tyw"]
 
-[ext_resource type="Texture2D" uid="uid://dxk323p2hap2c" path="res://Art/Background/Background.png" id="2_krb0y"]
-[ext_resource type="Texture2D" uid="uid://m2dbb5s7avis" path="res://Art/Background/Mage.png" id="3_vsfb3"]
-[ext_resource type="Texture2D" uid="uid://bsynd6xnwhvs1" path="res://Art/Background/Title.png" id="4_7evq1"]
-[ext_resource type="Script" path="res://Scenes/StartScreen/ToMainMenu.gd" id="5_ylrcl"]
+[ext_resource type="Texture2D" uid="uid://dxk323p2hap2c" path="res://Art/Background/Background.png" id="2_x0hu5"]
+[ext_resource type="Texture2D" uid="uid://m2dbb5s7avis" path="res://Art/Background/Mage.png" id="3_xwity"]
+[ext_resource type="Texture2D" uid="uid://bsynd6xnwhvs1" path="res://Art/Background/Title.png" id="4_d3wr2"]
+[ext_resource type="Script" path="res://Scenes/StartScreen/ToMainMenu.gd" id="5_na4fm"]
 
 [node name="StartScreen" type="Control"]
 layout_mode = 3
@@ -23,7 +23,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_krb0y")
+texture = ExtResource("2_x0hu5")
 expand_mode = 3
 stretch_mode = 4
 
@@ -34,7 +34,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("3_vsfb3")
+texture = ExtResource("3_xwity")
 expand_mode = 3
 stretch_mode = 4
 
@@ -47,7 +47,7 @@ offset_left = -23.0
 offset_bottom = -0.245972
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("4_7evq1")
+texture = ExtResource("4_d3wr2")
 expand_mode = 3
 stretch_mode = 4
 
@@ -59,6 +59,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 flat = true
-script = ExtResource("5_ylrcl")
+script = ExtResource("5_na4fm")
 
 [connection signal="pressed" from="Button" to="Button" method="_on_pressed"]

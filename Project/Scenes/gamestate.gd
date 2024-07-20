@@ -1,6 +1,6 @@
 extends Node
 
-enum Scenes {Godot, Triggerwarning, Ubiscene, Credits, StartScreen, MainMenu}
+enum Scenes {Godot, Triggerwarning, Ubiscene, Credits, StartScreen, MainMenu, LooseScreen}
 
  
 var twChoice = "Confusion";
@@ -42,6 +42,11 @@ func startScene(Scene : Scenes):
 		currentScene = scene.instantiate();
 		currentScene.set_name("MainMenu");
 		currentSceneName = "MainMenu";
+	elif (Scene == Scenes.LooseScreen):
+		var scene = ResourceLoader.load("res://Scenes/LooseScreen/LooseScreen.tscn")
+		currentScene = scene.instantiate();
+		currentScene.set_name("LooseScreen");
+		currentSceneName = "LooseScreen";
 	masternode.add_child(currentScene)
 	return currentScene;
 
