@@ -17,6 +17,10 @@ func _process(delta):
 
 
 func _on_button_pressed():
+	
+	gamestate.fadeTo(gamestate.Scenes.MainMenu);
+	return
+	
 	if (alreadyPressed):
 		return;
 	alreadyPressed= true;

@@ -6,6 +6,8 @@ var endPos = Vector2(-20,-20);
 var visibility = 0;
 
 var screenshot;
+var screenshotPanel;
+var capturedRect;
 
 @export var offset = 3.0
 @export var fadeoutspeed = 0.02
@@ -78,23 +80,65 @@ func doCopy():
 	visibility = 1
 	self.modulate.a = visibility
 	self.visible = true;
-	screenshot = get_viewport().get_texture() # We get what our player sees
+	captureReality();
+	#screenshot = get_viewport().get_texture() # We get what our player sees
 		
 func doPaste():
 	var mouse = get_global_mouse_position()
-	if (screenshot):
-		var parent = gamestate.snapPool
-		var rect = TextureRect.new()
-		parent.add_child(rect)
-		rect.position = mouse
-		var imgtex = ImageTexture.create_from_image(screenshot.get_image())
-		rect.texture = imgtex
+	if (screenshotPanel):
+		pasteReality()
 
-func getallnodes(node):
-	for N in node.get_children():
+func pasteReality():
+	var allNodes = [];
+	getallnodes(screenshotPanel, allNodes)
+	var selection = capturedRect
+
+	var panel = Panel.new()
+	gamestate.snapPool.add_child(panel);
+	#panel.position = selection.position
+
+	for item in allNodes:
+		var current = Rect2(item.position,item.size);
+		if (item.is_in_group("Copyable")):
+			var copyObj = item.cloneObject()
+			panel.add_child(copyObj);
+			copyObj.position = item.position
+	panel.size = selection.size
+	panel.modulate.a = 1
+	panel.self_modulate.a = 0
+	panel.clip_contents = true
+	panel.position = get_global_mouse_position()
+	
+func captureReality():
+	var allNodes = [];
+	getallnodes(gamestate.masternode, allNodes)
+	var selection = Rect2(self.position+Vector2(offset,offset),self.size-Vector2(offset,offset)*2);
+	capturedRect = selection
+	
+	var panel = Panel.new()
+	gamestate.snapPool.add_child(panel);
+	panel.position = selection.position
+
+	for item in allNodes:
+		var current = Rect2(item.position,item.size);
+		if (item.is_in_group("Copyable") and selection.intersection(current)):
+			var copyObj = item.cloneObject()
+			panel.add_child(copyObj);
+			copyObj.position = item.position - panel.position
+	screenshotPanel = panel
+	panel.size = selection.size
+	panel.modulate.a = 1
+	panel.self_modulate.a = 0
+	panel.clip_contents = true
+	panel.visible = false
+	panel.set_process(false)
+	
+
+
+func getallnodes(targetNode, resultArray):
+	for N in targetNode.get_children():
 		if N.get_child_count() > 0:
-			print("["+N.get_name()+"]")
-			getallnodes(N)
+			resultArray.append(N)
+			getallnodes(N,resultArray)
 		else:
-			# Do something
-			print("- "+N.get_name())
+			resultArray.append(N)
