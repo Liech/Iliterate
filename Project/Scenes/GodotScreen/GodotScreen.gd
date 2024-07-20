@@ -1,8 +1,8 @@
 extends Control
 
-@export var nextscenedelay = 2
-@export var deletepindelay = 2
-@export var fadeout = 2
+var nextscenedelay = 2
+var deletepindelay = 2
+var fadeout = 2
 
 var alreadyPressed = false
 
@@ -24,6 +24,4 @@ func _on_button_pressed():
 	await get_tree().create_timer(deletepindelay).timeout
 	$PinJoint2D.queue_free();
 	await get_tree().create_timer(nextscenedelay).timeout
-	var tween = create_tween();
-	await tween.tween_property($Fadeout,"modulate",Color(0,0,0,100),fadeout).finished
-	get_tree().change_scene_to_file("res://Scenes/TriggerWarning/TriggerWarning.tscn")
+	gamestate.fadeTo(gamestate.Scenes.Triggerwarning);
