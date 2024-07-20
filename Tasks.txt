@@ -4,7 +4,7 @@
  || Trigger Warning Scene              || Done   ||
  ||   True Love Effects                || Done   ||
  ||   Buglessnes Effects               || Done   ||
- ||   Audio Effects                    ||        ||
+ ||   Audio Effects                    || Done   ||
  ||   Confusion Effects                || Done   ||
  || Ubiscene                           || Done   ||
  || Start Screen                       ||        ||
