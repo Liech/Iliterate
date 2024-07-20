@@ -94,6 +94,7 @@ func pasteReality():
 	var selection = capturedRect
 
 	var panel = Panel.new()
+	panel.set_script(load("res://Scenes/MasterScene/DeleteOnEntf.gd"))
 	gamestate.snapPool.add_child(panel);
 	#panel.position = selection.position
 
@@ -110,6 +111,9 @@ func pasteReality():
 	panel.position = get_global_mouse_position()
 	
 func captureReality():
+	if (screenshotPanel):
+		screenshotPanel.queue_free()
+		screenshotPanel = null
 	var allNodes = [];
 	getallnodes(gamestate.masternode, allNodes)
 	var selection = Rect2(self.position+Vector2(offset,offset),self.size-Vector2(offset,offset)*2);
