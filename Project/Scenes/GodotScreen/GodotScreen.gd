@@ -1,4 +1,4 @@
-extends Control
+extends SceneRoot
 
 var nextscenedelay = 2
 var deletepindelay = 2
@@ -21,8 +21,8 @@ func _process(delta):
 
 func _on_button_pressed():
 	
-	#gamestate.fadeTo(gamestate.Scenes.MainMenu);
-	#return
+	gamestate.fadeTo(gamestate.Scenes.MainMenu);
+	return
 	
 	if (alreadyPressed):
 		return;

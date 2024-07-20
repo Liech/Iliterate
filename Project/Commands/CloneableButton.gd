@@ -1,15 +1,12 @@
 extends Button
+class_name CloneableButton
 
 var isClone = false
 
 func _ready():
 	if (not isClone):
 		add_to_group("Copyable");
-
-func _on_pressed():
-	gamestate.fadeTo(gamestate.Scenes.ActualGame);
-
-
+	
 func cloneObject(panel, move,ppos):
 	var result = self.duplicate();
 	result.size  = self.size

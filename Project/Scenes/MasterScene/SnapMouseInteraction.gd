@@ -41,7 +41,7 @@ func _process(delta):
 		self.visible = false
 	if (isActive):
 		var endPos = get_global_mouse_position()
-		
+				
 		var realPos = startPos - Vector2(offset,offset)
 		var realSize = (endPos-startPos)+ Vector2(offset,offset);
 		if (endPos.x < startPos.x):
@@ -87,6 +87,9 @@ func doPaste():
 	var mouse = get_global_mouse_position()
 	if (screenshotPanel):
 		pasteReality()
+		visibility = 1
+		self.modulate.a = visibility
+		self.visible = true;
 
 func pasteReality():
 	var allNodes = [];
@@ -108,6 +111,9 @@ func pasteReality():
 	panel.clip_contents = true
 	disableAllNodes(panel, true)
 	panel.position = get_global_mouse_position() - panel.size/2
+	self.position = panel.position
+	self.size = panel.size
+	
 	
 func captureReality():
 	if (screenshotPanel):
@@ -126,7 +132,7 @@ func captureReality():
 	for item in allNodes:
 		if (item.is_in_group("Copyable")):
 			var current = Rect2(item.position,item.size);
-			if (selection.intersection(current)):
+			if (selection.intersection(current) and not item.isClone):
 				item.cloneObject(panel, true,get_global_mouse_position() - panel.size/2)
 	screenshotPanel = panel
 	panel.modulate.a = 1

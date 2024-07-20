@@ -1,16 +1,17 @@
-[gd_scene load_steps=12 format=3 uid="uid://cch5ed86qkrt4"]
+[gd_scene load_steps=13 format=3 uid="uid://cch5ed86qkrt4"]
 
-[ext_resource type="Script" path="res://Scenes/MasterScene/Cloneable.gd" id="3_3uqhv"]
+[ext_resource type="Script" path="res://Scenes/MainMenu/MainMenu.gd" id="2_ckgni"]
+[ext_resource type="Script" path="res://Commands/Cloneable.gd" id="3_3uqhv"]
 [ext_resource type="Texture2D" uid="uid://m2dbb5s7avis" path="res://Art/Background/Mage.png" id="3_kqgqu"]
-[ext_resource type="Script" path="res://Scenes/MainMenu/StartGame.gd" id="4_583ko"]
+[ext_resource type="Script" path="res://Commands/CmdStartGame.gd" id="4_583ko"]
 [ext_resource type="Theme" uid="uid://d2hv2jx01084f" path="res://mainTheme.tres" id="5_1o4bo"]
 [ext_resource type="StyleBox" uid="uid://bdktf0xccluh5" path="res://Scenes/MainMenu/new_style_box_texture.tres" id="6_kavg7"]
-[ext_resource type="Script" path="res://Scenes/MainMenu/GoToCredits.gd" id="7_fbqfy"]
+[ext_resource type="Script" path="res://Commands/CmdAbout.gd" id="7_fbqfy"]
 [ext_resource type="Texture2D" uid="uid://vc0f42xth06n" path="res://Art/Button/Button.png" id="7_vc7f2"]
-[ext_resource type="Script" path="res://Scenes/MainMenu/GoToMemories.gd" id="8_8don6"]
-[ext_resource type="Script" path="res://Scenes/MainMenu/GoToOptions.gd" id="9_nayao"]
-[ext_resource type="Script" path="res://Scenes/MainMenu/GoToLoose.gd" id="9_q7sbv"]
-[ext_resource type="Script" path="res://Scenes/MainMenu/GoToStartScreen.gd" id="11_yvkh4"]
+[ext_resource type="Script" path="res://Commands/CmdMemory.gd" id="8_8don6"]
+[ext_resource type="Script" path="res://Commands/CmdOptions.gd" id="9_nayao"]
+[ext_resource type="Script" path="res://Commands/CmdLoose.gd" id="9_q7sbv"]
+[ext_resource type="Script" path="res://Commands/CmdBack.gd" id="12_am8p2"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -23,6 +24,7 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = ExtResource("5_1o4bo")
+script = ExtResource("2_ckgni")
 
 [node name="Background" type="TextureRect" parent="."]
 z_index = -1
@@ -179,7 +181,7 @@ theme = ExtResource("5_1o4bo")
 theme_override_styles/normal = ExtResource("6_kavg7")
 text = "Back"
 flat = true
-script = ExtResource("11_yvkh4")
+script = ExtResource("12_am8p2")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="Back"]
 show_behind_parent = true

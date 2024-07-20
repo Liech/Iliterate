@@ -1,16 +1,12 @@
-extends Button
-
+extends TextureRect
+class_name Cloneable
 
 var isClone = false
 
 func _ready():
 	if (not isClone):
 		add_to_group("Copyable");
-
-func _on_pressed():
-	gamestate.fadeTo(gamestate.Scenes.Credits);
-
-
+	
 func cloneObject(panel, move,ppos):
 	var result = self.duplicate();
 	result.size  = self.size
