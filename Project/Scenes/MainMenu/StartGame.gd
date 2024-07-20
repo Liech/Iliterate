@@ -6,7 +6,11 @@ func _ready():
 func _on_pressed():
 	gamestate.fadeTo(gamestate.Scenes.ActualGame);
 
-func cloneObject():
+func cloneObject(panel, move,ppos):
 	var result = self.duplicate();
+	result.size  = self.size
 	result.theme = self.theme
+	panel.add_child(result);
+	if (move):
+		result.position = result.position - panel.position
 	return result

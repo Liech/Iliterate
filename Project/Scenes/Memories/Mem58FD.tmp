@@ -54,14 +54,12 @@ patch_margin_top = 58
 patch_margin_right = 83
 patch_margin_bottom = 46
 
-[node name="Raincloud" type="Panel" parent="."]
-modulate = Color(1, 1, 1, 0)
-self_modulate = Color(1, 1, 1, 0.580392)
+[node name="Panel" type="Panel" parent="."]
 layout_mode = 0
-offset_left = 963.0
-offset_top = 117.0
-offset_right = 1345.0
-offset_bottom = 157.0
+offset_left = 979.0
+offset_top = 53.0
+offset_right = 1850.0
+offset_bottom = 93.0
 script = ExtResource("7_aoglo")
 
 [connection signal="pressed" from="Back" to="Back" method="_on_pressed"]

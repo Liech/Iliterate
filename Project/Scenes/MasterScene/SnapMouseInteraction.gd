@@ -95,20 +95,19 @@ func pasteReality():
 
 	var panel = Panel.new()
 	panel.set_script(load("res://Scenes/MasterScene/DeleteOnEntf.gd"))
-	gamestate.snapPool.add_child(panel);
+	gamestate.currentScene.add_child(panel);
 	#panel.position = selection.position
 
-	for item in allNodes:
-		var current = Rect2(item.position,item.size);
-		if (item.is_in_group("Copyable")):
-			var copyObj = item.cloneObject()
-			panel.add_child(copyObj);
-			copyObj.position = item.position
 	panel.size = selection.size
+	for item in allNodes:
+		if (item.is_in_group("Copyable")):
+			var current = Rect2(item.position,item.size);
+			item.cloneObject(panel, false,(get_global_mouse_position() - panel.size/2) - capturedRect.position)
 	panel.modulate.a = 1
 	panel.self_modulate.a = 0
 	panel.clip_contents = true
-	panel.position = get_global_mouse_position()
+	disableAllNodes(panel, true)
+	panel.position = get_global_mouse_position() - panel.size/2
 	
 func captureReality():
 	if (screenshotPanel):
@@ -123,21 +122,27 @@ func captureReality():
 	gamestate.snapPool.add_child(panel);
 	panel.position = selection.position
 
-	for item in allNodes:
-		var current = Rect2(item.position,item.size);
-		if (item.is_in_group("Copyable") and selection.intersection(current)):
-			var copyObj = item.cloneObject()
-			panel.add_child(copyObj);
-			copyObj.position = item.position - panel.position
-	screenshotPanel = panel
 	panel.size = selection.size
+	for item in allNodes:
+		if (item.is_in_group("Copyable")):
+			var current = Rect2(item.position,item.size);
+			if (selection.intersection(current)):
+				item.cloneObject(panel, true,get_global_mouse_position() - panel.size/2)
+	screenshotPanel = panel
 	panel.modulate.a = 1
 	panel.self_modulate.a = 0
 	panel.clip_contents = true
-	panel.visible = false
-	panel.set_process(false)
+	disableAllNodes(panel, false)
+	panel.position = Vector2(4000,4000)
 	
-
+func disableAllNodes(targetNode, valu):
+	targetNode.visible = valu
+	targetNode.set_process(valu)
+	var allNodes = []
+	getallnodes(targetNode,allNodes)
+	for w in allNodes:
+		w.visible = valu
+		w.set_process(valu)
 
 func getallnodes(targetNode, resultArray):
 	for N in targetNode.get_children():

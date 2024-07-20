@@ -4,7 +4,8 @@ func _ready():
 	add_to_group("Copyable");
 
 func _on_pressed():
-	gamestate.fadeTo(gamestate.Scenes.Options);
+	gamestate.fadeTo(gamestate.Scenes.MainMenu);
+	
 
 func cloneObject(panel, move,ppos):
 	var result = self.duplicate();
@@ -14,3 +15,4 @@ func cloneObject(panel, move,ppos):
 	if (move):
 		result.position = result.position - panel.position
 	return result
+
