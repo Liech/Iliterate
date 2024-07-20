@@ -18,6 +18,7 @@ Introduction:
         Trigger Warning:
 	      Confusion
 	      True Love
+		  Audio
 	      Buglessnes
 	    --------
 	    Game waits for you to select one. Game remembers this for weird things like background music.

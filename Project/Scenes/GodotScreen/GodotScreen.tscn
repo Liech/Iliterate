@@ -1,0 +1,104 @@
+[gd_scene load_steps=6 format=3 uid="uid://dllnxms57yayp"]
+
+[ext_resource type="Script" path="res://Scenes/GodotScreen/GodotScreen.gd" id="1_n13py"]
+[ext_resource type="Texture2D" uid="uid://bia5jsnmij008" path="res://Art/GodotLogo.png" id="2_x8p1y"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u4rb4"]
+size = Vector2(263, 259.5)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_t2niw"]
+radius = 33.541
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hlsih"]
+size = Vector2(8771.25, 17)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_n13py")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.145266, 0.145266, 0.145266, 1)
+
+[node name="GodotSymbol" type="RigidBody2D" parent="."]
+position = Vector2(963, 550)
+freeze = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GodotSymbol"]
+position = Vector2(1, -16)
+shape = SubResource("RectangleShape2D_u4rb4")
+
+[node name="TextureRect" type="TextureRect" parent="GodotSymbol"]
+offset_left = -147.0
+offset_top = -160.0
+offset_right = 153.0
+offset_bottom = 140.0
+texture = ExtResource("2_x8p1y")
+stretch_mode = 2
+
+[node name="Nail" type="RigidBody2D" parent="."]
+position = Vector2(1189, 673)
+freeze = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Nail"]
+position = Vector2(546, -43)
+shape = SubResource("CircleShape2D_t2niw")
+
+[node name="Bottom" type="RigidBody2D" parent="."]
+position = Vector2(992, 1072)
+freeze = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bottom"]
+position = Vector2(880, 19)
+shape = SubResource("RectangleShape2D_hlsih")
+
+[node name="PinJoint2D" type="PinJoint2D" parent="."]
+position = Vector2(1087, 659)
+node_a = NodePath("../GodotSymbol")
+node_b = NodePath("../Nail")
+
+[node name="Fadeout" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.0156863)
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 0)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 0)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 0)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 0)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 0)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 0)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 0)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 0)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 0)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 0)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 0)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 0)
+flat = true
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
