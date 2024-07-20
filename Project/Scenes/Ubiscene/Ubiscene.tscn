@@ -1,0 +1,150 @@
+[gd_scene load_steps=5 format=3 uid="uid://bkhgq350lw5sw"]
+
+[ext_resource type="Theme" uid="uid://d2hv2jx01084f" path="res://mainTheme.tres" id="1_t3nyp"]
+[ext_resource type="Script" path="res://Scenes/TriggerWarning/FadeIn.gd" id="2_6rj78"]
+[ext_resource type="Script" path="res://Scenes/Ubiscene/Ubiscene.gd" id="2_x0o6i"]
+
+[sub_resource type="GDScript" id="GDScript_qcivd"]
+script/source = "extends VBoxContainer
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+"
+
+[node name="Ubiscene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_t3nyp")
+script = ExtResource("2_x0o6i")
+scenetime = 11
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("GDScript_qcivd")
+
+[node name="Headline" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 30
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/Headline"]
+layout_mode = 2
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 250
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 100
+
+[node name="Label" type="Label" parent="VBoxContainer/Headline/MarginContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+text = "Inspired by historical events and characters in your life"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="VBoxContainer/Headline"]
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+script = ExtResource("2_6rj78")
+startdelay = 0
+
+[node name="FirstLine" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 200
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 15
+
+[node name="Label" type="Label" parent="VBoxContainer/FirstLine"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+text = "This dream of fiction was designed, developed and produced    "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="VBoxContainer/FirstLine"]
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+script = ExtResource("2_6rj78")
+startdelay = 4
+
+[node name="SecondLine" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 200
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 15
+
+[node name="Label" type="Label" parent="VBoxContainer/SecondLine"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+text = "by a single guy that does not know how to art or sound    "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="VBoxContainer/SecondLine"]
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+script = ExtResource("2_6rj78")
+startdelay = 6
+
+[node name="Link" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 200
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 15
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/Link"]
+layout_mode = 2
+theme_override_constants/margin_top = 200
+
+[node name="Label" type="Label" parent="VBoxContainer/Link/MarginContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Visit https://github.com/Liech/Iliterate for the Tips & Sourcecode      "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="VBoxContainer/Link"]
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+script = ExtResource("2_6rj78")
+startdelay = 8
+
+[node name="FadeOut" type="ColorRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0.0156863)

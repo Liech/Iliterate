@@ -1,6 +1,6 @@
 extends Node
 
-enum Scenes {Godot, Triggerwarning, StartScreen}
+enum Scenes {Godot, Triggerwarning, Ubiscene, StartScreen}
 
  
 var twChoice = "Confusion";
@@ -16,31 +16,29 @@ func startScene(Scene : Scenes):
 		var scene = ResourceLoader.load("res://Scenes/GodotScreen/GodotScreen.tscn");
 		currentScene = scene.instantiate();
 		currentScene.set_name("Godot");
-		masternode.add_child(currentScene)
-		currentSceneName = "Godot";
-		return currentScene;
 	elif (Scene == Scenes.Triggerwarning):
 		var scene = ResourceLoader.load("res://Scenes/TriggerWarning/TriggerWarning.tscn")
 		currentScene = scene.instantiate();
 		currentScene.set_name("TriggerWarning");
-		masternode.add_child(currentScene)
 		currentSceneName = "TriggerWarning";
-		return currentScene;
+	elif (Scene == Scenes.Ubiscene):
+		var scene = ResourceLoader.load("res://Scenes/Ubiscene/Ubiscene.tscn")
+		currentScene = scene.instantiate();
+		currentScene.set_name("Ubiscene");
+		currentSceneName = "Ubiscene";
 	elif (Scene == Scenes.StartScreen):
 		var scene = ResourceLoader.load("res://Scenes/StartScreen/StartScreeeen.tscn")
 		currentScene = scene.instantiate();
 		currentScene.set_name("StartScreen");
-		masternode.add_child(currentScene)
 		currentSceneName = "StartScreen";
-		return currentScene;
+	masternode.add_child(currentScene)
+	return currentScene;
 
 
 func fadeTo(sceneName : Scenes):
 	var tween = create_tween();
 	await tween.tween_property(fader,"modulate",Color(0,0,0,100),fadeouttime).finished
 	currentScene.queue_free()
-	#currentScene.visible = false;
-	#currentScene.process_mode = Node.PROCESS_MODE_DISABLED;
 	var node = gamestate.startScene(sceneName);
 	var tween2 = create_tween();
 	await tween2.tween_property(fader,"modulate",Color(0,0,0,0),fadeintime).finished
