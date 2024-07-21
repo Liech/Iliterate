@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://cch5ed86qkrt4"]
+[gd_scene load_steps=18 format=3 uid="uid://cch5ed86qkrt4"]
 
 [ext_resource type="Script" path="res://Scenes/MainMenu/MainMenu.gd" id="2_ckgni"]
 [ext_resource type="Script" path="res://Generics/Cloneable.gd" id="3_3uqhv"]
@@ -15,16 +15,12 @@
 [ext_resource type="Script" path="res://Core/SignLanguageInstructor.gd" id="13_cmu2o"]
 [ext_resource type="Texture2D" uid="uid://c5c2vtc7dcttf" path="res://Art/Menu/CatSignLanguageInterpreterPaw.png" id="13_r2l6x"]
 [ext_resource type="Script" path="res://Core/SignLanguagePaw.gd" id="14_4uklr"]
-[ext_resource type="Script" path="res://Scenes/Options/Audio/AudioLabel.gd" id="16_vhd80"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iu5qb"]
 size = Vector2(462, 123)
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_mabsu"]
 distance = -9.0
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_h7ptp"]
-size = Vector2(280, 88)
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -42,10 +38,10 @@ script = ExtResource("2_ckgni")
 [node name="Background" type="TextureRect" parent="."]
 z_index = -2
 layout_mode = 0
-offset_left = 272.0
-offset_top = -736.0
-offset_right = 2133.33
-offset_bottom = 311.0
+offset_left = 104.0
+offset_top = 8.0
+offset_right = 1965.33
+offset_bottom = 1055.0
 texture = ExtResource("3_kqgqu")
 expand_mode = 3
 stretch_mode = 4
@@ -263,68 +259,29 @@ texture = ExtResource("13_r2l6x")
 script = ExtResource("14_4uklr")
 
 [node name="Ground" type="RigidBody2D" parent="."]
+position = Vector2(888, 1088)
 freeze = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
-position = Vector2(902, 1074)
 shape = SubResource("WorldBoundaryShape2D_mabsu")
 
-[node name="EffectAudioLabel2" type="RigidBody2D" parent="."]
-position = Vector2(1384, 568)
-rotation = 0.308964
-collision_layer = 2
-collision_mask = 2
+[node name="Wall2" type="RigidBody2D" parent="."]
+position = Vector2(-16, 840)
+rotation = 1.5708
 freeze = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="EffectAudioLabel2"]
-position = Vector2(129.724, 33.9938)
-shape = SubResource("RectangleShape2D_h7ptp")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall2"]
+position = Vector2(0, 8)
+shape = SubResource("WorldBoundaryShape2D_mabsu")
 
-[node name="EffectAudioLabel" type="Label" parent="EffectAudioLabel2"]
-offset_right = 295.0
-offset_bottom = 88.0
-mouse_filter = 1
-theme = ExtResource("5_1o4bo")
-text = "Effect:"
-script = ExtResource("16_vhd80")
-
-[node name="EffectAudioLabel3" type="RigidBody2D" parent="."]
-position = Vector2(1000, 528)
-rotation = -3.9446
-collision_layer = 2
-collision_mask = 2
+[node name="Wall" type="RigidBody2D" parent="."]
+position = Vector2(1936, 936)
+rotation = -1.5708
 freeze = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="EffectAudioLabel3"]
-position = Vector2(129.724, 33.9938)
-shape = SubResource("RectangleShape2D_h7ptp")
-
-[node name="EffectAudioLabel" type="Label" parent="EffectAudioLabel3"]
-offset_right = 295.0
-offset_bottom = 88.0
-mouse_filter = 1
-theme = ExtResource("5_1o4bo")
-text = "Effect:"
-script = ExtResource("16_vhd80")
-
-[node name="EffectAudioLabel" type="RigidBody2D" parent="."]
-position = Vector2(912, 776)
-rotation = 1.01163
-collision_layer = 2
-collision_mask = 2
-freeze = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="EffectAudioLabel"]
-position = Vector2(129.724, 33.9938)
-shape = SubResource("RectangleShape2D_h7ptp")
-
-[node name="EffectAudioLabel" type="Label" parent="EffectAudioLabel"]
-offset_right = 295.0
-offset_bottom = 88.0
-mouse_filter = 1
-theme = ExtResource("5_1o4bo")
-text = "Effect:"
-script = ExtResource("16_vhd80")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall"]
+position = Vector2(0, 8)
+shape = SubResource("WorldBoundaryShape2D_mabsu")
 
 [connection signal="mouse_entered" from="Start Game/Start Game" to="Start Game/Start Game" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Start Game/Start Game" to="Start Game/Start Game" method="_on_mouse_exited"]
@@ -341,9 +298,3 @@ script = ExtResource("16_vhd80")
 [connection signal="mouse_entered" from="Back/Back" to="Back/Back" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Back/Back" to="Back/Back" method="_on_mouse_exited"]
 [connection signal="pressed" from="Back/Back" to="Back/Back" method="_on_pressed"]
-[connection signal="mouse_entered" from="EffectAudioLabel2/EffectAudioLabel" to="EffectAudioLabel2/EffectAudioLabel" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="EffectAudioLabel2/EffectAudioLabel" to="EffectAudioLabel2/EffectAudioLabel" method="_on_mouse_exited"]
-[connection signal="mouse_entered" from="EffectAudioLabel3/EffectAudioLabel" to="EffectAudioLabel3/EffectAudioLabel" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="EffectAudioLabel3/EffectAudioLabel" to="EffectAudioLabel3/EffectAudioLabel" method="_on_mouse_exited"]
-[connection signal="mouse_entered" from="EffectAudioLabel/EffectAudioLabel" to="EffectAudioLabel/EffectAudioLabel" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="EffectAudioLabel/EffectAudioLabel" to="EffectAudioLabel/EffectAudioLabel" method="_on_mouse_exited"]

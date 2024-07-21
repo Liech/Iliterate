@@ -107,7 +107,7 @@ size = Vector2(272, 88)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8qwk6"]
 size = Vector2(288, 112)
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_g07yp"]
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ufr3p"]
 distance = -9.0
 
 [node name="Options" type="Control"]
@@ -957,14 +957,30 @@ pivot_offset = Vector2(85, 581)
 texture = ExtResource("33_81wdw")
 script = ExtResource("34_04tvg")
 
-[node name="Ground" type="RigidBody2D" parent="."]
-collision_layer = 15
-collision_mask = 15
+[node name="Ground2" type="RigidBody2D" parent="."]
+position = Vector2(888, 1088)
 freeze = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
-position = Vector2(902, 1074)
-shape = SubResource("WorldBoundaryShape2D_g07yp")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground2"]
+shape = SubResource("WorldBoundaryShape2D_ufr3p")
+
+[node name="Wall2" type="RigidBody2D" parent="."]
+position = Vector2(-16, 840)
+rotation = 1.5708
+freeze = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall2"]
+position = Vector2(0, 8)
+shape = SubResource("WorldBoundaryShape2D_ufr3p")
+
+[node name="Wall" type="RigidBody2D" parent="."]
+position = Vector2(1936, 936)
+rotation = -1.5708
+freeze = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall"]
+position = Vector2(0, 8)
+shape = SubResource("WorldBoundaryShape2D_ufr3p")
 
 [connection signal="mouse_entered" from="Back/Back" to="Back/Back" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Back/Back" to="Back/Back" method="_on_mouse_exited"]
