@@ -1,0 +1,2 @@
+* In Options invisible physics are still there
+* rotation and copy does not work
