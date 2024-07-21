@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cc2expfh1gclt"
-path="res://.godot/imported/UwUCursor.png-f5de456b4fadeb5229c1cc781036a99f.ctex"
+uid="uid://df7hdx5b8nrg4"
+path="res://.godot/imported/SliderKnob.png-bb6774cce3f8d102591352052a6a4970.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/UwUCursor.png"
-dest_files=["res://.godot/imported/UwUCursor.png-f5de456b4fadeb5229c1cc781036a99f.ctex"]
+source_file="res://Art/Menu/SliderKnob.png"
+dest_files=["res://.godot/imported/SliderKnob.png-bb6774cce3f8d102591352052a6a4970.ctex"]
 
 [params]
 

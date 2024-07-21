@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cch5ed86qkrt4"]
+[gd_scene load_steps=12 format=3 uid="uid://cch5ed86qkrt4"]
 
 [ext_resource type="Script" path="res://Scenes/MainMenu/MainMenu.gd" id="2_ckgni"]
 [ext_resource type="Script" path="res://Commands/Cloneable.gd" id="3_3uqhv"]
@@ -10,7 +10,6 @@
 [ext_resource type="Texture2D" uid="uid://vc0f42xth06n" path="res://Art/Button/Button.png" id="7_vc7f2"]
 [ext_resource type="Script" path="res://Commands/CmdMemory.gd" id="8_8don6"]
 [ext_resource type="Script" path="res://Commands/CmdOptions.gd" id="9_nayao"]
-[ext_resource type="Script" path="res://Commands/CmdLoose.gd" id="9_q7sbv"]
 [ext_resource type="Script" path="res://Commands/CmdBack.gd" id="12_am8p2"]
 
 [node name="MainMenu" type="Control"]
@@ -27,7 +26,7 @@ theme = ExtResource("5_1o4bo")
 script = ExtResource("2_ckgni")
 
 [node name="Background" type="TextureRect" parent="."]
-z_index = -1
+z_index = -2
 layout_mode = 0
 offset_left = 238.0
 offset_top = 10.0
@@ -118,38 +117,11 @@ patch_margin_top = 58
 patch_margin_right = 83
 patch_margin_bottom = 46
 
-[node name="Loose" type="Button" parent="."]
+[node name="Options" type="Button" parent="."]
 layout_mode = 2
 offset_top = 396.0
 offset_right = 479.0
 offset_bottom = 524.0
-theme = ExtResource("5_1o4bo")
-theme_override_styles/normal = ExtResource("6_kavg7")
-text = "Loose"
-flat = true
-script = ExtResource("9_q7sbv")
-
-[node name="NinePatchRect" type="NinePatchRect" parent="Loose"]
-show_behind_parent = true
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme = ExtResource("5_1o4bo")
-texture = ExtResource("7_vc7f2")
-region_rect = Rect2(0.447113, 1.15751, 198.079, 182.684)
-patch_margin_left = 120
-patch_margin_top = 58
-patch_margin_right = 83
-patch_margin_bottom = 46
-
-[node name="Options" type="Button" parent="."]
-layout_mode = 2
-offset_top = 528.0
-offset_right = 479.0
-offset_bottom = 656.0
 theme = ExtResource("5_1o4bo")
 theme_override_styles/normal = ExtResource("6_kavg7")
 text = "Options"
@@ -174,9 +146,9 @@ patch_margin_bottom = 46
 
 [node name="Back" type="Button" parent="."]
 layout_mode = 2
-offset_top = 660.0
+offset_top = 528.0
 offset_right = 479.0
-offset_bottom = 788.0
+offset_bottom = 656.0
 theme = ExtResource("5_1o4bo")
 theme_override_styles/normal = ExtResource("6_kavg7")
 text = "Back"
@@ -208,6 +180,5 @@ grow_vertical = 2
 [connection signal="pressed" from="Start Game" to="Start Game" method="_on_pressed"]
 [connection signal="pressed" from="About" to="About" method="_on_pressed"]
 [connection signal="pressed" from="Memories" to="Memories" method="_on_pressed"]
-[connection signal="pressed" from="Loose" to="Loose" method="_on_pressed"]
 [connection signal="pressed" from="Options" to="Options" method="_on_pressed"]
 [connection signal="pressed" from="Back" to="Back" method="_on_pressed"]

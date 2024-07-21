@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://df7hdx5b8nrg4"
-path="res://.godot/imported/SliderKnob.png-054ded46f85e988003ce9f11dd6ba1d7.ctex"
+uid="uid://lvld2o43cpmo"
+path="res://.godot/imported/ComboKnob.png-823602114395ea5dbf520125bd1ec74a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/SliderKnob.png"
-dest_files=["res://.godot/imported/SliderKnob.png-054ded46f85e988003ce9f11dd6ba1d7.ctex"]
+source_file="res://Art/Menu/ComboKnob.png"
+dest_files=["res://.godot/imported/ComboKnob.png-823602114395ea5dbf520125bd1ec74a.ctex"]
 
 [params]
 

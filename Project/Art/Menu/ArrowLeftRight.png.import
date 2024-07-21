@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cunvmahm0k2ca"
-path="res://.godot/imported/CatCursor.png-b6fe67183e868ba8d587b5f9b301933f.ctex"
+uid="uid://ed4y6oqrpmgy"
+path="res://.godot/imported/ArrowLeftRight.png-b3b3452a5af4f803db98a9a259bd939e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/CatCursor.png"
-dest_files=["res://.godot/imported/CatCursor.png-b6fe67183e868ba8d587b5f9b301933f.ctex"]
+source_file="res://Art/Menu/ArrowLeftRight.png"
+dest_files=["res://.godot/imported/ArrowLeftRight.png-b3b3452a5af4f803db98a9a259bd939e.ctex"]
 
 [params]
 
