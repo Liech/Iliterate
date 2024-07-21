@@ -135,30 +135,30 @@ func captureReality():
 	
 	panel.size = selection.size
 	for item in allNodes:
-		if (abs(item.rotation) > 0.3):
-			continue
+		#if (abs(item.rotation) > 0.3):
+		#	continue
 		if (item.is_in_group("Copyable") and item.visible):
-			var current = Rect2(item.global_position,item.size);
-			if (selection.intersection(current) and not item.isClone):
+			var globrect = item.get_global_rect()
+			if (selection.intersection(globrect) and not item.isClone):
 				item.cloneObject(panel, true,get_global_mouse_position() - panel.size/2)
-			#elif (item.get_parent()):
-			#	if (item.get_parent() is RigidBody2D):
-			#		var col : RigidBody2D = item.get_parent()
-			#		var space_state = get_world_2d().direct_space_state
-			#		var params =  PhysicsShapeQueryParameters2D.new()
-			#		params.shape = shape
-			#		var t = Transform2D()
-			#		t.origin = selection.position
-			#		params.transform= t
-			#		var out = space_state.intersect_shape(params)
-			#		for x in out:
-			#			if (x.collider == col):
-			#				item.cloneObject(panel, true,get_global_mouse_position() - panel.size/2)
+			elif (item.get_parent()):
+				if (item.get_parent() is RigidBody2D):
+					var col : RigidBody2D = item.get_parent()
+					var space_state = get_world_2d().direct_space_state
+					var params =  PhysicsShapeQueryParameters2D.new()
+					params.shape = shape
+					var t = Transform2D()
+					t.origin = selection.position
+					params.transform= t
+					var out = space_state.intersect_shape(params)
+					for x in out:
+						if (x.collider == col):
+							item.cloneObject(panel, true,get_global_mouse_position() - panel.size/2)
 			#				
 	screenshotPanel = panel
 	panel.modulate.a = 1
 	panel.self_modulate.a = 0
-	panel.clip_contents = true
+	#panel.clip_contents = true
 	disableAllNodes(panel, false)
 	panel.position = Vector2(4000,4000)
 	
