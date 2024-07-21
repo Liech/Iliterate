@@ -18,12 +18,20 @@ func _ready():
 		add_to_group("Copyable");
 	
 
+func hasChar(str, char):
+	for i in range(len(str)):
+		if (str[i] == char):
+			return true;
+	return false;
+
+	
 func shuffleLetter():
 	for index in range(item_count):
 		var pos = randi()%len(englishTexts[index])
 		var n_char = len(GlobalOptions.characters)
 		var t = get_item_text(index)
-		t[pos] = GlobalOptions.characters[randi()% n_char]
+		if hasChar(GlobalOptions.characters,t[index]):
+			t[pos] = GlobalOptions.characters[randi()% n_char]
 		set_item_text(index,t)
 	
 func shuffleAll():
@@ -31,7 +39,10 @@ func shuffleAll():
 	for index in range(item_count):
 		var word: String
 		for i in range(len(englishTexts[index])):
-			word += GlobalOptions.characters[randi()% n_char]
+			if hasChar(GlobalOptions.characters,englishTexts[index][i]):
+				word += GlobalOptions.characters[randi()% n_char]
+			else:
+				word+=englishTexts[index][i]
 		set_item_text(index,word)
 	
 func _process(delta):
@@ -42,6 +53,7 @@ func _process(delta):
 			material = load("res://Art/gibberish.tres")
 		if (randi() % 100 < shuffleprop):
 			shuffleLetter()
+		
 	else:
 		for i in range(item_count):
 			set_item_text(i, englishTexts[i])

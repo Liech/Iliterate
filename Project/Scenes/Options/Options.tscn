@@ -496,8 +496,7 @@ offset_left = 120.0
 offset_top = 300.0
 offset_right = 623.0
 offset_bottom = 388.0
-text = "Localization: "
-horizontal_alignment = 1
+text = "Language: "
 vertical_alignment = 1
 script = ExtResource("13_2k2fm")
 

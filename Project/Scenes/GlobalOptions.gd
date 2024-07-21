@@ -16,4 +16,4 @@ var masterAudio = 1
 var musicAudio = 1
 var effectAudio = 1
 
-var characters = 'abcdefghijklmnopqrstuvwxyz'
+var characters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'

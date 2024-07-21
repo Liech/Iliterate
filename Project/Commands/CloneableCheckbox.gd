@@ -13,20 +13,29 @@ func _ready():
 	startShader = material
 	if (not isClone):
 		add_to_group("Copyable");
-	
+
+func hasChar(str, char):
+	for i in range(len(str)):
+		if (str[i] == char):
+			return true;
+	return false;
+
 	
 func shuffleLetter():
 	var index = randi()%len(text)
 	var n_char = len(GlobalOptions.characters)
-	text[index] = GlobalOptions.characters[randi()% n_char]
+	if hasChar(GlobalOptions.characters,text[index]):
+		text[index] = GlobalOptions.characters[randi()% n_char]
 	
 func shuffleAll():
 	var word: String
 	var n_char = len(GlobalOptions.characters)
 	for i in range(len(englishText)):
-		word += GlobalOptions.characters[randi()% n_char]
+		if hasChar(GlobalOptions.characters,englishText[i]):
+			word += GlobalOptions.characters[randi()% n_char]
+		else:
+			word+= englishText[i]
 	text = word
-
 	
 func _process(delta):
 	if (GlobalOptions.localization == GlobalOptions.Localization.Gibberish):		
