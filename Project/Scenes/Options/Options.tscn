@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://bn57n5cddun8x"]
+[gd_scene load_steps=45 format=3 uid="uid://bn57n5cddun8x"]
 
 [ext_resource type="Theme" uid="uid://d2hv2jx01084f" path="res://mainTheme.tres" id="1_ipdrc"]
 [ext_resource type="Script" path="res://Scenes/Options/Options.gd" id="2_8cd1l"]
@@ -35,7 +35,35 @@
 [ext_resource type="Texture2D" uid="uid://c5c2vtc7dcttf" path="res://Art/Menu/CatSignLanguageInterpreterPaw.png" id="33_81wdw"]
 [ext_resource type="Script" path="res://CatSignLanguage/SignLanguagePaw.gd" id="34_04tvg"]
 
-[sub_resource type="Theme" id="Theme_rl0iw"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8nxqd"]
+size = Vector2(264, 123)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_02o73"]
+size = Vector2(280, 80)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oyn8m"]
+size = Vector2(752, 120)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_08ahe"]
+size = Vector2(744, 112)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jtrej"]
+size = Vector2(752, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ol78t"]
+size = Vector2(368, 72)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6ubfx"]
+size = Vector2(352, 96)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o308c"]
+size = Vector2(472, 88)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u68ne"]
+size = Vector2(352, 80)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_g07yp"]
+distance = -9.0
 
 [node name="Options" type="Control"]
 layout_mode = 3
@@ -77,8 +105,15 @@ patch_margin_right = 83
 patch_margin_bottom = 46
 script = ExtResource("6_7t1l1")
 
-[node name="Back" type="Button" parent="."]
-layout_mode = 2
+[node name="Back" type="RigidBody2D" parent="."]
+collision_layer = 2
+freeze = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Back"]
+position = Vector2(230.438, 912)
+shape = SubResource("RectangleShape2D_8nxqd")
+
+[node name="Back" type="Button" parent="Back"]
 offset_left = 120.0
 offset_top = 848.0
 offset_right = 336.0
@@ -89,7 +124,7 @@ text = "Back"
 flat = true
 script = ExtResource("11_o6sco")
 
-[node name="NinePatchRect2" type="NinePatchRect" parent="Back"]
+[node name="NinePatchRect2" type="NinePatchRect" parent="Back/Back"]
 show_behind_parent = true
 layout_mode = 1
 anchors_preset = -1
@@ -291,8 +326,15 @@ horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("11_mj2eo")
 
-[node name="HintsGameplay" type="CheckBox" parent="."]
-layout_mode = 2
+[node name="Hints" type="RigidBody2D" parent="."]
+collision_layer = 2
+freeze = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hints"]
+position = Vector2(284, 744)
+shape = SubResource("RectangleShape2D_02o73")
+
+[node name="HintsGameplay" type="CheckBox" parent="Hints"]
 offset_left = 120.0
 offset_top = 696.0
 offset_right = 427.0
@@ -307,13 +349,19 @@ text = "Hints
 "
 script = ExtResource("20_e703a")
 
-[node name="DialogSpeed2Gameplay" type="OptionButton" parent="."]
-layout_mode = 2
-offset_left = 727.0
-offset_top = 564.0
-offset_right = 1480.0
-offset_bottom = 692.0
-theme = SubResource("Theme_rl0iw")
+[node name="DialogSpeed2Gameplay" type="RigidBody2D" parent="."]
+position = Vector2(727, 564)
+collision_layer = 2
+freeze = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DialogSpeed2Gameplay"]
+position = Vector2(377, 64)
+shape = SubResource("RectangleShape2D_oyn8m")
+
+[node name="DialogSpeed2Gameplay" type="OptionButton" parent="DialogSpeed2Gameplay"]
+offset_right = 753.0
+offset_bottom = 128.0
+theme = ExtResource("1_ipdrc")
 theme_override_styles/focus = ExtResource("5_exebi")
 theme_override_styles/normal = ExtResource("5_exebi")
 theme_override_styles/hover = ExtResource("5_exebi")
@@ -334,7 +382,7 @@ popup/item_2/text = "Off "
 popup/item_2/id = 0
 script = ExtResource("17_ksj6o")
 
-[node name="DownButton" type="TextureRect" parent="DialogSpeed2Gameplay"]
+[node name="DownButton" type="TextureRect" parent="DialogSpeed2Gameplay/DialogSpeed2Gameplay"]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -348,7 +396,7 @@ grow_horizontal = 0
 grow_vertical = 2
 texture = ExtResource("9_asoxr")
 
-[node name="NinePatchRect2" type="NinePatchRect" parent="DialogSpeed2Gameplay"]
+[node name="NinePatchRect2" type="NinePatchRect" parent="DialogSpeed2Gameplay/DialogSpeed2Gameplay"]
 show_behind_parent = true
 layout_mode = 1
 anchors_preset = -1
@@ -364,13 +412,21 @@ patch_margin_top = 58
 patch_margin_right = 83
 patch_margin_bottom = 46
 
-[node name="GraphicsGameplay" type="OptionButton" parent="."]
-layout_mode = 2
-offset_left = 727.0
-offset_top = 432.0
-offset_right = 1480.0
-offset_bottom = 560.0
-theme = SubResource("Theme_rl0iw")
+[node name="DialogSpeed2Gameplay2" type="RigidBody2D" parent="."]
+position = Vector2(1454, 1128)
+collision_layer = 2
+freeze = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DialogSpeed2Gameplay2"]
+position = Vector2(-346, -632)
+shape = SubResource("RectangleShape2D_08ahe")
+
+[node name="GraphicsGameplay" type="OptionButton" parent="DialogSpeed2Gameplay2"]
+offset_left = -727.0
+offset_top = -696.0
+offset_right = 26.0
+offset_bottom = -568.0
+theme = ExtResource("1_ipdrc")
 theme_override_styles/focus = ExtResource("5_exebi")
 theme_override_styles/normal = ExtResource("5_exebi")
 theme_override_styles/hover = ExtResource("5_exebi")
@@ -391,7 +447,7 @@ popup/item_2/text = "Potato"
 popup/item_2/id = 0
 script = ExtResource("16_tdafj")
 
-[node name="DownButton" type="TextureRect" parent="GraphicsGameplay"]
+[node name="DownButton" type="TextureRect" parent="DialogSpeed2Gameplay2/GraphicsGameplay"]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -405,7 +461,7 @@ grow_horizontal = 0
 grow_vertical = 2
 texture = ExtResource("9_asoxr")
 
-[node name="NinePatchRect2" type="NinePatchRect" parent="GraphicsGameplay"]
+[node name="NinePatchRect2" type="NinePatchRect" parent="DialogSpeed2Gameplay2/GraphicsGameplay"]
 show_behind_parent = true
 layout_mode = 1
 anchors_preset = -1
@@ -421,13 +477,20 @@ patch_margin_top = 58
 patch_margin_right = 83
 patch_margin_bottom = 46
 
-[node name="LocalizationGameplay" type="OptionButton" parent="."]
-layout_mode = 2
+[node name="LocalizationGameplay" type="RigidBody2D" parent="."]
+collision_layer = 2
+freeze = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LocalizationGameplay"]
+position = Vector2(1104, 360)
+shape = SubResource("RectangleShape2D_jtrej")
+
+[node name="LocalizationGameplay" type="OptionButton" parent="LocalizationGameplay"]
 offset_left = 727.0
 offset_top = 300.0
 offset_right = 1480.0
 offset_bottom = 428.0
-theme = SubResource("Theme_rl0iw")
+theme = ExtResource("1_ipdrc")
 theme_override_styles/focus = ExtResource("5_exebi")
 theme_override_styles/normal = ExtResource("5_exebi")
 theme_override_styles/hover = ExtResource("5_exebi")
@@ -450,7 +513,7 @@ popup/item_3/text = "Gibberish   "
 popup/item_3/id = 2
 script = ExtResource("9_l83e7")
 
-[node name="DownButton" type="TextureRect" parent="LocalizationGameplay"]
+[node name="DownButton" type="TextureRect" parent="LocalizationGameplay/LocalizationGameplay"]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -464,7 +527,7 @@ grow_horizontal = 0
 grow_vertical = 2
 texture = ExtResource("9_asoxr")
 
-[node name="NinePatchRect2" type="NinePatchRect" parent="LocalizationGameplay"]
+[node name="NinePatchRect2" type="NinePatchRect" parent="LocalizationGameplay/LocalizationGameplay"]
 show_behind_parent = true
 layout_mode = 1
 anchors_preset = -1
@@ -480,44 +543,76 @@ patch_margin_top = 58
 patch_margin_right = 83
 patch_margin_bottom = 46
 
-[node name="DialogSpeedGameplay" type="Label" parent="."]
-layout_mode = 2
-offset_left = 120.0
-offset_top = 586.0
-offset_right = 623.0
-offset_bottom = 674.0
-mouse_filter = 1
-text = "Dialog Speed:"
-script = ExtResource("13_2k2fm")
+[node name="LocalizationGameplay2" type="RigidBody2D" parent="."]
+collision_layer = 2
+freeze = true
 
-[node name="GraphicLabelGameplay" type="Label" parent="."]
-layout_mode = 2
-offset_left = 120.0
-offset_top = 443.0
-offset_right = 623.0
-offset_bottom = 531.0
-mouse_filter = 1
-text = "Graphics:"
-script = ExtResource("13_2k2fm")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LocalizationGameplay2"]
+position = Vector2(304, 340)
+shape = SubResource("RectangleShape2D_ol78t")
 
-[node name="LocalizationGameplay2" type="Label" parent="."]
-layout_mode = 2
+[node name="LocalizationGameplay2" type="Label" parent="LocalizationGameplay2"]
 offset_left = 120.0
 offset_top = 300.0
 offset_right = 623.0
 offset_bottom = 388.0
 mouse_filter = 1
+theme = ExtResource("1_ipdrc")
 text = "Language: "
 vertical_alignment = 1
 script = ExtResource("13_2k2fm")
 
-[node name="GameplayLabel" type="Label" parent="."]
-layout_mode = 2
+[node name="GraphicLabelGameplay" type="RigidBody2D" parent="."]
+collision_layer = 2
+freeze = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GraphicLabelGameplay"]
+position = Vector2(296, 480)
+shape = SubResource("RectangleShape2D_6ubfx")
+
+[node name="GraphicLabelGameplay" type="Label" parent="GraphicLabelGameplay"]
+offset_left = 120.0
+offset_top = 443.0
+offset_right = 623.0
+offset_bottom = 531.0
+mouse_filter = 1
+theme = ExtResource("1_ipdrc")
+text = "Graphics:"
+script = ExtResource("13_2k2fm")
+
+[node name="DialogSpeedGameplay" type="RigidBody2D" parent="."]
+collision_layer = 2
+freeze = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DialogSpeedGameplay"]
+position = Vector2(356, 620)
+shape = SubResource("RectangleShape2D_o308c")
+
+[node name="DialogSpeedGameplay" type="Label" parent="DialogSpeedGameplay"]
+offset_left = 120.0
+offset_top = 586.0
+offset_right = 623.0
+offset_bottom = 674.0
+mouse_filter = 1
+theme = ExtResource("1_ipdrc")
+text = "Dialog Speed:"
+script = ExtResource("13_2k2fm")
+
+[node name="GameplayLabel" type="RigidBody2D" parent="."]
+collision_layer = 2
+freeze = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameplayLabel"]
+position = Vector2(960, 248)
+shape = SubResource("RectangleShape2D_u68ne")
+
+[node name="GameplayLabel" type="Label" parent="GameplayLabel"]
 offset_left = 120.0
 offset_top = 208.0
 offset_right = 1800.0
 offset_bottom = 296.0
 mouse_filter = 1
+theme = ExtResource("1_ipdrc")
 text = "Gameplay"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -622,7 +717,6 @@ script = ExtResource("17_qn2n8")
 
 [node name="MiscLabel" type="Label" parent="."]
 visible = false
-layout_mode = 2
 offset_left = 120.0
 offset_top = 220.0
 offset_right = 1800.0
@@ -702,9 +796,16 @@ pivot_offset = Vector2(85, 581)
 texture = ExtResource("33_81wdw")
 script = ExtResource("34_04tvg")
 
-[connection signal="mouse_entered" from="Back" to="Back" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Back" to="Back" method="_on_mouse_exited"]
-[connection signal="pressed" from="Back" to="Back" method="_on_pressed"]
+[node name="Ground" type="RigidBody2D" parent="."]
+freeze = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
+position = Vector2(902, 1074)
+shape = SubResource("WorldBoundaryShape2D_g07yp")
+
+[connection signal="mouse_entered" from="Back/Back" to="Back/Back" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Back/Back" to="Back/Back" method="_on_mouse_exited"]
+[connection signal="pressed" from="Back/Back" to="Back/Back" method="_on_pressed"]
 [connection signal="mouse_entered" from="MuteAudio" to="MuteAudio" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="MuteAudio" to="MuteAudio" method="_on_mouse_exited"]
 [connection signal="toggled" from="MuteAudio" to="MuteAudio" method="_on_toggled"]
@@ -725,29 +826,29 @@ script = ExtResource("34_04tvg")
 [connection signal="mouse_exited" from="MasterAudioLabel" to="MasterAudioLabel" method="_on_mouse_exited"]
 [connection signal="mouse_entered" from="AudioTitle" to="AudioTitle" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="AudioTitle" to="AudioTitle" method="_on_mouse_exited"]
-[connection signal="mouse_entered" from="HintsGameplay" to="HintsGameplay" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="HintsGameplay" to="HintsGameplay" method="_on_mouse_exited"]
-[connection signal="toggled" from="HintsGameplay" to="HintsGameplay" method="_on_toggled"]
-[connection signal="item_selected" from="DialogSpeed2Gameplay" to="DialogSpeed2Gameplay" method="_on_item_selected"]
-[connection signal="mouse_entered" from="DialogSpeed2Gameplay" to="DialogSpeed2Gameplay" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="DialogSpeed2Gameplay" to="DialogSpeed2Gameplay" method="_on_mouse_exited"]
-[connection signal="pressed" from="DialogSpeed2Gameplay" to="DialogSpeed2Gameplay" method="_on_pressed"]
-[connection signal="item_selected" from="GraphicsGameplay" to="GraphicsGameplay" method="_on_item_selected"]
-[connection signal="mouse_entered" from="GraphicsGameplay" to="GraphicsGameplay" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="GraphicsGameplay" to="GraphicsGameplay" method="_on_mouse_exited"]
-[connection signal="pressed" from="GraphicsGameplay" to="GraphicsGameplay" method="_on_pressed"]
-[connection signal="item_selected" from="LocalizationGameplay" to="LocalizationGameplay" method="_on_item_selected"]
-[connection signal="mouse_entered" from="LocalizationGameplay" to="LocalizationGameplay" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="LocalizationGameplay" to="LocalizationGameplay" method="_on_mouse_exited"]
-[connection signal="pressed" from="LocalizationGameplay" to="LocalizationGameplay" method="_on_pressed"]
-[connection signal="mouse_entered" from="DialogSpeedGameplay" to="DialogSpeedGameplay" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="DialogSpeedGameplay" to="DialogSpeedGameplay" method="_on_mouse_exited"]
-[connection signal="mouse_entered" from="GraphicLabelGameplay" to="GraphicLabelGameplay" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="GraphicLabelGameplay" to="GraphicLabelGameplay" method="_on_mouse_exited"]
-[connection signal="mouse_entered" from="LocalizationGameplay2" to="LocalizationGameplay2" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="LocalizationGameplay2" to="LocalizationGameplay2" method="_on_mouse_exited"]
-[connection signal="mouse_entered" from="GameplayLabel" to="GameplayLabel" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="GameplayLabel" to="GameplayLabel" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Hints/HintsGameplay" to="Hints/HintsGameplay" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Hints/HintsGameplay" to="Hints/HintsGameplay" method="_on_mouse_exited"]
+[connection signal="toggled" from="Hints/HintsGameplay" to="Hints/HintsGameplay" method="_on_toggled"]
+[connection signal="item_selected" from="DialogSpeed2Gameplay/DialogSpeed2Gameplay" to="DialogSpeed2Gameplay/DialogSpeed2Gameplay" method="_on_item_selected"]
+[connection signal="mouse_entered" from="DialogSpeed2Gameplay/DialogSpeed2Gameplay" to="DialogSpeed2Gameplay/DialogSpeed2Gameplay" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="DialogSpeed2Gameplay/DialogSpeed2Gameplay" to="DialogSpeed2Gameplay/DialogSpeed2Gameplay" method="_on_mouse_exited"]
+[connection signal="pressed" from="DialogSpeed2Gameplay/DialogSpeed2Gameplay" to="DialogSpeed2Gameplay/DialogSpeed2Gameplay" method="_on_pressed"]
+[connection signal="item_selected" from="DialogSpeed2Gameplay2/GraphicsGameplay" to="DialogSpeed2Gameplay2/GraphicsGameplay" method="_on_item_selected"]
+[connection signal="mouse_entered" from="DialogSpeed2Gameplay2/GraphicsGameplay" to="DialogSpeed2Gameplay2/GraphicsGameplay" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="DialogSpeed2Gameplay2/GraphicsGameplay" to="DialogSpeed2Gameplay2/GraphicsGameplay" method="_on_mouse_exited"]
+[connection signal="pressed" from="DialogSpeed2Gameplay2/GraphicsGameplay" to="DialogSpeed2Gameplay2/GraphicsGameplay" method="_on_pressed"]
+[connection signal="item_selected" from="LocalizationGameplay/LocalizationGameplay" to="LocalizationGameplay/LocalizationGameplay" method="_on_item_selected"]
+[connection signal="mouse_entered" from="LocalizationGameplay/LocalizationGameplay" to="LocalizationGameplay/LocalizationGameplay" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="LocalizationGameplay/LocalizationGameplay" to="LocalizationGameplay/LocalizationGameplay" method="_on_mouse_exited"]
+[connection signal="pressed" from="LocalizationGameplay/LocalizationGameplay" to="LocalizationGameplay/LocalizationGameplay" method="_on_pressed"]
+[connection signal="mouse_entered" from="LocalizationGameplay2/LocalizationGameplay2" to="LocalizationGameplay2/LocalizationGameplay2" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="LocalizationGameplay2/LocalizationGameplay2" to="LocalizationGameplay2/LocalizationGameplay2" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="GraphicLabelGameplay/GraphicLabelGameplay" to="GraphicLabelGameplay/GraphicLabelGameplay" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="GraphicLabelGameplay/GraphicLabelGameplay" to="GraphicLabelGameplay/GraphicLabelGameplay" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="DialogSpeedGameplay/DialogSpeedGameplay" to="DialogSpeedGameplay/DialogSpeedGameplay" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="DialogSpeedGameplay/DialogSpeedGameplay" to="DialogSpeedGameplay/DialogSpeedGameplay" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="GameplayLabel/GameplayLabel" to="GameplayLabel/GameplayLabel" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="GameplayLabel/GameplayLabel" to="GameplayLabel/GameplayLabel" method="_on_mouse_exited"]
 [connection signal="mouse_entered" from="KeybindingMisc" to="KeybindingMisc" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="KeybindingMisc" to="KeybindingMisc" method="_on_mouse_exited"]
 [connection signal="pressed" from="KeybindingMisc" to="KeybindingMisc" method="_on_pressed"]
