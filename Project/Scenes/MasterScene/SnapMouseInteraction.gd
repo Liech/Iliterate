@@ -130,7 +130,7 @@ func captureReality():
 
 	panel.size = selection.size
 	for item in allNodes:
-		if (item.is_in_group("Copyable")):
+		if (item.is_in_group("Copyable") and item.visible):
 			var current = Rect2(item.position,item.size);
 			if (selection.intersection(current) and not item.isClone):
 				item.cloneObject(panel, true,get_global_mouse_position() - panel.size/2)

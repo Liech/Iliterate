@@ -3,6 +3,7 @@ extends CloneableButton
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	super()
 	add_to_group("MiscOption");
 
 
