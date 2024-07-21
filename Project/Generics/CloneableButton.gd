@@ -74,3 +74,17 @@ func _on_mouse_entered():
 
 func _on_mouse_exited():
 	gamestate.catExplain = false
+
+func breakApart():
+	var i = get_child_count()-1
+	var col : RigidBody2D = self.get_parent();
+	while(i > 0):
+		var c = get_child(i)
+		c.visible = true
+		remove_child(c)
+		gamestate.currentScene.add_child(c)
+		var colpos = col.position
+		var colrot = col.rotation
+		c.position = colpos + c.position
+		c.rotation = col.rotation
+		i = i-1;
