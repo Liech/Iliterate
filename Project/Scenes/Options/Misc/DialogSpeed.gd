@@ -1,0 +1,25 @@
+extends CloneableOptionButton
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	add_to_group("GameplayOption");
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+
+
+
+
+func _on_item_selected(index):
+	gamestate.snapActive = true
+
+
+func _on_mouse_entered():
+	gamestate.snapActive = false
+
+
+func _on_mouse_exited():
+	gamestate.snapActive = true

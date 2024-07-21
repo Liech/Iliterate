@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://bn57n5cddun8x"]
+[gd_scene load_steps=31 format=3 uid="uid://bn57n5cddun8x"]
 
 [ext_resource type="Theme" uid="uid://d2hv2jx01084f" path="res://mainTheme.tres" id="1_ipdrc"]
 [ext_resource type="Script" path="res://Scenes/Options/Options.gd" id="2_8cd1l"]
@@ -11,25 +11,24 @@
 [ext_resource type="Script" path="res://Scenes/Options/Tabs/AudioTab.gd" id="8_y7h6b"]
 [ext_resource type="Script" path="res://Scenes/Options/Tabs/GameplayTab.gd" id="9_6vc1n"]
 [ext_resource type="Texture2D" uid="uid://lvld2o43cpmo" path="res://Art/Menu/ComboKnob.png" id="9_asoxr"]
-[ext_resource type="Script" path="res://Scenes/Options/Gameplay/Localization.gd" id="9_l83e7"]
+[ext_resource type="Script" path="res://Scenes/Options/Localization.gd" id="9_l83e7"]
 [ext_resource type="Texture2D" uid="uid://dhjsy1diag3ff" path="res://Art/Checkbox/Yes.png" id="10_6jl05"]
 [ext_resource type="Script" path="res://Scenes/Options/Tabs/MiscTab.gd" id="10_a0t2t"]
 [ext_resource type="Texture2D" uid="uid://ds7upvyjthxnq" path="res://Art/Checkbox/No.png" id="11_hpo47"]
-[ext_resource type="Script" path="res://Scenes/Options/Audio/AudioLabel.gd" id="11_mj2eo"]
+[ext_resource type="Script" path="res://Scenes/Options/AudioNode.gd" id="11_mj2eo"]
 [ext_resource type="Script" path="res://Commands/CmdBack.gd" id="11_o6sco"]
-[ext_resource type="Script" path="res://Scenes/Options/Gameplay/GameplayLabel.gd" id="13_2k2fm"]
-[ext_resource type="Script" path="res://Scenes/Options/Audio/MusicAudioLevel.gd" id="13_cgfxa"]
-[ext_resource type="Script" path="res://Scenes/Options/Audio/EffectAudioLevel.gd" id="13_erca1"]
-[ext_resource type="Script" path="res://Scenes/Options/Audio/MasterAudioLevel.gd" id="13_q23gk"]
-[ext_resource type="Script" path="res://Scenes/Options/Gameplay/Graphics.gd" id="16_tdafj"]
-[ext_resource type="Script" path="res://Scenes/Options/Misc/DialogSpeed.gd" id="17_ksj6o"]
-[ext_resource type="Script" path="res://Scenes/Options/Misc/MiscLabel.gd" id="17_qn2n8"]
-[ext_resource type="Script" path="res://Scenes/Options/Audio/MuteAudioLevel.gd" id="19_bdni5"]
+[ext_resource type="Script" path="res://Scenes/Options/GameplayNode.gd" id="13_2k2fm"]
+[ext_resource type="Script" path="res://Scenes/Options/MusicAudioLevel.gd" id="13_cgfxa"]
+[ext_resource type="Script" path="res://Scenes/Options/EffectAudioLevel.gd" id="13_erca1"]
+[ext_resource type="Script" path="res://Scenes/Options/MasterAudioLevel.gd" id="13_q23gk"]
+[ext_resource type="Script" path="res://Scenes/Options/Graphics.gd" id="16_tdafj"]
+[ext_resource type="Script" path="res://Scenes/Options/DialogSpeed.gd" id="17_ksj6o"]
+[ext_resource type="Script" path="res://Scenes/Options/MiscNode.gd" id="17_qn2n8"]
+[ext_resource type="Script" path="res://Scenes/Options/MuteAudioLevel.gd" id="19_bdni5"]
 [ext_resource type="Script" path="res://Scenes/Options/VSync.gd" id="19_dxp1v"]
-[ext_resource type="Script" path="res://Scenes/Options/Misc/Opacity.gd" id="19_gv6oq"]
-[ext_resource type="Script" path="res://Scenes/Options/Misc/Brightness.gd" id="20_38wnd"]
-[ext_resource type="Script" path="res://Scenes/Options/Gameplay/Hints.gd" id="20_e703a"]
-[ext_resource type="Script" path="res://Scenes/Options/Misc/Keybinding.gd" id="30_qipj4"]
+[ext_resource type="Script" path="res://Scenes/Options/Opacity.gd" id="19_gv6oq"]
+[ext_resource type="Script" path="res://Scenes/Options/Brightness.gd" id="20_38wnd"]
+[ext_resource type="Script" path="res://Scenes/Options/Hints.gd" id="20_e703a"]
 
 [sub_resource type="Theme" id="Theme_rl0iw"]
 
@@ -152,7 +151,7 @@ script = ExtResource("10_a0t2t")
 [node name="AudioTab" type="VBoxContainer" parent="LayoutForRearanging/MarginContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="AudioTitle" type="Label" parent="LayoutForRearanging/MarginContainer/VBoxContainer/AudioTab"]
+[node name="Audio" type="Label" parent="LayoutForRearanging/MarginContainer/VBoxContainer/AudioTab"]
 layout_mode = 2
 text = "Audio"
 horizontal_alignment = 1
@@ -166,17 +165,17 @@ theme_override_constants/separation = 80
 [node name="Labels" type="VBoxContainer" parent="LayoutForRearanging/MarginContainer/VBoxContainer/AudioTab/HBoxContainer"]
 layout_mode = 2
 
-[node name="MasterAudioLabel" type="Label" parent="LayoutForRearanging/MarginContainer/VBoxContainer/AudioTab/HBoxContainer/Labels"]
+[node name="Master" type="Label" parent="LayoutForRearanging/MarginContainer/VBoxContainer/AudioTab/HBoxContainer/Labels"]
 layout_mode = 2
 text = "Master:"
 script = ExtResource("11_mj2eo")
 
-[node name="MusicAudioLabel" type="Label" parent="LayoutForRearanging/MarginContainer/VBoxContainer/AudioTab/HBoxContainer/Labels"]
+[node name="Music" type="Label" parent="LayoutForRearanging/MarginContainer/VBoxContainer/AudioTab/HBoxContainer/Labels"]
 layout_mode = 2
 text = "Music:"
 script = ExtResource("11_mj2eo")
 
-[node name="EffectAudioLabel" type="Label" parent="LayoutForRearanging/MarginContainer/VBoxContainer/AudioTab/HBoxContainer/Labels"]
+[node name="Effect" type="Label" parent="LayoutForRearanging/MarginContainer/VBoxContainer/AudioTab/HBoxContainer/Labels"]
 layout_mode = 2
 text = "Effect:"
 script = ExtResource("11_mj2eo")
@@ -185,7 +184,7 @@ script = ExtResource("11_mj2eo")
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="MasterAudio" type="HSlider" parent="LayoutForRearanging/MarginContainer/VBoxContainer/AudioTab/HBoxContainer/Sliders"]
+[node name="Master" type="HSlider" parent="LayoutForRearanging/MarginContainer/VBoxContainer/AudioTab/HBoxContainer/Sliders"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
@@ -194,7 +193,7 @@ theme_override_icons/grabber_highlight = ExtResource("8_lbeyj")
 theme_override_icons/grabber_disabled = ExtResource("8_lbeyj")
 script = ExtResource("13_q23gk")
 
-[node name="MusicAudio" type="HSlider" parent="LayoutForRearanging/MarginContainer/VBoxContainer/AudioTab/HBoxContainer/Sliders"]
+[node name="Music" type="HSlider" parent="LayoutForRearanging/MarginContainer/VBoxContainer/AudioTab/HBoxContainer/Sliders"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
@@ -203,7 +202,7 @@ theme_override_icons/grabber_highlight = ExtResource("8_lbeyj")
 theme_override_icons/grabber_disabled = ExtResource("8_lbeyj")
 script = ExtResource("13_cgfxa")
 
-[node name="EffectAudio" type="HSlider" parent="LayoutForRearanging/MarginContainer/VBoxContainer/AudioTab/HBoxContainer/Sliders"]
+[node name="Effect" type="HSlider" parent="LayoutForRearanging/MarginContainer/VBoxContainer/AudioTab/HBoxContainer/Sliders"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
@@ -214,8 +213,9 @@ script = ExtResource("13_erca1")
 
 [node name="Spacer" type="Control" parent="LayoutForRearanging/MarginContainer/VBoxContainer/AudioTab/HBoxContainer"]
 layout_mode = 2
+script = ExtResource("11_mj2eo")
 
-[node name="MuteAudio" type="CheckBox" parent="LayoutForRearanging/MarginContainer/VBoxContainer/AudioTab"]
+[node name="Mute" type="CheckBox" parent="LayoutForRearanging/MarginContainer/VBoxContainer/AudioTab"]
 layout_mode = 2
 theme = ExtResource("1_ipdrc")
 theme_override_icons/checked = ExtResource("10_6jl05")
@@ -229,7 +229,7 @@ script = ExtResource("19_bdni5")
 visible = false
 layout_mode = 2
 
-[node name="GameplayLabel" type="Label" parent="LayoutForRearanging/MarginContainer/VBoxContainer/GameplayTab"]
+[node name="Gameplay2" type="Label" parent="LayoutForRearanging/MarginContainer/VBoxContainer/GameplayTab"]
 layout_mode = 2
 text = "Gameplay"
 horizontal_alignment = 1
@@ -244,19 +244,19 @@ theme_override_constants/separation = 30
 layout_mode = 2
 theme_override_constants/separation = 55
 
-[node name="LocalizationGameplay" type="Label" parent="LayoutForRearanging/MarginContainer/VBoxContainer/GameplayTab/Gameplay/Labels"]
+[node name="Localization" type="Label" parent="LayoutForRearanging/MarginContainer/VBoxContainer/GameplayTab/Gameplay/Labels"]
 layout_mode = 2
 text = "Localization: "
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("13_2k2fm")
 
-[node name="GraphicLabelGameplay" type="Label" parent="LayoutForRearanging/MarginContainer/VBoxContainer/GameplayTab/Gameplay/Labels"]
+[node name="GraphicLabel" type="Label" parent="LayoutForRearanging/MarginContainer/VBoxContainer/GameplayTab/Gameplay/Labels"]
 layout_mode = 2
 text = "Graphics:"
 script = ExtResource("13_2k2fm")
 
-[node name="DialogSpeedGameplay" type="Label" parent="LayoutForRearanging/MarginContainer/VBoxContainer/GameplayTab/Gameplay/Labels"]
+[node name="DialogSpeed" type="Label" parent="LayoutForRearanging/MarginContainer/VBoxContainer/GameplayTab/Gameplay/Labels"]
 layout_mode = 2
 text = "Dialog Speed:"
 script = ExtResource("13_2k2fm")
@@ -264,7 +264,7 @@ script = ExtResource("13_2k2fm")
 [node name="Content" type="VBoxContainer" parent="LayoutForRearanging/MarginContainer/VBoxContainer/GameplayTab/Gameplay"]
 layout_mode = 2
 
-[node name="LocalizationGameplay" type="OptionButton" parent="LayoutForRearanging/MarginContainer/VBoxContainer/GameplayTab/Gameplay/Content"]
+[node name="Localization" type="OptionButton" parent="LayoutForRearanging/MarginContainer/VBoxContainer/GameplayTab/Gameplay/Content"]
 layout_mode = 2
 theme = SubResource("Theme_rl0iw")
 theme_override_styles/focus = ExtResource("5_exebi")
@@ -276,19 +276,17 @@ theme_override_styles/normal_mirrored = ExtResource("5_exebi")
 theme_override_styles/hover_mirrored = ExtResource("5_exebi")
 theme_override_styles/pressed_mirrored = ExtResource("5_exebi")
 theme_override_styles/disabled_mirrored = ExtResource("5_exebi")
-item_count = 4
+item_count = 3
 selected = 0
 popup/item_0/text = "English  "
 popup/item_0/id = 0
 popup/item_1/text = "UwU  "
 popup/item_1/id = 1
-popup/item_2/text = "Cat Sign Language"
-popup/item_2/id = 3
-popup/item_3/text = "Gibberish   "
-popup/item_3/id = 2
+popup/item_2/text = "Gibberish   "
+popup/item_2/id = 2
 script = ExtResource("9_l83e7")
 
-[node name="DownButton" type="TextureRect" parent="LayoutForRearanging/MarginContainer/VBoxContainer/GameplayTab/Gameplay/Content/LocalizationGameplay"]
+[node name="DownButton" type="TextureRect" parent="LayoutForRearanging/MarginContainer/VBoxContainer/GameplayTab/Gameplay/Content/Localization"]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -302,7 +300,7 @@ grow_horizontal = 0
 grow_vertical = 2
 texture = ExtResource("9_asoxr")
 
-[node name="GraphicsGameplay" type="OptionButton" parent="LayoutForRearanging/MarginContainer/VBoxContainer/GameplayTab/Gameplay/Content"]
+[node name="Graphics" type="OptionButton" parent="LayoutForRearanging/MarginContainer/VBoxContainer/GameplayTab/Gameplay/Content"]
 layout_mode = 2
 theme = SubResource("Theme_rl0iw")
 theme_override_styles/focus = ExtResource("5_exebi")
@@ -318,13 +316,13 @@ item_count = 3
 selected = 2
 popup/item_0/text = "Potato"
 popup/item_0/id = 0
-popup/item_1/text = "Low"
+popup/item_1/text = ""
 popup/item_1/id = 1
-popup/item_2/text = "High"
+popup/item_2/text = ""
 popup/item_2/id = 2
 script = ExtResource("16_tdafj")
 
-[node name="DownButton" type="TextureRect" parent="LayoutForRearanging/MarginContainer/VBoxContainer/GameplayTab/Gameplay/Content/GraphicsGameplay"]
+[node name="DownButton" type="TextureRect" parent="LayoutForRearanging/MarginContainer/VBoxContainer/GameplayTab/Gameplay/Content/Graphics"]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -338,7 +336,7 @@ grow_horizontal = 0
 grow_vertical = 2
 texture = ExtResource("9_asoxr")
 
-[node name="DialogSpeed2Gameplay" type="OptionButton" parent="LayoutForRearanging/MarginContainer/VBoxContainer/GameplayTab/Gameplay/Content"]
+[node name="DialogSpeed2" type="OptionButton" parent="LayoutForRearanging/MarginContainer/VBoxContainer/GameplayTab/Gameplay/Content"]
 layout_mode = 2
 theme = SubResource("Theme_rl0iw")
 theme_override_styles/focus = ExtResource("5_exebi")
@@ -360,7 +358,7 @@ popup/item_2/text = "High  "
 popup/item_2/id = 2
 script = ExtResource("17_ksj6o")
 
-[node name="DownButton" type="TextureRect" parent="LayoutForRearanging/MarginContainer/VBoxContainer/GameplayTab/Gameplay/Content/DialogSpeed2Gameplay"]
+[node name="DownButton" type="TextureRect" parent="LayoutForRearanging/MarginContainer/VBoxContainer/GameplayTab/Gameplay/Content/DialogSpeed2"]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -377,7 +375,7 @@ texture = ExtResource("9_asoxr")
 [node name="Hints" type="HBoxContainer" parent="LayoutForRearanging/MarginContainer/VBoxContainer/GameplayTab"]
 layout_mode = 2
 
-[node name="HintsGameplay" type="CheckBox" parent="LayoutForRearanging/MarginContainer/VBoxContainer/GameplayTab/Hints"]
+[node name="Hints" type="CheckBox" parent="LayoutForRearanging/MarginContainer/VBoxContainer/GameplayTab/Hints"]
 layout_mode = 2
 theme = ExtResource("1_ipdrc")
 theme_override_icons/checked = ExtResource("10_6jl05")
@@ -408,12 +406,12 @@ theme_override_constants/separation = 30
 layout_mode = 2
 theme_override_constants/separation = 0
 
-[node name="OpacityLabelMisc" type="Label" parent="LayoutForRearanging/MarginContainer/VBoxContainer/MiscTab/Misc/Labels"]
+[node name="OpacityLabel" type="Label" parent="LayoutForRearanging/MarginContainer/VBoxContainer/MiscTab/Misc/Labels"]
 layout_mode = 2
 text = "Opacity"
 script = ExtResource("17_qn2n8")
 
-[node name="BrightnessLabelMisc" type="Label" parent="LayoutForRearanging/MarginContainer/VBoxContainer/MiscTab/Misc/Labels"]
+[node name="BrightnessLabel" type="Label" parent="LayoutForRearanging/MarginContainer/VBoxContainer/MiscTab/Misc/Labels"]
 layout_mode = 2
 text = "Brightness"
 script = ExtResource("17_qn2n8")
@@ -422,7 +420,7 @@ script = ExtResource("17_qn2n8")
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="OpacityMisc" type="HSlider" parent="LayoutForRearanging/MarginContainer/VBoxContainer/MiscTab/Misc/Content"]
+[node name="Opacity" type="HSlider" parent="LayoutForRearanging/MarginContainer/VBoxContainer/MiscTab/Misc/Content"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
@@ -431,7 +429,7 @@ theme_override_icons/grabber_highlight = ExtResource("8_lbeyj")
 theme_override_icons/grabber_disabled = ExtResource("8_lbeyj")
 script = ExtResource("19_gv6oq")
 
-[node name="BrightnessMisc" type="HSlider" parent="LayoutForRearanging/MarginContainer/VBoxContainer/MiscTab/Misc/Content"]
+[node name="Brightness" type="HSlider" parent="LayoutForRearanging/MarginContainer/VBoxContainer/MiscTab/Misc/Content"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
@@ -443,7 +441,7 @@ script = ExtResource("20_38wnd")
 [node name="VSync" type="HBoxContainer" parent="LayoutForRearanging/MarginContainer/VBoxContainer/MiscTab"]
 layout_mode = 2
 
-[node name="VSyncMisc" type="CheckBox" parent="LayoutForRearanging/MarginContainer/VBoxContainer/MiscTab/VSync"]
+[node name="VSync" type="CheckBox" parent="LayoutForRearanging/MarginContainer/VBoxContainer/MiscTab/VSync"]
 layout_mode = 2
 theme = ExtResource("1_ipdrc")
 theme_override_icons/checked = ExtResource("10_6jl05")
@@ -454,15 +452,18 @@ button_pressed = true
 text = "V-Sync"
 script = ExtResource("19_dxp1v")
 
-[node name="KeybindingMisc" type="Button" parent="LayoutForRearanging/MarginContainer/VBoxContainer/MiscTab"]
+[node name="Keybinding" type="HBoxContainer" parent="LayoutForRearanging/MarginContainer/VBoxContainer/MiscTab"]
+layout_mode = 2
+
+[node name="Keybinding" type="Button" parent="LayoutForRearanging/MarginContainer/VBoxContainer/MiscTab/Keybinding"]
 layout_mode = 2
 theme = ExtResource("1_ipdrc")
 theme_override_styles/normal = ExtResource("5_exebi")
 text = "Keybindings"
 flat = true
-script = ExtResource("30_qipj4")
+script = ExtResource("11_o6sco")
 
-[node name="NinePatchRect2" type="NinePatchRect" parent="LayoutForRearanging/MarginContainer/VBoxContainer/MiscTab/KeybindingMisc"]
+[node name="NinePatchRect2" type="NinePatchRect" parent="LayoutForRearanging/MarginContainer/VBoxContainer/MiscTab/Keybinding/Keybinding"]
 show_behind_parent = true
 layout_mode = 1
 anchors_preset = -1
@@ -482,10 +483,10 @@ patch_margin_bottom = 46
 [connection signal="pressed" from="LayoutForRearanging/MarginContainer/VBoxContainer/Tabs/Audio" to="LayoutForRearanging/MarginContainer/VBoxContainer/Tabs/Audio" method="_on_pressed"]
 [connection signal="pressed" from="LayoutForRearanging/MarginContainer/VBoxContainer/Tabs/Gameplay" to="LayoutForRearanging/MarginContainer/VBoxContainer/Tabs/Gameplay" method="_on_pressed"]
 [connection signal="pressed" from="LayoutForRearanging/MarginContainer/VBoxContainer/Tabs/Misc" to="LayoutForRearanging/MarginContainer/VBoxContainer/Tabs/Misc" method="_on_pressed"]
-[connection signal="mouse_entered" from="LayoutForRearanging/MarginContainer/VBoxContainer/GameplayTab/Gameplay/Content/LocalizationGameplay" to="LayoutForRearanging/MarginContainer/VBoxContainer/GameplayTab/Gameplay/Content/LocalizationGameplay" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="LayoutForRearanging/MarginContainer/VBoxContainer/GameplayTab/Gameplay/Content/LocalizationGameplay" to="LayoutForRearanging/MarginContainer/VBoxContainer/GameplayTab/Gameplay/Content/LocalizationGameplay" method="_on_mouse_exited"]
-[connection signal="mouse_entered" from="LayoutForRearanging/MarginContainer/VBoxContainer/GameplayTab/Gameplay/Content/GraphicsGameplay" to="LayoutForRearanging/MarginContainer/VBoxContainer/GameplayTab/Gameplay/Content/GraphicsGameplay" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="LayoutForRearanging/MarginContainer/VBoxContainer/GameplayTab/Gameplay/Content/GraphicsGameplay" to="LayoutForRearanging/MarginContainer/VBoxContainer/GameplayTab/Gameplay/Content/GraphicsGameplay" method="_on_mouse_exited"]
-[connection signal="mouse_entered" from="LayoutForRearanging/MarginContainer/VBoxContainer/GameplayTab/Gameplay/Content/DialogSpeed2Gameplay" to="LayoutForRearanging/MarginContainer/VBoxContainer/GameplayTab/Gameplay/Content/DialogSpeed2Gameplay" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="LayoutForRearanging/MarginContainer/VBoxContainer/GameplayTab/Gameplay/Content/DialogSpeed2Gameplay" to="LayoutForRearanging/MarginContainer/VBoxContainer/GameplayTab/Gameplay/Content/DialogSpeed2Gameplay" method="_on_mouse_exited"]
-[connection signal="pressed" from="LayoutForRearanging/MarginContainer/VBoxContainer/MiscTab/KeybindingMisc" to="LayoutForRearanging/MarginContainer/VBoxContainer/MiscTab/KeybindingMisc" method="_on_pressed"]
+[connection signal="mouse_entered" from="LayoutForRearanging/MarginContainer/VBoxContainer/GameplayTab/Gameplay/Content/Localization" to="LayoutForRearanging/MarginContainer/VBoxContainer/GameplayTab/Gameplay/Content/Localization" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="LayoutForRearanging/MarginContainer/VBoxContainer/GameplayTab/Gameplay/Content/Localization" to="LayoutForRearanging/MarginContainer/VBoxContainer/GameplayTab/Gameplay/Content/Localization" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="LayoutForRearanging/MarginContainer/VBoxContainer/GameplayTab/Gameplay/Content/Graphics" to="LayoutForRearanging/MarginContainer/VBoxContainer/GameplayTab/Gameplay/Content/Graphics" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="LayoutForRearanging/MarginContainer/VBoxContainer/GameplayTab/Gameplay/Content/Graphics" to="LayoutForRearanging/MarginContainer/VBoxContainer/GameplayTab/Gameplay/Content/Graphics" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="LayoutForRearanging/MarginContainer/VBoxContainer/GameplayTab/Gameplay/Content/DialogSpeed2" to="LayoutForRearanging/MarginContainer/VBoxContainer/GameplayTab/Gameplay/Content/DialogSpeed2" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="LayoutForRearanging/MarginContainer/VBoxContainer/GameplayTab/Gameplay/Content/DialogSpeed2" to="LayoutForRearanging/MarginContainer/VBoxContainer/GameplayTab/Gameplay/Content/DialogSpeed2" method="_on_mouse_exited"]
+[connection signal="pressed" from="LayoutForRearanging/MarginContainer/VBoxContainer/MiscTab/Keybinding/Keybinding" to="LayoutForRearanging/MarginContainer/VBoxContainer/MiscTab/Keybinding/Keybinding" method="_on_pressed"]

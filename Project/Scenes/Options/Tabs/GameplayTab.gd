@@ -1,17 +1,6 @@
-extends SceneRoot
+extends CloneableButton
 
-func _ready():
-	startup()
-
-func DoCommand(command):
-	
-	if (command == "Back"):
-		gamestate.fadeTo(gamestate.Scenes.MainMenu);
-	else:
-		super.DoCommand(command)
-	
-
-func startup():
+func _on_pressed():
 	var allNodes = []
 	getallnodes(gamestate.currentScene,allNodes)
 	for w in allNodes:
