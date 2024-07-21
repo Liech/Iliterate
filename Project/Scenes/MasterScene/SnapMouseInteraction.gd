@@ -21,6 +21,7 @@ func _ready():
 func _input( event ):
 	if(not gamestate.snapActive):
 		self.visible = false
+		isActive = false
 		return;
 	if event is InputEventMouseButton:
 		if event.button_index == 1 and event.is_pressed():
@@ -36,6 +37,7 @@ func _input( event ):
 func _process(delta):
 	if(not gamestate.snapActive):
 		self.visible = false
+		isActive = false
 		return;
 	if (visibility < 0):
 		self.visible = false

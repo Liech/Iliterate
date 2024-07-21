@@ -518,6 +518,8 @@ size_flags_vertical = 1
 theme_override_icons/grabber = ExtResource("8_lbeyj")
 theme_override_icons/grabber_highlight = ExtResource("8_lbeyj")
 theme_override_icons/grabber_disabled = ExtResource("8_lbeyj")
+max_value = 1.0
+step = 0.05
 script = ExtResource("20_38wnd")
 
 [node name="OpacityMisc" type="HSlider" parent="."]
@@ -598,6 +600,15 @@ script = ExtResource("8_y7h6b")
 
 [connection signal="pressed" from="Back" to="Back" method="_on_pressed"]
 [connection signal="toggled" from="MuteAudio" to="MuteAudio" method="_on_toggled"]
+[connection signal="drag_ended" from="EffectAudio" to="EffectAudio" method="_on_drag_ended"]
+[connection signal="drag_started" from="EffectAudio" to="EffectAudio" method="_on_drag_started"]
+[connection signal="value_changed" from="EffectAudio" to="EffectAudio" method="_on_value_changed"]
+[connection signal="drag_ended" from="MusicAudio" to="MusicAudio" method="_on_drag_ended"]
+[connection signal="drag_started" from="MusicAudio" to="MusicAudio" method="_on_drag_started"]
+[connection signal="value_changed" from="MusicAudio" to="MusicAudio" method="_on_value_changed"]
+[connection signal="drag_ended" from="MasterAudio" to="MasterAudio" method="_on_drag_ended"]
+[connection signal="drag_started" from="MasterAudio" to="MasterAudio" method="_on_drag_started"]
+[connection signal="value_changed" from="MasterAudio" to="MasterAudio" method="_on_value_changed"]
 [connection signal="toggled" from="HintsGameplay" to="HintsGameplay" method="_on_toggled"]
 [connection signal="item_selected" from="DialogSpeed2Gameplay" to="DialogSpeed2Gameplay" method="_on_item_selected"]
 [connection signal="mouse_entered" from="DialogSpeed2Gameplay" to="DialogSpeed2Gameplay" method="_on_mouse_entered"]
@@ -613,6 +624,12 @@ script = ExtResource("8_y7h6b")
 [connection signal="pressed" from="LocalizationGameplay" to="LocalizationGameplay" method="_on_pressed"]
 [connection signal="pressed" from="KeybindingMisc" to="KeybindingMisc" method="_on_pressed"]
 [connection signal="toggled" from="VSyncMisc" to="VSyncMisc" method="_on_toggled"]
+[connection signal="drag_ended" from="BrightnessMisc" to="BrightnessMisc" method="_on_drag_ended"]
+[connection signal="drag_started" from="BrightnessMisc" to="BrightnessMisc" method="_on_drag_started"]
+[connection signal="value_changed" from="BrightnessMisc" to="BrightnessMisc" method="_on_value_changed"]
+[connection signal="drag_ended" from="OpacityMisc" to="OpacityMisc" method="_on_drag_ended"]
+[connection signal="drag_started" from="OpacityMisc" to="OpacityMisc" method="_on_drag_started"]
+[connection signal="value_changed" from="OpacityMisc" to="OpacityMisc" method="_on_value_changed"]
 [connection signal="pressed" from="MiscTab" to="MiscTab" method="_on_pressed"]
 [connection signal="pressed" from="GameplayTab" to="GameplayTab" method="_on_pressed"]
 [connection signal="pressed" from="AudioTab" to="AudioTab" method="_on_pressed"]

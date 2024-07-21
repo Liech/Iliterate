@@ -9,4 +9,15 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	if (GlobalOptions.brightness != value):
+		value = GlobalOptions.effectAudio
+
+func _on_value_changed(value):
+	GlobalOptions.effectAudio = value
+
+func _on_drag_started():
+	gamestate.snapActive = false
+
+
+func _on_drag_ended(value_changed):
+	gamestate.snapActive = true
