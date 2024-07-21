@@ -1,5 +1,6 @@
 extends Cloneable
 
+
 var targetrot;
 var targetrotthreshold = 0.1;
 
@@ -22,7 +23,8 @@ func doCatThings():
 	if (mousePressed != pressed and pressed):
 		var pos = get_global_mouse_position();
 		var space_state = get_world_2d().direct_space_state
-		var params = PhysicsPointQueryParameters2D.new() 
+		var params = PhysicsPointQueryParameters2D.new()
+		params.collision_mask = 2
 		params.position = get_global_mouse_position()
 		var out = space_state.intersect_point(params,1)
 		for result in out:
@@ -30,6 +32,7 @@ func doCatThings():
 			col.freeze = false
 			col.angular_velocity = (randf() -0.5) * 9
 			col.linear_velocity = Vector2((randf() -0.5) * 8,(randf() -0.5) * 8)
+			col.collision_layer = 1
 			
 	mousePressed = pressed;
 

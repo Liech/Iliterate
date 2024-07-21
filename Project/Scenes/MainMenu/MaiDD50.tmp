@@ -49,7 +49,6 @@ script = ExtResource("3_3uqhv")
 
 [node name="Start Game" type="RigidBody2D" parent="."]
 position = Vector2(0, 128)
-collision_layer = 2
 freeze = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Start Game"]
@@ -83,7 +82,6 @@ patch_margin_bottom = 46
 
 [node name="Memories" type="RigidBody2D" parent="."]
 position = Vector2(0, 128)
-collision_layer = 2
 freeze = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Memories"]
@@ -116,7 +114,6 @@ patch_margin_right = 83
 patch_margin_bottom = 46
 
 [node name="About" type="RigidBody2D" parent="."]
-collision_layer = 2
 freeze = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="About"]
@@ -150,7 +147,6 @@ patch_margin_right = 83
 patch_margin_bottom = 46
 
 [node name="Options" type="RigidBody2D" parent="."]
-collision_layer = 2
 freeze = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Options"]
@@ -184,7 +180,6 @@ patch_margin_right = 83
 patch_margin_bottom = 46
 
 [node name="Back" type="RigidBody2D" parent="."]
-collision_layer = 2
 freeze = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Back"]
