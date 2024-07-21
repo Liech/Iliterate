@@ -16,10 +16,27 @@ func pawMovement(delta):
 	else:
 		rotation -= delta * 5
 
+var mousePressed = false
+func doCatThings():
+	var pressed = Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT);
+	if (mousePressed != pressed and pressed):
+		var pos = get_global_mouse_position();
+		var space_state = get_world_2d().direct_space_state
+		var params = PhysicsPointQueryParameters2D.new() 
+		params.position = get_global_mouse_position()
+		var out = space_state.intersect_point(params,1)
+		for result in out:
+			var col  : RigidBody2D= result.collider;
+			col.freeze = false
+			col.angular_velocity = (randf() -0.5) * 9
+			col.linear_velocity = Vector2((randf() -0.5) * 8,(randf() -0.5) * 8)
+			
+	mousePressed = pressed;
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if GlobalOptions.localization == GlobalOptions.Localization.CatSignLanguage:
+		doCatThings();
 		visible = true;
 		if (gamestate.catExplain):
 			pawMovement(delta)
