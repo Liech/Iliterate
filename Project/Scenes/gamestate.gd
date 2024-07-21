@@ -15,6 +15,8 @@ var snap;
 var snapActive = false;
 var snapPool;
 
+var catExplain = false;
+
 func startScene(Scene : Scenes):
 	if (Scene == Scenes.Godot):
 		var scene = ResourceLoader.load("res://Scenes/GodotScreen/GodotScreen.tscn");

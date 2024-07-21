@@ -20,10 +20,10 @@ func _process(delta):
 
 
 func _on_button_pressed():
-	
+	GlobalOptions.localization = GlobalOptions.Localization.CatSignLanguage
 	gamestate.fadeouttime = 0
 	gamestate.fadeintime = 0
-	gamestate.fadeTo(gamestate.Scenes.Options);
+	gamestate.fadeTo(gamestate.Scenes.MainMenu);
 	return
 	
 	if (alreadyPressed):
