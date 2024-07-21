@@ -47,17 +47,24 @@ expand_mode = 3
 stretch_mode = 4
 script = ExtResource("3_3uqhv")
 
-[node name="Start Game" type="Button" parent="."]
-layout_mode = 2
+[node name="Start Game" type="RigidBody2D" parent="."]
+position = Vector2(0, 128)
+freeze = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Start Game"]
+position = Vector2(232, -64)
+shape = SubResource("RectangleShape2D_iu5qb")
+
+[node name="Start Game" type="Button" parent="Start Game"]
+offset_top = -128.0
 offset_right = 479.0
-offset_bottom = 128.0
 theme = ExtResource("5_1o4bo")
 theme_override_styles/normal = ExtResource("6_kavg7")
 text = "Start Game"
 flat = true
 script = ExtResource("4_583ko")
 
-[node name="NinePatchRect" type="NinePatchRect" parent="Start Game"]
+[node name="NinePatchRect" type="NinePatchRect" parent="Start Game/Start Game"]
 show_behind_parent = true
 layout_mode = 1
 anchors_preset = 15
@@ -73,45 +80,24 @@ patch_margin_top = 58
 patch_margin_right = 83
 patch_margin_bottom = 46
 
-[node name="About" type="Button" parent="."]
-layout_mode = 2
-offset_top = 132.0
-offset_right = 479.0
-offset_bottom = 260.0
-theme = ExtResource("5_1o4bo")
-theme_override_styles/normal = ExtResource("6_kavg7")
-text = "About"
-flat = true
-script = ExtResource("7_fbqfy")
+[node name="Memories" type="RigidBody2D" parent="."]
+position = Vector2(0, 128)
+freeze = true
 
-[node name="NinePatchRect" type="NinePatchRect" parent="About"]
-show_behind_parent = true
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme = ExtResource("5_1o4bo")
-texture = ExtResource("7_vc7f2")
-region_rect = Rect2(0.447113, 1.15751, 198.079, 182.684)
-patch_margin_left = 120
-patch_margin_top = 58
-patch_margin_right = 83
-patch_margin_bottom = 46
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Memories"]
+position = Vector2(232, 64)
+shape = SubResource("RectangleShape2D_iu5qb")
 
-[node name="Memories" type="Button" parent="."]
-layout_mode = 2
-offset_top = 264.0
+[node name="Memories" type="Button" parent="Memories"]
 offset_right = 479.0
-offset_bottom = 392.0
+offset_bottom = 128.0
 theme = ExtResource("5_1o4bo")
 theme_override_styles/normal = ExtResource("6_kavg7")
 text = "Memories"
 flat = true
 script = ExtResource("8_8don6")
 
-[node name="NinePatchRect" type="NinePatchRect" parent="Memories"]
+[node name="NinePatchRect" type="NinePatchRect" parent="Memories/Memories"]
 show_behind_parent = true
 layout_mode = 1
 anchors_preset = 15
@@ -127,8 +113,47 @@ patch_margin_top = 58
 patch_margin_right = 83
 patch_margin_bottom = 46
 
-[node name="Options" type="Button" parent="."]
-layout_mode = 2
+[node name="About" type="RigidBody2D" parent="."]
+freeze = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="About"]
+position = Vector2(240, 328)
+shape = SubResource("RectangleShape2D_iu5qb")
+
+[node name="About" type="Button" parent="About"]
+offset_top = 264.0
+offset_right = 479.0
+offset_bottom = 392.0
+theme = ExtResource("5_1o4bo")
+theme_override_styles/normal = ExtResource("6_kavg7")
+text = "About"
+flat = true
+script = ExtResource("7_fbqfy")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="About/About"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("5_1o4bo")
+texture = ExtResource("7_vc7f2")
+region_rect = Rect2(0.447113, 1.15751, 198.079, 182.684)
+patch_margin_left = 120
+patch_margin_top = 58
+patch_margin_right = 83
+patch_margin_bottom = 46
+
+[node name="Options" type="RigidBody2D" parent="."]
+freeze = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Options"]
+position = Vector2(232, 464)
+shape = SubResource("RectangleShape2D_iu5qb")
+
+[node name="Options" type="Button" parent="Options"]
 offset_top = 396.0
 offset_right = 479.0
 offset_bottom = 524.0
@@ -138,7 +163,7 @@ text = "Options"
 flat = true
 script = ExtResource("9_nayao")
 
-[node name="NinePatchRect" type="NinePatchRect" parent="Options"]
+[node name="NinePatchRect" type="NinePatchRect" parent="Options/Options"]
 show_behind_parent = true
 layout_mode = 1
 anchors_preset = 15
@@ -236,18 +261,18 @@ freeze = true
 position = Vector2(902, 1074)
 shape = SubResource("WorldBoundaryShape2D_mabsu")
 
-[connection signal="mouse_entered" from="Start Game" to="Start Game" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Start Game" to="Start Game" method="_on_mouse_exited"]
-[connection signal="pressed" from="Start Game" to="Start Game" method="_on_pressed"]
-[connection signal="mouse_entered" from="About" to="About" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="About" to="About" method="_on_mouse_exited"]
-[connection signal="pressed" from="About" to="About" method="_on_pressed"]
-[connection signal="mouse_entered" from="Memories" to="Memories" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Memories" to="Memories" method="_on_mouse_exited"]
-[connection signal="pressed" from="Memories" to="Memories" method="_on_pressed"]
-[connection signal="mouse_entered" from="Options" to="Options" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Options" to="Options" method="_on_mouse_exited"]
-[connection signal="pressed" from="Options" to="Options" method="_on_pressed"]
+[connection signal="mouse_entered" from="Start Game/Start Game" to="Start Game/Start Game" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Start Game/Start Game" to="Start Game/Start Game" method="_on_mouse_exited"]
+[connection signal="pressed" from="Start Game/Start Game" to="Start Game/Start Game" method="_on_pressed"]
+[connection signal="mouse_entered" from="Memories/Memories" to="Memories/Memories" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Memories/Memories" to="Memories/Memories" method="_on_mouse_exited"]
+[connection signal="pressed" from="Memories/Memories" to="Memories/Memories" method="_on_pressed"]
+[connection signal="mouse_entered" from="About/About" to="About/About" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="About/About" to="About/About" method="_on_mouse_exited"]
+[connection signal="pressed" from="About/About" to="About/About" method="_on_pressed"]
+[connection signal="mouse_entered" from="Options/Options" to="Options/Options" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Options/Options" to="Options/Options" method="_on_mouse_exited"]
+[connection signal="pressed" from="Options/Options" to="Options/Options" method="_on_pressed"]
 [connection signal="mouse_entered" from="Back/Back" to="Back/Back" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Back/Back" to="Back/Back" method="_on_mouse_exited"]
 [connection signal="pressed" from="Back/Back" to="Back/Back" method="_on_pressed"]
