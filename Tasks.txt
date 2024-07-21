@@ -107,3 +107,24 @@
  ||                                    ||        ||
  ||                                    ||        ||
  || ===============================================================================
+ 
+ 
+ Big tasks:
+ * Language
+ * VSync
+ * UwU
+ * Undecipherable
+ * Cat Sign Language
+ * Keybinding
+ * Soundtrack
+ * Audio
+ * Working Audio Options
+ * Brightness
+ * Fish
+ * Terms and Services
+ * Character Creator
+ * Main Menu
+ * Gameplay
+ * Memories
+ * Hints
+ * FPS / Potato

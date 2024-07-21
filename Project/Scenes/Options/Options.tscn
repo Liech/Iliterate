@@ -102,6 +102,7 @@ patch_margin_right = 83
 patch_margin_bottom = 46
 
 [node name="LayoutForRearanging" type="MarginContainer" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -316,12 +317,12 @@ theme_override_styles/pressed_mirrored = ExtResource("5_exebi")
 theme_override_styles/disabled_mirrored = ExtResource("5_exebi")
 item_count = 3
 selected = 2
-popup/item_0/text = "Off "
-popup/item_0/id = 0
+popup/item_0/text = "High  "
+popup/item_0/id = 2
 popup/item_1/text = "Low "
 popup/item_1/id = 1
-popup/item_2/text = "High  "
-popup/item_2/id = 2
+popup/item_2/text = "Off "
+popup/item_2/id = 0
 script = ExtResource("17_ksj6o")
 
 [node name="DownButton" type="TextureRect" parent="DialogSpeed2Gameplay"]
@@ -356,12 +357,12 @@ theme_override_styles/pressed_mirrored = ExtResource("5_exebi")
 theme_override_styles/disabled_mirrored = ExtResource("5_exebi")
 item_count = 3
 selected = 2
-popup/item_0/text = "Potato"
-popup/item_0/id = 0
+popup/item_0/text = "High"
+popup/item_0/id = 2
 popup/item_1/text = "Low"
 popup/item_1/id = 1
-popup/item_2/text = "High"
-popup/item_2/id = 2
+popup/item_2/text = "Potato"
+popup/item_2/id = 0
 script = ExtResource("16_tdafj")
 
 [node name="DownButton" type="TextureRect" parent="GraphicsGameplay"]
