@@ -106,7 +106,7 @@ func pasteReality():
 	panel.size = selection.size
 	for item in allNodes:
 		if (item.is_in_group("Copyable")):
-			var current = Rect2(item.position,item.size);
+			var current = Rect2(item.global_position,item.size);
 			item.cloneObject(panel, false,(get_global_mouse_position() - panel.size/2) - capturedRect.position)
 	panel.modulate.a = 1
 	panel.self_modulate.a = 0
@@ -133,7 +133,7 @@ func captureReality():
 	panel.size = selection.size
 	for item in allNodes:
 		if (item.is_in_group("Copyable") and item.visible):
-			var current = Rect2(item.position,item.size);
+			var current = Rect2(item.global_position,item.size);
 			if (selection.intersection(current) and not item.isClone):
 				item.cloneObject(panel, true,get_global_mouse_position() - panel.size/2)
 	screenshotPanel = panel

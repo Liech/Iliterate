@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://cch5ed86qkrt4"]
+[gd_scene load_steps=18 format=3 uid="uid://cch5ed86qkrt4"]
 
 [ext_resource type="Script" path="res://Scenes/MainMenu/MainMenu.gd" id="2_ckgni"]
 [ext_resource type="Script" path="res://Commands/Cloneable.gd" id="3_3uqhv"]
@@ -15,6 +15,12 @@
 [ext_resource type="Script" path="res://CatSignLanguage/SignLanguageInstructor.gd" id="13_cmu2o"]
 [ext_resource type="Texture2D" uid="uid://c5c2vtc7dcttf" path="res://Art/Menu/CatSignLanguageInterpreterPaw.png" id="13_r2l6x"]
 [ext_resource type="Script" path="res://CatSignLanguage/SignLanguagePaw.gd" id="14_4uklr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iu5qb"]
+size = Vector2(462, 123)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_mabsu"]
+distance = -9.0
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -148,8 +154,14 @@ patch_margin_top = 58
 patch_margin_right = 83
 patch_margin_bottom = 46
 
-[node name="Back" type="Button" parent="."]
-layout_mode = 2
+[node name="Back" type="RigidBody2D" parent="."]
+freeze = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Back"]
+position = Vector2(233, 592)
+shape = SubResource("RectangleShape2D_iu5qb")
+
+[node name="Back" type="Button" parent="Back"]
 offset_top = 528.0
 offset_right = 479.0
 offset_bottom = 656.0
@@ -159,7 +171,7 @@ text = "Back"
 flat = true
 script = ExtResource("12_am8p2")
 
-[node name="NinePatchRect" type="NinePatchRect" parent="Back"]
+[node name="NinePatchRect" type="NinePatchRect" parent="Back/Back"]
 show_behind_parent = true
 layout_mode = 1
 anchors_preset = 15
@@ -217,6 +229,13 @@ pivot_offset = Vector2(85, 581)
 texture = ExtResource("13_r2l6x")
 script = ExtResource("14_4uklr")
 
+[node name="Ground" type="RigidBody2D" parent="."]
+freeze = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
+position = Vector2(902, 1074)
+shape = SubResource("WorldBoundaryShape2D_mabsu")
+
 [connection signal="mouse_entered" from="Start Game" to="Start Game" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Start Game" to="Start Game" method="_on_mouse_exited"]
 [connection signal="pressed" from="Start Game" to="Start Game" method="_on_pressed"]
@@ -229,6 +248,6 @@ script = ExtResource("14_4uklr")
 [connection signal="mouse_entered" from="Options" to="Options" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Options" to="Options" method="_on_mouse_exited"]
 [connection signal="pressed" from="Options" to="Options" method="_on_pressed"]
-[connection signal="mouse_entered" from="Back" to="Back" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Back" to="Back" method="_on_mouse_exited"]
-[connection signal="pressed" from="Back" to="Back" method="_on_pressed"]
+[connection signal="mouse_entered" from="Back/Back" to="Back/Back" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Back/Back" to="Back/Back" method="_on_mouse_exited"]
+[connection signal="pressed" from="Back/Back" to="Back/Back" method="_on_pressed"]

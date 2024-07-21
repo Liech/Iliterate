@@ -57,7 +57,7 @@ func cloneObject(panel, move,ppos):
 	result.isClone = true
 	panel.add_child(result);
 	if (move):
-		result.position = result.position - panel.position
+		result.position = global_position - panel.position
 	return result
 
 func _on_mouse_entered():
