@@ -130,12 +130,31 @@ func captureReality():
 	gamestate.snapPool.add_child(panel);
 	panel.position = selection.position
 
+	var shape = RectangleShape2D.new()
+	shape.size = selection.size
+	
 	panel.size = selection.size
 	for item in allNodes:
+		if (abs(item.rotation) > 0.3):
+			continue
 		if (item.is_in_group("Copyable") and item.visible):
 			var current = Rect2(item.global_position,item.size);
 			if (selection.intersection(current) and not item.isClone):
 				item.cloneObject(panel, true,get_global_mouse_position() - panel.size/2)
+			#elif (item.get_parent()):
+			#	if (item.get_parent() is RigidBody2D):
+			#		var col : RigidBody2D = item.get_parent()
+			#		var space_state = get_world_2d().direct_space_state
+			#		var params =  PhysicsShapeQueryParameters2D.new()
+			#		params.shape = shape
+			#		var t = Transform2D()
+			#		t.origin = selection.position
+			#		params.transform= t
+			#		var out = space_state.intersect_shape(params)
+			#		for x in out:
+			#			if (x.collider == col):
+			#				item.cloneObject(panel, true,get_global_mouse_position() - panel.size/2)
+			#				
 	screenshotPanel = panel
 	panel.modulate.a = 1
 	panel.self_modulate.a = 0

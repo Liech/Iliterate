@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dllnxms57yayp" path="res://Scenes/GodotScreen/GodotScreen.tscn" id="2_385ln"]
 [ext_resource type="Script" path="res://Scenes/MasterScene/SnapPool.gd" id="3_013t6"]
 [ext_resource type="Texture2D" uid="uid://khno7ceqsilw" path="res://Art/SnapWindow.png" id="3_npd7u"]
-[ext_resource type="Script" path="res://Scenes/MasterScene/SnapMouseInteraction.gd" id="4_qrkg7"]
+[ext_resource type="Script" path="res://Core/SnapMouseInteraction.gd" id="4_qrkg7"]
 
 [node name="MasterScene" type="Control"]
 layout_mode = 3
