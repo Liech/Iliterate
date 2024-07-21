@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://Scenes/Options/Options.gd" id="2_8cd1l"]
 [ext_resource type="Texture2D" uid="uid://dxk323p2hap2c" path="res://Art/Background/Background.png" id="3_n2lvf"]
 [ext_resource type="Script" path="res://Commands/Cloneable.gd" id="4_8sec6"]
-[ext_resource type="StyleBox" uid="uid://bdktf0xccluh5" path="res://Scenes/MainMenu/buttonninepatch.tres" id="5_exebi"]
+[ext_resource type="StyleBox" uid="uid://bdktf0xccluh5" path="res://Scenes/MainMenu/new_style_box_texture.tres" id="5_exebi"]
 [ext_resource type="Script" path="res://Commands/CloneableNode.gd" id="6_7t1l1"]
 [ext_resource type="Texture2D" uid="uid://vc0f42xth06n" path="res://Art/Button/Button.png" id="7_n7v6a"]
 [ext_resource type="Texture2D" uid="uid://df7hdx5b8nrg4" path="res://Art/Menu/SliderKnob.png" id="8_lbeyj"]
@@ -315,7 +315,6 @@ theme_override_styles/normal_mirrored = ExtResource("5_exebi")
 theme_override_styles/hover_mirrored = ExtResource("5_exebi")
 theme_override_styles/pressed_mirrored = ExtResource("5_exebi")
 theme_override_styles/disabled_mirrored = ExtResource("5_exebi")
-flat = true
 item_count = 3
 selected = 2
 popup/item_0/text = "High  "
@@ -340,22 +339,6 @@ grow_horizontal = 0
 grow_vertical = 2
 texture = ExtResource("9_asoxr")
 
-[node name="NinePatchRect2" type="NinePatchRect" parent="DialogSpeed2Gameplay"]
-show_behind_parent = true
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme = ExtResource("1_ipdrc")
-texture = ExtResource("7_n7v6a")
-region_rect = Rect2(0.447113, 1.15751, 198.079, 182.684)
-patch_margin_left = 120
-patch_margin_top = 58
-patch_margin_right = 83
-patch_margin_bottom = 46
-
 [node name="GraphicsGameplay" type="OptionButton" parent="."]
 layout_mode = 2
 offset_left = 727.0
@@ -372,7 +355,6 @@ theme_override_styles/normal_mirrored = ExtResource("5_exebi")
 theme_override_styles/hover_mirrored = ExtResource("5_exebi")
 theme_override_styles/pressed_mirrored = ExtResource("5_exebi")
 theme_override_styles/disabled_mirrored = ExtResource("5_exebi")
-flat = true
 item_count = 3
 selected = 2
 popup/item_0/text = "High"
@@ -397,22 +379,6 @@ grow_horizontal = 0
 grow_vertical = 2
 texture = ExtResource("9_asoxr")
 
-[node name="NinePatchRect2" type="NinePatchRect" parent="GraphicsGameplay"]
-show_behind_parent = true
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme = ExtResource("1_ipdrc")
-texture = ExtResource("7_n7v6a")
-region_rect = Rect2(0.447113, 1.15751, 198.079, 182.684)
-patch_margin_left = 120
-patch_margin_top = 58
-patch_margin_right = 83
-patch_margin_bottom = 46
-
 [node name="LocalizationGameplay" type="OptionButton" parent="."]
 layout_mode = 2
 offset_left = 727.0
@@ -429,7 +395,6 @@ theme_override_styles/normal_mirrored = ExtResource("5_exebi")
 theme_override_styles/hover_mirrored = ExtResource("5_exebi")
 theme_override_styles/pressed_mirrored = ExtResource("5_exebi")
 theme_override_styles/disabled_mirrored = ExtResource("5_exebi")
-flat = true
 item_count = 4
 selected = 0
 popup/item_0/text = "English  "
@@ -455,22 +420,6 @@ offset_bottom = 28.5
 grow_horizontal = 0
 grow_vertical = 2
 texture = ExtResource("9_asoxr")
-
-[node name="NinePatchRect2" type="NinePatchRect" parent="LocalizationGameplay"]
-show_behind_parent = true
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme = ExtResource("1_ipdrc")
-texture = ExtResource("7_n7v6a")
-region_rect = Rect2(0.447113, 1.15751, 198.079, 182.684)
-patch_margin_left = 120
-patch_margin_top = 58
-patch_margin_right = 83
-patch_margin_bottom = 46
 
 [node name="DialogSpeedGameplay" type="Label" parent="."]
 layout_mode = 2

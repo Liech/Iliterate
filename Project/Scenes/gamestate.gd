@@ -86,3 +86,5 @@ func fadeTo(sceneName : Scenes):
 	gamestate.startScene(sceneName);
 	var tween2 = create_tween();
 	await tween2.tween_property(fader,"modulate",Color(0,0,0,0),fadeintime).finished
+
+

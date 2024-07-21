@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://Commands/Cloneable.gd" id="2_il4sm"]
 [ext_resource type="Theme" uid="uid://d2hv2jx01084f" path="res://mainTheme.tres" id="4_h3p8p"]
 [ext_resource type="Script" path="res://Commands/CmdBack.gd" id="5_lqalk"]
-[ext_resource type="StyleBox" uid="uid://bdktf0xccluh5" path="res://Scenes/MainMenu/new_style_box_texture.tres" id="5_pncrj"]
+[ext_resource type="StyleBox" uid="uid://bdktf0xccluh5" path="res://Scenes/MainMenu/buttonninepatch.tres" id="5_pncrj"]
 [ext_resource type="Texture2D" uid="uid://vc0f42xth06n" path="res://Art/Button/Button.png" id="6_4jo0q"]
 [ext_resource type="Script" path="res://Scenes/Memories/RaindropSpawner.gd" id="7_aoglo"]
 [ext_resource type="Texture2D" uid="uid://c0tmkfpmwnmej" path="res://Art/Raindrop.png" id="8_sn8m2"]

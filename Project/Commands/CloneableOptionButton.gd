@@ -3,9 +3,51 @@ class_name CloneableOptionButton
 
 var isClone = false
 
+var englishTexts;
+var gibberishStarted = false
+var shuffleprop = 4
+var startShader;
+
 func _ready():
+	englishTexts = []
+	startShader = material
+	for i in range(item_count):
+		englishTexts.append(get_item_text(i))
+
 	if (not isClone):
 		add_to_group("Copyable");
+	
+
+func shuffleLetter():
+	for index in range(item_count):
+		var pos = randi()%len(englishTexts[index])
+		var n_char = len(GlobalOptions.characters)
+		var t = get_item_text(index)
+		t[pos] = GlobalOptions.characters[randi()% n_char]
+		set_item_text(index,t)
+	
+func shuffleAll():
+	var n_char = len(GlobalOptions.characters)
+	for index in range(item_count):
+		var word: String
+		for i in range(len(englishTexts[index])):
+			word += GlobalOptions.characters[randi()% n_char]
+		set_item_text(index,word)
+	
+func _process(delta):
+	if (GlobalOptions.localization == GlobalOptions.Localization.Gibberish):		
+		if (not gibberishStarted):
+			shuffleAll();
+			gibberishStarted = true
+			material = load("res://Art/gibberish.tres")
+		if (randi() % 100 < shuffleprop):
+			shuffleLetter()
+	else:
+		for i in range(item_count):
+			set_item_text(i, englishTexts[i])
+		gibberishStarted = false
+		material = startShader
+	
 	
 func cloneObject(panel, move,ppos):
 	var result = self.duplicate();

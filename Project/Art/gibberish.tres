@@ -1,0 +1,6 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://bb08rdecgcxnv"]
+
+[ext_resource type="Shader" path="res://Scenes/MainMenu/Gibberish.gdshader" id="1_tul6s"]
+
+[resource]
+shader = ExtResource("1_tul6s")

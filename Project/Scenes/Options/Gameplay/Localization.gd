@@ -9,6 +9,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	super(delta)
 	if (GlobalOptions.localization == GlobalOptions.Localization.English and selected != 0):
 		selected = 0; 
 	if (GlobalOptions.localization == GlobalOptions.Localization.UwU and selected != 1):
