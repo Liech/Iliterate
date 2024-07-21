@@ -21,13 +21,16 @@ func _process(delta):
 
 func _on_button_pressed():
 	
+	gamestate.fadeouttime = 0
+	gamestate.fadeintime = 0
 	gamestate.fadeTo(gamestate.Scenes.Options);
 	return
 	
 	if (alreadyPressed):
 		return;
-	$Audio.stream = goooo
-	$Audio.play()
+	if (not GlobalOptions.muteAudio):
+		$Audio.stream = goooo
+		$Audio.play()
 	alreadyPressed= true;
 	$GodotSymbol.freeze = false;
 	await get_tree().create_timer(deletepindelay).timeout
@@ -37,7 +40,7 @@ func _on_button_pressed():
 
 var audioplayed = false
 func _on_godot_symbol_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
-	if (not audioplayed):
+	if (not audioplayed and not GlobalOptions.muteAudio):
 		audioplayed = true
 		$Audio.stream = douh
 		$Audio.play()

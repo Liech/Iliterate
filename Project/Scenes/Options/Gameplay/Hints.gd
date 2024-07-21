@@ -9,4 +9,9 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	if (button_pressed  != GlobalOptions.hints):
+		button_pressed  = GlobalOptions.hints
+
+
+func _on_toggled(toggled_on):
+	GlobalOptions.hints = toggled_on

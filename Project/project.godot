@@ -19,6 +19,7 @@ boot_splash/fullsize=false
 [autoload]
 
 gamestate="*res://Scenes/gamestate.gd"
+GlobalOptions="*res://Scenes/GlobalOptions.gd"
 
 [display]
 

@@ -9,4 +9,9 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	if (button_pressed  != GlobalOptions.muteAudio):
+		button_pressed  = GlobalOptions.muteAudio
+
+
+func _on_toggled(toggled_on):
+	GlobalOptions.muteAudio = toggled_on

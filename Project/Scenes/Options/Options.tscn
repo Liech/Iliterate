@@ -572,7 +572,6 @@ offset_left = 1182.0
 offset_top = 120.0
 offset_right = 1605.0
 offset_bottom = 216.0
-action_mode = 0
 text = ".oO|Misc|Oo."
 flat = true
 script = ExtResource("10_a0t2t")
@@ -583,7 +582,6 @@ offset_left = 579.0
 offset_top = 120.0
 offset_right = 1178.0
 offset_bottom = 216.0
-action_mode = 0
 text = ".oO|Gameplay|Oo."
 flat = true
 script = ExtResource("9_6vc1n")
@@ -594,19 +592,27 @@ offset_left = 120.0
 offset_top = 120.0
 offset_right = 575.0
 offset_bottom = 216.0
-action_mode = 0
 text = ".oO|Audio|Oo."
 flat = true
 script = ExtResource("8_y7h6b")
 
 [connection signal="pressed" from="Back" to="Back" method="_on_pressed"]
+[connection signal="toggled" from="MuteAudio" to="MuteAudio" method="_on_toggled"]
+[connection signal="toggled" from="HintsGameplay" to="HintsGameplay" method="_on_toggled"]
+[connection signal="item_selected" from="DialogSpeed2Gameplay" to="DialogSpeed2Gameplay" method="_on_item_selected"]
 [connection signal="mouse_entered" from="DialogSpeed2Gameplay" to="DialogSpeed2Gameplay" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="DialogSpeed2Gameplay" to="DialogSpeed2Gameplay" method="_on_mouse_exited"]
+[connection signal="pressed" from="DialogSpeed2Gameplay" to="DialogSpeed2Gameplay" method="_on_pressed"]
+[connection signal="item_selected" from="GraphicsGameplay" to="GraphicsGameplay" method="_on_item_selected"]
 [connection signal="mouse_entered" from="GraphicsGameplay" to="GraphicsGameplay" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="GraphicsGameplay" to="GraphicsGameplay" method="_on_mouse_exited"]
+[connection signal="pressed" from="GraphicsGameplay" to="GraphicsGameplay" method="_on_pressed"]
+[connection signal="item_selected" from="LocalizationGameplay" to="LocalizationGameplay" method="_on_item_selected"]
 [connection signal="mouse_entered" from="LocalizationGameplay" to="LocalizationGameplay" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="LocalizationGameplay" to="LocalizationGameplay" method="_on_mouse_exited"]
+[connection signal="pressed" from="LocalizationGameplay" to="LocalizationGameplay" method="_on_pressed"]
 [connection signal="pressed" from="KeybindingMisc" to="KeybindingMisc" method="_on_pressed"]
+[connection signal="toggled" from="VSyncMisc" to="VSyncMisc" method="_on_toggled"]
 [connection signal="pressed" from="MiscTab" to="MiscTab" method="_on_pressed"]
 [connection signal="pressed" from="GameplayTab" to="GameplayTab" method="_on_pressed"]
 [connection signal="pressed" from="AudioTab" to="AudioTab" method="_on_pressed"]

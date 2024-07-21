@@ -64,7 +64,7 @@ theme_override_constants/margin_bottom = 100
 [node name="Label" type="Label" parent="VBoxContainer/Headline/MarginContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 60
-text = "Inspired by historical events and characters in your life"
+text = "Inspired by historical events and characters in your day"
 horizontal_alignment = 1
 vertical_alignment = 1
 
