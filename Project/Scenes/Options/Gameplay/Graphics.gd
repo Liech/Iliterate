@@ -26,10 +26,12 @@ func _on_item_selected(index):
 		GlobalOptions.graphics = GlobalOptions.GraphicsQuality.Potato;
 		
 func _on_mouse_entered():
+	super()
 	gamestate.snapActive = false
 
 
 func _on_mouse_exited():
+	super()
 	gamestate.snapActive = true
 
 

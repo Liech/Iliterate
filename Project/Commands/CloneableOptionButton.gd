@@ -70,3 +70,9 @@ func cloneObject(panel, move,ppos):
 	if (move):
 		result.position = result.position - panel.position
 	return result
+
+func _on_mouse_entered():
+	gamestate.catExplain = true
+
+func _on_mouse_exited():
+	gamestate.catExplain = false

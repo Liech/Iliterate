@@ -213,8 +213,18 @@ pivot_offset = Vector2(85, 581)
 texture = ExtResource("13_r2l6x")
 script = ExtResource("14_4uklr")
 
+[connection signal="mouse_entered" from="Start Game" to="Start Game" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Start Game" to="Start Game" method="_on_mouse_exited"]
 [connection signal="pressed" from="Start Game" to="Start Game" method="_on_pressed"]
+[connection signal="mouse_entered" from="About" to="About" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="About" to="About" method="_on_mouse_exited"]
 [connection signal="pressed" from="About" to="About" method="_on_pressed"]
+[connection signal="mouse_entered" from="Memories" to="Memories" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Memories" to="Memories" method="_on_mouse_exited"]
 [connection signal="pressed" from="Memories" to="Memories" method="_on_pressed"]
+[connection signal="mouse_entered" from="Options" to="Options" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Options" to="Options" method="_on_mouse_exited"]
 [connection signal="pressed" from="Options" to="Options" method="_on_pressed"]
+[connection signal="mouse_entered" from="Back" to="Back" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Back" to="Back" method="_on_mouse_exited"]
 [connection signal="pressed" from="Back" to="Back" method="_on_pressed"]

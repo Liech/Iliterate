@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://bn57n5cddun8x"]
+[gd_scene load_steps=36 format=3 uid="uid://bn57n5cddun8x"]
 
 [ext_resource type="Theme" uid="uid://d2hv2jx01084f" path="res://mainTheme.tres" id="1_ipdrc"]
 [ext_resource type="Script" path="res://Scenes/Options/Options.gd" id="2_8cd1l"]
@@ -30,6 +30,10 @@
 [ext_resource type="Script" path="res://Scenes/Options/Misc/Brightness.gd" id="20_38wnd"]
 [ext_resource type="Script" path="res://Scenes/Options/Gameplay/Hints.gd" id="20_e703a"]
 [ext_resource type="Script" path="res://Scenes/Options/Misc/Keybinding.gd" id="30_qipj4"]
+[ext_resource type="Texture2D" uid="uid://bsrqm7fiqm5va" path="res://Art/CatSignLanguageInterpreter.png" id="31_x5547"]
+[ext_resource type="Script" path="res://CatSignLanguage/SignLanguageInstructor.gd" id="32_ep8m2"]
+[ext_resource type="Texture2D" uid="uid://c5c2vtc7dcttf" path="res://Art/CatSignLanguageInterpreterPaw.png" id="33_81wdw"]
+[ext_resource type="Script" path="res://CatSignLanguage/SignLanguagePaw.gd" id="34_04tvg"]
 
 [sub_resource type="Theme" id="Theme_rl0iw"]
 
@@ -248,6 +252,7 @@ offset_left = 120.0
 offset_top = 496.0
 offset_right = 415.0
 offset_bottom = 584.0
+mouse_filter = 1
 text = "Effect:"
 script = ExtResource("11_mj2eo")
 
@@ -258,6 +263,7 @@ offset_left = 120.0
 offset_top = 404.0
 offset_right = 415.0
 offset_bottom = 492.0
+mouse_filter = 1
 text = "Music:"
 script = ExtResource("11_mj2eo")
 
@@ -268,6 +274,7 @@ offset_left = 120.0
 offset_top = 312.0
 offset_right = 415.0
 offset_bottom = 400.0
+mouse_filter = 1
 text = "Master:"
 script = ExtResource("11_mj2eo")
 
@@ -278,6 +285,7 @@ offset_left = 120.0
 offset_top = 220.0
 offset_right = 1800.0
 offset_bottom = 308.0
+mouse_filter = 1
 text = "Audio"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -478,6 +486,7 @@ offset_left = 120.0
 offset_top = 586.0
 offset_right = 623.0
 offset_bottom = 674.0
+mouse_filter = 1
 text = "Dialog Speed:"
 script = ExtResource("13_2k2fm")
 
@@ -487,6 +496,7 @@ offset_left = 120.0
 offset_top = 443.0
 offset_right = 623.0
 offset_bottom = 531.0
+mouse_filter = 1
 text = "Graphics:"
 script = ExtResource("13_2k2fm")
 
@@ -496,6 +506,7 @@ offset_left = 120.0
 offset_top = 300.0
 offset_right = 623.0
 offset_bottom = 388.0
+mouse_filter = 1
 text = "Language: "
 vertical_alignment = 1
 script = ExtResource("13_2k2fm")
@@ -506,6 +517,7 @@ offset_left = 120.0
 offset_top = 208.0
 offset_right = 1800.0
 offset_bottom = 296.0
+mouse_filter = 1
 text = "Gameplay"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -593,6 +605,7 @@ offset_left = 120.0
 offset_top = 400.0
 offset_right = 535.0
 offset_bottom = 488.0
+mouse_filter = 1
 text = "Brightness"
 script = ExtResource("17_qn2n8")
 
@@ -603,6 +616,7 @@ offset_left = 120.0
 offset_top = 312.0
 offset_right = 403.0
 offset_bottom = 400.0
+mouse_filter = 1
 text = "Opacity"
 script = ExtResource("17_qn2n8")
 
@@ -613,6 +627,7 @@ offset_left = 120.0
 offset_top = 220.0
 offset_right = 1800.0
 offset_bottom = 308.0
+mouse_filter = 1
 text = "Misc"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -651,7 +666,41 @@ text = "Audio"
 flat = true
 script = ExtResource("8_y7h6b")
 
+[node name="CatSignLanguageInterpreter" type="TextureRect" parent="."]
+offset_left = 1229.0
+offset_top = 250.0
+offset_right = 2029.0
+offset_bottom = 1050.0
+scale = Vector2(0.552485, 0.553739)
+pivot_offset = Vector2(400, 800)
+texture = ExtResource("31_x5547")
+script = ExtResource("32_ep8m2")
+
+[node name="Paw2" type="TextureRect" parent="."]
+offset_left = 1384.0
+offset_top = 402.0
+offset_right = 1554.0
+offset_bottom = 983.0
+scale = Vector2(0.671369, 0.48748)
+pivot_offset = Vector2(85, 581)
+texture = ExtResource("33_81wdw")
+script = ExtResource("34_04tvg")
+
+[node name="Paw" type="TextureRect" parent="."]
+offset_left = 1769.0
+offset_top = 380.0
+offset_right = 1939.0
+offset_bottom = 961.0
+scale = Vector2(0.671369, 0.48748)
+pivot_offset = Vector2(85, 581)
+texture = ExtResource("33_81wdw")
+script = ExtResource("34_04tvg")
+
+[connection signal="mouse_entered" from="Back" to="Back" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Back" to="Back" method="_on_mouse_exited"]
 [connection signal="pressed" from="Back" to="Back" method="_on_pressed"]
+[connection signal="mouse_entered" from="MuteAudio" to="MuteAudio" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="MuteAudio" to="MuteAudio" method="_on_mouse_exited"]
 [connection signal="toggled" from="MuteAudio" to="MuteAudio" method="_on_toggled"]
 [connection signal="drag_ended" from="EffectAudio" to="EffectAudio" method="_on_drag_ended"]
 [connection signal="drag_started" from="EffectAudio" to="EffectAudio" method="_on_drag_started"]
@@ -662,6 +711,16 @@ script = ExtResource("8_y7h6b")
 [connection signal="drag_ended" from="MasterAudio" to="MasterAudio" method="_on_drag_ended"]
 [connection signal="drag_started" from="MasterAudio" to="MasterAudio" method="_on_drag_started"]
 [connection signal="value_changed" from="MasterAudio" to="MasterAudio" method="_on_value_changed"]
+[connection signal="mouse_entered" from="EffectAudioLabel" to="EffectAudioLabel" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="EffectAudioLabel" to="EffectAudioLabel" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="MusicAudioLabel" to="MusicAudioLabel" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="MusicAudioLabel" to="MusicAudioLabel" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="MasterAudioLabel" to="MasterAudioLabel" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="MasterAudioLabel" to="MasterAudioLabel" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="AudioTitle" to="AudioTitle" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="AudioTitle" to="AudioTitle" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="HintsGameplay" to="HintsGameplay" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="HintsGameplay" to="HintsGameplay" method="_on_mouse_exited"]
 [connection signal="toggled" from="HintsGameplay" to="HintsGameplay" method="_on_toggled"]
 [connection signal="item_selected" from="DialogSpeed2Gameplay" to="DialogSpeed2Gameplay" method="_on_item_selected"]
 [connection signal="mouse_entered" from="DialogSpeed2Gameplay" to="DialogSpeed2Gameplay" method="_on_mouse_entered"]
@@ -675,7 +734,19 @@ script = ExtResource("8_y7h6b")
 [connection signal="mouse_entered" from="LocalizationGameplay" to="LocalizationGameplay" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="LocalizationGameplay" to="LocalizationGameplay" method="_on_mouse_exited"]
 [connection signal="pressed" from="LocalizationGameplay" to="LocalizationGameplay" method="_on_pressed"]
+[connection signal="mouse_entered" from="DialogSpeedGameplay" to="DialogSpeedGameplay" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="DialogSpeedGameplay" to="DialogSpeedGameplay" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="GraphicLabelGameplay" to="GraphicLabelGameplay" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="GraphicLabelGameplay" to="GraphicLabelGameplay" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="LocalizationGameplay2" to="LocalizationGameplay2" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="LocalizationGameplay2" to="LocalizationGameplay2" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="GameplayLabel" to="GameplayLabel" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="GameplayLabel" to="GameplayLabel" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="KeybindingMisc" to="KeybindingMisc" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="KeybindingMisc" to="KeybindingMisc" method="_on_mouse_exited"]
 [connection signal="pressed" from="KeybindingMisc" to="KeybindingMisc" method="_on_pressed"]
+[connection signal="mouse_entered" from="VSyncMisc" to="VSyncMisc" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="VSyncMisc" to="VSyncMisc" method="_on_mouse_exited"]
 [connection signal="toggled" from="VSyncMisc" to="VSyncMisc" method="_on_toggled"]
 [connection signal="drag_ended" from="BrightnessMisc" to="BrightnessMisc" method="_on_drag_ended"]
 [connection signal="drag_started" from="BrightnessMisc" to="BrightnessMisc" method="_on_drag_started"]
@@ -683,6 +754,18 @@ script = ExtResource("8_y7h6b")
 [connection signal="drag_ended" from="OpacityMisc" to="OpacityMisc" method="_on_drag_ended"]
 [connection signal="drag_started" from="OpacityMisc" to="OpacityMisc" method="_on_drag_started"]
 [connection signal="value_changed" from="OpacityMisc" to="OpacityMisc" method="_on_value_changed"]
+[connection signal="mouse_entered" from="BrightnessLabelMisc" to="BrightnessLabelMisc" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="BrightnessLabelMisc" to="BrightnessLabelMisc" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="OpacityLabelMisc" to="OpacityLabelMisc" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="OpacityLabelMisc" to="OpacityLabelMisc" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="MiscLabel" to="MiscLabel" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="MiscLabel" to="MiscLabel" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="MiscTab" to="MiscTab" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="MiscTab" to="MiscTab" method="_on_mouse_exited"]
 [connection signal="pressed" from="MiscTab" to="MiscTab" method="_on_pressed"]
+[connection signal="mouse_entered" from="GameplayTab" to="GameplayTab" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="GameplayTab" to="GameplayTab" method="_on_mouse_exited"]
 [connection signal="pressed" from="GameplayTab" to="GameplayTab" method="_on_pressed"]
+[connection signal="mouse_entered" from="AudioTab" to="AudioTab" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="AudioTab" to="AudioTab" method="_on_mouse_exited"]
 [connection signal="pressed" from="AudioTab" to="AudioTab" method="_on_pressed"]
