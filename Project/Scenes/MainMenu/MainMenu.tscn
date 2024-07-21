@@ -10,10 +10,10 @@
 [ext_resource type="Texture2D" uid="uid://vc0f42xth06n" path="res://Art/Button/Button.png" id="7_vc7f2"]
 [ext_resource type="Script" path="res://Commands/CmdMemory.gd" id="8_8don6"]
 [ext_resource type="Script" path="res://Commands/CmdOptions.gd" id="9_nayao"]
-[ext_resource type="Texture2D" uid="uid://bsrqm7fiqm5va" path="res://Art/CatSignLanguageInterpreter.png" id="12_a2aqx"]
+[ext_resource type="Texture2D" uid="uid://bsrqm7fiqm5va" path="res://Art/Menu/CatSignLanguageInterpreter.png" id="12_a2aqx"]
 [ext_resource type="Script" path="res://Commands/CmdBack.gd" id="12_am8p2"]
 [ext_resource type="Script" path="res://CatSignLanguage/SignLanguageInstructor.gd" id="13_cmu2o"]
-[ext_resource type="Texture2D" uid="uid://c5c2vtc7dcttf" path="res://Art/CatSignLanguageInterpreterPaw.png" id="13_r2l6x"]
+[ext_resource type="Texture2D" uid="uid://c5c2vtc7dcttf" path="res://Art/Menu/CatSignLanguageInterpreterPaw.png" id="13_r2l6x"]
 [ext_resource type="Script" path="res://CatSignLanguage/SignLanguagePaw.gd" id="14_4uklr"]
 
 [node name="MainMenu" type="Control"]
@@ -182,6 +182,7 @@ anchor_bottom = 1.0
 grow_vertical = 2
 
 [node name="CatSignLanguageInterpreter" type="TextureRect" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 1229.0
 offset_top = 250.0
@@ -193,6 +194,8 @@ texture = ExtResource("12_a2aqx")
 script = ExtResource("13_cmu2o")
 
 [node name="Paw2" type="TextureRect" parent="."]
+visible = false
+layout_mode = 0
 offset_left = 1384.0
 offset_top = 402.0
 offset_right = 1554.0
@@ -203,6 +206,7 @@ texture = ExtResource("13_r2l6x")
 script = ExtResource("14_4uklr")
 
 [node name="Paw" type="TextureRect" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 1769.0
 offset_top = 380.0

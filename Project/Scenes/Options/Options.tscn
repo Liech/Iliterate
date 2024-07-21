@@ -30,9 +30,9 @@
 [ext_resource type="Script" path="res://Scenes/Options/Misc/Brightness.gd" id="20_38wnd"]
 [ext_resource type="Script" path="res://Scenes/Options/Gameplay/Hints.gd" id="20_e703a"]
 [ext_resource type="Script" path="res://Scenes/Options/Misc/Keybinding.gd" id="30_qipj4"]
-[ext_resource type="Texture2D" uid="uid://bsrqm7fiqm5va" path="res://Art/CatSignLanguageInterpreter.png" id="31_x5547"]
+[ext_resource type="Texture2D" uid="uid://bsrqm7fiqm5va" path="res://Art/Menu/CatSignLanguageInterpreter.png" id="31_x5547"]
 [ext_resource type="Script" path="res://CatSignLanguage/SignLanguageInstructor.gd" id="32_ep8m2"]
-[ext_resource type="Texture2D" uid="uid://c5c2vtc7dcttf" path="res://Art/CatSignLanguageInterpreterPaw.png" id="33_81wdw"]
+[ext_resource type="Texture2D" uid="uid://c5c2vtc7dcttf" path="res://Art/Menu/CatSignLanguageInterpreterPaw.png" id="33_81wdw"]
 [ext_resource type="Script" path="res://CatSignLanguage/SignLanguagePaw.gd" id="34_04tvg"]
 
 [sub_resource type="Theme" id="Theme_rl0iw"]
@@ -667,6 +667,8 @@ flat = true
 script = ExtResource("8_y7h6b")
 
 [node name="CatSignLanguageInterpreter" type="TextureRect" parent="."]
+visible = false
+layout_mode = 0
 offset_left = 1229.0
 offset_top = 250.0
 offset_right = 2029.0
@@ -677,6 +679,8 @@ texture = ExtResource("31_x5547")
 script = ExtResource("32_ep8m2")
 
 [node name="Paw2" type="TextureRect" parent="."]
+visible = false
+layout_mode = 0
 offset_left = 1384.0
 offset_top = 402.0
 offset_right = 1554.0
@@ -687,6 +691,8 @@ texture = ExtResource("33_81wdw")
 script = ExtResource("34_04tvg")
 
 [node name="Paw" type="TextureRect" parent="."]
+visible = false
+layout_mode = 0
 offset_left = 1769.0
 offset_top = 380.0
 offset_right = 1939.0

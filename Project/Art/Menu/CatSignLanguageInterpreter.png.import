@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c5c2vtc7dcttf"
-path="res://.godot/imported/CatSignLanguageInterpreterPaw.png-bd52f68b0ac6f1b261dcf10c0e62e5e6.ctex"
+uid="uid://bsrqm7fiqm5va"
+path="res://.godot/imported/CatSignLanguageInterpreter.png-80124832186492cdc33c1199942fa52e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/CatSignLanguageInterpreterPaw.png"
-dest_files=["res://.godot/imported/CatSignLanguageInterpreterPaw.png-bd52f68b0ac6f1b261dcf10c0e62e5e6.ctex"]
+source_file="res://Art/Menu/CatSignLanguageInterpreter.png"
+dest_files=["res://.godot/imported/CatSignLanguageInterpreter.png-80124832186492cdc33c1199942fa52e.ctex"]
 
 [params]
 
