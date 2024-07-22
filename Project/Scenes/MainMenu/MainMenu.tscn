@@ -45,6 +45,7 @@ stretch_mode = 4
 script = ExtResource("3_3uqhv")
 
 [node name="Start Game2" type="Button" parent="."]
+layout_mode = 0
 offset_left = -8.0
 offset_top = -8.0
 offset_right = 471.0
@@ -130,6 +131,7 @@ patch_margin_right = 83
 patch_margin_bottom = 46
 
 [node name="About" type="Button" parent="."]
+layout_mode = 0
 offset_top = 264.0
 offset_right = 479.0
 offset_bottom = 392.0
@@ -158,6 +160,7 @@ patch_margin_bottom = 46
 
 [node name="PieceFirst" type="Button" parent="About"]
 visible = false
+layout_mode = 0
 offset_left = 248.0
 offset_right = 492.0
 offset_bottom = 128.0
@@ -186,6 +189,7 @@ patch_margin_bottom = 46
 
 [node name="PieceSecond" type="Button" parent="About"]
 visible = false
+layout_mode = 0
 offset_right = 260.0
 offset_bottom = 128.0
 theme = ExtResource("5_1o4bo")
@@ -212,6 +216,7 @@ patch_margin_right = 83
 patch_margin_bottom = 46
 
 [node name="Memories2" type="Button" parent="."]
+layout_mode = 0
 offset_top = 128.0
 offset_right = 479.0
 offset_bottom = 256.0
@@ -240,6 +245,7 @@ patch_margin_bottom = 46
 
 [node name="PieceFirst" type="Button" parent="Memories2"]
 visible = false
+layout_mode = 0
 offset_left = 248.0
 offset_right = 492.0
 offset_bottom = 128.0
@@ -268,6 +274,7 @@ patch_margin_bottom = 46
 
 [node name="PieceSecond" type="Button" parent="Memories2"]
 visible = false
+layout_mode = 0
 offset_right = 260.0
 offset_bottom = 128.0
 theme = ExtResource("5_1o4bo")
@@ -294,6 +301,7 @@ patch_margin_right = 83
 patch_margin_bottom = 46
 
 [node name="Options2" type="Button" parent="."]
+layout_mode = 0
 offset_top = 400.0
 offset_right = 479.0
 offset_bottom = 528.0
@@ -320,6 +328,7 @@ patch_margin_right = 83
 patch_margin_bottom = 46
 
 [node name="Back2" type="Button" parent="."]
+layout_mode = 0
 offset_top = 536.0
 offset_right = 479.0
 offset_bottom = 664.0
@@ -348,6 +357,7 @@ patch_margin_bottom = 46
 
 [node name="PieceFirst" type="Button" parent="Back2"]
 visible = false
+layout_mode = 0
 offset_left = 248.0
 offset_right = 492.0
 offset_bottom = 128.0
@@ -376,6 +386,7 @@ patch_margin_bottom = 46
 
 [node name="PieceSecond" type="Button" parent="Back2"]
 visible = false
+layout_mode = 0
 offset_right = 260.0
 offset_bottom = 128.0
 theme = ExtResource("5_1o4bo")

@@ -14,6 +14,8 @@ var nextScene = Scenes.MainMenu;
 var snap;
 var snapActive = false;
 var snapPool;
+var dialog;
+
 
 var catExplain = false;
 

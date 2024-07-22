@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bdmsibriri3e4"]
+[gd_scene load_steps=10 format=3 uid="uid://bdmsibriri3e4"]
 
 [ext_resource type="Script" path="res://Scenes/MasterScene/MasterScene.gd" id="1_tj8ov"]
 [ext_resource type="PackedScene" uid="uid://dllnxms57yayp" path="res://Scenes/GodotScreen/GodotScreen.tscn" id="2_385ln"]
@@ -9,7 +9,6 @@
 [ext_resource type="Script" path="res://Core/SnapMouseInteraction.gd" id="4_qrkg7"]
 [ext_resource type="Script" path="res://Scenes/MasterScene/Dialog.gd" id="4_wcga6"]
 [ext_resource type="Texture2D" uid="uid://s3c6up3fpsyt" path="res://Art/Keycaps/KeycapQUwU.png" id="5_b0g7r"]
-[ext_resource type="Script" path="res://Scenes/MasterScene/Choice.gd" id="6_gluqs"]
 
 [node name="MasterScene" type="Control"]
 layout_mode = 3
@@ -85,100 +84,38 @@ text = "Hello There. Im Q.sssssssssssssssssssss
 Behold my Power!asdaaaaaaassssssssssss
 Third Lines Are Awesomeeeeeeeee"
 
-[node name="Choices" type="HBoxContainer" parent="Dialog/MarginContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Dialog/MarginContainer/VBoxContainer"]
 layout_direction = 3
 layout_mode = 2
 theme_override_constants/separation = 100
 
-[node name="Choice1" type="Button" parent="Dialog/MarginContainer/VBoxContainer/Choices"]
-visible = false
+[node name="Button" type="Button" parent="Dialog/MarginContainer/VBoxContainer/HBoxContainer"]
 self_modulate = Color(0, 0.0235294, 1, 1)
 layout_mode = 2
 theme = ExtResource("4_2ub7r")
 text = "Close"
 flat = true
-script = ExtResource("6_gluqs")
 
-[node name="Choice2" type="Button" parent="Dialog/MarginContainer/VBoxContainer/Choices"]
-visible = false
+[node name="Button2" type="Button" parent="Dialog/MarginContainer/VBoxContainer/HBoxContainer"]
 self_modulate = Color(0, 0.0235294, 1, 1)
 layout_mode = 2
 theme = ExtResource("4_2ub7r")
-text = "Close"
+text = "No"
 flat = true
-script = ExtResource("6_gluqs")
 
-[node name="Choice3" type="Button" parent="Dialog/MarginContainer/VBoxContainer/Choices"]
-visible = false
+[node name="Button3" type="Button" parent="Dialog/MarginContainer/VBoxContainer/HBoxContainer"]
 self_modulate = Color(0, 0.0235294, 1, 1)
 layout_mode = 2
 theme = ExtResource("4_2ub7r")
-text = "Close"
+text = "No"
 flat = true
-script = ExtResource("6_gluqs")
 
-[node name="Choice4" type="Button" parent="Dialog/MarginContainer/VBoxContainer/Choices"]
-visible = false
+[node name="Button4" type="Button" parent="Dialog/MarginContainer/VBoxContainer/HBoxContainer"]
 self_modulate = Color(0, 0.0235294, 1, 1)
 layout_mode = 2
 theme = ExtResource("4_2ub7r")
-text = "Close"
+text = "No"
 flat = true
-script = ExtResource("6_gluqs")
-
-[node name="Choice5" type="Button" parent="Dialog/MarginContainer/VBoxContainer/Choices"]
-visible = false
-self_modulate = Color(0, 0.0235294, 1, 1)
-layout_mode = 2
-theme = ExtResource("4_2ub7r")
-text = "Close"
-flat = true
-script = ExtResource("6_gluqs")
-
-[node name="Choice6" type="Button" parent="Dialog/MarginContainer/VBoxContainer/Choices"]
-visible = false
-self_modulate = Color(0, 0.0235294, 1, 1)
-layout_mode = 2
-theme = ExtResource("4_2ub7r")
-text = "Close"
-flat = true
-script = ExtResource("6_gluqs")
-
-[node name="Choice7" type="Button" parent="Dialog/MarginContainer/VBoxContainer/Choices"]
-visible = false
-self_modulate = Color(0, 0.0235294, 1, 1)
-layout_mode = 2
-theme = ExtResource("4_2ub7r")
-text = "Close"
-flat = true
-script = ExtResource("6_gluqs")
-
-[node name="Choice8" type="Button" parent="Dialog/MarginContainer/VBoxContainer/Choices"]
-visible = false
-self_modulate = Color(0, 0.0235294, 1, 1)
-layout_mode = 2
-theme = ExtResource("4_2ub7r")
-text = "Close"
-flat = true
-script = ExtResource("6_gluqs")
-
-[node name="Choice9" type="Button" parent="Dialog/MarginContainer/VBoxContainer/Choices"]
-visible = false
-self_modulate = Color(0, 0.0235294, 1, 1)
-layout_mode = 2
-theme = ExtResource("4_2ub7r")
-text = "Close"
-flat = true
-script = ExtResource("6_gluqs")
-
-[node name="Choice10" type="Button" parent="Dialog/MarginContainer/VBoxContainer/Choices"]
-visible = false
-self_modulate = Color(0, 0.0235294, 1, 1)
-layout_mode = 2
-theme = ExtResource("4_2ub7r")
-text = "Close"
-flat = true
-script = ExtResource("6_gluqs")
 
 [node name="Character" type="TextureRect" parent="Dialog"]
 layout_mode = 0
@@ -219,14 +156,3 @@ patch_margin_top = 14
 patch_margin_right = 18
 patch_margin_bottom = 12
 script = ExtResource("4_qrkg7")
-
-[connection signal="pressed" from="Dialog/MarginContainer/VBoxContainer/Choices/Choice1" to="Dialog/MarginContainer/VBoxContainer/Choices/Choice1" method="_on_pressed"]
-[connection signal="pressed" from="Dialog/MarginContainer/VBoxContainer/Choices/Choice2" to="Dialog/MarginContainer/VBoxContainer/Choices/Choice2" method="_on_pressed"]
-[connection signal="pressed" from="Dialog/MarginContainer/VBoxContainer/Choices/Choice3" to="Dialog/MarginContainer/VBoxContainer/Choices/Choice3" method="_on_pressed"]
-[connection signal="pressed" from="Dialog/MarginContainer/VBoxContainer/Choices/Choice4" to="Dialog/MarginContainer/VBoxContainer/Choices/Choice4" method="_on_pressed"]
-[connection signal="pressed" from="Dialog/MarginContainer/VBoxContainer/Choices/Choice5" to="Dialog/MarginContainer/VBoxContainer/Choices/Choice5" method="_on_pressed"]
-[connection signal="pressed" from="Dialog/MarginContainer/VBoxContainer/Choices/Choice6" to="Dialog/MarginContainer/VBoxContainer/Choices/Choice6" method="_on_pressed"]
-[connection signal="pressed" from="Dialog/MarginContainer/VBoxContainer/Choices/Choice7" to="Dialog/MarginContainer/VBoxContainer/Choices/Choice7" method="_on_pressed"]
-[connection signal="pressed" from="Dialog/MarginContainer/VBoxContainer/Choices/Choice8" to="Dialog/MarginContainer/VBoxContainer/Choices/Choice8" method="_on_pressed"]
-[connection signal="pressed" from="Dialog/MarginContainer/VBoxContainer/Choices/Choice9" to="Dialog/MarginContainer/VBoxContainer/Choices/Choice9" method="_on_pressed"]
-[connection signal="pressed" from="Dialog/MarginContainer/VBoxContainer/Choices/Choice10" to="Dialog/MarginContainer/VBoxContainer/Choices/Choice10" method="_on_pressed"]
