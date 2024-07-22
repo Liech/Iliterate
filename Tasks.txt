@@ -11,25 +11,24 @@
  || Snap Mechanic                      || Done   ||
  || Memories                           ||        ||
  || Popup Dialogs                      ||        ||
- || Global ButtonCalls                 ||        ||
- || Global ButtonCalls                 ||        ||
- || Language Mechainc                  ||        ||
+ || Global ButtonCalls                 || Done   ||
+ || Language Mechainc                  || Done   ||
  || UwU                                ||        ||
  ||   Dialog for everything            ||        ||
  ||   Anime Sounds                     ||        ||
  ||   Anime Music                      ||        ||
  ||   Keybinding Dialog                ||        ||
  ||   Keybinding reminder              ||        ||
- || Cat Sign Language                  ||        ||
- ||   Sign Language Cat Animation      ||        ||
- ||   Cat Paw Cursor                   ||        ||
+ || Cat Sign Language                  || Done   ||
+ ||   Sign Language Cat Animation      || Done   ||
+ ||   Cat Paw Cursor                   || Done   ||
  ||   Meow Sounds                      ||        ||
  ||   Meow Music                       ||        ||
- ||   Button Physics                   ||        ||
- || Undecipherable Language            ||        ||
+ ||   Button Physics                   || Done   ||
+ || Undecipherable Language            || Done   ||
  || Main Menu                          ||        ||
  ||   Background                       ||        ||
- || About                              ||        ||
+ || About                              || Done   ||
  || Options                            ||        ||
  ||   Brightness                       ||        ||
  ||   Menu Opacity                     ||        ||

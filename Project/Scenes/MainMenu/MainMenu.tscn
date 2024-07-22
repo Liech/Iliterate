@@ -346,17 +346,18 @@ patch_margin_top = 58
 patch_margin_right = 83
 patch_margin_bottom = 46
 
-[node name="PieceSecond" type="Button" parent="Back2"]
+[node name="PieceFirst" type="Button" parent="Back2"]
 visible = false
-offset_right = 260.0
+offset_left = 248.0
+offset_right = 492.0
 offset_bottom = 128.0
 theme = ExtResource("5_1o4bo")
 theme_override_styles/normal = ExtResource("6_kavg7")
-text = "Ba"
+text = "Ck"
 flat = true
 script = ExtResource("4_583ko")
 
-[node name="NinePatchRect" type="NinePatchRect" parent="Back2/PieceSecond"]
+[node name="NinePatchRect" type="NinePatchRect" parent="Back2/PieceFirst"]
 show_behind_parent = true
 layout_mode = 1
 anchors_preset = 15
@@ -373,18 +374,17 @@ patch_margin_top = 58
 patch_margin_right = 83
 patch_margin_bottom = 46
 
-[node name="PieceFirst" type="Button" parent="Back2"]
+[node name="PieceSecond" type="Button" parent="Back2"]
 visible = false
-offset_left = 248.0
-offset_right = 492.0
+offset_right = 260.0
 offset_bottom = 128.0
 theme = ExtResource("5_1o4bo")
 theme_override_styles/normal = ExtResource("6_kavg7")
-text = "Ck"
+text = "Ba"
 flat = true
 script = ExtResource("4_583ko")
 
-[node name="NinePatchRect" type="NinePatchRect" parent="Back2/PieceFirst"]
+[node name="NinePatchRect" type="NinePatchRect" parent="Back2/PieceSecond"]
 show_behind_parent = true
 layout_mode = 1
 anchors_preset = 15
@@ -501,9 +501,9 @@ shape = SubResource("WorldBoundaryShape2D_mabsu")
 [connection signal="mouse_entered" from="Back2" to="Back2" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Back2" to="Back2" method="_on_mouse_exited"]
 [connection signal="pressed" from="Back2" to="Back2" method="_on_pressed"]
-[connection signal="mouse_entered" from="Back2/PieceSecond" to="Back2/PieceSecond" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Back2/PieceSecond" to="Back2/PieceSecond" method="_on_mouse_exited"]
-[connection signal="pressed" from="Back2/PieceSecond" to="Back2/PieceSecond" method="_on_pressed"]
 [connection signal="mouse_entered" from="Back2/PieceFirst" to="Back2/PieceFirst" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Back2/PieceFirst" to="Back2/PieceFirst" method="_on_mouse_exited"]
 [connection signal="pressed" from="Back2/PieceFirst" to="Back2/PieceFirst" method="_on_pressed"]
+[connection signal="mouse_entered" from="Back2/PieceSecond" to="Back2/PieceSecond" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Back2/PieceSecond" to="Back2/PieceSecond" method="_on_mouse_exited"]
+[connection signal="pressed" from="Back2/PieceSecond" to="Back2/PieceSecond" method="_on_pressed"]
