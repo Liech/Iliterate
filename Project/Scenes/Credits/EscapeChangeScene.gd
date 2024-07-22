@@ -1,7 +1,9 @@
-extends Control
+extends SceneRoot
 
 
-
-func _input(event):
-	if event.is_action_pressed("ui_cancel"):
-		gamestate.fadeTo(gamestate.nextScene);
+func DoCommand(command):
+	if (command == "Back"):
+		gamestate.fadeTo(gamestate.Scenes.MainMenu);
+	else:
+		super.DoCommand(command)
+	

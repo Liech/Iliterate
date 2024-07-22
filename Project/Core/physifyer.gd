@@ -1,7 +1,16 @@
 extends Node
 
+func isALlowed(nod):
+	if (nod is VBoxContainer):
+		return true
+	if (nod is HBoxContainer):
+		return true
+	if (nod is MarginContainer):
+		return true
+	return false
+
 func physiphy(target, toss):
-	if (target.get_parent() != gamestate.currentScene):
+	if (target.get_parent() != gamestate.currentScene and not isALlowed(target.get_parent())):
 		return; # no work needed
 	var col = RigidBody2D.new();
 	var shp = CollisionShape2D.new()
@@ -19,7 +28,11 @@ func physiphy(target, toss):
 	col.rotation = target.rotation
 	col.contact_monitor = true
 	col.max_contacts_reported = 1
-	gamestate.currentScene.add_child(col)
+	
+	if (target.get_parent()):
+		target.get_parent().add_child(col);
+	else:
+		gamestate.currentScene.add_child(col)
 	target.get_parent().remove_child(target)
 	col.add_child(target)
 	target.position = Vector2(0,0)

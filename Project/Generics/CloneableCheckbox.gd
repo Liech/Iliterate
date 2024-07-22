@@ -1,6 +1,7 @@
 extends CheckBox
 class_name CloneableCheckBox
 
+@export var breaks = false
 var isClone = false
 
 var englishText;
@@ -13,6 +14,8 @@ func _ready():
 	startShader = material
 	if (not isClone):
 		add_to_group("Copyable");
+		await get_tree().create_timer(0.01).timeout # wait for daddy
+		Phys.physiphy(self,false);
 
 func hasChar(str, char):
 	for i in range(len(str)):

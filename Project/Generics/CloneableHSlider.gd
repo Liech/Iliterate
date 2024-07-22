@@ -1,11 +1,14 @@
 extends HSlider
 class_name CloneableHSlider
 
+@export var breaks = false
 var isClone = false
 
 func _ready():
 	if (not isClone):
 		add_to_group("Copyable");
+		await get_tree().create_timer(0.01).timeout # wait for daddy
+		Phys.physiphy(self,false);
 	
 func cloneObject(panel, move,ppos):
 	var result = self.duplicate();

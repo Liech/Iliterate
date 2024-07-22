@@ -138,6 +138,7 @@ theme_override_styles/normal = ExtResource("6_kavg7")
 text = "About"
 flat = true
 script = ExtResource("7_fbqfy")
+breaks = true
 
 [node name="NinePatchRect" type="NinePatchRect" parent="About"]
 show_behind_parent = true
@@ -145,6 +146,61 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("5_1o4bo")
+texture = ExtResource("7_vc7f2")
+region_rect = Rect2(0.447113, 1.15751, 198.079, 182.684)
+patch_margin_left = 120
+patch_margin_top = 58
+patch_margin_right = 83
+patch_margin_bottom = 46
+
+[node name="PieceFirst" type="Button" parent="About"]
+visible = false
+offset_left = 248.0
+offset_right = 492.0
+offset_bottom = 128.0
+theme = ExtResource("5_1o4bo")
+theme_override_styles/normal = ExtResource("6_kavg7")
+text = "Out"
+flat = true
+script = ExtResource("4_583ko")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="About/PieceFirst"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -12.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("5_1o4bo")
+texture = ExtResource("7_vc7f2")
+region_rect = Rect2(0.447113, 1.15751, 198.079, 182.684)
+patch_margin_left = 120
+patch_margin_top = 58
+patch_margin_right = 83
+patch_margin_bottom = 46
+
+[node name="PieceSecond" type="Button" parent="About"]
+visible = false
+offset_right = 260.0
+offset_bottom = 128.0
+theme = ExtResource("5_1o4bo")
+theme_override_styles/normal = ExtResource("6_kavg7")
+text = "Ab"
+flat = true
+script = ExtResource("4_583ko")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="About/PieceSecond"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -12.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("5_1o4bo")
@@ -164,6 +220,7 @@ theme_override_styles/normal = ExtResource("6_kavg7")
 text = "Memories"
 flat = true
 script = ExtResource("8_8don6")
+breaks = true
 
 [node name="NinePatchRect" type="NinePatchRect" parent="Memories2"]
 show_behind_parent = true
@@ -171,6 +228,61 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("5_1o4bo")
+texture = ExtResource("7_vc7f2")
+region_rect = Rect2(0.447113, 1.15751, 198.079, 182.684)
+patch_margin_left = 120
+patch_margin_top = 58
+patch_margin_right = 83
+patch_margin_bottom = 46
+
+[node name="PieceFirst" type="Button" parent="Memories2"]
+visible = false
+offset_left = 248.0
+offset_right = 492.0
+offset_bottom = 128.0
+theme = ExtResource("5_1o4bo")
+theme_override_styles/normal = ExtResource("6_kavg7")
+text = "Ory"
+flat = true
+script = ExtResource("4_583ko")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Memories2/PieceFirst"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -12.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("5_1o4bo")
+texture = ExtResource("7_vc7f2")
+region_rect = Rect2(0.447113, 1.15751, 198.079, 182.684)
+patch_margin_left = 120
+patch_margin_top = 58
+patch_margin_right = 83
+patch_margin_bottom = 46
+
+[node name="PieceSecond" type="Button" parent="Memories2"]
+visible = false
+offset_right = 260.0
+offset_bottom = 128.0
+theme = ExtResource("5_1o4bo")
+theme_override_styles/normal = ExtResource("6_kavg7")
+text = "Mem"
+flat = true
+script = ExtResource("4_583ko")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Memories2/PieceSecond"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -12.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("5_1o4bo")
@@ -216,6 +328,7 @@ theme_override_styles/normal = ExtResource("6_kavg7")
 text = "Back"
 flat = true
 script = ExtResource("12_am8p2")
+breaks = true
 
 [node name="NinePatchRect" type="NinePatchRect" parent="Back2"]
 show_behind_parent = true
@@ -223,6 +336,61 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("5_1o4bo")
+texture = ExtResource("7_vc7f2")
+region_rect = Rect2(0.447113, 1.15751, 198.079, 182.684)
+patch_margin_left = 120
+patch_margin_top = 58
+patch_margin_right = 83
+patch_margin_bottom = 46
+
+[node name="PieceSecond" type="Button" parent="Back2"]
+visible = false
+offset_right = 260.0
+offset_bottom = 128.0
+theme = ExtResource("5_1o4bo")
+theme_override_styles/normal = ExtResource("6_kavg7")
+text = "Ba"
+flat = true
+script = ExtResource("4_583ko")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Back2/PieceSecond"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -12.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("5_1o4bo")
+texture = ExtResource("7_vc7f2")
+region_rect = Rect2(0.447113, 1.15751, 198.079, 182.684)
+patch_margin_left = 120
+patch_margin_top = 58
+patch_margin_right = 83
+patch_margin_bottom = 46
+
+[node name="PieceFirst" type="Button" parent="Back2"]
+visible = false
+offset_left = 248.0
+offset_right = 492.0
+offset_bottom = 128.0
+theme = ExtResource("5_1o4bo")
+theme_override_styles/normal = ExtResource("6_kavg7")
+text = "Ck"
+flat = true
+script = ExtResource("4_583ko")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Back2/PieceFirst"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -12.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("5_1o4bo")
@@ -312,12 +480,30 @@ shape = SubResource("WorldBoundaryShape2D_mabsu")
 [connection signal="mouse_entered" from="About" to="About" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="About" to="About" method="_on_mouse_exited"]
 [connection signal="pressed" from="About" to="About" method="_on_pressed"]
+[connection signal="mouse_entered" from="About/PieceFirst" to="About/PieceFirst" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="About/PieceFirst" to="About/PieceFirst" method="_on_mouse_exited"]
+[connection signal="pressed" from="About/PieceFirst" to="About/PieceFirst" method="_on_pressed"]
+[connection signal="mouse_entered" from="About/PieceSecond" to="About/PieceSecond" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="About/PieceSecond" to="About/PieceSecond" method="_on_mouse_exited"]
+[connection signal="pressed" from="About/PieceSecond" to="About/PieceSecond" method="_on_pressed"]
 [connection signal="mouse_entered" from="Memories2" to="Memories2" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Memories2" to="Memories2" method="_on_mouse_exited"]
 [connection signal="pressed" from="Memories2" to="Memories2" method="_on_pressed"]
+[connection signal="mouse_entered" from="Memories2/PieceFirst" to="Memories2/PieceFirst" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Memories2/PieceFirst" to="Memories2/PieceFirst" method="_on_mouse_exited"]
+[connection signal="pressed" from="Memories2/PieceFirst" to="Memories2/PieceFirst" method="_on_pressed"]
+[connection signal="mouse_entered" from="Memories2/PieceSecond" to="Memories2/PieceSecond" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Memories2/PieceSecond" to="Memories2/PieceSecond" method="_on_mouse_exited"]
+[connection signal="pressed" from="Memories2/PieceSecond" to="Memories2/PieceSecond" method="_on_pressed"]
 [connection signal="mouse_entered" from="Options2" to="Options2" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Options2" to="Options2" method="_on_mouse_exited"]
 [connection signal="pressed" from="Options2" to="Options2" method="_on_pressed"]
 [connection signal="mouse_entered" from="Back2" to="Back2" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Back2" to="Back2" method="_on_mouse_exited"]
 [connection signal="pressed" from="Back2" to="Back2" method="_on_pressed"]
+[connection signal="mouse_entered" from="Back2/PieceSecond" to="Back2/PieceSecond" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Back2/PieceSecond" to="Back2/PieceSecond" method="_on_mouse_exited"]
+[connection signal="pressed" from="Back2/PieceSecond" to="Back2/PieceSecond" method="_on_pressed"]
+[connection signal="mouse_entered" from="Back2/PieceFirst" to="Back2/PieceFirst" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Back2/PieceFirst" to="Back2/PieceFirst" method="_on_mouse_exited"]
+[connection signal="pressed" from="Back2/PieceFirst" to="Back2/PieceFirst" method="_on_pressed"]

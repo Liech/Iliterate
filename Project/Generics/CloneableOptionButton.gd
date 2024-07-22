@@ -1,6 +1,7 @@
 extends OptionButton
 class_name CloneableOptionButton
 
+@export var breaks = false
 var isClone = false
 
 var englishTexts;
@@ -16,6 +17,8 @@ func _ready():
 
 	if (not isClone):
 		add_to_group("Copyable");
+		await get_tree().create_timer(0.01).timeout # wait for daddy
+		Phys.physiphy(self,false);
 	
 
 func hasChar(str, char):

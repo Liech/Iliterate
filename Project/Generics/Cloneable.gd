@@ -1,11 +1,17 @@
 extends TextureRect
 class_name Cloneable
 
+@export var breaks = false
+@export var physify = false
+
 var isClone = false
 
 func _ready():
 	if (not isClone):
 		add_to_group("Copyable");
+		if (physify):
+			await get_tree().create_timer(0.01).timeout # wait for daddy
+			Phys.physiphy(self,false);
 	
 func cloneObject(panel, move,ppos):
 	var result = self.duplicate();

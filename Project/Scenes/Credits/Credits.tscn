@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dqbxf45lkgpgo"]
+[gd_scene load_steps=20 format=3 uid="uid://dqbxf45lkgpgo"]
 
 [ext_resource type="Theme" uid="uid://d2hv2jx01084f" path="res://mainTheme.tres" id="1_chx1x"]
 [ext_resource type="Script" path="res://Scenes/Credits/RollCredits.gd" id="2_ak1k0"]
@@ -6,9 +6,21 @@
 [ext_resource type="Script" path="res://Scenes/Credits/EscapeChangeScene.gd" id="2_jyfd5"]
 [ext_resource type="Texture2D" uid="uid://dnuo5ietwwchh" path="res://Art/Logos/EngineLogo.png" id="3_yk00n"]
 [ext_resource type="Texture2D" uid="uid://r5o3wo0f3w6y" path="res://Art/Logos/painttool.png" id="4_7yvxn"]
+[ext_resource type="Script" path="res://Generics/CloneableLabel.gd" id="4_c7j4i"]
 [ext_resource type="Texture2D" uid="uid://bljnxprblhku7" path="res://Art/Logos/FontLogo.png" id="4_uyvpy"]
 [ext_resource type="Texture2D" uid="uid://0ry0ct1dikxl" path="res://Art/Logos/AudioTool.png" id="5_1hcdi"]
+[ext_resource type="Script" path="res://Generics/Cloneable.gd" id="6_ov1yf"]
 [ext_resource type="Texture2D" uid="uid://d33dlcmqu4nb2" path="res://Art/Logos/AudioTool2.png" id="6_w3yrq"]
+[ext_resource type="Texture2D" uid="uid://bsrqm7fiqm5va" path="res://Art/Menu/CatSignLanguageInterpreter.png" id="10_tu7sf"]
+[ext_resource type="Script" path="res://Core/SignLanguageInstructor.gd" id="11_xr7n1"]
+[ext_resource type="Texture2D" uid="uid://c5c2vtc7dcttf" path="res://Art/Menu/CatSignLanguageInterpreterPaw.png" id="12_ksxw6"]
+[ext_resource type="Script" path="res://Core/SignLanguagePaw.gd" id="13_j8jk4"]
+[ext_resource type="StyleBox" uid="uid://bdktf0xccluh5" path="res://Scenes/MainMenu/buttonninepatch.tres" id="14_3rfvb"]
+[ext_resource type="Script" path="res://Generics/CmdBack.gd" id="15_u7l8l"]
+[ext_resource type="Texture2D" uid="uid://vc0f42xth06n" path="res://Art/Button/Button.png" id="16_vvrhi"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_7ky1p"]
+distance = -9.0
 
 [node name="Credits" type="Control"]
 layout_mode = 3
@@ -21,6 +33,7 @@ theme = ExtResource("1_chx1x")
 script = ExtResource("2_jyfd5")
 
 [node name="ColorRect" type="ColorRect" parent="."]
+z_index = -1
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -63,12 +76,14 @@ theme_override_font_sizes/font_size = 60
 text = "Game Development"
 horizontal_alignment = 1
 vertical_alignment = 1
+script = ExtResource("4_c7j4i")
 
 [node name="Label3" type="Label" parent="VBoxContainer/Me/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
 horizontal_alignment = 1
 vertical_alignment = 1
+script = ExtResource("4_c7j4i")
 
 [node name="Label" type="Label" parent="VBoxContainer/Me/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -76,6 +91,7 @@ theme_override_font_sizes/font_size = 40
 text = "Liech - Nicolas Harttig"
 horizontal_alignment = 1
 vertical_alignment = 1
+script = ExtResource("4_c7j4i")
 
 [node name="Thanks" type="MarginContainer" parent="VBoxContainer"]
 layout_mode = 2
@@ -98,12 +114,14 @@ theme_override_font_sizes/font_size = 60
 text = "Thanks to"
 horizontal_alignment = 1
 vertical_alignment = 1
+script = ExtResource("4_c7j4i")
 
 [node name="Label3" type="Label" parent="VBoxContainer/Thanks/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 60
 horizontal_alignment = 1
 vertical_alignment = 1
+script = ExtResource("4_c7j4i")
 
 [node name="Label4" type="Label" parent="VBoxContainer/Thanks/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -111,6 +129,7 @@ theme_override_font_sizes/font_size = 40
 text = "Racootie (Paw Model Consultant)"
 horizontal_alignment = 1
 vertical_alignment = 1
+script = ExtResource("4_c7j4i")
 
 [node name="Label" type="Label" parent="VBoxContainer/Thanks/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -118,6 +137,7 @@ theme_override_font_sizes/font_size = 40
 text = "Keinomieli (Discord Help)"
 horizontal_alignment = 1
 vertical_alignment = 1
+script = ExtResource("4_c7j4i")
 
 [node name="Cat" type="MarginContainer" parent="VBoxContainer"]
 layout_mode = 2
@@ -140,12 +160,14 @@ theme_override_font_sizes/font_size = 60
 text = "Paw Model Reference"
 horizontal_alignment = 1
 vertical_alignment = 1
+script = ExtResource("4_c7j4i")
 
 [node name="Label3" type="Label" parent="VBoxContainer/Cat/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 60
 horizontal_alignment = 1
 vertical_alignment = 1
+script = ExtResource("4_c7j4i")
 
 [node name="Label" type="Label" parent="VBoxContainer/Cat/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -153,6 +175,7 @@ theme_override_font_sizes/font_size = 40
 text = "Nessi"
 horizontal_alignment = 1
 vertical_alignment = 1
+script = ExtResource("4_c7j4i")
 
 [node name="Font" type="MarginContainer" parent="VBoxContainer"]
 layout_mode = 2
@@ -171,6 +194,8 @@ layout_mode = 2
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer/Font/MarginContainer/HBoxContainer"]
 layout_mode = 2
 texture = ExtResource("4_uyvpy")
+stretch_mode = 2
+script = ExtResource("6_ov1yf")
 
 [node name="Label" type="Label" parent="VBoxContainer/Font/MarginContainer/HBoxContainer"]
 layout_mode = 2
@@ -180,6 +205,7 @@ text = "Font
 m6x11
 Daniel Linssen
 https://managore.itch.io/"
+script = ExtResource("4_c7j4i")
 
 [node name="Engine" type="MarginContainer" parent="VBoxContainer"]
 layout_mode = 2
@@ -198,6 +224,7 @@ layout_mode = 2
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer/Engine/MarginContainer/HBoxContainer"]
 layout_mode = 2
 texture = ExtResource("3_yk00n")
+script = ExtResource("6_ov1yf")
 
 [node name="Label" type="Label" parent="VBoxContainer/Engine/MarginContainer/HBoxContainer"]
 layout_mode = 2
@@ -207,6 +234,7 @@ text = "Game Engine
 Godot 4.2.2
 https://godotengine.org/
 Free (MIT)"
+script = ExtResource("4_c7j4i")
 
 [node name="Paint" type="MarginContainer" parent="VBoxContainer"]
 layout_mode = 2
@@ -225,6 +253,7 @@ layout_mode = 2
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer/Paint/MarginContainer/HBoxContainer"]
 layout_mode = 2
 texture = ExtResource("4_7yvxn")
+script = ExtResource("6_ov1yf")
 
 [node name="Label" type="Label" parent="VBoxContainer/Paint/MarginContainer/HBoxContainer"]
 layout_mode = 2
@@ -234,6 +263,7 @@ text = "Drawing
 Gimp
 https://www.gimp.org/
 Free (GPL)"
+script = ExtResource("4_c7j4i")
 
 [node name="Audio1" type="MarginContainer" parent="VBoxContainer"]
 layout_mode = 2
@@ -252,6 +282,7 @@ layout_mode = 2
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer/Audio1/MarginContainer/HBoxContainer"]
 layout_mode = 2
 texture = ExtResource("5_1hcdi")
+script = ExtResource("6_ov1yf")
 
 [node name="Label" type="Label" parent="VBoxContainer/Audio1/MarginContainer/HBoxContainer"]
 layout_mode = 2
@@ -261,6 +292,7 @@ text = "Audio Recording & Cutting
 Audacity
 https://www.audacityteam.org/
 Free (GPL)"
+script = ExtResource("4_c7j4i")
 
 [node name="Audio2" type="MarginContainer" parent="VBoxContainer"]
 layout_mode = 2
@@ -279,6 +311,7 @@ layout_mode = 2
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer/Audio2/MarginContainer/HBoxContainer"]
 layout_mode = 2
 texture = ExtResource("6_w3yrq")
+script = ExtResource("6_ov1yf")
 
 [node name="Label" type="Label" parent="VBoxContainer/Audio2/MarginContainer/HBoxContainer"]
 layout_mode = 2
@@ -288,6 +321,7 @@ text = "Music, Sound & Voicedistortion
 LMMS
 https://lmms.io/
 Free (GPL)"
+script = ExtResource("4_c7j4i")
 
 [node name="Host" type="MarginContainer" parent="VBoxContainer"]
 layout_mode = 2
@@ -306,6 +340,7 @@ layout_mode = 2
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer/Host/MarginContainer/HBoxContainer"]
 layout_mode = 2
 texture = ExtResource("2_ia30n")
+script = ExtResource("6_ov1yf")
 
 [node name="Label" type="Label" parent="VBoxContainer/Host/MarginContainer/HBoxContainer"]
 layout_mode = 2
@@ -317,6 +352,7 @@ https://gopiratesoftware.com/
 Probably also Free. 
 But a Human. Humans are handled 
 differently than Software"
+script = ExtResource("4_c7j4i")
 
 [node name="Thanks for playing" type="MarginContainer" parent="VBoxContainer"]
 layout_mode = 2
@@ -339,12 +375,14 @@ theme_override_font_sizes/font_size = 60
 text = "Thank you for playing"
 horizontal_alignment = 1
 vertical_alignment = 1
+script = ExtResource("4_c7j4i")
 
 [node name="Label3" type="Label" parent="VBoxContainer/Thanks for playing/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
 horizontal_alignment = 1
 vertical_alignment = 1
+script = ExtResource("4_c7j4i")
 
 [node name="Label" type="Label" parent="VBoxContainer/Thanks for playing/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -352,3 +390,97 @@ theme_override_font_sizes/font_size = 40
 text = "hope it was fun :3"
 horizontal_alignment = 1
 vertical_alignment = 1
+script = ExtResource("4_c7j4i")
+
+[node name="CatSignLanguageInterpreter" type="TextureRect" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 1229.0
+offset_top = 250.0
+offset_right = 2029.0
+offset_bottom = 1050.0
+scale = Vector2(0.552485, 0.553739)
+pivot_offset = Vector2(400, 800)
+texture = ExtResource("10_tu7sf")
+script = ExtResource("11_xr7n1")
+
+[node name="Paw2" type="TextureRect" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 1384.0
+offset_top = 402.0
+offset_right = 1554.0
+offset_bottom = 983.0
+scale = Vector2(0.671369, 0.48748)
+pivot_offset = Vector2(85, 581)
+texture = ExtResource("12_ksxw6")
+script = ExtResource("13_j8jk4")
+
+[node name="Paw" type="TextureRect" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 1769.0
+offset_top = 380.0
+offset_right = 1939.0
+offset_bottom = 961.0
+scale = Vector2(0.671369, 0.48748)
+pivot_offset = Vector2(85, 581)
+texture = ExtResource("12_ksxw6")
+script = ExtResource("13_j8jk4")
+
+[node name="Back2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 904.0
+offset_right = 264.0
+offset_bottom = 1032.0
+theme = ExtResource("1_chx1x")
+theme_override_styles/normal = ExtResource("14_3rfvb")
+text = "Back"
+flat = true
+script = ExtResource("15_u7l8l")
+
+[node name="NinePatchRect2" type="NinePatchRect" parent="Back2"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_chx1x")
+texture = ExtResource("16_vvrhi")
+region_rect = Rect2(0.447113, 1.15751, 198.079, 182.684)
+patch_margin_left = 120
+patch_margin_top = 58
+patch_margin_right = 83
+patch_margin_bottom = 46
+
+[node name="Ground2" type="RigidBody2D" parent="."]
+position = Vector2(888, 1088)
+freeze = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground2"]
+shape = SubResource("WorldBoundaryShape2D_7ky1p")
+
+[node name="Wall2" type="RigidBody2D" parent="."]
+position = Vector2(-16, 840)
+rotation = 1.5708
+freeze = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall2"]
+position = Vector2(0, 8)
+shape = SubResource("WorldBoundaryShape2D_7ky1p")
+
+[node name="Wall" type="RigidBody2D" parent="."]
+position = Vector2(1936, 936)
+rotation = -1.5708
+freeze = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall"]
+position = Vector2(0, 8)
+shape = SubResource("WorldBoundaryShape2D_7ky1p")
+
+[connection signal="mouse_entered" from="Back2" to="Back2" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Back2" to="Back2" method="_on_mouse_exited"]
+[connection signal="pressed" from="Back2" to="Back2" method="_on_pressed"]
