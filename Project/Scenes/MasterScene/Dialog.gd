@@ -1,6 +1,6 @@
 extends Panel
 
-enum Bodies{ ButtonChan }
+enum Bodies{ ButtonChan, Nothing }
 
 var visibility = 0;
 var dialogActive = false;
@@ -20,8 +20,9 @@ func _process(delta):
 func setCharacter(body):
 	if (body == Bodies.ButtonChan):
 		$ButtonChan.visible = true
+	elif (body == Bodies.Nothing):
+		$ButtonChan.visible = false
 		
-	
 func setBelly(t):
 	$"ButtonChan/ButtonChanBelly".text = t;
 	
@@ -56,9 +57,14 @@ func adjustVisibility():
 	modulate.a = visibility
 	
 
+var oldSnap
 func closeDialog():
 	dialogActive = false;
+	gamestate.snapActive= oldSnap
+	
 
 func openDialog():
+	oldSnap = gamestate.snapActive
 	dialogActive = true;
 	visible = true
+	gamestate.snapActive = false

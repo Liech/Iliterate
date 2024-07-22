@@ -15,7 +15,7 @@ var snap;
 var snapActive = false;
 var snapPool;
 var dialog;
-
+var currentTab = "Gameplay"
 
 var catExplain = false;
 

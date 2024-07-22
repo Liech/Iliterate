@@ -1,7 +1,11 @@
 extends CloneableButton
 
+func tabname():
+	return "Misc"
+
 func _on_pressed():
 	var allNodes = []
+	gamestate.currentTab = "Misc"
 	getallnodes(gamestate.currentScene,allNodes)
 	for w in allNodes:
 		if (w.is_in_group("AudioOption")):

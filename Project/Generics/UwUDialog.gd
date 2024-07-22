@@ -3,11 +3,14 @@ class_name UwUDialog
 
 @export var characterName : String
 @export var characterBelly : String
-@export var characterIcon : Texture2D
-@export var startTextBlock : int = 0
+@export var characterIcon : int
+@export var ears : bool
 
 var dialogActive = false
-var currentBlock ="";
+var currentBlock;
+
+var earleftoffset = Vector2(44,50);
+var earrightoffset = Vector2(44,50);
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -16,15 +19,23 @@ func _ready():
 func choiceMade(choice):
 	closeDialog()
 
+func startup():
+	pass
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	handleConnection()
 	
+	if (ears):
+		$"Graphics/Left".position = get_parent().position - earleftoffset
+		$"Graphics/Right".position = get_parent().position + Vector2(get_parent().size.x,0.0) -earrightoffset
+		$"Graphics/Left".visible = isUwU()
+		$"Graphics/Right".visible = isUwU()
 	
 func setTextBlock(block):
 	gamestate.dialog.setText(block.text);
 	gamestate.dialog.setChoices(block.choices)
-	currentBlock = block.name
+	currentBlock = block
 	
 func closeDialog():
 	gamestate.dialog.closeDialog()
@@ -34,9 +45,14 @@ func startDialog():
 	gamestate.dialog.openDialog()
 	gamestate.dialog.setCharacterName(characterName)
 	gamestate.dialog.setBelly(characterBelly)
-	gamestate.dialog.setCharacter(gamestate.dialog.Bodies.ButtonChan)
-	setTextBlock(get_child(startTextBlock))
+	setTextBlock(get_child(1))
 	dialogActive = true
+	
+	if (characterIcon == 1):
+		gamestate.dialog.setCharacter(gamestate.dialog.Bodies.ButtonChan);
+	elif (characterIcon == 0):
+		gamestate.dialog.setCharacter(gamestate.dialog.Bodies.Nothing);
+	startup()
 	
 func handleConnection():
 	var UwUOnline = get_parent().is_connected("pressed",_on_pressed)

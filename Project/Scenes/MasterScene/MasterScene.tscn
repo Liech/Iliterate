@@ -93,7 +93,7 @@ theme_override_constants/separation = 100
 
 [node name="Choice1" type="Button" parent="Dialog/MarginContainer/VBoxContainer/Choices"]
 visible = false
-self_modulate = Color(0, 0.0235294, 1, 1)
+self_modulate = Color(0.900348, 0.465337, 0.513429, 1)
 layout_mode = 2
 theme = ExtResource("4_2ub7r")
 text = "Close"
@@ -102,7 +102,7 @@ script = ExtResource("6_gluqs")
 
 [node name="Choice2" type="Button" parent="Dialog/MarginContainer/VBoxContainer/Choices"]
 visible = false
-self_modulate = Color(0, 0.0235294, 1, 1)
+self_modulate = Color(0.900348, 0.465337, 0.513429, 1)
 layout_mode = 2
 theme = ExtResource("4_2ub7r")
 text = "Close"
@@ -111,7 +111,7 @@ script = ExtResource("6_gluqs")
 
 [node name="Choice3" type="Button" parent="Dialog/MarginContainer/VBoxContainer/Choices"]
 visible = false
-self_modulate = Color(0, 0.0235294, 1, 1)
+self_modulate = Color(0.900348, 0.465337, 0.513429, 1)
 layout_mode = 2
 theme = ExtResource("4_2ub7r")
 text = "Close"
@@ -120,7 +120,7 @@ script = ExtResource("6_gluqs")
 
 [node name="Choice4" type="Button" parent="Dialog/MarginContainer/VBoxContainer/Choices"]
 visible = false
-self_modulate = Color(0, 0.0235294, 1, 1)
+self_modulate = Color(0.900348, 0.465337, 0.513429, 1)
 layout_mode = 2
 theme = ExtResource("4_2ub7r")
 text = "Close"
@@ -129,7 +129,7 @@ script = ExtResource("6_gluqs")
 
 [node name="Choice5" type="Button" parent="Dialog/MarginContainer/VBoxContainer/Choices"]
 visible = false
-self_modulate = Color(0, 0.0235294, 1, 1)
+self_modulate = Color(0.900348, 0.465337, 0.513429, 1)
 layout_mode = 2
 theme = ExtResource("4_2ub7r")
 text = "Close"
@@ -138,7 +138,7 @@ script = ExtResource("6_gluqs")
 
 [node name="Choice6" type="Button" parent="Dialog/MarginContainer/VBoxContainer/Choices"]
 visible = false
-self_modulate = Color(0, 0.0235294, 1, 1)
+self_modulate = Color(0.900348, 0.465337, 0.513429, 1)
 layout_mode = 2
 theme = ExtResource("4_2ub7r")
 text = "Close"
@@ -147,7 +147,7 @@ script = ExtResource("6_gluqs")
 
 [node name="Choice7" type="Button" parent="Dialog/MarginContainer/VBoxContainer/Choices"]
 visible = false
-self_modulate = Color(0, 0.0235294, 1, 1)
+self_modulate = Color(0.900348, 0.465337, 0.513429, 1)
 layout_mode = 2
 theme = ExtResource("4_2ub7r")
 text = "Close"
@@ -156,7 +156,7 @@ script = ExtResource("6_gluqs")
 
 [node name="Choice8" type="Button" parent="Dialog/MarginContainer/VBoxContainer/Choices"]
 visible = false
-self_modulate = Color(0, 0.0235294, 1, 1)
+self_modulate = Color(0.900348, 0.465337, 0.513429, 1)
 layout_mode = 2
 theme = ExtResource("4_2ub7r")
 text = "Close"
@@ -165,7 +165,7 @@ script = ExtResource("6_gluqs")
 
 [node name="Choice9" type="Button" parent="Dialog/MarginContainer/VBoxContainer/Choices"]
 visible = false
-self_modulate = Color(0, 0.0235294, 1, 1)
+self_modulate = Color(0.900348, 0.465337, 0.513429, 1)
 layout_mode = 2
 theme = ExtResource("4_2ub7r")
 text = "Close"
@@ -174,7 +174,7 @@ script = ExtResource("6_gluqs")
 
 [node name="Choice10" type="Button" parent="Dialog/MarginContainer/VBoxContainer/Choices"]
 visible = false
-self_modulate = Color(0, 0.0235294, 1, 1)
+self_modulate = Color(0.900348, 0.465337, 0.513429, 1)
 layout_mode = 2
 theme = ExtResource("4_2ub7r")
 text = "Close"

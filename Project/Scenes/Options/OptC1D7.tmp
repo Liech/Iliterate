@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://bn57n5cddun8x"]
+[gd_scene load_steps=38 format=3 uid="uid://bn57n5cddun8x"]
 
 [ext_resource type="Theme" uid="uid://d2hv2jx01084f" path="res://mainTheme.tres" id="1_ipdrc"]
 [ext_resource type="Script" path="res://Scenes/Options/Options.gd" id="2_8cd1l"]
@@ -14,12 +14,10 @@
 [ext_resource type="Script" path="res://Scenes/Options/Gameplay/Localization.gd" id="9_l83e7"]
 [ext_resource type="Script" path="res://Scenes/Options/OptionsBackUwU.gd" id="9_rl7ts"]
 [ext_resource type="Texture2D" uid="uid://dhjsy1diag3ff" path="res://Art/Checkbox/Yes.png" id="10_6jl05"]
-[ext_resource type="Texture2D" uid="uid://drqi8h3p02kye" path="res://Art/Button/LeftUwU.png" id="10_8w66l"]
 [ext_resource type="Script" path="res://Scenes/Options/Tabs/MiscTab.gd" id="10_a0t2t"]
 [ext_resource type="Texture2D" uid="uid://ds7upvyjthxnq" path="res://Art/Checkbox/No.png" id="11_hpo47"]
 [ext_resource type="Script" path="res://Scenes/Options/Audio/AudioLabel.gd" id="11_mj2eo"]
 [ext_resource type="Script" path="res://Generics/CmdBack.gd" id="11_o6sco"]
-[ext_resource type="Texture2D" uid="uid://lonj01xgrckt" path="res://Art/Button/RightUwU.png" id="11_vclru"]
 [ext_resource type="Script" path="res://Scenes/Options/TextBlock.gd" id="11_wc0h8"]
 [ext_resource type="Script" path="res://Scenes/Options/Gameplay/GameplayLabel.gd" id="13_2k2fm"]
 [ext_resource type="Script" path="res://Scenes/Options/Audio/MusicAudioLevel.gd" id="13_cgfxa"]
@@ -38,7 +36,6 @@
 [ext_resource type="Script" path="res://Core/SignLanguageInstructor.gd" id="32_ep8m2"]
 [ext_resource type="Texture2D" uid="uid://c5c2vtc7dcttf" path="res://Art/Menu/CatSignLanguageInterpreterPaw.png" id="33_81wdw"]
 [ext_resource type="Script" path="res://Core/SignLanguagePaw.gd" id="34_04tvg"]
-[ext_resource type="Script" path="res://Scenes/Options/Tabs/UwUTab.gd" id="35_nltyf"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ufr3p"]
 distance = -9.0
@@ -113,35 +110,9 @@ patch_margin_bottom = 46
 
 [node name="UwU" type="Control" parent="Back"]
 anchors_preset = 0
-script = ExtResource("9_rl7ts")
-characterName = "Back - The Schoolyardkeeper"
-characterBelly = "Back"
-characterIcon = 1
-ears = true
-
-[node name="Graphics" type="Control" parent="Back/UwU"]
-anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
-
-[node name="Left" type="TextureRect" parent="Back/UwU/Graphics"]
-visible = false
-layout_mode = 0
-offset_left = -32.0
-offset_top = -48.0
-offset_right = 51.0
-offset_bottom = 46.0
-texture = ExtResource("10_8w66l")
-
-[node name="Right" type="TextureRect" parent="Back/UwU/Graphics"]
-visible = false
-layout_mode = 1
-anchors_preset = -1
-offset_left = 168.0
-offset_top = -40.0
-offset_right = 250.0
-offset_bottom = 52.0
-texture = ExtResource("11_vclru")
+script = ExtResource("9_rl7ts")
 
 [node name="Intro" type="Control" parent="Back/UwU"]
 anchors_preset = 0
@@ -158,15 +129,6 @@ offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("11_wc0h8")
 text = "Outside is beautiful. Don't stay in too long. Class is not that important."
-choices = Array[String](["Bye"])
-
-[node name="Happy" type="Control" parent="Back/UwU"]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-script = ExtResource("11_wc0h8")
-text = "Make sure to talk to some folks. I you are frustrated they might help."
 choices = Array[String](["Bye"])
 
 [node name="LayoutForRearanging" type="MarginContainer" parent="."]
@@ -721,9 +683,9 @@ breaks = true
 
 [node name="MiscTab" type="Button" parent="."]
 layout_mode = 2
-offset_left = 1496.0
+offset_left = 1364.0
 offset_top = 118.0
-offset_right = 1667.0
+offset_right = 1787.0
 offset_bottom = 214.0
 theme = ExtResource("1_ipdrc")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -733,9 +695,9 @@ script = ExtResource("10_a0t2t")
 
 [node name="GameplayTab" type="Button" parent="."]
 layout_mode = 2
-offset_left = 816.0
+offset_left = 690.0
 offset_top = 120.0
-offset_right = 1163.0
+offset_right = 1289.0
 offset_bottom = 216.0
 theme = ExtResource("1_ipdrc")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -745,62 +707,15 @@ script = ExtResource("9_6vc1n")
 
 [node name="AudioTab" type="Button" parent="."]
 layout_mode = 2
-offset_left = 240.0
+offset_left = 120.0
 offset_top = 120.0
-offset_right = 456.0
+offset_right = 575.0
 offset_bottom = 216.0
 theme = ExtResource("1_ipdrc")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Audio"
 flat = true
 script = ExtResource("8_y7h6b")
-
-[node name="UwU" type="Control" parent="AudioTab"]
-layout_mode = 3
-anchors_preset = 0
-script = ExtResource("35_nltyf")
-characterName = "Music Club Room"
-
-[node name="Graphics" type="Control" parent="AudioTab/UwU"]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="Left" type="TextureRect" parent="AudioTab/UwU/Graphics"]
-visible = false
-layout_mode = 0
-offset_left = -32.0
-offset_top = -48.0
-offset_right = 51.0
-offset_bottom = 46.0
-texture = ExtResource("10_8w66l")
-
-[node name="Right" type="TextureRect" parent="AudioTab/UwU/Graphics"]
-visible = false
-layout_mode = 1
-anchors_preset = -1
-offset_left = 168.0
-offset_top = -40.0
-offset_right = 250.0
-offset_bottom = 52.0
-texture = ExtResource("11_vclru")
-
-[node name="Intro" type="Control" parent="AudioTab/UwU"]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-script = ExtResource("11_wc0h8")
-text = "Loud music guides your attention to the music clubroom. It sounds like a mix of Post Rock and Pre Scissor."
-choices = Array[String](["Enter", "Go Back"])
-
-[node name="AlreadyThere" type="Control" parent="AudioTab/UwU"]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-script = ExtResource("11_wc0h8")
-text = "You stare at the door thinking if it is legal to be this loud in a school. But it sounds so nice."
-choices = Array[String](["Listen"])
 
 [node name="CatSignLanguageInterpreter" type="TextureRect" parent="."]
 visible = false

@@ -1,4 +1,4 @@
-extends Cloneable
+extends "res://Generics/Cloneable.gd"
 
 
 var targetrot;

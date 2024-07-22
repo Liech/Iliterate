@@ -1,4 +1,4 @@
-extends Cloneable
+extends "res://Generics/Cloneable.gd"
 
 var targetrot;
 var time = 0
