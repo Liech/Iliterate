@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://bn57n5cddun8x"]
+[gd_scene load_steps=38 format=3 uid="uid://bn57n5cddun8x"]
 
 [ext_resource type="Theme" uid="uid://d2hv2jx01084f" path="res://mainTheme.tres" id="1_ipdrc"]
 [ext_resource type="Script" path="res://Scenes/Options/Options.gd" id="2_8cd1l"]
@@ -12,11 +12,13 @@
 [ext_resource type="Script" path="res://Scenes/Options/Tabs/GameplayTab.gd" id="9_6vc1n"]
 [ext_resource type="Texture2D" uid="uid://lvld2o43cpmo" path="res://Art/Menu/ComboKnob.png" id="9_asoxr"]
 [ext_resource type="Script" path="res://Scenes/Options/Gameplay/Localization.gd" id="9_l83e7"]
+[ext_resource type="Script" path="res://Scenes/Options/OptionsBackUwU.gd" id="9_rl7ts"]
 [ext_resource type="Texture2D" uid="uid://dhjsy1diag3ff" path="res://Art/Checkbox/Yes.png" id="10_6jl05"]
 [ext_resource type="Script" path="res://Scenes/Options/Tabs/MiscTab.gd" id="10_a0t2t"]
 [ext_resource type="Texture2D" uid="uid://ds7upvyjthxnq" path="res://Art/Checkbox/No.png" id="11_hpo47"]
 [ext_resource type="Script" path="res://Scenes/Options/Audio/AudioLabel.gd" id="11_mj2eo"]
 [ext_resource type="Script" path="res://Generics/CmdBack.gd" id="11_o6sco"]
+[ext_resource type="Script" path="res://Scenes/Options/TextBlock.gd" id="11_wc0h8"]
 [ext_resource type="Script" path="res://Scenes/Options/Gameplay/GameplayLabel.gd" id="13_2k2fm"]
 [ext_resource type="Script" path="res://Scenes/Options/Audio/MusicAudioLevel.gd" id="13_cgfxa"]
 [ext_resource type="Script" path="res://Scenes/Options/Audio/EffectAudioLevel.gd" id="13_erca1"]
@@ -78,7 +80,7 @@ patch_margin_right = 83
 patch_margin_bottom = 46
 script = ExtResource("6_7t1l1")
 
-[node name="Back2" type="Button" parent="."]
+[node name="Back" type="Button" parent="."]
 layout_mode = 0
 offset_left = 128.0
 offset_top = 840.0
@@ -90,7 +92,7 @@ text = "Back"
 flat = true
 script = ExtResource("11_o6sco")
 
-[node name="NinePatchRect2" type="NinePatchRect" parent="Back2"]
+[node name="NinePatchRect2" type="NinePatchRect" parent="Back"]
 show_behind_parent = true
 layout_mode = 1
 anchors_preset = -1
@@ -105,6 +107,29 @@ patch_margin_left = 120
 patch_margin_top = 58
 patch_margin_right = 83
 patch_margin_bottom = 46
+
+[node name="UwU" type="Control" parent="Back"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("9_rl7ts")
+
+[node name="Intro" type="Control" parent="Back/UwU"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("11_wc0h8")
+text = "Hi, Im the Schoolyardkeeper. Make sure to keep it clean. Do you want outside?"
+choices = Array[String](["Yes", "No"])
+
+[node name="Anger" type="Control" parent="Back/UwU"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("11_wc0h8")
+text = "Outside is beautiful. Don't stay in too long. Class is not that important."
+choices = Array[String](["Bye"])
 
 [node name="LayoutForRearanging" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -188,7 +213,7 @@ size_flags_horizontal = 3
 [node name="VSync" type="HBoxContainer" parent="LayoutForRearanging/MarginContainer/VBoxContainer/MiscTab"]
 layout_mode = 2
 
-[node name="MuteAudio2" type="CheckBox" parent="."]
+[node name="MuteAudio" type="CheckBox" parent="."]
 visible = false
 layout_mode = 0
 offset_left = 112.0
@@ -203,7 +228,7 @@ theme_override_icons/unchecked_disabled = ExtResource("11_hpo47")
 text = "Mute"
 script = ExtResource("19_bdni5")
 
-[node name="EffectAudio2" type="HSlider" parent="."]
+[node name="EffectAudio" type="HSlider" parent="."]
 visible = false
 layout_mode = 0
 offset_left = 496.0
@@ -217,7 +242,7 @@ theme_override_icons/grabber_highlight = ExtResource("8_lbeyj")
 theme_override_icons/grabber_disabled = ExtResource("8_lbeyj")
 script = ExtResource("13_erca1")
 
-[node name="MusicAudio2" type="HSlider" parent="."]
+[node name="MusicAudio" type="HSlider" parent="."]
 visible = false
 layout_mode = 0
 offset_left = 496.0
@@ -231,7 +256,7 @@ theme_override_icons/grabber_highlight = ExtResource("8_lbeyj")
 theme_override_icons/grabber_disabled = ExtResource("8_lbeyj")
 script = ExtResource("13_cgfxa")
 
-[node name="MasterAudio2" type="HSlider" parent="."]
+[node name="MasterAudio" type="HSlider" parent="."]
 visible = false
 layout_mode = 0
 offset_left = 496.0
@@ -245,7 +270,7 @@ theme_override_icons/grabber_highlight = ExtResource("8_lbeyj")
 theme_override_icons/grabber_disabled = ExtResource("8_lbeyj")
 script = ExtResource("13_q23gk")
 
-[node name="EffectAudioLabel2" type="Label" parent="."]
+[node name="EffectAudioLabel" type="Label" parent="."]
 visible = false
 layout_mode = 0
 offset_left = 120.0
@@ -258,7 +283,7 @@ text = "Effect:"
 script = ExtResource("11_mj2eo")
 breaks = true
 
-[node name="MusicAudioLabel2" type="Label" parent="."]
+[node name="MusicAudioLabel" type="Label" parent="."]
 visible = false
 layout_mode = 0
 offset_left = 120.0
@@ -271,7 +296,7 @@ text = "Music:"
 script = ExtResource("11_mj2eo")
 breaks = true
 
-[node name="MasterAudioLabel2" type="Label" parent="."]
+[node name="MasterAudioLabel" type="Label" parent="."]
 visible = false
 layout_mode = 0
 offset_left = 120.0
@@ -753,27 +778,27 @@ freeze = true
 position = Vector2(0, 8)
 shape = SubResource("WorldBoundaryShape2D_ufr3p")
 
-[connection signal="mouse_entered" from="Back2" to="Back2" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Back2" to="Back2" method="_on_mouse_exited"]
-[connection signal="pressed" from="Back2" to="Back2" method="_on_pressed"]
-[connection signal="mouse_entered" from="MuteAudio2" to="MuteAudio2" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="MuteAudio2" to="MuteAudio2" method="_on_mouse_exited"]
-[connection signal="toggled" from="MuteAudio2" to="MuteAudio2" method="_on_toggled"]
-[connection signal="drag_ended" from="EffectAudio2" to="EffectAudio2" method="_on_drag_ended"]
-[connection signal="drag_started" from="EffectAudio2" to="EffectAudio2" method="_on_drag_started"]
-[connection signal="value_changed" from="EffectAudio2" to="EffectAudio2" method="_on_value_changed"]
-[connection signal="drag_ended" from="MusicAudio2" to="MusicAudio2" method="_on_drag_ended"]
-[connection signal="drag_started" from="MusicAudio2" to="MusicAudio2" method="_on_drag_started"]
-[connection signal="value_changed" from="MusicAudio2" to="MusicAudio2" method="_on_value_changed"]
-[connection signal="drag_ended" from="MasterAudio2" to="MasterAudio2" method="_on_drag_ended"]
-[connection signal="drag_started" from="MasterAudio2" to="MasterAudio2" method="_on_drag_started"]
-[connection signal="value_changed" from="MasterAudio2" to="MasterAudio2" method="_on_value_changed"]
-[connection signal="mouse_entered" from="EffectAudioLabel2" to="EffectAudioLabel2" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="EffectAudioLabel2" to="EffectAudioLabel2" method="_on_mouse_exited"]
-[connection signal="mouse_entered" from="MusicAudioLabel2" to="MusicAudioLabel2" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="MusicAudioLabel2" to="MusicAudioLabel2" method="_on_mouse_exited"]
-[connection signal="mouse_entered" from="MasterAudioLabel2" to="MasterAudioLabel2" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="MasterAudioLabel2" to="MasterAudioLabel2" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Back" to="Back" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Back" to="Back" method="_on_mouse_exited"]
+[connection signal="pressed" from="Back" to="Back" method="_on_pressed"]
+[connection signal="mouse_entered" from="MuteAudio" to="MuteAudio" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="MuteAudio" to="MuteAudio" method="_on_mouse_exited"]
+[connection signal="toggled" from="MuteAudio" to="MuteAudio" method="_on_toggled"]
+[connection signal="drag_ended" from="EffectAudio" to="EffectAudio" method="_on_drag_ended"]
+[connection signal="drag_started" from="EffectAudio" to="EffectAudio" method="_on_drag_started"]
+[connection signal="value_changed" from="EffectAudio" to="EffectAudio" method="_on_value_changed"]
+[connection signal="drag_ended" from="MusicAudio" to="MusicAudio" method="_on_drag_ended"]
+[connection signal="drag_started" from="MusicAudio" to="MusicAudio" method="_on_drag_started"]
+[connection signal="value_changed" from="MusicAudio" to="MusicAudio" method="_on_value_changed"]
+[connection signal="drag_ended" from="MasterAudio" to="MasterAudio" method="_on_drag_ended"]
+[connection signal="drag_started" from="MasterAudio" to="MasterAudio" method="_on_drag_started"]
+[connection signal="value_changed" from="MasterAudio" to="MasterAudio" method="_on_value_changed"]
+[connection signal="mouse_entered" from="EffectAudioLabel" to="EffectAudioLabel" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="EffectAudioLabel" to="EffectAudioLabel" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="MusicAudioLabel" to="MusicAudioLabel" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="MusicAudioLabel" to="MusicAudioLabel" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="MasterAudioLabel" to="MasterAudioLabel" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="MasterAudioLabel" to="MasterAudioLabel" method="_on_mouse_exited"]
 [connection signal="mouse_entered" from="AudioTitle2" to="AudioTitle2" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="AudioTitle2" to="AudioTitle2" method="_on_mouse_exited"]
 [connection signal="mouse_entered" from="HintsGameplay2" to="HintsGameplay2" method="_on_mouse_entered"]

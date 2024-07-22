@@ -85,6 +85,9 @@ func breakApart():
 	var cumulativeSize = 0
 	while(i > 0):
 		var c = get_child(i)
+		if (not c.name.begins_with(("Piece"))):
+			i = i-1;
+			continue;
 		c.visible = true
 		remove_child(c)
 		gamestate.currentScene.add_child(c)

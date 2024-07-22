@@ -1,5 +1,7 @@
 extends Panel
 
+enum Bodies{ ButtonChan }
+
 var visibility = 0;
 var dialogActive = false;
 
@@ -15,8 +17,13 @@ func _ready():
 func _process(delta):
 	adjustVisibility();
 	
-func setCharacter(texture):
-	$Character.texture = texture;
+func setCharacter(body):
+	if (body == Bodies.ButtonChan):
+		$ButtonChan.visible = true
+		
+	
+func setBelly(t):
+	$"ButtonChan/ButtonChanBelly".text = t;
 	
 func setCharacterName(name):
 	$"MarginContainer/VBoxContainer/Character Name".text = name

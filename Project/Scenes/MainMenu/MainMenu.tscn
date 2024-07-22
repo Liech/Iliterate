@@ -44,7 +44,7 @@ expand_mode = 3
 stretch_mode = 4
 script = ExtResource("3_3uqhv")
 
-[node name="Start Game2" type="Button" parent="."]
+[node name="Start Game" type="Button" parent="."]
 layout_mode = 0
 offset_left = -8.0
 offset_top = -8.0
@@ -57,7 +57,7 @@ flat = true
 script = ExtResource("4_583ko")
 breaks = true
 
-[node name="NinePatchRect" type="NinePatchRect" parent="Start Game2"]
+[node name="NinePatchRect" type="NinePatchRect" parent="Start Game"]
 show_behind_parent = true
 layout_mode = 1
 anchors_preset = 15
@@ -73,7 +73,7 @@ patch_margin_top = 58
 patch_margin_right = 83
 patch_margin_bottom = 46
 
-[node name="PieceStart" type="Button" parent="Start Game2"]
+[node name="PieceStart" type="Button" parent="Start Game"]
 visible = false
 layout_mode = 0
 offset_right = 260.0
@@ -84,7 +84,7 @@ text = "Start"
 flat = true
 script = ExtResource("4_583ko")
 
-[node name="NinePatchRect" type="NinePatchRect" parent="Start Game2/PieceStart"]
+[node name="NinePatchRect" type="NinePatchRect" parent="Start Game/PieceStart"]
 show_behind_parent = true
 layout_mode = 1
 anchors_preset = 15
@@ -101,7 +101,7 @@ patch_margin_top = 58
 patch_margin_right = 83
 patch_margin_bottom = 46
 
-[node name="PieceGame" type="Button" parent="Start Game2"]
+[node name="PieceGame" type="Button" parent="Start Game"]
 visible = false
 layout_mode = 0
 offset_left = 248.0
@@ -113,7 +113,7 @@ text = "Game"
 flat = true
 script = ExtResource("4_583ko")
 
-[node name="NinePatchRect" type="NinePatchRect" parent="Start Game2/PieceGame"]
+[node name="NinePatchRect" type="NinePatchRect" parent="Start Game/PieceGame"]
 show_behind_parent = true
 layout_mode = 1
 anchors_preset = 15
@@ -479,15 +479,15 @@ freeze = true
 position = Vector2(0, 8)
 shape = SubResource("WorldBoundaryShape2D_mabsu")
 
-[connection signal="mouse_entered" from="Start Game2" to="Start Game2" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Start Game2" to="Start Game2" method="_on_mouse_exited"]
-[connection signal="pressed" from="Start Game2" to="Start Game2" method="_on_pressed"]
-[connection signal="mouse_entered" from="Start Game2/PieceStart" to="Start Game2/PieceStart" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Start Game2/PieceStart" to="Start Game2/PieceStart" method="_on_mouse_exited"]
-[connection signal="pressed" from="Start Game2/PieceStart" to="Start Game2/PieceStart" method="_on_pressed"]
-[connection signal="mouse_entered" from="Start Game2/PieceGame" to="Start Game2/PieceGame" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Start Game2/PieceGame" to="Start Game2/PieceGame" method="_on_mouse_exited"]
-[connection signal="pressed" from="Start Game2/PieceGame" to="Start Game2/PieceGame" method="_on_pressed"]
+[connection signal="mouse_entered" from="Start Game" to="Start Game" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Start Game" to="Start Game" method="_on_mouse_exited"]
+[connection signal="pressed" from="Start Game" to="Start Game" method="_on_pressed"]
+[connection signal="mouse_entered" from="Start Game/PieceStart" to="Start Game/PieceStart" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Start Game/PieceStart" to="Start Game/PieceStart" method="_on_mouse_exited"]
+[connection signal="pressed" from="Start Game/PieceStart" to="Start Game/PieceStart" method="_on_pressed"]
+[connection signal="mouse_entered" from="Start Game/PieceGame" to="Start Game/PieceGame" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Start Game/PieceGame" to="Start Game/PieceGame" method="_on_mouse_exited"]
+[connection signal="pressed" from="Start Game/PieceGame" to="Start Game/PieceGame" method="_on_pressed"]
 [connection signal="mouse_entered" from="About" to="About" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="About" to="About" method="_on_mouse_exited"]
 [connection signal="pressed" from="About" to="About" method="_on_pressed"]

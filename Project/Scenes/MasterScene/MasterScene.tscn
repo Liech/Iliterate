@@ -8,8 +8,8 @@
 [ext_resource type="Theme" uid="uid://d2hv2jx01084f" path="res://mainTheme.tres" id="4_2ub7r"]
 [ext_resource type="Script" path="res://Core/SnapMouseInteraction.gd" id="4_qrkg7"]
 [ext_resource type="Script" path="res://Scenes/MasterScene/Dialog.gd" id="4_wcga6"]
-[ext_resource type="Texture2D" uid="uid://s3c6up3fpsyt" path="res://Art/Keycaps/KeycapQUwU.png" id="5_b0g7r"]
 [ext_resource type="Script" path="res://Scenes/MasterScene/Choice.gd" id="6_gluqs"]
+[ext_resource type="Texture2D" uid="uid://i4b5kjl3dm7o" path="res://Art/Button/ButtonUwU.png" id="7_0jr6s"]
 
 [node name="MasterScene" type="Control"]
 layout_mode = 3
@@ -36,6 +36,7 @@ layout_mode = 1
 
 [node name="Dialog" type="Panel" parent="."]
 self_modulate = Color(0.763809, 0.763809, 0.763808, 1)
+layout_mode = 0
 offset_left = 88.0
 offset_top = 512.0
 offset_right = 1864.0
@@ -45,6 +46,7 @@ script = ExtResource("4_wcga6")
 
 [node name="DialogBackground" type="ColorRect" parent="Dialog"]
 modulate = Color(0, 0, 0, 0.552941)
+layout_mode = 0
 offset_left = -104.0
 offset_top = -544.0
 offset_right = 1880.0
@@ -81,9 +83,8 @@ theme_override_constants/margin_bottom = 0
 [node name="Content" type="Label" parent="Dialog/MarginContainer/VBoxContainer/MarginContainer"]
 layout_mode = 2
 theme = ExtResource("4_2ub7r")
-text = "Hello There. Im Q.sssssssssssssssssssss
-Behold my Power!asdaaaaaaassssssssssss
-Third Lines Are Awesomeeeeeeeee"
+text = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+autowrap_mode = 3
 
 [node name="Choices" type="HBoxContainer" parent="Dialog/MarginContainer/VBoxContainer"]
 layout_direction = 3
@@ -180,14 +181,50 @@ text = "Close"
 flat = true
 script = ExtResource("6_gluqs")
 
-[node name="Character" type="TextureRect" parent="Dialog"]
-layout_mode = 0
-offset_left = 1336.0
-offset_top = -240.0
-offset_right = 2136.0
-offset_bottom = 560.0
-scale = Vector2(0.513, 0.5)
-texture = ExtResource("5_b0g7r")
+[node name="ButtonChan" type="Control" parent="Dialog"]
+anchors_preset = 0
+offset_left = -63.0
+offset_top = -162.0
+offset_right = 1837.0
+offset_bottom = 40.0
+
+[node name="ButtonChanBelly" type="Label" parent="Dialog/ButtonChan"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -721.0
+offset_top = -159.0
+offset_right = -7.0
+offset_bottom = 141.0
+grow_horizontal = 0
+grow_vertical = 2
+theme = ExtResource("4_2ub7r")
+theme_override_font_sizes/font_size = 200
+text = "Back"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Character" type="NinePatchRect" parent="Dialog/ButtonChan/ButtonChanBelly"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -101.48
+offset_right = -12.0
+offset_bottom = -1.48001
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_2ub7r")
+texture = ExtResource("7_0jr6s")
+region_rect = Rect2(-0.5, -2.75, 302, 300)
+patch_margin_left = 126
+patch_margin_top = 222
+patch_margin_right = 122
+patch_margin_bottom = 40
 
 [node name="SnapPool" type="Control" parent="."]
 layout_mode = 1
@@ -202,6 +239,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -27.0
+offset_top = -112.0
+offset_right = -27.0
+offset_bottom = -112.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
