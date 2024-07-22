@@ -16,7 +16,7 @@ func _ready():
 	if (not isClone):
 		add_to_group("Copyable");
 		await get_tree().create_timer(0.01).timeout # wait for daddy
-		physiphy(false)
+		Phys.physiphy(self,false);
 
 func hasChar(str, char):
 	for i in range(len(str)):
@@ -79,39 +79,6 @@ func _on_mouse_entered():
 func _on_mouse_exited():
 	gamestate.catExplain = false
 
-func physiphy(toss):
-	if (get_parent() != gamestate.currentScene):
-		return; # no work needed
-	var col = RigidBody2D.new();
-	var shp = CollisionShape2D.new()
-	var rect = RectangleShape2D.new()
-	rect.size = size
-	col.add_child(shp)
-	
-	if (breaks):
-		col.set_script(load("res://Core/Breaker.gd"));
-		col.selfconnect();
-	
-	shp.shape = rect
-	shp.position = size/2.0
-	col.position = position
-	col.rotation = rotation
-	col.contact_monitor = true
-	col.max_contacts_reported = 1
-	gamestate.currentScene.add_child(col)
-	get_parent().remove_child(self)
-	col.add_child(self)
-	position = Vector2(0,0)
-	rotation = 0
-	if (toss):
-		col.angular_velocity = (randf() -0.5) * 9
-		col.linear_velocity = Vector2((randf() -0.5) * 8,(randf() -0.5) * 8)
-	else:
-		col.freeze =true
-		col.collision_layer = 2
-	
-	
-
 func breakApart():
 	var i = get_child_count()-1
 	var col : RigidBody2D = self.get_parent();
@@ -126,6 +93,6 @@ func breakApart():
 		c.position = colpos + Vector2(cos(colrot),sin(colrot))*cumulativeSize
 		c.rotation = col.rotation
 		cumulativeSize += c.size.x
-		c.physiphy(true);
+		Phys.physiphy(c,true);
 		
 		i = i-1;

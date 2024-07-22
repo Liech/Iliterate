@@ -20,6 +20,7 @@ boot_splash/fullsize=false
 
 gamestate="*res://Scenes/gamestate.gd"
 GlobalOptions="*res://Scenes/GlobalOptions.gd"
+Phys="*res://Core/physifyer.gd"
 
 [display]
 
