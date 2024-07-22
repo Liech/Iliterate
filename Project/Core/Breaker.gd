@@ -20,3 +20,6 @@ func _on_body_entered(body):
 		broken = true
 		get_child(1).breakApart()
 		queue_free();
+
+func selfconnect():
+	body_entered.connect(_on_body_entered)

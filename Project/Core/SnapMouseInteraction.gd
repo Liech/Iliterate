@@ -139,21 +139,24 @@ func captureReality():
 		#	continue
 		if (item.is_in_group("Copyable") and item.visible):
 			var globrect = item.get_global_rect()
-			if (selection.intersection(globrect) and not item.isClone):
-				item.cloneObject(panel, true,get_global_mouse_position() - panel.size/2)
-			elif (item.get_parent()):
-				if (item.get_parent() is RigidBody2D):
-					var col : RigidBody2D = item.get_parent()
-					var space_state = get_world_2d().direct_space_state
-					var params =  PhysicsShapeQueryParameters2D.new()
-					params.shape = shape
-					var t = Transform2D()
-					t.origin = selection.position
-					params.transform= t
-					var out = space_state.intersect_shape(params)
-					for x in out:
-						if (x.collider == col):
-							item.cloneObject(panel, true,get_global_mouse_position() - panel.size/2)
+			print(globrect)
+			# be heretic, skip test, every copy copies entier scene!
+			# anarchy! Game Jam!
+			#if (selection.intersection(globrect) and not item.isClone):
+			item.cloneObject(panel, true,get_global_mouse_position() - panel.size/2)
+			#elif (item.get_parent()):
+			#	if (item.get_parent() is RigidBody2D):
+			#		var col : RigidBody2D = item.get_parent()
+			#		var space_state = get_world_2d().direct_space_state
+			#		var params =  PhysicsShapeQueryParameters2D.new()
+			#		params.shape = shape
+			#		var t = Transform2D()
+			#		t.origin = selection.position
+			#		params.transform= t
+			#		var out = space_state.intersect_shape(params)
+			#		for x in out:
+			#			if (x.collider == col):
+			#				item.cloneObject(panel, true,get_global_mouse_position() - panel.size/2)
 			#				
 	screenshotPanel = panel
 	panel.modulate.a = 1
