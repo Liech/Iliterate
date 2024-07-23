@@ -81,7 +81,7 @@ func handleCheckboxConnection():
 	if (not uwu and UwUOnline):
 		get_parent().disconnect("toggled",_on_toggled)
 	if (not uwu and not ParOnline):
-		get_parent().disconnect("toggled",get_parent()._on_toggled)
+		get_parent().connect("toggled",get_parent()._on_toggled)
 	pass
 	
 func handleButtonConnection():
@@ -100,7 +100,7 @@ func handleButtonConnection():
 	if (not uwu and UwUOnline):
 		get_parent().disconnect("pressed",_on_pressed)
 	if (not uwu and not ParOnline):
-		get_parent().disconnect("pressed",get_parent()._on_pressed)
+		get_parent().connect("pressed",get_parent()._on_pressed)
 		
 func isUwU():
 	return GlobalOptions.localization == GlobalOptions.Localization.UwU

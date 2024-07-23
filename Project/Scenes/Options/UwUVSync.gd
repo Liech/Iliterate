@@ -1,8 +1,8 @@
 extends UwUDialog
 
 func startup():
-	#if (get_parent().tabname() == gamestate.currentTab):
-	#	setTextBlock($AlreadyThere)
+	if (not get_parent().button_pressed):
+		setTextBlock($Absent)
 	pass
 
 func choiceMade(choice):

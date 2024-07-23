@@ -697,7 +697,6 @@ text = "Come in"
 choices = Array[String](["Enter"])
 
 [node name="VSyncMisc" type="CheckBox" parent="."]
-visible = false
 layout_mode = 0
 offset_left = 112.0
 offset_top = 520.0
@@ -746,16 +745,16 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("11_wc0h8")
-text = "Loud music guides your attention to the music clubroom. It sounds like a mix of Post Rock and Pre Scissor."
+text = "hi"
 choices = Array[String](["Enter", "Go Back"])
 
-[node name="AlreadyThere" type="Control" parent="VSyncMisc/UwU"]
+[node name="Absent" type="Control" parent="VSyncMisc/UwU"]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("11_wc0h8")
-text = "You stare at the door thinking if it is legal to be this loud in a school. But it sounds so nice."
+text = "absent"
 choices = Array[String](["Listen"])
 
 [node name="BrightnessMisc2" type="HSlider" parent="."]
