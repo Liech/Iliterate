@@ -26,7 +26,7 @@ func _on_item_selected(index):
 	
 	
 	gamestate.snapActive = true
-	if (index == 0):
+	if (index == 0 or (index == 3 and firstChoice)):
 		GlobalOptions.localization = GlobalOptions.Localization.English;
 		Input.set_custom_mouse_cursor(null)
 	elif (index == 1):
