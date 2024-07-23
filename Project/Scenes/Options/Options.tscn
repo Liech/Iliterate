@@ -1007,8 +1007,6 @@ size_flags_vertical = 1
 theme_override_icons/grabber = ExtResource("8_lbeyj")
 theme_override_icons/grabber_highlight = ExtResource("8_lbeyj")
 theme_override_icons/grabber_disabled = ExtResource("8_lbeyj")
-max_value = 1.0
-step = 0.05
 script = ExtResource("20_38wnd")
 
 [node name="OpacityMisc2" type="HSlider" parent="."]
