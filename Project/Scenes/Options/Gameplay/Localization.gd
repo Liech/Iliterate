@@ -3,6 +3,8 @@ extends CloneableOptionButton
 var catPaw = load("res://Art/Menu/CatCursor.png")
 var uwuPaw = load("res://Art/Menu/UwUCursor.png")
 
+var firstChoice = true
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	super()
@@ -21,6 +23,8 @@ func _process(delta):
 		selected = 3; 
 
 func _on_item_selected(index):
+	
+	
 	gamestate.snapActive = true
 	if (index == 0):
 		GlobalOptions.localization = GlobalOptions.Localization.English;
@@ -28,12 +32,15 @@ func _on_item_selected(index):
 	elif (index == 1):
 		GlobalOptions.localization = GlobalOptions.Localization.UwU;
 		Input.set_custom_mouse_cursor(uwuPaw,0,Vector2(19,4))
+		if (firstChoice):
+			GlobalOptions.dialog = GlobalOptions.DialogSpeed.Off # from gibberish to uwu is too confusing
 	elif (index == 2):
 		GlobalOptions.localization = GlobalOptions.Localization.CatSignLanguage;
 		Input.set_custom_mouse_cursor(catPaw,0,Vector2(10,14))
 	elif (index == 3):
 		GlobalOptions.localization = GlobalOptions.Localization.Gibberish;
 		Input.set_custom_mouse_cursor(null)
+	firstChoice = false;
 		
 func _on_mouse_entered():
 	super()

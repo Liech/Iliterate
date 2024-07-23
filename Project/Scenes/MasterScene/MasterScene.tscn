@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bdmsibriri3e4"]
+[gd_scene load_steps=19 format=3 uid="uid://bdmsibriri3e4"]
 
 [ext_resource type="Script" path="res://Scenes/MasterScene/MasterScene.gd" id="1_tj8ov"]
 [ext_resource type="PackedScene" uid="uid://dllnxms57yayp" path="res://Scenes/GodotScreen/GodotScreen.tscn" id="2_385ln"]
@@ -7,10 +7,17 @@
 [ext_resource type="StyleBox" uid="uid://bdktf0xccluh5" path="res://Scenes/MainMenu/buttonninepatch.tres" id="3_p7yde"]
 [ext_resource type="Theme" uid="uid://d2hv2jx01084f" path="res://mainTheme.tres" id="4_2ub7r"]
 [ext_resource type="Script" path="res://Core/SnapMouseInteraction.gd" id="4_qrkg7"]
-[ext_resource type="Script" path="res://Scenes/MasterScene/Dialog.gd" id="4_wcga6"]
+[ext_resource type="Script" path="res://Core/Dialog.gd" id="4_wcga6"]
+[ext_resource type="Script" path="res://Scenes/MasterScene/DialogWandersOffButton.gd" id="6_4m13h"]
 [ext_resource type="Script" path="res://Scenes/MasterScene/Choice.gd" id="6_gluqs"]
 [ext_resource type="Script" path="res://Generics/CloneableLabel.gd" id="6_mb6bg"]
 [ext_resource type="Texture2D" uid="uid://i4b5kjl3dm7o" path="res://Art/Button/ButtonUwU.png" id="7_0jr6s"]
+[ext_resource type="Texture2D" uid="uid://vc0f42xth06n" path="res://Art/Button/Button.png" id="7_6vry6"]
+[ext_resource type="Texture2D" uid="uid://c5c2vtc7dcttf" path="res://Art/Menu/CatSignLanguageInterpreterPaw.png" id="9_nkmxj"]
+[ext_resource type="Script" path="res://Scenes/MasterScene/LowSpeedPawRotate.gd" id="10_b60xc"]
+[ext_resource type="Script" path="res://Scenes/MasterScene/ByeDialog.gd" id="11_wfmv7"]
+[ext_resource type="Texture2D" uid="uid://c2fkgtiynvecr" path="res://Art/Rocket.png" id="17_30jps"]
+[ext_resource type="Script" path="res://Scenes/MasterScene/Rocket.gd" id="18_osg1a"]
 
 [node name="MasterScene" type="Control"]
 layout_mode = 3
@@ -35,14 +42,47 @@ grow_vertical = 2
 [node name="Godot" parent="ScenePool" instance=ExtResource("2_385ln")]
 layout_mode = 1
 
-[node name="Dialog" type="Panel" parent="."]
-self_modulate = Color(0.763809, 0.763809, 0.763808, 1)
+[node name="SnapPool" type="Control" parent="."]
+layout_mode = 1
+anchor_right = 0.568
+anchor_bottom = 0.869
+offset_right = -1090.56
+offset_bottom = -940.258
+script = ExtResource("3_013t6")
+
+[node name="GlobalFader" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -36.0
+offset_top = -43.0
+offset_right = 48.0
+offset_bottom = 56.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0.0156863)
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
 layout_mode = 0
+offset_right = 420.0
+offset_bottom = 369.0
+texture = ExtResource("3_npd7u")
+draw_center = false
+region_rect = Rect2(-0.450012, -1.88346, 715.711, 729.883)
+patch_margin_left = 12
+patch_margin_top = 14
+patch_margin_right = 18
+patch_margin_bottom = 12
+script = ExtResource("4_qrkg7")
+
+[node name="Dialog" type="Control" parent="."]
+anchors_preset = 0
 offset_left = 88.0
 offset_top = 512.0
 offset_right = 1864.0
 offset_bottom = 1048.0
-theme_override_styles/panel = ExtResource("3_p7yde")
 script = ExtResource("4_wcga6")
 
 [node name="DialogBackground" type="ColorRect" parent="Dialog"]
@@ -52,6 +92,40 @@ offset_left = -104.0
 offset_top = -544.0
 offset_right = 1880.0
 offset_bottom = 632.0
+
+[node name="???" type="Button" parent="Dialog"]
+layout_mode = 0
+offset_left = 1598.0
+offset_top = 222.0
+offset_right = 1738.0
+offset_bottom = 318.0
+theme = ExtResource("4_2ub7r")
+text = "???"
+flat = true
+script = ExtResource("6_4m13h")
+
+[node name="NinePatchRect2" type="NinePatchRect" parent="Dialog/???"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_2ub7r")
+texture = ExtResource("7_6vry6")
+region_rect = Rect2(0.447113, 1.15751, 198.079, 182.684)
+patch_margin_left = 120
+patch_margin_top = 58
+patch_margin_right = 83
+patch_margin_bottom = 46
+
+[node name="Dialog" type="Panel" parent="Dialog"]
+self_modulate = Color(0.763809, 0.763809, 0.763808, 1)
+layout_mode = 0
+offset_right = 1776.0
+offset_bottom = 536.0
+theme_override_styles/panel = ExtResource("3_p7yde")
 
 [node name="Character Name" type="Label" parent="Dialog"]
 layout_mode = 2
@@ -232,41 +306,48 @@ patch_margin_top = 222
 patch_margin_right = 122
 patch_margin_bottom = 40
 
-[node name="SnapPool" type="Control" parent="."]
-layout_mode = 1
-anchor_right = 0.568
-anchor_bottom = 0.869
-offset_right = -1090.56
-offset_bottom = -940.258
-script = ExtResource("3_013t6")
-
-[node name="GlobalFader" type="ColorRect" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -27.0
-offset_top = -112.0
-offset_right = -27.0
-offset_bottom = -112.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-color = Color(0, 0, 0, 0.0156863)
-
-[node name="NinePatchRect" type="NinePatchRect" parent="."]
+[node name="ByeDialog" type="Label" parent="Dialog"]
 layout_mode = 0
-offset_right = 420.0
-offset_bottom = 369.0
-texture = ExtResource("3_npd7u")
-draw_center = false
-region_rect = Rect2(-0.450012, -1.88346, 715.711, 729.883)
-patch_margin_left = 12
-patch_margin_top = 14
-patch_margin_right = 18
-patch_margin_bottom = 12
-script = ExtResource("4_qrkg7")
+offset_left = 86.0
+offset_top = -466.0
+offset_right = 1304.0
+offset_bottom = -378.0
+theme = ExtResource("4_2ub7r")
+text = "Bye Dialog! Have a Nice Journey!"
+script = ExtResource("11_wfmv7")
 
+[node name="LowSpeedPaw" type="TextureRect" parent="Dialog"]
+layout_mode = 0
+offset_left = 1643.5
+offset_top = -59.7
+offset_right = 1813.5
+offset_bottom = 521.3
+scale = Vector2(0.3, 0.3)
+pivot_offset = Vector2(85, 581)
+texture = ExtResource("9_nkmxj")
+script = ExtResource("10_b60xc")
+
+[node name="LowSpeedPaw2" type="TextureRect" parent="Dialog"]
+offset_left = -32.5
+offset_top = -54.7
+offset_right = 137.5
+offset_bottom = 526.3
+scale = Vector2(0.3, 0.3)
+pivot_offset = Vector2(85, 581)
+texture = ExtResource("9_nkmxj")
+script = ExtResource("10_b60xc")
+
+[node name="Rocket" type="TextureRect" parent="Dialog"]
+layout_mode = 0
+offset_left = 1530.0
+offset_top = -207.0
+offset_right = 2330.0
+offset_bottom = 593.0
+texture = ExtResource("17_30jps")
+flip_h = true
+script = ExtResource("18_osg1a")
+
+[connection signal="pressed" from="Dialog/???" to="Dialog/???" method="_on_pressed"]
 [connection signal="pressed" from="Dialog/Choices/Choice2" to="Dialog/Choices/Choice2" method="_on_pressed"]
 [connection signal="pressed" from="Dialog/Choices/Choice3" to="Dialog/Choices/Choice3" method="_on_pressed"]
 [connection signal="pressed" from="Dialog/Choices/Choice4" to="Dialog/Choices/Choice4" method="_on_pressed"]
