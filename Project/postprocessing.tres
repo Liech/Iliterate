@@ -1,0 +1,7 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://bxr21smj0c8ja"]
+
+[ext_resource type="Shader" path="res://postprocessing.gdshader" id="1_a55xd"]
+
+[resource]
+shader = ExtResource("1_a55xd")
+shader_parameter/bright = 1.0
