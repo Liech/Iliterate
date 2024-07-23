@@ -131,6 +131,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Left" type="TextureRect" parent="Back/UwU/Graphics"]
+visible = false
 layout_mode = 0
 offset_left = -32.0
 offset_top = -48.0
@@ -139,6 +140,7 @@ offset_bottom = 46.0
 texture = ExtResource("10_8w66l")
 
 [node name="Right" type="TextureRect" parent="Back/UwU/Graphics"]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 offset_left = 168.0
@@ -274,6 +276,7 @@ script = ExtResource("19_bdni5")
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("16_6hg6y")
+ears = true
 
 [node name="Graphics" type="Control" parent="MuteAudio/UwU"]
 anchors_preset = 0
@@ -432,6 +435,7 @@ script = ExtResource("20_e703a")
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("22_j7okq")
+ears = true
 
 [node name="Graphics" type="Control" parent="HintsGameplay/UwU"]
 anchors_preset = 0
