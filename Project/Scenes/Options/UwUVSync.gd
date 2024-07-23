@@ -6,4 +6,15 @@ func startup():
 	pass
 
 func choiceMade(choice):
-	closeDialog();
+	if (currentBlock == $Absent):
+		closeDialog();
+	elif (choice == "Ignore"):
+		closeDialog();
+	elif (choice == "Greet"):
+		setTextBlock($Greeted)
+		gamestate.dialog.setCharacterName("VSync - Torn Apart");
+		gamestate.dialog.setCharacter(gamestate.dialog.Bodies.ButtonChan)
+		gamestate.dialog.setBelly("VSync")
+	elif (choice == "What?"):
+		setTextBlock($Kidding)
+		

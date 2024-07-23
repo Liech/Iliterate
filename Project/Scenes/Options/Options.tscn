@@ -745,8 +745,8 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("11_wc0h8")
-text = "hi"
-choices = Array[String](["Enter", "Go Back"])
+text = "A kid with a big scar passes by"
+choices = Array[String](["Ignore", "Greet"])
 
 [node name="Absent" type="Control" parent="VSyncMisc/UwU"]
 layout_mode = 3
@@ -754,8 +754,26 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("11_wc0h8")
-text = "absent"
-choices = Array[String](["Listen"])
+text = "Youwalk along the floor, nobdy is there. It feels chilly."
+choices = Array[String](["Continue"])
+
+[node name="Greeted" type="Control" parent="VSyncMisc/UwU"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("11_wc0h8")
+text = "Oh hello. You look like an easy prey. It would be so easy to push you off a cliff."
+choices = Array[String](["What?"])
+
+[node name="Kidding" type="Control" parent="VSyncMisc/UwU"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("11_wc0h8")
+text = "Im Just Kidding. But seriously, come over to the fight club. We will show you how to survive."
+choices = Array[String](["Ignore"])
 
 [node name="BrightnessMisc2" type="HSlider" parent="."]
 visible = false
