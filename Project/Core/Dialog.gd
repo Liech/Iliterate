@@ -47,7 +47,8 @@ func setText(t):
 	$Content.englishText = t
 	
 func choicePressed(choiceName):
-	choiceMade.emit(choiceName)
+	if (GlobalOptions.dialog == GlobalOptions.DialogSpeed.Off):
+		choiceMade.emit(choiceName)
 
 func setChoices(choices):
 	var choiceParent = $Choices
