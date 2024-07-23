@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://bn57n5cddun8x"]
+[gd_scene load_steps=46 format=3 uid="uid://bn57n5cddun8x"]
 
 [ext_resource type="Theme" uid="uid://d2hv2jx01084f" path="res://mainTheme.tres" id="1_ipdrc"]
 [ext_resource type="Script" path="res://Scenes/Options/Options.gd" id="2_8cd1l"]
@@ -11,6 +11,7 @@
 [ext_resource type="Script" path="res://Scenes/Options/Tabs/AudioTab.gd" id="8_y7h6b"]
 [ext_resource type="Script" path="res://Scenes/Options/Tabs/GameplayTab.gd" id="9_6vc1n"]
 [ext_resource type="Texture2D" uid="uid://lvld2o43cpmo" path="res://Art/Menu/ComboKnob.png" id="9_asoxr"]
+[ext_resource type="Script" path="res://Scenes/Options/Potatofier.gd" id="9_dcgym"]
 [ext_resource type="Script" path="res://Scenes/Options/Gameplay/Localization.gd" id="9_l83e7"]
 [ext_resource type="Script" path="res://Scenes/Options/OptionsBackUwU.gd" id="9_rl7ts"]
 [ext_resource type="Texture2D" uid="uid://dhjsy1diag3ff" path="res://Art/Checkbox/Yes.png" id="10_6jl05"]
@@ -114,6 +115,7 @@ patch_margin_left = 120
 patch_margin_top = 58
 patch_margin_right = 83
 patch_margin_bottom = 46
+script = ExtResource("9_dcgym")
 
 [node name="UwU" type="Control" parent="Back"]
 anchors_preset = 0
@@ -846,6 +848,7 @@ patch_margin_left = 120
 patch_margin_top = 58
 patch_margin_right = 83
 patch_margin_bottom = 46
+script = ExtResource("9_dcgym")
 
 [node name="UwU" type="Control" parent="KeybindingMisc2"]
 layout_mode = 3

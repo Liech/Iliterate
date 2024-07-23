@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://b45vfqcxcwe4q"]
+[gd_scene load_steps=12 format=3 uid="uid://b45vfqcxcwe4q"]
 
 [ext_resource type="Texture2D" uid="uid://dxk323p2hap2c" path="res://Art/Background/Background.png" id="2_krb0y"]
 [ext_resource type="Texture2D" uid="uid://m2dbb5s7avis" path="res://Art/Background/Mage.png" id="3_vsfb3"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://Scenes/StartScreen/ToMainMenu.gd" id="5_ylrcl"]
 [ext_resource type="Texture2D" uid="uid://vc0f42xth06n" path="res://Art/Button/Button.png" id="6_6o6uj"]
 [ext_resource type="Script" path="res://Scenes/StartScreen/StartGameUwU.gd" id="6_mgiyc"]
+[ext_resource type="Script" path="res://Scenes/Options/Potatofier.gd" id="7_h3rom"]
 [ext_resource type="Texture2D" uid="uid://drqi8h3p02kye" path="res://Art/Button/LeftUwU.png" id="7_ksgfq"]
 [ext_resource type="Texture2D" uid="uid://lonj01xgrckt" path="res://Art/Button/RightUwU.png" id="8_trkv0"]
 [ext_resource type="Script" path="res://Scenes/Options/TextBlock.gd" id="9_t4sld"]
@@ -72,6 +73,7 @@ grow_horizontal = 2
 grow_vertical = 0
 theme = ExtResource("4_kk7bs")
 text = "Start Game"
+flat = true
 script = ExtResource("5_ylrcl")
 
 [node name="NinePatchRect2" type="NinePatchRect" parent="Start Game"]
@@ -91,6 +93,7 @@ patch_margin_left = 120
 patch_margin_top = 58
 patch_margin_right = 83
 patch_margin_bottom = 46
+script = ExtResource("7_h3rom")
 
 [node name="UwU" type="Control" parent="Start Game"]
 layout_mode = 3

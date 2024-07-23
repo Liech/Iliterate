@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://cch5ed86qkrt4"]
+[gd_scene load_steps=18 format=3 uid="uid://cch5ed86qkrt4"]
 
 [ext_resource type="Script" path="res://Scenes/MainMenu/MainMenu.gd" id="2_ckgni"]
 [ext_resource type="Script" path="res://Generics/Cloneable.gd" id="3_3uqhv"]
@@ -8,6 +8,7 @@
 [ext_resource type="StyleBox" uid="uid://bdktf0xccluh5" path="res://Scenes/MainMenu/buttonninepatch.tres" id="6_kavg7"]
 [ext_resource type="Script" path="res://Generics/CmdAbout.gd" id="7_fbqfy"]
 [ext_resource type="Texture2D" uid="uid://vc0f42xth06n" path="res://Art/Button/Button.png" id="7_vc7f2"]
+[ext_resource type="Script" path="res://Scenes/Options/Potatofier.gd" id="8_4c27e"]
 [ext_resource type="Script" path="res://Generics/CmdMemory.gd" id="8_8don6"]
 [ext_resource type="Script" path="res://Generics/CmdOptions.gd" id="9_nayao"]
 [ext_resource type="Texture2D" uid="uid://bsrqm7fiqm5va" path="res://Art/Menu/CatSignLanguageInterpreter.png" id="12_a2aqx"]
@@ -55,7 +56,6 @@ theme_override_styles/normal = ExtResource("6_kavg7")
 text = "Start Game"
 flat = true
 script = ExtResource("4_583ko")
-breaks = true
 
 [node name="NinePatchRect" type="NinePatchRect" parent="Start Game"]
 show_behind_parent = true
@@ -72,6 +72,7 @@ patch_margin_left = 120
 patch_margin_top = 58
 patch_margin_right = 83
 patch_margin_bottom = 46
+script = ExtResource("8_4c27e")
 
 [node name="PieceStart" type="Button" parent="Start Game"]
 visible = false
@@ -100,6 +101,7 @@ patch_margin_left = 120
 patch_margin_top = 58
 patch_margin_right = 83
 patch_margin_bottom = 46
+script = ExtResource("8_4c27e")
 
 [node name="PieceGame" type="Button" parent="Start Game"]
 visible = false
@@ -129,6 +131,7 @@ patch_margin_left = 120
 patch_margin_top = 58
 patch_margin_right = 83
 patch_margin_bottom = 46
+script = ExtResource("8_4c27e")
 
 [node name="About" type="Button" parent="."]
 layout_mode = 0
@@ -157,6 +160,7 @@ patch_margin_left = 120
 patch_margin_top = 58
 patch_margin_right = 83
 patch_margin_bottom = 46
+script = ExtResource("8_4c27e")
 
 [node name="PieceFirst" type="Button" parent="About"]
 visible = false
@@ -186,6 +190,7 @@ patch_margin_left = 120
 patch_margin_top = 58
 patch_margin_right = 83
 patch_margin_bottom = 46
+script = ExtResource("8_4c27e")
 
 [node name="PieceSecond" type="Button" parent="About"]
 visible = false
@@ -214,6 +219,7 @@ patch_margin_left = 120
 patch_margin_top = 58
 patch_margin_right = 83
 patch_margin_bottom = 46
+script = ExtResource("8_4c27e")
 
 [node name="Memories2" type="Button" parent="."]
 layout_mode = 0
@@ -242,6 +248,7 @@ patch_margin_left = 120
 patch_margin_top = 58
 patch_margin_right = 83
 patch_margin_bottom = 46
+script = ExtResource("8_4c27e")
 
 [node name="PieceFirst" type="Button" parent="Memories2"]
 visible = false
@@ -271,6 +278,7 @@ patch_margin_left = 120
 patch_margin_top = 58
 patch_margin_right = 83
 patch_margin_bottom = 46
+script = ExtResource("8_4c27e")
 
 [node name="PieceSecond" type="Button" parent="Memories2"]
 visible = false
@@ -299,6 +307,7 @@ patch_margin_left = 120
 patch_margin_top = 58
 patch_margin_right = 83
 patch_margin_bottom = 46
+script = ExtResource("8_4c27e")
 
 [node name="Options2" type="Button" parent="."]
 layout_mode = 0
@@ -326,6 +335,7 @@ patch_margin_left = 120
 patch_margin_top = 58
 patch_margin_right = 83
 patch_margin_bottom = 46
+script = ExtResource("8_4c27e")
 
 [node name="Back2" type="Button" parent="."]
 layout_mode = 0
@@ -354,6 +364,7 @@ patch_margin_left = 120
 patch_margin_top = 58
 patch_margin_right = 83
 patch_margin_bottom = 46
+script = ExtResource("8_4c27e")
 
 [node name="PieceFirst" type="Button" parent="Back2"]
 visible = false
@@ -383,6 +394,7 @@ patch_margin_left = 120
 patch_margin_top = 58
 patch_margin_right = 83
 patch_margin_bottom = 46
+script = ExtResource("8_4c27e")
 
 [node name="PieceSecond" type="Button" parent="Back2"]
 visible = false
@@ -411,6 +423,7 @@ patch_margin_left = 120
 patch_margin_top = 58
 patch_margin_right = 83
 patch_margin_bottom = 46
+script = ExtResource("8_4c27e")
 
 [node name="ForRearanging" type="VBoxContainer" parent="."]
 layout_mode = 1
