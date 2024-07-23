@@ -1,5 +1,5 @@
-extends Node
-class_name CloneableNode
+extends Control
+class_name CloneablePanel
 
 var isClone = false
 
@@ -7,6 +7,8 @@ func _ready():
 	if (not isClone):
 		add_to_group("Copyable");
 	
+func _process(delta):
+	self_modulate.a = GlobalOptions.opacity / 100.0;
 	
 func cloneObject(panel, move,ppos):
 	var result = self.duplicate();
