@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://b45vfqcxcwe4q"]
+[gd_scene load_steps=17 format=3 uid="uid://b45vfqcxcwe4q"]
 
 [ext_resource type="Texture2D" uid="uid://dxk323p2hap2c" path="res://Art/Background/Background.png" id="2_krb0y"]
 [ext_resource type="Texture2D" uid="uid://m2dbb5s7avis" path="res://Art/Background/Mage.png" id="3_vsfb3"]
@@ -11,6 +11,13 @@
 [ext_resource type="Texture2D" uid="uid://drqi8h3p02kye" path="res://Art/Button/LeftUwU.png" id="7_ksgfq"]
 [ext_resource type="Texture2D" uid="uid://lonj01xgrckt" path="res://Art/Button/RightUwU.png" id="8_trkv0"]
 [ext_resource type="Script" path="res://Scenes/Options/TextBlock.gd" id="9_t4sld"]
+[ext_resource type="Texture2D" uid="uid://bsrqm7fiqm5va" path="res://Art/Menu/CatSignLanguageInterpreter.png" id="12_60oc7"]
+[ext_resource type="Script" path="res://Core/SignLanguageInstructor.gd" id="13_y4dgt"]
+[ext_resource type="Texture2D" uid="uid://c5c2vtc7dcttf" path="res://Art/Menu/CatSignLanguageInterpreterPaw.png" id="14_27kdo"]
+[ext_resource type="Script" path="res://Core/SignLanguagePaw.gd" id="15_2f3q0"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_i1i8j"]
+distance = -9.0
 
 [node name="StartScreen" type="Control"]
 layout_mode = 3
@@ -160,5 +167,63 @@ offset_bottom = 40.0
 script = ExtResource("9_t4sld")
 text = "If you do not do it you are not allowed to work and becomehomeless. I talked with your boss, he will fire you."
 choices = Array[String](["Flee"])
+
+[node name="CatSignLanguageInterpreter" type="TextureRect" parent="."]
+visible = false
+offset_left = 1229.0
+offset_top = 250.0
+offset_right = 2029.0
+offset_bottom = 1050.0
+scale = Vector2(0.552485, 0.553739)
+pivot_offset = Vector2(400, 800)
+texture = ExtResource("12_60oc7")
+script = ExtResource("13_y4dgt")
+
+[node name="Paw2" type="TextureRect" parent="."]
+visible = false
+offset_left = 1384.0
+offset_top = 402.0
+offset_right = 1554.0
+offset_bottom = 983.0
+scale = Vector2(0.671369, 0.48748)
+pivot_offset = Vector2(85, 581)
+texture = ExtResource("14_27kdo")
+script = ExtResource("15_2f3q0")
+
+[node name="Paw" type="TextureRect" parent="."]
+visible = false
+offset_left = 1769.0
+offset_top = 380.0
+offset_right = 1939.0
+offset_bottom = 961.0
+scale = Vector2(0.671369, 0.48748)
+pivot_offset = Vector2(85, 581)
+texture = ExtResource("14_27kdo")
+script = ExtResource("15_2f3q0")
+
+[node name="Ground2" type="RigidBody2D" parent="."]
+position = Vector2(888, 1088)
+freeze = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground2"]
+shape = SubResource("WorldBoundaryShape2D_i1i8j")
+
+[node name="Wall2" type="RigidBody2D" parent="."]
+position = Vector2(-16, 840)
+rotation = 1.5708
+freeze = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall2"]
+position = Vector2(0, 8)
+shape = SubResource("WorldBoundaryShape2D_i1i8j")
+
+[node name="Wall" type="RigidBody2D" parent="."]
+position = Vector2(1936, 936)
+rotation = -1.5708
+freeze = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall"]
+position = Vector2(0, 8)
+shape = SubResource("WorldBoundaryShape2D_i1i8j")
 
 [connection signal="pressed" from="Start Game" to="Start Game" method="_on_pressed"]

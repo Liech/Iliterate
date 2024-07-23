@@ -16,7 +16,7 @@ func choiceMade(choice):
 			gamestate.dialog.setCharacterName("You - But Younger")
 		else:
 			gamestate.dialog.setCharacterName("Start Game - Your Old English Teacher");
-			GlobalOptions.localization = GlobalOptions.Localization.Gibberish;
+			GlobalOptions.setGibberish()
 			gamestate.dialog.setCharacter(gamestate.dialog.Bodies.ButtonChan)
 			setTextBlock($NotListening)
 	elif (choice == "Flee"):

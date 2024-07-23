@@ -1,7 +1,5 @@
 extends CloneableOptionButton
 
-var catPaw = load("res://Art/Menu/CatCursor.png")
-var uwuPaw = load("res://Art/Menu/UwUCursor.png")
 
 var firstChoice = true
 
@@ -22,24 +20,22 @@ func _process(delta):
 	if (GlobalOptions.localization == GlobalOptions.Localization.Gibberish and selected != 3):
 		selected = 3; 
 
-func _on_item_selected(index):
-	
-	
+
+func _on_item_selected(index):	
+	setLang(index)
+
+func setLang(index):	
 	gamestate.snapActive = true
 	if (index == 0 or (index == 3 and firstChoice)):
-		GlobalOptions.localization = GlobalOptions.Localization.English;
-		Input.set_custom_mouse_cursor(null)
+		GlobalOptions.setEnglish()
 	elif (index == 1):
-		GlobalOptions.localization = GlobalOptions.Localization.UwU;
-		Input.set_custom_mouse_cursor(uwuPaw,0,Vector2(19,4))
+		GlobalOptions.setUwU()
 		if (firstChoice):
 			GlobalOptions.dialog = GlobalOptions.DialogSpeed.Off # from gibberish to uwu is too confusing
 	elif (index == 2):
-		GlobalOptions.localization = GlobalOptions.Localization.CatSignLanguage;
-		Input.set_custom_mouse_cursor(catPaw,0,Vector2(10,14))
+		GlobalOptions.setCat()
 	elif (index == 3):
-		GlobalOptions.localization = GlobalOptions.Localization.Gibberish;
-		Input.set_custom_mouse_cursor(null)
+		GlobalOptions.setGibberish()
 	firstChoice = false;
 		
 func _on_mouse_entered():

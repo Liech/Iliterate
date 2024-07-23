@@ -43,11 +43,11 @@ func choiceMade(choice):
 	elif (choice == "Sure"):
 		setTextBlock($ActualHint)	
 	elif (choice == "ahhhHHHhhHH"):
-		GlobalOptions.localization = GlobalOptions.Localization.Gibberish;
+		GlobalOptions.setGibberish()
 		setTextBlock($Chaos)
 		lectureGiven = true
 	elif (choice == "s s s s s s s s s"):
-		GlobalOptions.localization = GlobalOptions.Localization.UwU
+		GlobalOptions.setUwU()
 		setTextBlock($CanITalkToYou)				
 	else:
 		closeDialog();

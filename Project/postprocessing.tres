@@ -4,4 +4,6 @@
 
 [resource]
 shader = ExtResource("1_a55xd")
+shader_parameter/vsyncAmount = 0.0
+shader_parameter/vsyncpos = 500.0
 shader_parameter/bright = 1.0
