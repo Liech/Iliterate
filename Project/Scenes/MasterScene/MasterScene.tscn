@@ -72,6 +72,7 @@ offset_top = 177.0
 offset_right = 1736.0
 offset_bottom = 447.0
 theme = ExtResource("4_2ub7r")
+theme_override_font_sizes/font_size = 70
 text = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
 autowrap_mode = 3
 script = ExtResource("6_mb6bg")

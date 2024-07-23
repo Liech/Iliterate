@@ -6,9 +6,7 @@ func startup():
 	pass
 
 func choiceMade(choice):
-	if (currentBlock == $Absent):
-		closeDialog();
-	elif (choice == "Ignore"):
+	if (choice == "Ignore"):
 		closeDialog();
 	elif (choice == "Greet"):
 		setTextBlock($Greeted)
@@ -17,4 +15,6 @@ func choiceMade(choice):
 		gamestate.dialog.setBelly("VSync")
 	elif (choice == "What?"):
 		setTextBlock($Kidding)
+	else:
+		closeDialog();
 		

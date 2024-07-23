@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://bn57n5cddun8x"]
+[gd_scene load_steps=44 format=3 uid="uid://bn57n5cddun8x"]
 
 [ext_resource type="Theme" uid="uid://d2hv2jx01084f" path="res://mainTheme.tres" id="1_ipdrc"]
 [ext_resource type="Script" path="res://Scenes/Options/Options.gd" id="2_8cd1l"]
@@ -33,6 +33,7 @@
 [ext_resource type="Script" path="res://Scenes/Options/Misc/Opacity.gd" id="19_gv6oq"]
 [ext_resource type="Script" path="res://Scenes/Options/Misc/Brightness.gd" id="20_38wnd"]
 [ext_resource type="Script" path="res://Scenes/Options/Gameplay/Hints.gd" id="20_e703a"]
+[ext_resource type="Script" path="res://Scenes/Options/UwUHint.gd" id="22_j7okq"]
 [ext_resource type="Script" path="res://Scenes/Options/UwUKeyBindingButton.gd" id="28_1jxdt"]
 [ext_resource type="Script" path="res://Scenes/Options/UwUVSync.gd" id="30_dtng5"]
 [ext_resource type="Script" path="res://Scenes/Options/Misc/Keybinding.gd" id="30_qipj4"]
@@ -362,8 +363,7 @@ vertical_alignment = 1
 script = ExtResource("11_mj2eo")
 breaks = true
 
-[node name="HintsGameplay2" type="CheckBox" parent="."]
-visible = false
+[node name="HintsGameplay" type="CheckBox" parent="."]
 layout_mode = 0
 offset_left = 120.0
 offset_top = 696.0
@@ -378,6 +378,174 @@ button_pressed = true
 text = "Hints
 "
 script = ExtResource("20_e703a")
+
+[node name="UwU" type="Control" parent="HintsGameplay"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("22_j7okq")
+
+[node name="Graphics" type="Control" parent="HintsGameplay/UwU"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Left" type="TextureRect" parent="HintsGameplay/UwU/Graphics"]
+visible = false
+layout_mode = 0
+offset_left = -32.0
+offset_top = -48.0
+offset_right = 51.0
+offset_bottom = 46.0
+texture = ExtResource("10_8w66l")
+
+[node name="Right" type="TextureRect" parent="HintsGameplay/UwU/Graphics"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+offset_left = 168.0
+offset_top = -40.0
+offset_right = 250.0
+offset_bottom = 52.0
+texture = ExtResource("11_vclru")
+
+[node name="Intro" type="Control" parent="HintsGameplay/UwU"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("11_wc0h8")
+text = "The Teacher. The greatest of all.This Button is everything you wanna be."
+choices = Array[String](["Hello Checkbox Hint"])
+
+[node name="Absent" type="Control" parent="HintsGameplay/UwU"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("11_wc0h8")
+text = "Hint, the teacher is not in the classroom."
+choices = Array[String](["Mayhem!"])
+
+[node name="Greeting" type="Control" parent="HintsGameplay/UwU"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("11_wc0h8")
+text = "Alright kiddos, time for a lecture. Listen closely. Todays topic is the trolley problem."
+choices = Array[String](["Listen", "Don't Listen"])
+
+[node name="Lecture" type="Control" parent="HintsGameplay/UwU"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="LectureTime2" type="Control" parent="HintsGameplay/UwU/Lecture"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("11_wc0h8")
+text = "Imagine a Trolleybutton constantly pressed by the user above us all. He is directly facing towards a gun that can kill label  named chekov."
+choices = Array[String](["continue"])
+
+[node name="LectureTime3" type="Control" parent="HintsGameplay/UwU/Lecture"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("11_wc0h8")
+text = "You can by, pressing yourself, change the direction to a gun that can kills everybody and has a silencer on it."
+choices = Array[String](["continue"])
+
+[node name="LectureTime4" type="Control" parent="HintsGameplay/UwU/Lecture"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("11_wc0h8")
+text = "In case A you could be responsible for chekovs death."
+choices = Array[String](["continue"])
+
+[node name="LectureTime5" type="Control" parent="HintsGameplay/UwU/Lecture"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("11_wc0h8")
+text = "In case B anyone could die, but you wouldn't notice. The Gun certainly will be fired, but you see only consequences that might be related to that gun."
+choices = Array[String](["continue"])
+
+[node name="Question" type="Control" parent="HintsGameplay/UwU/Lecture"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("11_wc0h8")
+text = "Can chekov be proud?"
+choices = Array[String](["Yes", "No"])
+
+[node name="Yes" type="Control" parent="HintsGameplay/UwU/Lecture"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("11_wc0h8")
+text = "Yes, someone has built a weapon specifically against him. He has enemies, which means he stood up for something."
+choices = Array[String](["Enlightenment"])
+
+[node name="No" type="Control" parent="HintsGameplay/UwU/Lecture"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("11_wc0h8")
+text = "Your wrong. Yes, someone has built a weapon specifically against him. He has enemies, which means he stood up for something."
+choices = Array[String](["Enlightenment"])
+
+[node name="LectureIsOver" type="Control" parent="HintsGameplay/UwU/Lecture"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("11_wc0h8")
+text = "Anyway. Lecture is over. See you tomorrow."
+choices = Array[String](["Freedom!"])
+
+[node name="MindWanders" type="Control" parent="HintsGameplay/UwU"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("11_wc0h8")
+text = "Your mind wanders. You think about your taxes. You should really do your taxes. Your taxes are wrong."
+choices = Array[String](["ahhhHHHhhHH"])
+
+[node name="CanITalkToYou" type="Control" parent="HintsGameplay/UwU"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("11_wc0h8")
+text = "Hey you. Can i see you after class?"
+choices = Array[String](["Sure"])
+
+[node name="Chaos" type="Control" parent="HintsGameplay/UwU"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("11_wc0h8")
+text = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat."
+choices = Array[String](["s s s s s s s s s"])
+
+[node name="ActualHint" type="Control" parent="HintsGameplay/UwU"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("11_wc0h8")
+text = "You look troubled. Well why don't you go to the schoolyard. Fresh Air is good for you and those kids know a lot about everything. Just don't go outside the area. Its dangerous."
+choices = Array[String](["Thanks Teacher"])
 
 [node name="DialogSpeed2Gameplay2" type="OptionButton" parent="."]
 layout_mode = 0
@@ -697,6 +865,7 @@ text = "Come in"
 choices = Array[String](["Enter"])
 
 [node name="VSyncMisc" type="CheckBox" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 112.0
 offset_top = 520.0
@@ -715,6 +884,7 @@ script = ExtResource("19_dxp1v")
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("30_dtng5")
+ears = true
 
 [node name="Graphics" type="Control" parent="VSyncMisc/UwU"]
 anchors_preset = 0
@@ -773,7 +943,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("11_wc0h8")
 text = "Im Just Kidding. But seriously, come over to the fight club. We will show you how to survive."
-choices = Array[String](["Ignore"])
+choices = Array[String](["Ah no thanks"])
 
 [node name="BrightnessMisc2" type="HSlider" parent="."]
 visible = false
@@ -1107,9 +1277,9 @@ shape = SubResource("WorldBoundaryShape2D_ufr3p")
 [connection signal="mouse_exited" from="MasterAudioLabel" to="MasterAudioLabel" method="_on_mouse_exited"]
 [connection signal="mouse_entered" from="AudioTitle2" to="AudioTitle2" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="AudioTitle2" to="AudioTitle2" method="_on_mouse_exited"]
-[connection signal="mouse_entered" from="HintsGameplay2" to="HintsGameplay2" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="HintsGameplay2" to="HintsGameplay2" method="_on_mouse_exited"]
-[connection signal="toggled" from="HintsGameplay2" to="HintsGameplay2" method="_on_toggled"]
+[connection signal="mouse_entered" from="HintsGameplay" to="HintsGameplay" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="HintsGameplay" to="HintsGameplay" method="_on_mouse_exited"]
+[connection signal="toggled" from="HintsGameplay" to="HintsGameplay" method="_on_toggled"]
 [connection signal="item_selected" from="DialogSpeed2Gameplay2" to="DialogSpeed2Gameplay2" method="_on_item_selected"]
 [connection signal="mouse_entered" from="DialogSpeed2Gameplay2" to="DialogSpeed2Gameplay2" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="DialogSpeed2Gameplay2" to="DialogSpeed2Gameplay2" method="_on_mouse_exited"]
