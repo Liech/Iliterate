@@ -1,6 +1,5 @@
 extends UwUDialog
 
-
 var dotCounter = 0;
 func startup():
 	dotCounter = 0

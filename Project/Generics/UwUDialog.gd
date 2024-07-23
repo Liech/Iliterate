@@ -6,6 +6,7 @@ class_name UwUDialog
 @export var characterIcon : int
 @export var ears : bool
 
+
 var dialogActive = false
 var currentBlock;
 
@@ -24,7 +25,11 @@ func startup():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	handleConnection()
+	handleChoiceConnection()
+	if (get_parent() is CheckBox):
+		handleCheckboxConnection()
+	elif (get_parent() is Button):
+		handleButtonConnection()
 	
 	if (ears):
 		$"Graphics/Left".position = get_parent().position - earleftoffset
@@ -54,13 +59,33 @@ func startDialog():
 		gamestate.dialog.setCharacter(gamestate.dialog.Bodies.Nothing);
 	startup()
 	
-func handleConnection():
-	var dialogOpen= gamestate.dialog.dialogActive
+func handleChoiceConnection():
 	var dialogCon = gamestate.dialog.is_connected("choiceMade",choiceMade)
 	if ((not dialogActive) and dialogCon):
 		gamestate.dialog.disconnect("choiceMade",choiceMade)
 	if (dialogActive and not dialogCon):
-		gamestate.dialog.connect("choiceMade",choiceMade)
+		gamestate.dialog.connect("choiceMade",choiceMade)	
+	
+func handleCheckboxConnection():
+	var dialogOpen= gamestate.dialog.dialogActive
+	if (dialogOpen):
+		return;
+	var UwUOnline = get_parent().is_connected("toggled",_on_toggled)
+	var ParOnline = get_parent().is_connected("toggled",get_parent()._on_toggled)
+	var uwu = isUwU()
+	
+	if (uwu and ParOnline):
+		get_parent().disconnect("toggled",get_parent()._on_toggled)
+	if (uwu and not UwUOnline):
+		get_parent().connect("toggled",_on_toggled)
+	if (not uwu and UwUOnline):
+		get_parent().disconnect("toggled",_on_toggled)
+	if (not uwu and not ParOnline):
+		get_parent().disconnect("toggled",get_parent()._on_toggled)
+	pass
+	
+func handleButtonConnection():
+	var dialogOpen= gamestate.dialog.dialogActive
 
 	if (dialogOpen):
 		return;
@@ -79,6 +104,10 @@ func handleConnection():
 		
 func isUwU():
 	return GlobalOptions.localization == GlobalOptions.Localization.UwU
+
+
+func _on_toggled(toggled_on):
+	startDialog();
 
 func _on_pressed():
 	startDialog();

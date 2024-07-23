@@ -13,6 +13,5 @@ func _process(delta):
 	if (button_pressed  != GlobalOptions.vsync):
 		button_pressed  = GlobalOptions.vsync
 
-
 func _on_toggled(toggled_on):
 	GlobalOptions.vsync = toggled_on
