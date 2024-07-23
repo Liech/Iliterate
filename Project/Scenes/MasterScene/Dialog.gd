@@ -25,24 +25,28 @@ func setCharacter(body):
 		
 func setBelly(t):
 	$"ButtonChan/ButtonChanBelly".text = t;
+	$"ButtonChan/ButtonChanBelly".englishText = t
 	
 func setCharacterName(name):
-	$"MarginContainer/VBoxContainer/Character Name".text = name
+	$"Character Name".text = name
+	$"Character Name".englishText = name
 	
 func setText(t):
-	$MarginContainer/VBoxContainer/MarginContainer/Content.text = t
+	$Content.text = t
+	$Content.englishText = t
 	
 func choicePressed(choiceName):
 	choiceMade.emit(choiceName)
 
 func setChoices(choices):
-	var choiceParent = $MarginContainer/VBoxContainer/Choices
+	var choiceParent = $Choices
 	for i in range(10):
 		choiceParent.get_child(i).visible = false
 	for i in len(choices):
 		var choice = choices[i];
 		var button = choiceParent.get_child(i);
-		button.text = choice;
+		button.text = choice;	
+		button.englishText = choice
 		button.visible = true;
 
 func adjustVisibility():

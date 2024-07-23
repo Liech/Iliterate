@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bdmsibriri3e4"]
+[gd_scene load_steps=12 format=3 uid="uid://bdmsibriri3e4"]
 
 [ext_resource type="Script" path="res://Scenes/MasterScene/MasterScene.gd" id="1_tj8ov"]
 [ext_resource type="PackedScene" uid="uid://dllnxms57yayp" path="res://Scenes/GodotScreen/GodotScreen.tscn" id="2_385ln"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" path="res://Core/SnapMouseInteraction.gd" id="4_qrkg7"]
 [ext_resource type="Script" path="res://Scenes/MasterScene/Dialog.gd" id="4_wcga6"]
 [ext_resource type="Script" path="res://Scenes/MasterScene/Choice.gd" id="6_gluqs"]
+[ext_resource type="Script" path="res://Generics/CloneableLabel.gd" id="6_mb6bg"]
 [ext_resource type="Texture2D" uid="uid://i4b5kjl3dm7o" path="res://Art/Button/ButtonUwU.png" id="7_0jr6s"]
 
 [node name="MasterScene" type="Control"]
@@ -52,46 +53,39 @@ offset_top = -544.0
 offset_right = 1880.0
 offset_bottom = 632.0
 
-[node name="MarginContainer" type="MarginContainer" parent="Dialog"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 40
-theme_override_constants/margin_top = 40
-theme_override_constants/margin_right = 40
-theme_override_constants/margin_bottom = 40
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Dialog/MarginContainer"]
+[node name="Character Name" type="Label" parent="Dialog"]
 layout_mode = 2
-
-[node name="Character Name" type="Label" parent="Dialog/MarginContainer/VBoxContainer"]
-layout_mode = 2
+offset_left = 40.0
+offset_top = 40.0
+offset_right = 1736.0
+offset_bottom = 128.0
 theme = ExtResource("4_2ub7r")
 theme_override_font_sizes/font_size = 100
 text = "Q - The Extraplanar Button"
+script = ExtResource("6_mb6bg")
 
-[node name="MarginContainer" type="MarginContainer" parent="Dialog/MarginContainer/VBoxContainer"]
+[node name="Content" type="Label" parent="Dialog"]
+custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
-theme_override_constants/margin_left = 50
-theme_override_constants/margin_top = 30
-theme_override_constants/margin_right = 30
-theme_override_constants/margin_bottom = 0
-
-[node name="Content" type="Label" parent="Dialog/MarginContainer/VBoxContainer/MarginContainer"]
-layout_mode = 2
+offset_left = 40.0
+offset_top = 177.0
+offset_right = 1736.0
+offset_bottom = 447.0
 theme = ExtResource("4_2ub7r")
 text = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
 autowrap_mode = 3
+script = ExtResource("6_mb6bg")
 
-[node name="Choices" type="HBoxContainer" parent="Dialog/MarginContainer/VBoxContainer"]
+[node name="Choices" type="HBoxContainer" parent="Dialog"]
 layout_direction = 3
 layout_mode = 2
+offset_left = 40.0
+offset_top = 406.0
+offset_right = 1736.0
+offset_bottom = 406.0
 theme_override_constants/separation = 100
 
-[node name="Choice1" type="Button" parent="Dialog/MarginContainer/VBoxContainer/Choices"]
+[node name="Choice2" type="Button" parent="Dialog/Choices"]
 visible = false
 self_modulate = Color(0.900348, 0.465337, 0.513429, 1)
 layout_mode = 2
@@ -99,8 +93,9 @@ theme = ExtResource("4_2ub7r")
 text = "Close"
 flat = true
 script = ExtResource("6_gluqs")
+buildPhysic = false
 
-[node name="Choice2" type="Button" parent="Dialog/MarginContainer/VBoxContainer/Choices"]
+[node name="Choice3" type="Button" parent="Dialog/Choices"]
 visible = false
 self_modulate = Color(0.900348, 0.465337, 0.513429, 1)
 layout_mode = 2
@@ -108,8 +103,9 @@ theme = ExtResource("4_2ub7r")
 text = "Close"
 flat = true
 script = ExtResource("6_gluqs")
+buildPhysic = false
 
-[node name="Choice3" type="Button" parent="Dialog/MarginContainer/VBoxContainer/Choices"]
+[node name="Choice4" type="Button" parent="Dialog/Choices"]
 visible = false
 self_modulate = Color(0.900348, 0.465337, 0.513429, 1)
 layout_mode = 2
@@ -117,8 +113,9 @@ theme = ExtResource("4_2ub7r")
 text = "Close"
 flat = true
 script = ExtResource("6_gluqs")
+buildPhysic = false
 
-[node name="Choice4" type="Button" parent="Dialog/MarginContainer/VBoxContainer/Choices"]
+[node name="Choice5" type="Button" parent="Dialog/Choices"]
 visible = false
 self_modulate = Color(0.900348, 0.465337, 0.513429, 1)
 layout_mode = 2
@@ -126,8 +123,9 @@ theme = ExtResource("4_2ub7r")
 text = "Close"
 flat = true
 script = ExtResource("6_gluqs")
+buildPhysic = false
 
-[node name="Choice5" type="Button" parent="Dialog/MarginContainer/VBoxContainer/Choices"]
+[node name="Choice6" type="Button" parent="Dialog/Choices"]
 visible = false
 self_modulate = Color(0.900348, 0.465337, 0.513429, 1)
 layout_mode = 2
@@ -135,8 +133,9 @@ theme = ExtResource("4_2ub7r")
 text = "Close"
 flat = true
 script = ExtResource("6_gluqs")
+buildPhysic = false
 
-[node name="Choice6" type="Button" parent="Dialog/MarginContainer/VBoxContainer/Choices"]
+[node name="Choice7" type="Button" parent="Dialog/Choices"]
 visible = false
 self_modulate = Color(0.900348, 0.465337, 0.513429, 1)
 layout_mode = 2
@@ -144,8 +143,9 @@ theme = ExtResource("4_2ub7r")
 text = "Close"
 flat = true
 script = ExtResource("6_gluqs")
+buildPhysic = false
 
-[node name="Choice7" type="Button" parent="Dialog/MarginContainer/VBoxContainer/Choices"]
+[node name="Choice8" type="Button" parent="Dialog/Choices"]
 visible = false
 self_modulate = Color(0.900348, 0.465337, 0.513429, 1)
 layout_mode = 2
@@ -153,8 +153,9 @@ theme = ExtResource("4_2ub7r")
 text = "Close"
 flat = true
 script = ExtResource("6_gluqs")
+buildPhysic = false
 
-[node name="Choice8" type="Button" parent="Dialog/MarginContainer/VBoxContainer/Choices"]
+[node name="Choice9" type="Button" parent="Dialog/Choices"]
 visible = false
 self_modulate = Color(0.900348, 0.465337, 0.513429, 1)
 layout_mode = 2
@@ -162,8 +163,9 @@ theme = ExtResource("4_2ub7r")
 text = "Close"
 flat = true
 script = ExtResource("6_gluqs")
+buildPhysic = false
 
-[node name="Choice9" type="Button" parent="Dialog/MarginContainer/VBoxContainer/Choices"]
+[node name="Choice10" type="Button" parent="Dialog/Choices"]
 visible = false
 self_modulate = Color(0.900348, 0.465337, 0.513429, 1)
 layout_mode = 2
@@ -171,8 +173,9 @@ theme = ExtResource("4_2ub7r")
 text = "Close"
 flat = true
 script = ExtResource("6_gluqs")
+buildPhysic = false
 
-[node name="Choice10" type="Button" parent="Dialog/MarginContainer/VBoxContainer/Choices"]
+[node name="Choice11" type="Button" parent="Dialog/Choices"]
 visible = false
 self_modulate = Color(0.900348, 0.465337, 0.513429, 1)
 layout_mode = 2
@@ -180,13 +183,14 @@ theme = ExtResource("4_2ub7r")
 text = "Close"
 flat = true
 script = ExtResource("6_gluqs")
+buildPhysic = false
 
 [node name="ButtonChan" type="Control" parent="Dialog"]
 anchors_preset = 0
-offset_left = -63.0
-offset_top = -162.0
-offset_right = 1837.0
-offset_bottom = 40.0
+offset_left = -47.0
+offset_top = -250.0
+offset_right = 1853.0
+offset_bottom = -48.0
 
 [node name="ButtonChanBelly" type="Label" parent="Dialog/ButtonChan"]
 layout_mode = 1
@@ -206,6 +210,7 @@ theme_override_font_sizes/font_size = 200
 text = "Back"
 horizontal_alignment = 1
 vertical_alignment = 1
+script = ExtResource("6_mb6bg")
 
 [node name="Character" type="NinePatchRect" parent="Dialog/ButtonChan/ButtonChanBelly"]
 show_behind_parent = true
@@ -261,13 +266,13 @@ patch_margin_right = 18
 patch_margin_bottom = 12
 script = ExtResource("4_qrkg7")
 
-[connection signal="pressed" from="Dialog/MarginContainer/VBoxContainer/Choices/Choice1" to="Dialog/MarginContainer/VBoxContainer/Choices/Choice1" method="_on_pressed"]
-[connection signal="pressed" from="Dialog/MarginContainer/VBoxContainer/Choices/Choice2" to="Dialog/MarginContainer/VBoxContainer/Choices/Choice2" method="_on_pressed"]
-[connection signal="pressed" from="Dialog/MarginContainer/VBoxContainer/Choices/Choice3" to="Dialog/MarginContainer/VBoxContainer/Choices/Choice3" method="_on_pressed"]
-[connection signal="pressed" from="Dialog/MarginContainer/VBoxContainer/Choices/Choice4" to="Dialog/MarginContainer/VBoxContainer/Choices/Choice4" method="_on_pressed"]
-[connection signal="pressed" from="Dialog/MarginContainer/VBoxContainer/Choices/Choice5" to="Dialog/MarginContainer/VBoxContainer/Choices/Choice5" method="_on_pressed"]
-[connection signal="pressed" from="Dialog/MarginContainer/VBoxContainer/Choices/Choice6" to="Dialog/MarginContainer/VBoxContainer/Choices/Choice6" method="_on_pressed"]
-[connection signal="pressed" from="Dialog/MarginContainer/VBoxContainer/Choices/Choice7" to="Dialog/MarginContainer/VBoxContainer/Choices/Choice7" method="_on_pressed"]
-[connection signal="pressed" from="Dialog/MarginContainer/VBoxContainer/Choices/Choice8" to="Dialog/MarginContainer/VBoxContainer/Choices/Choice8" method="_on_pressed"]
-[connection signal="pressed" from="Dialog/MarginContainer/VBoxContainer/Choices/Choice9" to="Dialog/MarginContainer/VBoxContainer/Choices/Choice9" method="_on_pressed"]
-[connection signal="pressed" from="Dialog/MarginContainer/VBoxContainer/Choices/Choice10" to="Dialog/MarginContainer/VBoxContainer/Choices/Choice10" method="_on_pressed"]
+[connection signal="pressed" from="Dialog/Choices/Choice2" to="Dialog/Choices/Choice2" method="_on_pressed"]
+[connection signal="pressed" from="Dialog/Choices/Choice3" to="Dialog/Choices/Choice3" method="_on_pressed"]
+[connection signal="pressed" from="Dialog/Choices/Choice4" to="Dialog/Choices/Choice4" method="_on_pressed"]
+[connection signal="pressed" from="Dialog/Choices/Choice5" to="Dialog/Choices/Choice5" method="_on_pressed"]
+[connection signal="pressed" from="Dialog/Choices/Choice6" to="Dialog/Choices/Choice6" method="_on_pressed"]
+[connection signal="pressed" from="Dialog/Choices/Choice7" to="Dialog/Choices/Choice7" method="_on_pressed"]
+[connection signal="pressed" from="Dialog/Choices/Choice8" to="Dialog/Choices/Choice8" method="_on_pressed"]
+[connection signal="pressed" from="Dialog/Choices/Choice9" to="Dialog/Choices/Choice9" method="_on_pressed"]
+[connection signal="pressed" from="Dialog/Choices/Choice10" to="Dialog/Choices/Choice10" method="_on_pressed"]
+[connection signal="pressed" from="Dialog/Choices/Choice11" to="Dialog/Choices/Choice11" method="_on_pressed"]

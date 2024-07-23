@@ -20,10 +20,10 @@ func _process(delta):
 
 
 func _on_button_pressed():
-	GlobalOptions.localization = GlobalOptions.Localization.UwU
+	GlobalOptions.localization = GlobalOptions.Localization.Gibberish
 	gamestate.fadeouttime = 0
 	gamestate.fadeintime = 0
-	gamestate.fadeTo(gamestate.Scenes.Options);
+	gamestate.fadeTo(gamestate.Scenes.StartScreen);
 	return
 	
 	if (alreadyPressed):

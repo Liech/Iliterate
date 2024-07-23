@@ -55,9 +55,17 @@ func startDialog():
 	startup()
 	
 func handleConnection():
+	var dialogOpen= gamestate.dialog.dialogActive
+	var dialogCon = gamestate.dialog.is_connected("choiceMade",choiceMade)
+	if ((not dialogActive) and dialogCon):
+		gamestate.dialog.disconnect("choiceMade",choiceMade)
+	if (dialogActive and not dialogCon):
+		gamestate.dialog.connect("choiceMade",choiceMade)
+
+	if (dialogOpen):
+		return;
 	var UwUOnline = get_parent().is_connected("pressed",_on_pressed)
 	var ParOnline = get_parent().is_connected("pressed",get_parent()._on_pressed)
-	var dialogCon = gamestate.dialog.is_connected("choiceMade",choiceMade)
 	var uwu = isUwU()
 	
 	if (uwu and ParOnline):
@@ -68,10 +76,6 @@ func handleConnection():
 		get_parent().disconnect("pressed",_on_pressed)
 	if (not uwu and not ParOnline):
 		get_parent().disconnect("pressed",get_parent()._on_pressed)
-	if ((not dialogActive or not uwu) and dialogCon):
-		gamestate.dialog.disconnect("choiceMade",choiceMade)
-	if (dialogActive and uwu and not dialogCon):
-		gamestate.dialog.connect("choiceMade",choiceMade)
 		
 func isUwU():
 	return GlobalOptions.localization == GlobalOptions.Localization.UwU

@@ -1,9 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://b45vfqcxcwe4q"]
+[gd_scene load_steps=11 format=3 uid="uid://b45vfqcxcwe4q"]
 
 [ext_resource type="Texture2D" uid="uid://dxk323p2hap2c" path="res://Art/Background/Background.png" id="2_krb0y"]
 [ext_resource type="Texture2D" uid="uid://m2dbb5s7avis" path="res://Art/Background/Mage.png" id="3_vsfb3"]
 [ext_resource type="Texture2D" uid="uid://bsynd6xnwhvs1" path="res://Art/Background/Title.png" id="4_7evq1"]
+[ext_resource type="Theme" uid="uid://d2hv2jx01084f" path="res://mainTheme.tres" id="4_kk7bs"]
 [ext_resource type="Script" path="res://Scenes/StartScreen/ToMainMenu.gd" id="5_ylrcl"]
+[ext_resource type="Texture2D" uid="uid://vc0f42xth06n" path="res://Art/Button/Button.png" id="6_6o6uj"]
+[ext_resource type="Script" path="res://Scenes/StartScreen/StartGameUwU.gd" id="6_mgiyc"]
+[ext_resource type="Texture2D" uid="uid://drqi8h3p02kye" path="res://Art/Button/LeftUwU.png" id="7_ksgfq"]
+[ext_resource type="Texture2D" uid="uid://lonj01xgrckt" path="res://Art/Button/RightUwU.png" id="8_trkv0"]
+[ext_resource type="Script" path="res://Scenes/Options/TextBlock.gd" id="9_t4sld"]
 
 [node name="StartScreen" type="Control"]
 layout_mode = 3
@@ -51,14 +57,105 @@ texture = ExtResource("4_7evq1")
 expand_mode = 3
 stretch_mode = 4
 
-[node name="Button" type="Button" parent="."]
+[node name="Start Game" type="Button" parent="."]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
 anchor_bottom = 1.0
+offset_left = -226.0
+offset_top = -210.0
+offset_right = 221.0
+offset_bottom = -114.0
 grow_horizontal = 2
-grow_vertical = 2
-flat = true
+grow_vertical = 0
+theme = ExtResource("4_kk7bs")
+text = "Start Game"
 script = ExtResource("5_ylrcl")
 
-[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
+[node name="NinePatchRect2" type="NinePatchRect" parent="Start Game"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -4.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_kk7bs")
+texture = ExtResource("6_6o6uj")
+region_rect = Rect2(0.447113, 1.15751, 198.079, 182.684)
+patch_margin_left = 120
+patch_margin_top = 58
+patch_margin_right = 83
+patch_margin_bottom = 46
+
+[node name="UwU" type="Control" parent="Start Game"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("6_mgiyc")
+characterName = "Start Game - Your Old English Teacher"
+characterBelly = "Start Game"
+characterIcon = 1
+ears = true
+
+[node name="Graphics" type="Control" parent="Start Game/UwU"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Left" type="TextureRect" parent="Start Game/UwU/Graphics"]
+layout_mode = 0
+offset_left = -32.0
+offset_top = -48.0
+offset_right = 51.0
+offset_bottom = 46.0
+texture = ExtResource("7_ksgfq")
+
+[node name="Right" type="TextureRect" parent="Start Game/UwU/Graphics"]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 168.0
+offset_top = -40.0
+offset_right = 250.0
+offset_bottom = 52.0
+texture = ExtResource("8_trkv0")
+
+[node name="Intro" type="Control" parent="Start Game/UwU"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("9_t4sld")
+text = "Hello! Long time no see. How are you?"
+choices = Array[String](["Run Away", "Good"])
+
+[node name="Revelation" type="Control" parent="Start Game/UwU"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("9_t4sld")
+text = "You must repeat your final exam. We made a mistake and you did not pass it. You have to do it tomorrow morning"
+choices = Array[String](["..."])
+
+[node name="OhNo" type="Control" parent="Start Game/UwU"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("9_t4sld")
+text = "Ohh noo!"
+choices = Array[String](["..."])
+
+[node name="NotListening" type="Control" parent="Start Game/UwU"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("9_t4sld")
+text = "If you do not do it you are not allowed to work and becomehomeless. I talked with your boss, he will fire you."
+choices = Array[String](["Flee"])
+
+[connection signal="pressed" from="Start Game" to="Start Game" method="_on_pressed"]

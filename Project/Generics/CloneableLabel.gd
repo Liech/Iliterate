@@ -25,10 +25,11 @@ func hasChar(str, char):
 
 	
 func shuffleLetter():
-	var index = randi()%len(text)
-	var n_char = len(GlobalOptions.characters)
-	if hasChar(GlobalOptions.characters,text[index]):
-		text[index] = GlobalOptions.characters[randi()% n_char]
+	if (len(text) > 0):
+		var index = randi()%len(text)
+		var n_char = len(GlobalOptions.characters)
+		if hasChar(GlobalOptions.characters,text[index]):
+			text[index] = GlobalOptions.characters[randi()% n_char]
 	
 func shuffleAll():
 	var word: String
