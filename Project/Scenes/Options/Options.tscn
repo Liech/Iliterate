@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://bn57n5cddun8x"]
+[gd_scene load_steps=45 format=3 uid="uid://bn57n5cddun8x"]
 
 [ext_resource type="Theme" uid="uid://d2hv2jx01084f" path="res://mainTheme.tres" id="1_ipdrc"]
 [ext_resource type="Script" path="res://Scenes/Options/Options.gd" id="2_8cd1l"]
@@ -25,6 +25,7 @@
 [ext_resource type="Script" path="res://Scenes/Options/Audio/MusicAudioLevel.gd" id="13_cgfxa"]
 [ext_resource type="Script" path="res://Scenes/Options/Audio/EffectAudioLevel.gd" id="13_erca1"]
 [ext_resource type="Script" path="res://Scenes/Options/Audio/MasterAudioLevel.gd" id="13_q23gk"]
+[ext_resource type="Script" path="res://Scenes/Options/Audio/MuteUwU.gd" id="16_6hg6y"]
 [ext_resource type="Script" path="res://Scenes/Options/Gameplay/Graphics.gd" id="16_tdafj"]
 [ext_resource type="Script" path="res://Scenes/Options/Misc/DialogSpeed.gd" id="17_ksj6o"]
 [ext_resource type="Script" path="res://Scenes/Options/Misc/MiscLabel.gd" id="17_qn2n8"]
@@ -33,9 +34,9 @@
 [ext_resource type="Script" path="res://Scenes/Options/Misc/Opacity.gd" id="19_gv6oq"]
 [ext_resource type="Script" path="res://Scenes/Options/Misc/Brightness.gd" id="20_38wnd"]
 [ext_resource type="Script" path="res://Scenes/Options/Gameplay/Hints.gd" id="20_e703a"]
-[ext_resource type="Script" path="res://Scenes/Options/UwUHint.gd" id="22_j7okq"]
-[ext_resource type="Script" path="res://Scenes/Options/UwUKeyBindingButton.gd" id="28_1jxdt"]
-[ext_resource type="Script" path="res://Scenes/Options/UwUVSync.gd" id="30_dtng5"]
+[ext_resource type="Script" path="res://Scenes/Options/Gameplay/UwUHint.gd" id="22_j7okq"]
+[ext_resource type="Script" path="res://Scenes/Options/Misc/UwUKeyBindingButton.gd" id="28_1jxdt"]
+[ext_resource type="Script" path="res://Scenes/Options/Misc/UwUVSync.gd" id="30_dtng5"]
 [ext_resource type="Script" path="res://Scenes/Options/Misc/Keybinding.gd" id="30_qipj4"]
 [ext_resource type="Texture2D" uid="uid://bsrqm7fiqm5va" path="res://Art/Menu/CatSignLanguageInterpreter.png" id="31_x5547"]
 [ext_resource type="Script" path="res://Core/SignLanguageInstructor.gd" id="32_ep8m2"]
@@ -266,6 +267,52 @@ theme_override_icons/unchecked = ExtResource("11_hpo47")
 theme_override_icons/unchecked_disabled = ExtResource("11_hpo47")
 text = "Mute"
 script = ExtResource("19_bdni5")
+
+[node name="UwU" type="Control" parent="MuteAudio"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("16_6hg6y")
+
+[node name="Graphics" type="Control" parent="MuteAudio/UwU"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Left" type="TextureRect" parent="MuteAudio/UwU/Graphics"]
+visible = false
+layout_mode = 0
+offset_left = -32.0
+offset_top = -48.0
+offset_right = 51.0
+offset_bottom = 46.0
+texture = ExtResource("10_8w66l")
+
+[node name="Right" type="TextureRect" parent="MuteAudio/UwU/Graphics"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+offset_left = 168.0
+offset_top = -40.0
+offset_right = 250.0
+offset_bottom = 52.0
+texture = ExtResource("11_vclru")
+
+[node name="Intro" type="Control" parent="MuteAudio/UwU"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("11_wc0h8")
+text = "There is a kid that just listens the music. It looks like it is absorbing it all."
+choices = Array[String](["Do not disturb"])
+
+[node name="Absent" type="Control" parent="MuteAudio/UwU"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("11_wc0h8")
+text = "A kid dances through the room . You are not able to stop it. But you also don't want to. It looks happy."
+choices = Array[String](["Have fun"])
 
 [node name="EffectAudio" type="HSlider" parent="."]
 visible = false
