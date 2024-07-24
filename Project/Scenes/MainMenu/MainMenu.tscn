@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://cch5ed86qkrt4"]
+[gd_scene load_steps=26 format=3 uid="uid://cch5ed86qkrt4"]
 
 [ext_resource type="Script" path="res://Scenes/MainMenu/MainMenu.gd" id="2_ckgni"]
 [ext_resource type="Script" path="res://Generics/Cloneable.gd" id="3_3uqhv"]
@@ -11,11 +11,19 @@
 [ext_resource type="Script" path="res://Scenes/Options/Potatofier.gd" id="8_4c27e"]
 [ext_resource type="Script" path="res://Generics/CmdMemory.gd" id="8_8don6"]
 [ext_resource type="Script" path="res://Generics/CmdOptions.gd" id="9_nayao"]
+[ext_resource type="Script" path="res://Scenes/MainMenu/UwUStartGame.gd" id="9_trqnd"]
+[ext_resource type="Texture2D" uid="uid://drqi8h3p02kye" path="res://Art/Button/LeftUwU.png" id="10_suh4q"]
+[ext_resource type="Texture2D" uid="uid://lonj01xgrckt" path="res://Art/Button/RightUwU.png" id="11_pmm3k"]
 [ext_resource type="Texture2D" uid="uid://bsrqm7fiqm5va" path="res://Art/Menu/CatSignLanguageInterpreter.png" id="12_a2aqx"]
 [ext_resource type="Script" path="res://Generics/CmdBack.gd" id="12_am8p2"]
+[ext_resource type="Script" path="res://Scenes/Options/TextBlock.gd" id="12_fctv6"]
 [ext_resource type="Script" path="res://Core/SignLanguageInstructor.gd" id="13_cmu2o"]
 [ext_resource type="Texture2D" uid="uid://c5c2vtc7dcttf" path="res://Art/Menu/CatSignLanguageInterpreterPaw.png" id="13_r2l6x"]
 [ext_resource type="Script" path="res://Core/SignLanguagePaw.gd" id="14_4uklr"]
+[ext_resource type="Script" path="res://Scenes/MainMenu/UwUAbout.gd" id="14_hg802"]
+[ext_resource type="Script" path="res://Scenes/MainMenu/UwUMemories.gd" id="16_773iw"]
+[ext_resource type="Script" path="res://Scenes/MainMenu/UwUOptions.gd" id="16_ttngs"]
+[ext_resource type="Script" path="res://Scenes/MainMenu/UwUMainBack.gd" id="18_gb4q0"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_mabsu"]
 distance = -9.0
@@ -47,10 +55,10 @@ script = ExtResource("3_3uqhv")
 
 [node name="Start Game" type="Button" parent="."]
 layout_mode = 0
-offset_left = -8.0
-offset_top = -8.0
-offset_right = 471.0
-offset_bottom = 120.0
+offset_left = 104.0
+offset_top = 112.0
+offset_right = 583.0
+offset_bottom = 240.0
 theme = ExtResource("5_1o4bo")
 theme_override_styles/normal = ExtResource("6_kavg7")
 text = "Start Game"
@@ -133,11 +141,58 @@ patch_margin_right = 83
 patch_margin_bottom = 46
 script = ExtResource("8_4c27e")
 
+[node name="UwU" type="Control" parent="Start Game"]
+layout_mode = 3
+anchors_preset = 0
+offset_top = -192.0
+offset_bottom = -192.0
+script = ExtResource("9_trqnd")
+ears = true
+
+[node name="Graphics" type="Control" parent="Start Game/UwU"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Left" type="TextureRect" parent="Start Game/UwU/Graphics"]
+layout_mode = 0
+offset_left = -16.0
+offset_top = 144.0
+offset_right = 67.0
+offset_bottom = 238.0
+texture = ExtResource("10_suh4q")
+
+[node name="Right" type="TextureRect" parent="Start Game/UwU/Graphics"]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 184.0
+offset_top = 152.0
+offset_right = 266.0
+offset_bottom = 244.0
+texture = ExtResource("11_pmm3k")
+
+[node name="Intro" type="Control" parent="Start Game/UwU"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("12_fctv6")
+text = "*deeply concentrated playing* D"
+choices = Array[String](["Leave", "Listen"])
+
+[node name="Intro2" type="Control" parent="Start Game/UwU"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("12_fctv6")
+text = "*deeply concentrated playing*   D"
+choices = Array[String](["Leave", "Listen"])
+
 [node name="About" type="Button" parent="."]
 layout_mode = 0
-offset_top = 264.0
-offset_right = 479.0
-offset_bottom = 392.0
+offset_left = 112.0
+offset_top = 384.0
+offset_right = 591.0
+offset_bottom = 512.0
 theme = ExtResource("5_1o4bo")
 theme_override_styles/normal = ExtResource("6_kavg7")
 text = "About"
@@ -221,11 +276,58 @@ patch_margin_right = 83
 patch_margin_bottom = 46
 script = ExtResource("8_4c27e")
 
+[node name="UwU" type="Control" parent="About"]
+layout_mode = 3
+anchors_preset = 0
+offset_top = -192.0
+offset_bottom = -192.0
+script = ExtResource("14_hg802")
+ears = true
+
+[node name="Graphics" type="Control" parent="About/UwU"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Left" type="TextureRect" parent="About/UwU/Graphics"]
+layout_mode = 0
+offset_left = -16.0
+offset_top = 144.0
+offset_right = 67.0
+offset_bottom = 238.0
+texture = ExtResource("10_suh4q")
+
+[node name="Right" type="TextureRect" parent="About/UwU/Graphics"]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 184.0
+offset_top = 152.0
+offset_right = 266.0
+offset_bottom = 244.0
+texture = ExtResource("11_pmm3k")
+
+[node name="Intro" type="Control" parent="About/UwU"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("12_fctv6")
+text = "*deeply concentrated playing* D"
+choices = Array[String](["Leave", "Listen"])
+
+[node name="Intro2" type="Control" parent="About/UwU"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("12_fctv6")
+text = "*deeply concentrated playing*   D"
+choices = Array[String](["Leave", "Listen"])
+
 [node name="Memories2" type="Button" parent="."]
 layout_mode = 0
-offset_top = 128.0
-offset_right = 479.0
-offset_bottom = 256.0
+offset_left = 112.0
+offset_top = 248.0
+offset_right = 591.0
+offset_bottom = 376.0
 theme = ExtResource("5_1o4bo")
 theme_override_styles/normal = ExtResource("6_kavg7")
 text = "Memories"
@@ -309,11 +411,58 @@ patch_margin_right = 83
 patch_margin_bottom = 46
 script = ExtResource("8_4c27e")
 
+[node name="UwU" type="Control" parent="Memories2"]
+layout_mode = 3
+anchors_preset = 0
+offset_top = -192.0
+offset_bottom = -192.0
+script = ExtResource("16_773iw")
+ears = true
+
+[node name="Graphics" type="Control" parent="Memories2/UwU"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Left" type="TextureRect" parent="Memories2/UwU/Graphics"]
+layout_mode = 0
+offset_left = -16.0
+offset_top = 144.0
+offset_right = 67.0
+offset_bottom = 238.0
+texture = ExtResource("10_suh4q")
+
+[node name="Right" type="TextureRect" parent="Memories2/UwU/Graphics"]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 184.0
+offset_top = 152.0
+offset_right = 266.0
+offset_bottom = 244.0
+texture = ExtResource("11_pmm3k")
+
+[node name="Intro" type="Control" parent="Memories2/UwU"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("12_fctv6")
+text = "*deeply concentrated playing* D"
+choices = Array[String](["Leave", "Listen"])
+
+[node name="Intro2" type="Control" parent="Memories2/UwU"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("12_fctv6")
+text = "*deeply concentrated playing*   D"
+choices = Array[String](["Leave", "Listen"])
+
 [node name="Options2" type="Button" parent="."]
 layout_mode = 0
-offset_top = 400.0
-offset_right = 479.0
-offset_bottom = 528.0
+offset_left = 112.0
+offset_top = 520.0
+offset_right = 591.0
+offset_bottom = 648.0
 theme = ExtResource("5_1o4bo")
 theme_override_styles/normal = ExtResource("6_kavg7")
 text = "Options"
@@ -337,11 +486,58 @@ patch_margin_right = 83
 patch_margin_bottom = 46
 script = ExtResource("8_4c27e")
 
+[node name="UwU" type="Control" parent="Options2"]
+layout_mode = 3
+anchors_preset = 0
+offset_top = -192.0
+offset_bottom = -192.0
+script = ExtResource("16_ttngs")
+ears = true
+
+[node name="Graphics" type="Control" parent="Options2/UwU"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Left" type="TextureRect" parent="Options2/UwU/Graphics"]
+layout_mode = 0
+offset_left = -16.0
+offset_top = 144.0
+offset_right = 67.0
+offset_bottom = 238.0
+texture = ExtResource("10_suh4q")
+
+[node name="Right" type="TextureRect" parent="Options2/UwU/Graphics"]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 184.0
+offset_top = 152.0
+offset_right = 266.0
+offset_bottom = 244.0
+texture = ExtResource("11_pmm3k")
+
+[node name="Intro" type="Control" parent="Options2/UwU"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("12_fctv6")
+text = "*deeply concentrated playing* D"
+choices = Array[String](["Leave", "Listen"])
+
+[node name="Intro2" type="Control" parent="Options2/UwU"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("12_fctv6")
+text = "*deeply concentrated playing*   D"
+choices = Array[String](["Leave", "Listen"])
+
 [node name="Back2" type="Button" parent="."]
 layout_mode = 0
-offset_top = 536.0
-offset_right = 479.0
-offset_bottom = 664.0
+offset_left = 112.0
+offset_top = 656.0
+offset_right = 591.0
+offset_bottom = 784.0
 theme = ExtResource("5_1o4bo")
 theme_override_styles/normal = ExtResource("6_kavg7")
 text = "Back"
@@ -424,6 +620,52 @@ patch_margin_top = 58
 patch_margin_right = 83
 patch_margin_bottom = 46
 script = ExtResource("8_4c27e")
+
+[node name="UwU" type="Control" parent="Back2"]
+layout_mode = 3
+anchors_preset = 0
+offset_top = -192.0
+offset_bottom = -192.0
+script = ExtResource("18_gb4q0")
+ears = true
+
+[node name="Graphics" type="Control" parent="Back2/UwU"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Left" type="TextureRect" parent="Back2/UwU/Graphics"]
+layout_mode = 0
+offset_left = -16.0
+offset_top = 144.0
+offset_right = 67.0
+offset_bottom = 238.0
+texture = ExtResource("10_suh4q")
+
+[node name="Right" type="TextureRect" parent="Back2/UwU/Graphics"]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 184.0
+offset_top = 152.0
+offset_right = 266.0
+offset_bottom = 244.0
+texture = ExtResource("11_pmm3k")
+
+[node name="Intro" type="Control" parent="Back2/UwU"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("12_fctv6")
+text = "*deeply concentrated playing* D"
+choices = Array[String](["Leave", "Listen"])
+
+[node name="Intro2" type="Control" parent="Back2/UwU"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("12_fctv6")
+text = "*deeply concentrated playing*   D"
+choices = Array[String](["Leave", "Listen"])
 
 [node name="ForRearanging" type="VBoxContainer" parent="."]
 layout_mode = 1
