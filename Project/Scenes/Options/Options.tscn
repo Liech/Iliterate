@@ -181,7 +181,6 @@ text = "Make sure to talk to some folks. If you are frustrated they might help. 
 choices = Array[String](["Bye"])
 
 [node name="MuteAudio" type="CheckBox" parent="."]
-visible = false
 layout_mode = 0
 offset_left = 112.0
 offset_top = 616.0
@@ -207,7 +206,6 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Left" type="TextureRect" parent="MuteAudio/UwU/Graphics"]
-visible = false
 layout_mode = 0
 offset_left = -32.0
 offset_top = -48.0
@@ -216,7 +214,6 @@ offset_bottom = 46.0
 texture = ExtResource("10_8w66l")
 
 [node name="Right" type="TextureRect" parent="MuteAudio/UwU/Graphics"]
-visible = false
 layout_mode = 1
 anchors_preset = -1
 offset_left = 168.0
@@ -242,7 +239,6 @@ text = "A kid dances through the room . You are not able to stop it. But you als
 choices = Array[String](["Have fun"])
 
 [node name="MasterAudio" type="HSlider" parent="."]
-visible = false
 layout_mode = 0
 offset_left = 496.0
 offset_top = 320.0
@@ -269,22 +265,20 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Left" type="TextureRect" parent="MasterAudio/UwU/Graphics"]
-visible = false
 layout_mode = 0
-offset_left = -32.0
-offset_top = -48.0
-offset_right = 51.0
-offset_bottom = 46.0
+offset_left = 64.0
+offset_top = -248.0
+offset_right = 147.0
+offset_bottom = -154.0
 texture = ExtResource("10_8w66l")
 
 [node name="Right" type="TextureRect" parent="MasterAudio/UwU/Graphics"]
-visible = false
 layout_mode = 1
 anchors_preset = -1
-offset_left = 168.0
-offset_top = -40.0
-offset_right = 250.0
-offset_bottom = 52.0
+offset_left = 264.0
+offset_top = -240.0
+offset_right = 346.0
+offset_bottom = -148.0
 texture = ExtResource("11_vclru")
 
 [node name="Intro" type="Control" parent="MasterAudio/UwU"]
@@ -394,7 +388,6 @@ text = "I think the same. Lets rock this halls! Buttons Smash!"
 choices = Array[String](["Smaaaash!"])
 
 [node name="EffectAudio" type="HSlider" parent="."]
-visible = false
 layout_mode = 0
 offset_left = 496.0
 offset_top = 512.0
@@ -423,22 +416,20 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Left" type="TextureRect" parent="EffectAudio/UwU/Graphics"]
-visible = false
 layout_mode = 0
-offset_left = -32.0
-offset_top = -48.0
-offset_right = 51.0
-offset_bottom = 46.0
+offset_left = -16.0
+offset_top = 136.0
+offset_right = 67.0
+offset_bottom = 230.0
 texture = ExtResource("10_8w66l")
 
 [node name="Right" type="TextureRect" parent="EffectAudio/UwU/Graphics"]
-visible = false
 layout_mode = 1
 anchors_preset = -1
-offset_left = 168.0
-offset_top = -40.0
-offset_right = 250.0
-offset_bottom = 52.0
+offset_left = 184.0
+offset_top = 144.0
+offset_right = 266.0
+offset_bottom = 236.0
 texture = ExtResource("11_vclru")
 
 [node name="Intro" type="Control" parent="EffectAudio/UwU"]
@@ -467,7 +458,6 @@ text = "Awesome idea. I'll try it."
 choices = Array[String](["Hope it gets better"])
 
 [node name="MusicAudio" type="HSlider" parent="."]
-visible = false
 layout_mode = 0
 offset_left = 496.0
 offset_top = 416.0
@@ -496,22 +486,20 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Left" type="TextureRect" parent="MusicAudio/UwU/Graphics"]
-visible = false
 layout_mode = 0
-offset_left = -32.0
-offset_top = -48.0
-offset_right = 51.0
-offset_bottom = 46.0
+offset_left = -16.0
+offset_top = 144.0
+offset_right = 67.0
+offset_bottom = 238.0
 texture = ExtResource("10_8w66l")
 
 [node name="Right" type="TextureRect" parent="MusicAudio/UwU/Graphics"]
-visible = false
 layout_mode = 1
 anchors_preset = -1
-offset_left = 168.0
-offset_top = -40.0
-offset_right = 250.0
-offset_bottom = 52.0
+offset_left = 184.0
+offset_top = 152.0
+offset_right = 266.0
+offset_bottom = 244.0
 texture = ExtResource("11_vclru")
 
 [node name="Intro" type="Control" parent="MusicAudio/UwU"]
@@ -612,7 +600,6 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Left" type="TextureRect" parent="HintsGameplay/UwU/Graphics"]
-visible = false
 layout_mode = 0
 offset_left = -32.0
 offset_top = -48.0
@@ -1115,7 +1102,6 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Left" type="TextureRect" parent="VSyncMisc/UwU/Graphics"]
-visible = false
 layout_mode = 0
 offset_left = -32.0
 offset_top = -48.0
@@ -1124,7 +1110,6 @@ offset_bottom = 46.0
 texture = ExtResource("10_8w66l")
 
 [node name="Right" type="TextureRect" parent="VSyncMisc/UwU/Graphics"]
-visible = false
 layout_mode = 1
 anchors_preset = -1
 offset_left = 168.0
@@ -1190,6 +1175,9 @@ offset_top = -304.0
 offset_right = -8.0
 offset_bottom = -304.0
 script = ExtResource("38_ajklg")
+characterName = "Brightness - Wallflower"
+characterBelly = "Brightness"
+ears = true
 
 [node name="Graphics" type="Control" parent="BrightnessMisc2/UwU"]
 anchors_preset = 0
@@ -1197,22 +1185,20 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Left" type="TextureRect" parent="BrightnessMisc2/UwU/Graphics"]
-visible = false
 layout_mode = 0
-offset_left = -32.0
-offset_top = -48.0
-offset_right = 51.0
-offset_bottom = 46.0
+offset_left = -8.0
+offset_top = 248.0
+offset_right = 75.0
+offset_bottom = 342.0
 texture = ExtResource("10_8w66l")
 
 [node name="Right" type="TextureRect" parent="BrightnessMisc2/UwU/Graphics"]
-visible = false
 layout_mode = 1
 anchors_preset = -1
-offset_left = 168.0
-offset_top = -40.0
-offset_right = 250.0
-offset_bottom = 52.0
+offset_left = 192.0
+offset_top = 256.0
+offset_right = 274.0
+offset_bottom = 348.0
 texture = ExtResource("11_vclru")
 
 [node name="Intro" type="Control" parent="BrightnessMisc2/UwU"]
@@ -1220,28 +1206,27 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("11_wc0h8")
-text = "Drums are so cool."
-choices = Array[String](["Yeah!"])
+text = "I want to be a member of the beauty club, but they won't accept me :("
+choices = Array[String](["Smile, you are beautiful", "I don't wonder why"])
 
-[node name="Intro2" type="Control" parent="BrightnessMisc2/UwU"]
+[node name="smile" type="Control" parent="BrightnessMisc2/UwU"]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("11_wc0h8")
-text = "I got some wrist pain though. What should i do?"
-choices = Array[String](["Lower your drums a bit.", "Mount your drums higher."])
+text = "Awwww, thanks :3"
+choices = Array[String](["Have a nice day :)"])
 
-[node name="bye" type="Control" parent="BrightnessMisc2/UwU"]
+[node name="insult" type="Control" parent="BrightnessMisc2/UwU"]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("11_wc0h8")
-text = "Awesome idea. I'll try it."
-choices = Array[String](["Hope it gets better"])
+text = "You are rude :_("
+choices = Array[String](["..."])
 
 [node name="OpacityMisc2" type="HSlider" parent="."]
-visible = false
 layout_mode = 0
 offset_left = 568.0
 offset_top = 312.0
@@ -1260,6 +1245,9 @@ anchors_preset = 0
 offset_top = -192.0
 offset_bottom = -192.0
 script = ExtResource("39_gvmn3")
+characterName = "Opacity - Head of Glassblower Club"
+characterBelly = "Opacity"
+ears = true
 
 [node name="Graphics" type="Control" parent="OpacityMisc2/UwU"]
 anchors_preset = 0
@@ -1267,22 +1255,20 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Left" type="TextureRect" parent="OpacityMisc2/UwU/Graphics"]
-visible = false
 layout_mode = 0
-offset_left = -32.0
-offset_top = -48.0
-offset_right = 51.0
-offset_bottom = 46.0
+offset_left = -16.0
+offset_top = 128.0
+offset_right = 67.0
+offset_bottom = 222.0
 texture = ExtResource("10_8w66l")
 
 [node name="Right" type="TextureRect" parent="OpacityMisc2/UwU/Graphics"]
-visible = false
 layout_mode = 1
 anchors_preset = -1
-offset_left = 168.0
-offset_top = -40.0
-offset_right = 250.0
-offset_bottom = 52.0
+offset_left = 184.0
+offset_top = 136.0
+offset_right = 266.0
+offset_bottom = 228.0
 texture = ExtResource("11_vclru")
 
 [node name="Intro" type="Control" parent="OpacityMisc2/UwU"]
@@ -1290,16 +1276,16 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("11_wc0h8")
-text = "Drums are so cool."
-choices = Array[String](["Yeah!"])
+text = "Hey, be careful. This glass is very hot."
+choices = Array[String](["What are you creating?"])
 
 [node name="Intro2" type="Control" parent="OpacityMisc2/UwU"]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("11_wc0h8")
-text = "I got some wrist pain though. What should i do?"
-choices = Array[String](["Lower your drums a bit.", "Mount your drums higher."])
+text = "I wiI am creating Sun Windows. Like Sun glasses but windows. But somehow i don't get the light right."
+choices = Array[String](["Try adding more black sand.", "Maybe reduce the heat?"])
 
 [node name="bye" type="Control" parent="OpacityMisc2/UwU"]
 layout_mode = 3

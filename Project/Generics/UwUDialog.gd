@@ -36,8 +36,8 @@ func _process(delta):
 		handleOptionsButtonConnection();
 	
 	if (ears):
-		$"Graphics/Left".position = get_parent().position - earleftoffset
-		$"Graphics/Right".position = get_parent().position + Vector2(get_parent().size.x,0.0) -earrightoffset
+		$"Graphics/Left".position.x = get_parent().position.x - earleftoffset.x
+		$"Graphics/Right".position.x = get_parent().position.x + Vector2(get_parent().size.x,0.0).x -earrightoffset.x
 		$"Graphics/Left".visible = isUwU()
 		$"Graphics/Right".visible = isUwU()
 	

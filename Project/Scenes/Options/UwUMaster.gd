@@ -4,14 +4,16 @@ extends UwUDialog
 
 func choiceMade(choice):
 	if (choice == "Thanks. Bye."):
-		GlobalOptions.masterAudio -= 5;
+		GlobalOptions.masterAudio -= 20;
 		if (GlobalOptions.masterAudio < 0):
 			GlobalOptions.masterAudio = 0;
+		get_parent().value = GlobalOptions.masterAudio
 		closeDialog()
 	elif (choice == "Smaaaash!"):
-		GlobalOptions.masterAudio += 5;
+		GlobalOptions.masterAudio += 20;
 		if (GlobalOptions.masterAudio > 100):
 			GlobalOptions.masterAudio = 100;
+		get_parent().value = GlobalOptions.masterAudio
 		closeDialog()
 	elif (choice == "Too Loud. Tune it down!"):
 		setTextBlock($TuneDown)

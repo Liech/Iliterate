@@ -314,10 +314,10 @@ grow_vertical = 2
 theme = ExtResource("4_2ub7r")
 texture = ExtResource("7_0jr6s")
 region_rect = Rect2(-0.5, -2.75, 302, 300)
-patch_margin_left = 126
-patch_margin_top = 222
-patch_margin_right = 122
-patch_margin_bottom = 40
+patch_margin_left = 112
+patch_margin_top = 193
+patch_margin_right = 167
+patch_margin_bottom = 52
 
 [node name="ByeDialog" type="Label" parent="Dialog"]
 layout_mode = 0
