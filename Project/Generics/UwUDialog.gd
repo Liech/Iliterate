@@ -30,6 +30,8 @@ func _process(delta):
 		handleCheckboxConnection()
 	elif (get_parent() is Button):
 		handleButtonConnection()
+	elif (get_parent() is HSlider):
+		handleHSliderConnection()
 	
 	if (ears):
 		$"Graphics/Left".position = get_parent().position - earleftoffset
@@ -84,6 +86,28 @@ func handleCheckboxConnection():
 		get_parent().connect("toggled",get_parent()._on_toggled)
 	pass
 	
+
+func handleHSliderConnection():
+	var dialogOpen= gamestate.dialog.dialogActive
+	if (dialogOpen):
+		return;
+	var UwUOnline = get_parent().is_connected("drag_started",_on_pressed)
+	var ParOnline = get_parent().is_connected("drag_started",get_parent()._on_drag_started)
+	var uwu = isUwU()
+	
+	if (uwu and ParOnline):
+		get_parent().disconnect("drag_started",get_parent()._on_drag_started)
+		get_parent().disconnect("value_changed",get_parent()._on_value_changed)
+	if (uwu and not UwUOnline):
+		get_parent().connect("drag_started",_on_pressed)
+	if (not uwu and UwUOnline):
+		get_parent().disconnect("drag_started",_on_pressed)
+	if (not uwu and not ParOnline):
+		get_parent().connect("drag_started",get_parent()._on_drag_started)
+		get_parent().connect("value_changed",get_parent()._on_value_changed)
+	pass
+	
+	
 func handleButtonConnection():
 	var dialogOpen= gamestate.dialog.dialogActive
 
@@ -105,6 +129,9 @@ func handleButtonConnection():
 func isUwU():
 	return GlobalOptions.localization == GlobalOptions.Localization.UwU
 
+func nextBlock():
+	var next = currentBlock.get_index()+1
+	setTextBlock(currentBlock.get_parent().get_child(next))
 
 func _on_toggled(toggled_on):
 	startDialog();

@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://bn57n5cddun8x"]
+[gd_scene load_steps=50 format=3 uid="uid://bn57n5cddun8x"]
 
 [ext_resource type="Theme" uid="uid://d2hv2jx01084f" path="res://mainTheme.tres" id="1_ipdrc"]
 [ext_resource type="Script" path="res://Scenes/Options/Options.gd" id="2_8cd1l"]
@@ -35,7 +35,10 @@
 [ext_resource type="Script" path="res://Scenes/Options/Misc/Opacity.gd" id="19_gv6oq"]
 [ext_resource type="Script" path="res://Scenes/Options/Misc/Brightness.gd" id="20_38wnd"]
 [ext_resource type="Script" path="res://Scenes/Options/Gameplay/Hints.gd" id="20_e703a"]
+[ext_resource type="Script" path="res://Scenes/Options/UwUMaster.gd" id="20_l5g42"]
+[ext_resource type="Script" path="res://Scenes/Options/UwUEffect.gd" id="22_67pmd"]
 [ext_resource type="Script" path="res://Scenes/Options/Gameplay/UwUHint.gd" id="22_j7okq"]
+[ext_resource type="Script" path="res://Scenes/Options/UwUEffectsReal.gd" id="22_wulh1"]
 [ext_resource type="Script" path="res://Scenes/Options/Misc/UwUKeyBindingButton.gd" id="28_1jxdt"]
 [ext_resource type="Script" path="res://Scenes/Options/Misc/UwUVSync.gd" id="30_dtng5"]
 [ext_resource type="Script" path="res://Scenes/Options/Misc/Keybinding.gd" id="30_qipj4"]
@@ -44,6 +47,7 @@
 [ext_resource type="Texture2D" uid="uid://c5c2vtc7dcttf" path="res://Art/Menu/CatSignLanguageInterpreterPaw.png" id="33_81wdw"]
 [ext_resource type="Script" path="res://Core/SignLanguagePaw.gd" id="34_04tvg"]
 [ext_resource type="Script" path="res://Scenes/Options/Tabs/UwUTab.gd" id="35_nltyf"]
+[ext_resource type="Script" path="res://Scenes/Options/UwUOpacity.gd" id="39_gvmn3"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ufr3p"]
 distance = -9.0
@@ -225,8 +229,7 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("11_wc0h8")
-text = "There is a kid that just listens the music. It looks like it is absorbing it all."
-choices = Array[String](["Do not disturb"])
+choices = Array[String](["Do not disturb", ""])
 
 [node name="Absent" type="Control" parent="MuteAudio/UwU"]
 layout_mode = 3
@@ -236,6 +239,158 @@ offset_bottom = 40.0
 script = ExtResource("11_wc0h8")
 text = "A kid dances through the room . You are not able to stop it. But you also don't want to. It looks happy."
 choices = Array[String](["Have fun"])
+
+[node name="MasterAudio" type="HSlider" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 496.0
+offset_top = 320.0
+offset_right = 1721.0
+offset_bottom = 420.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_icons/grabber = ExtResource("8_lbeyj")
+theme_override_icons/grabber_highlight = ExtResource("8_lbeyj")
+theme_override_icons/grabber_disabled = ExtResource("8_lbeyj")
+script = ExtResource("13_q23gk")
+
+[node name="UwU" type="Control" parent="MasterAudio"]
+layout_mode = 3
+anchors_preset = 0
+offset_top = 192.0
+offset_bottom = 192.0
+script = ExtResource("20_l5g42")
+ears = true
+
+[node name="Graphics" type="Control" parent="MasterAudio/UwU"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Left" type="TextureRect" parent="MasterAudio/UwU/Graphics"]
+visible = false
+layout_mode = 0
+offset_left = -32.0
+offset_top = -48.0
+offset_right = 51.0
+offset_bottom = 46.0
+texture = ExtResource("10_8w66l")
+
+[node name="Right" type="TextureRect" parent="MasterAudio/UwU/Graphics"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+offset_left = 168.0
+offset_top = -40.0
+offset_right = 250.0
+offset_bottom = 52.0
+texture = ExtResource("11_vclru")
+
+[node name="Intro" type="Control" parent="MasterAudio/UwU"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("11_wc0h8")
+text = "Awesome Guitar riffs, crushing drums. Everything is a bliss."
+choices = Array[String](["Listen", "Leave"])
+
+[node name="Intro2" type="Control" parent="MasterAudio/UwU"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("11_wc0h8")
+text = "But then the vocals start"
+choices = Array[String](["Listen"])
+
+[node name="Song Line" type="Control" parent="MasterAudio/UwU"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("11_wc0h8")
+text = "*sings* Deeply faaaaalling"
+choices = Array[String](["Listen", "Too Loud. Tune it down!", "Louder!"])
+
+[node name="Song Line2" type="Control" parent="MasterAudio/UwU"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("11_wc0h8")
+text = "*sings* Paws of Hell"
+choices = Array[String](["Listen", "Too Loud. Tune it down!", "Louder!"])
+
+[node name="Song Line3" type="Control" parent="MasterAudio/UwU"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("11_wc0h8")
+text = "*sings* broke me down"
+choices = Array[String](["Listen", "Too Loud. Tune it down!", "Louder!"])
+
+[node name="Song Line4" type="Control" parent="MasterAudio/UwU"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("11_wc0h8")
+text = "*sings* Hate your smell"
+choices = Array[String](["Listen", "Too Loud. Tune it down!", "Louder!"])
+
+[node name="Song Line5" type="Control" parent="MasterAudio/UwU"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("11_wc0h8")
+text = "*sings* gonna drown"
+choices = Array[String](["Listen", "Too Loud. Tune it down!", "Louder!"])
+
+[node name="Song Line6" type="Control" parent="MasterAudio/UwU"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("11_wc0h8")
+text = "Effect, these lines are horrible. What is wrong with you?"
+choices = Array[String](["continue"])
+
+[node name="EffectAnswer" type="Control" parent="MasterAudio/UwU"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("11_wc0h8")
+text = "Write better ones. Teacher Hint said they sound awesome."
+choices = Array[String](["continue"])
+
+[node name="EffectAnswer2" type="Control" parent="MasterAudio/UwU"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("11_wc0h8")
+text = "I incorporated my deep fear a cat might toss me down. You won't understand. It's called art!"
+choices = Array[String](["Ah yes."])
+
+[node name="TuneDown" type="Control" parent="MasterAudio/UwU"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("11_wc0h8")
+text = "Did the Fightclub send you? Awww man. Lets tune down a little bit folks :("
+choices = Array[String](["Thanks. Bye."])
+
+[node name="TuneUp" type="Control" parent="MasterAudio/UwU"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("11_wc0h8")
+text = "I think the same. Lets rock this halls! Buttons Smash!"
+choices = Array[String](["Smaaaash!"])
 
 [node name="EffectAudio" type="HSlider" parent="."]
 visible = false
@@ -251,6 +406,65 @@ theme_override_icons/grabber_highlight = ExtResource("8_lbeyj")
 theme_override_icons/grabber_disabled = ExtResource("8_lbeyj")
 script = ExtResource("13_erca1")
 
+[node name="UwU" type="Control" parent="EffectAudio"]
+layout_mode = 3
+anchors_preset = 0
+offset_top = -192.0
+offset_bottom = -192.0
+script = ExtResource("22_wulh1")
+characterName = "Effect - Music Club Drummer"
+characterBelly = "Effect"
+ears = true
+
+[node name="Graphics" type="Control" parent="EffectAudio/UwU"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Left" type="TextureRect" parent="EffectAudio/UwU/Graphics"]
+visible = false
+layout_mode = 0
+offset_left = -32.0
+offset_top = -48.0
+offset_right = 51.0
+offset_bottom = 46.0
+texture = ExtResource("10_8w66l")
+
+[node name="Right" type="TextureRect" parent="EffectAudio/UwU/Graphics"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+offset_left = 168.0
+offset_top = -40.0
+offset_right = 250.0
+offset_bottom = 52.0
+texture = ExtResource("11_vclru")
+
+[node name="Intro" type="Control" parent="EffectAudio/UwU"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("11_wc0h8")
+text = "Drums are so cool."
+choices = Array[String](["Yeah!"])
+
+[node name="Intro2" type="Control" parent="EffectAudio/UwU"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("11_wc0h8")
+text = "I got some wrist pain though. What should i do?"
+choices = Array[String](["Lower your drums a bit.", "Mount your drums higher."])
+
+[node name="bye" type="Control" parent="EffectAudio/UwU"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("11_wc0h8")
+text = "Awesome idea. I'll try it."
+choices = Array[String](["Hope it gets better"])
+
 [node name="MusicAudio" type="HSlider" parent="."]
 visible = false
 layout_mode = 0
@@ -265,19 +479,55 @@ theme_override_icons/grabber_highlight = ExtResource("8_lbeyj")
 theme_override_icons/grabber_disabled = ExtResource("8_lbeyj")
 script = ExtResource("13_cgfxa")
 
-[node name="MasterAudio" type="HSlider" parent="."]
+[node name="UwU" type="Control" parent="MusicAudio"]
+layout_mode = 3
+anchors_preset = 0
+offset_top = -192.0
+offset_bottom = -192.0
+script = ExtResource("22_67pmd")
+characterName = "Music - The Bass Player"
+characterBelly = "Music"
+ears = true
+
+[node name="Graphics" type="Control" parent="MusicAudio/UwU"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Left" type="TextureRect" parent="MusicAudio/UwU/Graphics"]
 visible = false
 layout_mode = 0
-offset_left = 496.0
-offset_top = 320.0
-offset_right = 1721.0
-offset_bottom = 420.0
-size_flags_horizontal = 3
-size_flags_vertical = 1
-theme_override_icons/grabber = ExtResource("8_lbeyj")
-theme_override_icons/grabber_highlight = ExtResource("8_lbeyj")
-theme_override_icons/grabber_disabled = ExtResource("8_lbeyj")
-script = ExtResource("13_q23gk")
+offset_left = -32.0
+offset_top = -48.0
+offset_right = 51.0
+offset_bottom = 46.0
+texture = ExtResource("10_8w66l")
+
+[node name="Right" type="TextureRect" parent="MusicAudio/UwU/Graphics"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+offset_left = 168.0
+offset_top = -40.0
+offset_right = 250.0
+offset_bottom = 52.0
+texture = ExtResource("11_vclru")
+
+[node name="Intro" type="Control" parent="MusicAudio/UwU"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("11_wc0h8")
+text = "*deeply concentrated playing* D"
+choices = Array[String](["Leave", "Listen"])
+
+[node name="Intro2" type="Control" parent="MusicAudio/UwU"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("11_wc0h8")
+text = "*deeply concentrated playing*   D"
+choices = Array[String](["Leave", "Listen"])
 
 [node name="EffectAudioLabel" type="Label" parent="."]
 visible = false
@@ -945,6 +1195,62 @@ theme_override_icons/grabber_highlight = ExtResource("8_lbeyj")
 theme_override_icons/grabber_disabled = ExtResource("8_lbeyj")
 script = ExtResource("19_gv6oq")
 
+[node name="UwU" type="Control" parent="OpacityMisc2"]
+layout_mode = 3
+anchors_preset = 0
+offset_top = -192.0
+offset_bottom = -192.0
+script = ExtResource("39_gvmn3")
+
+[node name="Graphics" type="Control" parent="OpacityMisc2/UwU"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Left" type="TextureRect" parent="OpacityMisc2/UwU/Graphics"]
+visible = false
+layout_mode = 0
+offset_left = -32.0
+offset_top = -48.0
+offset_right = 51.0
+offset_bottom = 46.0
+texture = ExtResource("10_8w66l")
+
+[node name="Right" type="TextureRect" parent="OpacityMisc2/UwU/Graphics"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+offset_left = 168.0
+offset_top = -40.0
+offset_right = 250.0
+offset_bottom = 52.0
+texture = ExtResource("11_vclru")
+
+[node name="Intro" type="Control" parent="OpacityMisc2/UwU"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("11_wc0h8")
+text = "Drums are so cool."
+choices = Array[String](["Yeah!"])
+
+[node name="Intro2" type="Control" parent="OpacityMisc2/UwU"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("11_wc0h8")
+text = "I got some wrist pain though. What should i do?"
+choices = Array[String](["Lower your drums a bit.", "Mount your drums higher."])
+
+[node name="bye" type="Control" parent="OpacityMisc2/UwU"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("11_wc0h8")
+text = "Awesome idea. I'll try it."
+choices = Array[String](["Hope it gets better"])
+
 [node name="BrightnessLabelMisc2" type="Label" parent="."]
 visible = false
 layout_mode = 0
@@ -1151,7 +1457,7 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("11_wc0h8")
-text = "Loud music guides your attention to the music clubroom. It sounds like a mix of Post Rock and Pre Scissor."
+text = "Loud music guides your attention to the music clubroom. Sounds like they try to compose a song."
 choices = Array[String](["Enter", "Go Back"])
 
 [node name="AlreadyThere" type="Control" parent="AudioTab/UwU"]
@@ -1230,15 +1536,15 @@ shape = SubResource("WorldBoundaryShape2D_ufr3p")
 [connection signal="mouse_entered" from="MuteAudio" to="MuteAudio" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="MuteAudio" to="MuteAudio" method="_on_mouse_exited"]
 [connection signal="toggled" from="MuteAudio" to="MuteAudio" method="_on_toggled"]
+[connection signal="drag_ended" from="MasterAudio" to="MasterAudio" method="_on_drag_ended"]
+[connection signal="drag_started" from="MasterAudio" to="MasterAudio" method="_on_drag_started"]
+[connection signal="value_changed" from="MasterAudio" to="MasterAudio" method="_on_value_changed"]
 [connection signal="drag_ended" from="EffectAudio" to="EffectAudio" method="_on_drag_ended"]
 [connection signal="drag_started" from="EffectAudio" to="EffectAudio" method="_on_drag_started"]
 [connection signal="value_changed" from="EffectAudio" to="EffectAudio" method="_on_value_changed"]
 [connection signal="drag_ended" from="MusicAudio" to="MusicAudio" method="_on_drag_ended"]
 [connection signal="drag_started" from="MusicAudio" to="MusicAudio" method="_on_drag_started"]
 [connection signal="value_changed" from="MusicAudio" to="MusicAudio" method="_on_value_changed"]
-[connection signal="drag_ended" from="MasterAudio" to="MasterAudio" method="_on_drag_ended"]
-[connection signal="drag_started" from="MasterAudio" to="MasterAudio" method="_on_drag_started"]
-[connection signal="value_changed" from="MasterAudio" to="MasterAudio" method="_on_value_changed"]
 [connection signal="mouse_entered" from="EffectAudioLabel" to="EffectAudioLabel" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="EffectAudioLabel" to="EffectAudioLabel" method="_on_mouse_exited"]
 [connection signal="mouse_entered" from="MusicAudioLabel" to="MusicAudioLabel" method="_on_mouse_entered"]
