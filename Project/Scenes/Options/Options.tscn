@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://bn57n5cddun8x"]
+[gd_scene load_steps=51 format=3 uid="uid://bn57n5cddun8x"]
 
 [ext_resource type="Theme" uid="uid://d2hv2jx01084f" path="res://mainTheme.tres" id="1_ipdrc"]
 [ext_resource type="Script" path="res://Scenes/Options/Options.gd" id="2_8cd1l"]
@@ -47,6 +47,7 @@
 [ext_resource type="Texture2D" uid="uid://c5c2vtc7dcttf" path="res://Art/Menu/CatSignLanguageInterpreterPaw.png" id="33_81wdw"]
 [ext_resource type="Script" path="res://Core/SignLanguagePaw.gd" id="34_04tvg"]
 [ext_resource type="Script" path="res://Scenes/Options/Tabs/UwUTab.gd" id="35_nltyf"]
+[ext_resource type="Script" path="res://Scenes/Options/UwUBrightness.gd" id="38_ajklg"]
 [ext_resource type="Script" path="res://Scenes/Options/UwUOpacity.gd" id="39_gvmn3"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ufr3p"]
@@ -1180,6 +1181,64 @@ theme_override_icons/grabber = ExtResource("8_lbeyj")
 theme_override_icons/grabber_highlight = ExtResource("8_lbeyj")
 theme_override_icons/grabber_disabled = ExtResource("8_lbeyj")
 script = ExtResource("20_38wnd")
+
+[node name="UwU" type="Control" parent="BrightnessMisc2"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -8.0
+offset_top = -304.0
+offset_right = -8.0
+offset_bottom = -304.0
+script = ExtResource("38_ajklg")
+
+[node name="Graphics" type="Control" parent="BrightnessMisc2/UwU"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Left" type="TextureRect" parent="BrightnessMisc2/UwU/Graphics"]
+visible = false
+layout_mode = 0
+offset_left = -32.0
+offset_top = -48.0
+offset_right = 51.0
+offset_bottom = 46.0
+texture = ExtResource("10_8w66l")
+
+[node name="Right" type="TextureRect" parent="BrightnessMisc2/UwU/Graphics"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+offset_left = 168.0
+offset_top = -40.0
+offset_right = 250.0
+offset_bottom = 52.0
+texture = ExtResource("11_vclru")
+
+[node name="Intro" type="Control" parent="BrightnessMisc2/UwU"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("11_wc0h8")
+text = "Drums are so cool."
+choices = Array[String](["Yeah!"])
+
+[node name="Intro2" type="Control" parent="BrightnessMisc2/UwU"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("11_wc0h8")
+text = "I got some wrist pain though. What should i do?"
+choices = Array[String](["Lower your drums a bit.", "Mount your drums higher."])
+
+[node name="bye" type="Control" parent="BrightnessMisc2/UwU"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("11_wc0h8")
+text = "Awesome idea. I'll try it."
+choices = Array[String](["Hope it gets better"])
 
 [node name="OpacityMisc2" type="HSlider" parent="."]
 visible = false
