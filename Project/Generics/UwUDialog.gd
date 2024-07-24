@@ -32,6 +32,8 @@ func _process(delta):
 		handleButtonConnection()
 	elif (get_parent() is HSlider):
 		handleHSliderConnection()
+	elif(get_parent() is OptionButton):
+		handleOptionsButtonConnection();
 	
 	if (ears):
 		$"Graphics/Left".position = get_parent().position - earleftoffset
@@ -69,6 +71,24 @@ func handleChoiceConnection():
 		gamestate.dialog.connect("choiceMade",choiceMade)	
 	
 func handleCheckboxConnection():
+	var dialogOpen= gamestate.dialog.dialogActive
+	if (dialogOpen):
+		return;
+	var UwUOnline = get_parent().is_connected("toggled",_on_toggled)
+	var ParOnline = get_parent().is_connected("toggled",get_parent()._on_toggled)
+	var uwu = isUwU()
+	
+	if (uwu and ParOnline):
+		get_parent().disconnect("toggled",get_parent()._on_toggled)
+	if (uwu and not UwUOnline):
+		get_parent().connect("toggled",_on_toggled)
+	if (not uwu and UwUOnline):
+		get_parent().disconnect("toggled",_on_toggled)
+	if (not uwu and not ParOnline):
+		get_parent().connect("toggled",get_parent()._on_toggled)
+	pass
+	
+func handleOptionsButtonConnection():
 	var dialogOpen= gamestate.dialog.dialogActive
 	if (dialogOpen):
 		return;
