@@ -1,5 +1,6 @@
 extends CloneableHSlider
 
+var bus := AudioServer.get_bus_index("Master")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -9,8 +10,11 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if (GlobalOptions.brightness != value):
+	if (GlobalOptions.masterAudio != value):
 		value = GlobalOptions.masterAudio
+	var level = GlobalOptions.masterAudio / 100.0
+	
+	AudioServer.set_bus_volume_db(bus, linear_to_db(level))
 
 func _on_value_changed(value):
 	GlobalOptions.masterAudio = value

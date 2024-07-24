@@ -18,8 +18,8 @@ boot_splash/fullsize=false
 
 [autoload]
 
-gamestate="*res://Scenes/gamestate.gd"
-GlobalOptions="*res://Scenes/GlobalOptions.gd"
+gamestate="*res://Core/gamestate.gd"
+GlobalOptions="*res://Core/GlobalOptions.gd"
 Phys="*res://Core/physifyer.gd"
 
 [display]

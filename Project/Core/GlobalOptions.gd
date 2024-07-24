@@ -15,9 +15,9 @@ var graphics = GraphicsQuality.High;
 var localization = Localization.English;
 var brightness = 50
 var opacity = 50
-var masterAudio = 1
-var musicAudio = 1
-var effectAudio = 1
+var masterAudio = 100
+var musicAudio = 80
+var effectAudio = 100
 
 var characters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
 

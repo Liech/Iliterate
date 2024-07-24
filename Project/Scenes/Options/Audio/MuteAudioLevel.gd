@@ -1,5 +1,6 @@
 extends CloneableCheckBox
 
+var bus := AudioServer.get_bus_index("Master")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -12,6 +13,7 @@ func _process(delta):
 	super(delta)
 	if (button_pressed  != GlobalOptions.muteAudio):
 		button_pressed  = GlobalOptions.muteAudio
+	AudioServer.set_bus_mute(bus,GlobalOptions.muteAudio)
 
 
 func _on_toggled(toggled_on):
