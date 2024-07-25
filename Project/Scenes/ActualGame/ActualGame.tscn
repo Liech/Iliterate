@@ -1,11 +1,49 @@
-[gd_scene load_steps=5 format=3 uid="uid://bty84m1ich0cx"]
+[gd_scene load_steps=22 format=3 uid="uid://bty84m1ich0cx"]
 
-[ext_resource type="Texture2D" uid="uid://dxk323p2hap2c" path="res://Art/Background/Background.png" id="1_qwhqu"]
-[ext_resource type="Texture2D" uid="uid://m2dbb5s7avis" path="res://Art/Background/Mage.png" id="2_jsvqa"]
-[ext_resource type="Texture2D" uid="uid://bsynd6xnwhvs1" path="res://Art/Background/Title.png" id="3_ibice"]
-[ext_resource type="Script" path="res://Scenes/StartScreen/ToMainMenu.gd" id="4_voqrh"]
+[ext_resource type="Texture2D" uid="uid://c4jdbmn3dmdw4" path="res://Art/LevelBackground.png" id="1_g2ffx"]
+[ext_resource type="Script" path="res://Scenes/ActualGame/ActualGame.gd" id="1_unm1w"]
+[ext_resource type="Texture2D" uid="uid://c8t8031606i2j" path="res://Art/LevelTerrain.png" id="2_c8f7l"]
+[ext_resource type="Theme" uid="uid://d2hv2jx01084f" path="res://mainTheme.tres" id="3_82lny"]
+[ext_resource type="Texture2D" uid="uid://1x31imsus3hm" path="res://Art/Character.png" id="3_xrtuc"]
+[ext_resource type="StyleBox" uid="uid://bdktf0xccluh5" path="res://Scenes/MainMenu/buttonninepatch.tres" id="4_q34dy"]
+[ext_resource type="Script" path="res://Generics/CmdBack.gd" id="5_673bu"]
+[ext_resource type="Texture2D" uid="uid://vc0f42xth06n" path="res://Art/Button/Button.png" id="6_aby28"]
+[ext_resource type="Script" path="res://Scenes/Options/Potatofier.gd" id="7_2ip71"]
+[ext_resource type="Script" path="res://Generics/CmdStartGame.gd" id="8_3i3a2"]
+[ext_resource type="Script" path="res://Scenes/ActualGame/PlayerCharacter.gd" id="9_bmml5"]
 
-[node name="StartScreen" type="Control"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qt4it"]
+size = Vector2(909, 407)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0ognq"]
+size = Vector2(328, 137)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gt8s3"]
+size = Vector2(380, 119)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1phar"]
+size = Vector2(166, 458)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j6kog"]
+size = Vector2(438, 240)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2dpdy"]
+size = Vector2(256, 44)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xtk0l"]
+size = Vector2(18, 45)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v8hye"]
+size = Vector2(80, 81)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7crxe"]
+size = Vector2(70, 81)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_s01f5"]
+radius = 20.0
+height = 70.0
+
+[node name="ActualGame" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -15,50 +53,172 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-
-[node name="Mage" type="TextureRect" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("1_qwhqu")
-expand_mode = 3
-stretch_mode = 4
+script = ExtResource("1_unm1w")
 
 [node name="Background" type="TextureRect" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("2_jsvqa")
-expand_mode = 3
-stretch_mode = 4
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_g2ffx")
 
-[node name="Title" type="TextureRect" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 1.003
-offset_left = -23.0
-offset_bottom = -0.245972
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("3_ibice")
-expand_mode = 3
-stretch_mode = 4
+[node name="Terrain" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_c8f7l")
 
-[node name="Button" type="Button" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="RigidBody2D" type="RigidBody2D" parent="Terrain"]
+freeze = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Terrain/RigidBody2D"]
+position = Vector2(791.5, 877.5)
+shape = SubResource("RectangleShape2D_qt4it")
+debug_color = Color(0.988633, 0.105515, 1.92523e-07, 0.388235)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Terrain/RigidBody2D"]
+position = Vector2(1078, 601.5)
+shape = SubResource("RectangleShape2D_0ognq")
+debug_color = Color(0.988633, 0.105515, 1.92523e-07, 0.388235)
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Terrain/RigidBody2D"]
+position = Vector2(1658, 568.5)
+shape = SubResource("RectangleShape2D_gt8s3")
+debug_color = Color(0.988633, 0.105515, 1.92523e-07, 0.388235)
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Terrain/RigidBody2D"]
+position = Vector2(1769, 861)
+shape = SubResource("RectangleShape2D_1phar")
+debug_color = Color(0.988633, 0.105515, 1.92523e-07, 0.388235)
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Terrain/RigidBody2D"]
+position = Vector2(1465, 952)
+shape = SubResource("RectangleShape2D_j6kog")
+debug_color = Color(0.988633, 0.105515, 1.92523e-07, 0.388235)
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Terrain/RigidBody2D"]
+position = Vector2(1345, 403)
+shape = SubResource("RectangleShape2D_2dpdy")
+debug_color = Color(0.988633, 0.105515, 1.92523e-07, 0.388235)
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="Terrain/RigidBody2D"]
+position = Vector2(1343, 349.5)
+shape = SubResource("RectangleShape2D_xtk0l")
+debug_color = Color(0.988633, 0.105515, 1.92523e-07, 0.388235)
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="Terrain/RigidBody2D"]
+position = Vector2(1208, 488.5)
+shape = SubResource("RectangleShape2D_v8hye")
+debug_color = Color(0.988633, 0.105515, 1.92523e-07, 0.388235)
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="Terrain/RigidBody2D"]
+position = Vector2(1501, 463.5)
+shape = SubResource("RectangleShape2D_7crxe")
+debug_color = Color(0.988633, 0.105515, 1.92523e-07, 0.388235)
+
+[node name="Back" type="Button" parent="."]
+offset_left = 24.0
+offset_top = 903.0
+offset_right = 503.0
+offset_bottom = 1031.0
+theme = ExtResource("3_82lny")
+theme_override_styles/normal = ExtResource("4_q34dy")
+text = "Back"
 flat = true
-script = ExtResource("4_voqrh")
+script = ExtResource("5_673bu")
+breaks = true
 
-[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
+[node name="NinePatchRect" type="NinePatchRect" parent="Back"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_82lny")
+texture = ExtResource("6_aby28")
+region_rect = Rect2(0.447113, 1.15751, 198.079, 182.684)
+patch_margin_left = 120
+patch_margin_top = 58
+patch_margin_right = 83
+patch_margin_bottom = 46
+script = ExtResource("7_2ip71")
+
+[node name="PieceFirst" type="Button" parent="Back"]
+visible = false
+layout_mode = 0
+offset_left = 248.0
+offset_right = 492.0
+offset_bottom = 128.0
+theme = ExtResource("3_82lny")
+theme_override_styles/normal = ExtResource("4_q34dy")
+text = "Ck"
+flat = true
+script = ExtResource("8_3i3a2")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Back/PieceFirst"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -12.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_82lny")
+texture = ExtResource("6_aby28")
+region_rect = Rect2(0.447113, 1.15751, 198.079, 182.684)
+patch_margin_left = 120
+patch_margin_top = 58
+patch_margin_right = 83
+patch_margin_bottom = 46
+script = ExtResource("7_2ip71")
+
+[node name="PieceSecond" type="Button" parent="Back"]
+visible = false
+layout_mode = 0
+offset_right = 260.0
+offset_bottom = 128.0
+theme = ExtResource("3_82lny")
+theme_override_styles/normal = ExtResource("4_q34dy")
+text = "Ba"
+flat = true
+script = ExtResource("8_3i3a2")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Back/PieceSecond"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -12.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_82lny")
+texture = ExtResource("6_aby28")
+region_rect = Rect2(0.447113, 1.15751, 198.079, 182.684)
+patch_margin_left = 120
+patch_margin_top = 58
+patch_margin_right = 83
+patch_margin_bottom = 46
+script = ExtResource("7_2ip71")
+
+[node name="Player" type="CharacterBody2D" parent="."]
+position = Vector2(393, 611)
+script = ExtResource("9_bmml5")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player"]
+texture = ExtResource("3_xrtuc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+shape = SubResource("CapsuleShape2D_s01f5")
+
+[connection signal="mouse_entered" from="Back" to="Back" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Back" to="Back" method="_on_mouse_exited"]
+[connection signal="pressed" from="Back" to="Back" method="_on_pressed"]
+[connection signal="mouse_entered" from="Back/PieceFirst" to="Back/PieceFirst" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Back/PieceFirst" to="Back/PieceFirst" method="_on_mouse_exited"]
+[connection signal="pressed" from="Back/PieceFirst" to="Back/PieceFirst" method="_on_pressed"]
+[connection signal="mouse_entered" from="Back/PieceSecond" to="Back/PieceSecond" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Back/PieceSecond" to="Back/PieceSecond" method="_on_mouse_exited"]
+[connection signal="pressed" from="Back/PieceSecond" to="Back/PieceSecond" method="_on_pressed"]
