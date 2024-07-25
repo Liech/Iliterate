@@ -18,7 +18,9 @@ var dialog;
 var currentTab = "Gameplay"
 var Postprocessor
 var isfading = false
-
+var playerpos;
+var playerposstart;
+var playerposinitialized = false
 var catExplain = false;
 
 func startScene(Scene : Scenes):

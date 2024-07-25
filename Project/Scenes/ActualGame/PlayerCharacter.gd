@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 
-const SPEED = 60.0
+const SPEED = 140.0
 const JUMP_VELOCITY = -530.0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -50,7 +50,7 @@ func doVSync():
 		gamestate.Postprocessor.material.set_shader_parameter("vsyncAmount", 0)
 		gamestate.Postprocessor.material.set_shader_parameter("vsyncpos", 0)
 	else:
-		vsyncpos = vsyncpos + 5
+		vsyncpos = vsyncpos + 8
 		if (vsyncpos > 1080):
 			playershift = false;
 			vsyncpos = 0;
