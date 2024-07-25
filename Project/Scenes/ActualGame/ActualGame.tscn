@@ -1,10 +1,11 @@
-[gd_scene load_steps=26 format=3 uid="uid://bty84m1ich0cx"]
+[gd_scene load_steps=29 format=3 uid="uid://bty84m1ich0cx"]
 
 [ext_resource type="Texture2D" uid="uid://c4jdbmn3dmdw4" path="res://Art/LevelBackground.png" id="1_g2ffx"]
 [ext_resource type="Script" path="res://Scenes/ActualGame/ActualGame.gd" id="1_unm1w"]
 [ext_resource type="Texture2D" uid="uid://c8t8031606i2j" path="res://Art/LevelTerrain.png" id="2_c8f7l"]
 [ext_resource type="Theme" uid="uid://d2hv2jx01084f" path="res://mainTheme.tres" id="3_82lny"]
 [ext_resource type="Texture2D" uid="uid://1x31imsus3hm" path="res://Art/Character.png" id="3_xrtuc"]
+[ext_resource type="Shader" path="res://Scenes/ActualGame/lowgraphics.gdshader" id="4_6nb7y"]
 [ext_resource type="StyleBox" uid="uid://bdktf0xccluh5" path="res://Scenes/MainMenu/buttonninepatch.tres" id="4_q34dy"]
 [ext_resource type="Script" path="res://Generics/CmdBack.gd" id="5_673bu"]
 [ext_resource type="Texture2D" uid="uid://vc0f42xth06n" path="res://Art/Button/Button.png" id="6_aby28"]
@@ -13,6 +14,16 @@
 [ext_resource type="Script" path="res://Scenes/ActualGame/PlayerCharacter.gd" id="9_bmml5"]
 [ext_resource type="Texture2D" uid="uid://dpxsgva5qit0v" path="res://Art/Signpost.png" id="12_e5hfn"]
 [ext_resource type="Script" path="res://Scenes/ActualGame/Hint.gd" id="13_1qlun"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_85ojc"]
+shader = ExtResource("4_6nb7y")
+shader_parameter/size = Vector2(30, 30)
+shader_parameter/disabled = false
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_p50hd"]
+shader = ExtResource("4_6nb7y")
+shader_parameter/size = Vector2(4, 4)
+shader_parameter/disabled = false
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qt4it"]
 size = Vector2(909, 407)
@@ -64,15 +75,15 @@ size_flags_vertical = 3
 script = ExtResource("1_unm1w")
 
 [node name="Background" type="TextureRect" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+material = SubResource("ShaderMaterial_85ojc")
+offset_right = 1920.0
+offset_bottom = 1080.0
 texture = ExtResource("1_g2ffx")
 
 [node name="Terrain" type="TextureRect" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+material = SubResource("ShaderMaterial_p50hd")
+offset_right = 1920.0
+offset_bottom = 1080.0
 texture = ExtResource("2_c8f7l")
 
 [node name="RigidBody2D" type="RigidBody2D" parent="Terrain"]

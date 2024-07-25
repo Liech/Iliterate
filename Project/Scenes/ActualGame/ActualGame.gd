@@ -13,6 +13,23 @@ func _ready():
 func _process(delta):
 	if ($Player.position.y > 1080):
 		DoCommand("Loose");
+		
+	if (GlobalOptions.graphics == GlobalOptions.GraphicsQuality.High):
+		$Terrain.material.set_shader_parameter("disabled", true)
+		$Terrain.material.set_shader_parameter("disabled", true)
+	if (GlobalOptions.graphics == GlobalOptions.GraphicsQuality.Low):
+		$Background.material.set_shader_parameter("size", Vector2(1,1))
+		$Background.material.set_shader_parameter("disabled", false)
+		$Background.material.set_shader_parameter("size", Vector2(4,4))
+		$Terrain.material.set_shader_parameter("size", Vector2(1,1))
+		$Terrain.material.set_shader_parameter("disabled", false)
+		$Terrain.material.set_shader_parameter("size", Vector2(4,4))
+	if (GlobalOptions.graphics == GlobalOptions.GraphicsQuality.Potato):
+		$Background.material.set_shader_parameter("disabled", false)
+		$Background.material.set_shader_parameter("size", Vector2(15,15))
+		$Terrain.material.set_shader_parameter("disabled", false)
+		$Terrain.material.set_shader_parameter("size", Vector2(15,15))
+
 
 func DoCommand(command):
 	super.DoCommand(command)
