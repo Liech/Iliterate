@@ -135,16 +135,6 @@ position = Vector2(1501, 463.5)
 shape = SubResource("RectangleShape2D_7crxe")
 debug_color = Color(0.988633, 0.105515, 1.92523e-07, 0.388235)
 
-[node name="Player" type="CharacterBody2D" parent="."]
-position = Vector2(393, 611)
-script = ExtResource("9_bmml5")
-
-[node name="Sprite2D" type="Sprite2D" parent="Player"]
-texture = ExtResource("3_xrtuc")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-shape = SubResource("CapsuleShape2D_s01f5")
-
 [node name="Back" type="Button" parent="."]
 offset_left = 24.0
 offset_top = 903.0
@@ -234,6 +224,16 @@ patch_margin_right = 83
 patch_margin_bottom = 46
 script = ExtResource("7_2ip71")
 
+[node name="Player" type="CharacterBody2D" parent="."]
+position = Vector2(393, 611)
+script = ExtResource("9_bmml5")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player"]
+texture = ExtResource("3_xrtuc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+shape = SubResource("CapsuleShape2D_s01f5")
+
 [node name="Hint" type="TextureRect" parent="."]
 layout_mode = 0
 offset_left = 860.0
@@ -264,26 +264,15 @@ text = "Go right"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="FPS2" type="Label" parent="."]
-layout_mode = 0
-offset_left = 67.0
-offset_top = 40.0
-offset_right = 107.0
-offset_bottom = 128.0
-theme = ExtResource("3_82lny")
-theme_override_font_sizes/font_size = 50
-text = "FPS"
-
 [node name="FPS" type="Label" parent="."]
 layout_mode = 0
-offset_left = 67.0
-offset_top = 40.0
-offset_right = 255.0
-offset_bottom = 85.0
+offset_left = 1690.0
+offset_top = 19.0
+offset_right = 1878.0
+offset_bottom = 64.0
 theme = ExtResource("3_82lny")
 theme_override_font_sizes/font_size = 50
-text = "0.123"
-horizontal_alignment = 2
+text = "FPS: 0.123"
 script = ExtResource("15_31bbh")
 
 [connection signal="mouse_entered" from="Back" to="Back" method="_on_mouse_entered"]

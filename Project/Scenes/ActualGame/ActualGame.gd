@@ -8,10 +8,14 @@ func _ready():
 		gamestate.playerposstart = $Player.position
 	$Player.visible = true
 	$Player.position = gamestate.playerpos;
+	if ($Player.position.x < gamestate.playerposstart.x):		
+		gamestate.playerpos = gamestate.playerposstart
 		
 
 func _process(delta):
 	if ($Player.position.y > 1080):
+		DoCommand("Loose");
+	if ($Player.position.x <0):
 		DoCommand("Loose");
 		
 	if (GlobalOptions.graphics == GlobalOptions.GraphicsQuality.High):

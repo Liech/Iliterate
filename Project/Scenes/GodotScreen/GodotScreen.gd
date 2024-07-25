@@ -23,7 +23,6 @@ func _on_button_pressed():
 	#GlobalOptions.localization = GlobalOptions.Localization.English
 	#gamestate.fadeouttime = 0
 	#gamestate.fadeintime = 0
-	GlobalOptions.graphics = GlobalOptions.GraphicsQuality.Low;
 
 	GlobalOptions.jumpKey = "E";
 	gamestate.fadeTo(gamestate.Scenes.ActualGame);

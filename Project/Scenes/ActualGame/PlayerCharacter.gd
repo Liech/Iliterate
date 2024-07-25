@@ -10,8 +10,14 @@ var doflip = false;
 
 var vsyncpos = 0;
 
-func _process(delta):
+
+func _process(delta):	
 	doVSync();
+	
+	if (GlobalOptions.graphics == GlobalOptions.GraphicsQuality.High):
+		if (randi() % 100 < 90):
+			return;
+	
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta
