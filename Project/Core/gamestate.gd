@@ -22,6 +22,7 @@ var playerpos;
 var playerposstart;
 var playerposinitialized = false
 var catExplain = false;
+var buttonLabel;
 
 func startScene(Scene : Scenes):
 	if (Scene == Scenes.Godot):

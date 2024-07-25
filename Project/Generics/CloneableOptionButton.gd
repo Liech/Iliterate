@@ -2,6 +2,7 @@ extends OptionButton
 class_name CloneableOptionButton
 
 @export var breaks = false
+@export var dormant = false
 var isClone = false
 
 var englishTexts;

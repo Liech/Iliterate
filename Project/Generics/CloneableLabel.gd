@@ -3,6 +3,7 @@ class_name CloneableLabel
 
 @export var breaks = false
 @export var physic = true
+@export var dormant = false
 var isClone = false
 
 var englishText;

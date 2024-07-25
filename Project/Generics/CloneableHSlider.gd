@@ -2,6 +2,7 @@ extends HSlider
 class_name CloneableHSlider
 
 @export var breaks = false
+@export var dormant = false
 var isClone = false
 
 func _ready():

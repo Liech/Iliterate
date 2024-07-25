@@ -171,7 +171,12 @@ func disableAllNodes(targetNode, valu):
 	var allNodes = []
 	getallnodes(targetNode,allNodes)
 	for w in allNodes:
-		w.visible = valu
+		if (w is CloneableButton and valu):
+			if (not w.dormant):
+				w.visible = valu
+		else:
+			w.visible = valu
+
 		w.set_process(valu)
 
 func getallnodes(targetNode, resultArray):

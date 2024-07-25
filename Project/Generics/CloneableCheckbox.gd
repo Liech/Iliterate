@@ -2,6 +2,7 @@ extends CheckBox
 class_name CloneableCheckBox
 
 @export var breaks = false
+@export var dormant = false
 var isClone = false
 
 var englishText;

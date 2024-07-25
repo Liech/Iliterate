@@ -1,4 +1,4 @@
 extends CloneableButton
 
-func _on_pressed():
-	gamestate.currentScene.DoCommand("Options");
+#func _on_pressed():
+#	gamestate.currentScene.DoCommand("Options");

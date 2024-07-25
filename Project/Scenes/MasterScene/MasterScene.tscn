@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://bdmsibriri3e4"]
+[gd_scene load_steps=23 format=3 uid="uid://bdmsibriri3e4"]
 
 [ext_resource type="Script" path="res://Scenes/MasterScene/MasterScene.gd" id="1_tj8ov"]
 [ext_resource type="PackedScene" uid="uid://dllnxms57yayp" path="res://Scenes/GodotScreen/GodotScreen.tscn" id="2_385ln"]
@@ -21,6 +21,7 @@
 [ext_resource type="Script" path="res://Scenes/MasterScene/AdjustBrightness.gd" id="19_e82uy"]
 [ext_resource type="Material" uid="uid://bxr21smj0c8ja" path="res://postprocessing.tres" id="20_wmkgo"]
 [ext_resource type="Script" path="res://Scenes/MasterScene/PostProcessor.gd" id="21_i2s2l"]
+[ext_resource type="Script" path="res://Scenes/MasterScene/ButtonPressedLabel.gd" id="22_kw4yp"]
 
 [node name="MasterScene" type="Control"]
 layout_mode = 3
@@ -53,34 +54,8 @@ offset_right = -1090.56
 offset_bottom = -940.258
 script = ExtResource("3_013t6")
 
-[node name="GlobalFader" type="ColorRect" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -36.0
-offset_top = -43.0
-offset_right = 48.0
-offset_bottom = 56.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-color = Color(0, 0, 0, 0.0156863)
-
-[node name="NinePatchRect" type="NinePatchRect" parent="."]
-layout_mode = 0
-offset_right = 420.0
-offset_bottom = 369.0
-texture = ExtResource("3_npd7u")
-draw_center = false
-region_rect = Rect2(-0.450012, -1.88346, 715.711, 729.883)
-patch_margin_left = 12
-patch_margin_top = 14
-patch_margin_right = 18
-patch_margin_bottom = 12
-script = ExtResource("4_qrkg7")
-
 [node name="Dialog" type="Control" parent="."]
+visible = false
 anchors_preset = 0
 offset_left = 88.0
 offset_top = 512.0
@@ -368,6 +343,47 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("19_e82uy")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_right = 420.0
+offset_bottom = 369.0
+texture = ExtResource("3_npd7u")
+draw_center = false
+region_rect = Rect2(-0.450012, -1.88346, 715.711, 729.883)
+patch_margin_left = 12
+patch_margin_top = 14
+patch_margin_right = 18
+patch_margin_bottom = 12
+script = ExtResource("4_qrkg7")
+
+[node name="GlobalFader" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -36.0
+offset_top = -43.0
+offset_right = 48.0
+offset_bottom = 56.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0.0156863)
+
+[node name="ButtonPressedLabel" type="Label" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 264.0
+grow_horizontal = 2
+theme = ExtResource("4_2ub7r")
+theme_override_font_sizes/font_size = 300
+text = "OK"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("22_kw4yp")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

@@ -1,5 +1,6 @@
-[gd_scene load_steps=17 format=3 uid="uid://b45vfqcxcwe4q"]
+[gd_scene load_steps=18 format=3 uid="uid://b45vfqcxcwe4q"]
 
+[ext_resource type="Script" path="res://Scenes/StartScreen/StartScreen.gd" id="1_t28ft"]
 [ext_resource type="Texture2D" uid="uid://dxk323p2hap2c" path="res://Art/Background/Background.png" id="2_krb0y"]
 [ext_resource type="Texture2D" uid="uid://m2dbb5s7avis" path="res://Art/Background/Mage.png" id="3_vsfb3"]
 [ext_resource type="Texture2D" uid="uid://bsynd6xnwhvs1" path="res://Art/Background/Title.png" id="4_7evq1"]
@@ -29,6 +30,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+script = ExtResource("1_t28ft")
 
 [node name="Mage" type="TextureRect" parent="."]
 layout_mode = 1

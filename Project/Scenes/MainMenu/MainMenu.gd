@@ -13,8 +13,8 @@ func DoCommand(command):
 		gamestate.fadeTo(gamestate.Scenes.Options);
 	elif (command == "Back"):
 		gamestate.fadeTo(gamestate.Scenes.StartScreen);
-	elif (command == "StartScreen"):
+	elif (command == "Start Screen"):
 		gamestate.fadeTo(gamestate.Scenes.StartScreen);
-	elif (command == "StartGame"):
+	elif (command == "Start Game"):
 		gamestate.fadeTo(gamestate.Scenes.ActualGame);
 		

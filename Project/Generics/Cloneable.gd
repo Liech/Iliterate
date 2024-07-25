@@ -3,6 +3,7 @@ class_name Cloneable
 
 @export var breaks = false
 @export var physify = false
+@export var dormant = false
 
 var isClone = false
 

@@ -3,6 +3,7 @@ class_name CloneableButton
 
 @export var breaks = false
 @export var buildPhysic = true
+@export var dormant = false
 
 var isClone = false
 
@@ -15,7 +16,8 @@ func _ready():
 	englishText = text
 	startShader = material
 	if (not isClone):
-		add_to_group("Copyable");
+		if (not dormant):
+			add_to_group("Copyable");
 		if (buildPhysic):
 			await get_tree().create_timer(0.01).timeout # wait for daddy
 			Phys.physiphy(self,false);
@@ -103,5 +105,12 @@ func breakApart():
 		c.rotation = col.rotation
 		cumulativeSize += c.size.x
 		Phys.physiphy(c,true);
+		if (c.dormant and not isClone):
+			add_to_group("Copyable");
 		
 		i = i-1;
+
+
+func _on_pressed():
+	gamestate.buttonLabel.flash(text);
+	gamestate.currentScene.DoCommand(text);
