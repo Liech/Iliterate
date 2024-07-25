@@ -14,12 +14,19 @@ func _process(delta):
 		velocity.y += gravity * delta
 
 	# Handle jump.
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+	var jumpPressed = false;
+	if (GlobalOptions.jumpKey == "E"):
+		jumpPressed = Input.is_key_pressed(KEY_E)
+	if jumpPressed and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction = Input.get_axis("ui_left", "ui_right")
+	if (Input.is_key_pressed(KEY_A)):
+		direction = -1;
+	elif (Input.is_key_pressed(KEY_D)):
+		direction = 1;
 	if (direction != 0):
 		doflip = direction < 0
 	$Sprite2D.flip_h = doflip
