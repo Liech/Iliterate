@@ -47,6 +47,7 @@ expand_mode = 3
 stretch_mode = 4
 
 [node name="Back" type="Button" parent="."]
+layout_mode = 0
 offset_left = 24.0
 offset_top = 903.0
 offset_right = 503.0

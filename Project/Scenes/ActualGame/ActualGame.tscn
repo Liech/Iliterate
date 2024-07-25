@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://bty84m1ich0cx"]
+[gd_scene load_steps=33 format=3 uid="uid://bty84m1ich0cx"]
 
 [ext_resource type="Texture2D" uid="uid://c4jdbmn3dmdw4" path="res://Art/LevelBackground.png" id="1_g2ffx"]
 [ext_resource type="Script" path="res://Scenes/ActualGame/ActualGame.gd" id="1_unm1w"]
@@ -14,7 +14,9 @@
 [ext_resource type="Script" path="res://Scenes/ActualGame/PlayerCharacter.gd" id="9_bmml5"]
 [ext_resource type="Texture2D" uid="uid://dpxsgva5qit0v" path="res://Art/Signpost.png" id="12_e5hfn"]
 [ext_resource type="Script" path="res://Scenes/ActualGame/Hint.gd" id="13_1qlun"]
+[ext_resource type="Script" path="res://Scenes/ActualGame/OldMan.gd" id="14_u8lte"]
 [ext_resource type="Script" path="res://Scenes/ActualGame/FPS.gd" id="15_31bbh"]
+[ext_resource type="Texture2D" uid="uid://njbqasa8sot5" path="res://Art/OldMan.png" id="16_f6p2h"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_85ojc"]
 shader = ExtResource("4_6nb7y")
@@ -82,12 +84,14 @@ script = ExtResource("1_unm1w")
 
 [node name="Background" type="TextureRect" parent="."]
 material = SubResource("ShaderMaterial_85ojc")
+layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
 texture = ExtResource("1_g2ffx")
 
 [node name="Terrain" type="TextureRect" parent="."]
 material = SubResource("ShaderMaterial_p50hd")
+layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
 texture = ExtResource("2_c8f7l")
@@ -141,7 +145,7 @@ shape = SubResource("RectangleShape2D_7crxe")
 debug_color = Color(0.988633, 0.105515, 1.92523e-07, 0.388235)
 
 [node name="Player" type="CharacterBody2D" parent="."]
-position = Vector2(393, 611)
+position = Vector2(1295, 768)
 script = ExtResource("9_bmml5")
 
 [node name="Sprite2D" type="Sprite2D" parent="Player"]
@@ -152,6 +156,7 @@ texture = ExtResource("3_xrtuc")
 shape = SubResource("CapsuleShape2D_s01f5")
 
 [node name="Back" type="Button" parent="."]
+layout_mode = 0
 offset_left = 24.0
 offset_top = 903.0
 offset_right = 503.0
@@ -239,6 +244,15 @@ patch_margin_top = 58
 patch_margin_right = 83
 patch_margin_bottom = 46
 script = ExtResource("7_2ip71")
+
+[node name="OldMan" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 1595.0
+offset_top = 749.0
+offset_right = 1640.0
+offset_bottom = 817.0
+texture = ExtResource("16_f6p2h")
+script = ExtResource("14_u8lte")
 
 [node name="Hint" type="TextureRect" parent="."]
 layout_mode = 0
