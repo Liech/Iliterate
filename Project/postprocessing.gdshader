@@ -9,7 +9,7 @@ uniform sampler2D screen_texture : hint_screen_texture, repeat_disable, filter_n
 
 void fragment() {
 		vec2 pos = SCREEN_UV;
-		if (pos.y > vsyncpos/ 1080.0){pos.x = pos.x-vsyncAmount;}
+		if (pos.y < vsyncpos/ 1080.0){pos.x = pos.x-vsyncAmount;}
         COLOR = textureLod(screen_texture, pos, 0.0);
 		COLOR.r = COLOR.r*bright;
 		COLOR.g = COLOR.g*bright;

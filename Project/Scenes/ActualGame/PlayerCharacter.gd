@@ -1,14 +1,17 @@
 extends CharacterBody2D
 
 
-const SPEED = 200.0
+const SPEED = 60.0
 const JUMP_VELOCITY = -530.0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var doflip = false;
 
+var vsyncpos = 0;
+
 func _process(delta):
+	doVSync();
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta
@@ -36,3 +39,26 @@ func _process(delta):
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
+
+var playershift = false;
+func doVSync():
+	if (gamestate.isfading):
+		return;
+	var on = GlobalOptions.vsync;
+	
+	if not on:
+		gamestate.Postprocessor.material.set_shader_parameter("vsyncAmount", 0)
+		gamestate.Postprocessor.material.set_shader_parameter("vsyncpos", 0)
+	else:
+		vsyncpos = vsyncpos + 5
+		if (vsyncpos > 1080):
+			playershift = false;
+			vsyncpos = 0;
+		var amount = +0.1
+		gamestate.Postprocessor.material.set_shader_parameter("vsyncAmount", amount)
+		gamestate.Postprocessor.material.set_shader_parameter("vsyncpos", vsyncpos)
+		if (not playershift and vsyncpos > position.y):
+			playershift = true;
+			position.x -= 1920.0 * amount
+		
+		
