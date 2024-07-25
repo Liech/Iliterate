@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://bkhgq350lw5sw"]
+[gd_scene load_steps=6 format=3 uid="uid://bkhgq350lw5sw"]
 
 [ext_resource type="Theme" uid="uid://d2hv2jx01084f" path="res://mainTheme.tres" id="1_t3nyp"]
 [ext_resource type="Script" path="res://Scenes/TriggerWarning/FadeIn.gd" id="2_6rj78"]
 [ext_resource type="Script" path="res://Scenes/Ubiscene/Ubiscene.gd" id="2_x0o6i"]
+[ext_resource type="Script" path="res://Generics/CloneableLabel.gd" id="3_yi2im"]
 
 [sub_resource type="GDScript" id="GDScript_qcivd"]
 script/source = "extends VBoxContainer
@@ -67,6 +68,8 @@ theme_override_font_sizes/font_size = 60
 text = "Inspired by historical events and characters in your day"
 horizontal_alignment = 1
 vertical_alignment = 1
+script = ExtResource("3_yi2im")
+physic = false
 
 [node name="ColorRect" type="ColorRect" parent="VBoxContainer/Headline"]
 layout_mode = 2
@@ -87,6 +90,8 @@ theme_override_font_sizes/font_size = 60
 text = "This Feverdream was designed, developed and produced      "
 horizontal_alignment = 1
 vertical_alignment = 1
+script = ExtResource("3_yi2im")
+physic = false
 
 [node name="ColorRect" type="ColorRect" parent="VBoxContainer/FirstLine"]
 layout_mode = 2
@@ -104,9 +109,11 @@ theme_override_constants/margin_bottom = 15
 [node name="Label" type="Label" parent="VBoxContainer/SecondLine"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 60
-text = "by a single guy that does not know how to art or sound    "
+text = "What do mean? Did you just forgot how to read?"
 horizontal_alignment = 1
 vertical_alignment = 1
+script = ExtResource("3_yi2im")
+physic = false
 
 [node name="ColorRect" type="ColorRect" parent="VBoxContainer/SecondLine"]
 layout_mode = 2
@@ -128,9 +135,11 @@ theme_override_constants/margin_top = 200
 [node name="Label" type="Label" parent="VBoxContainer/Link/MarginContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
-text = "Visit https://github.com/Liech/Iliterate for Tips & Sourcecode      "
+text = "Pathetic. Uninstall game. lol."
 horizontal_alignment = 1
 vertical_alignment = 1
+script = ExtResource("3_yi2im")
+physic = false
 
 [node name="ColorRect" type="ColorRect" parent="VBoxContainer/Link"]
 layout_mode = 2

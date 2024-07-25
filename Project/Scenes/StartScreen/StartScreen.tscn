@@ -165,11 +165,12 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("9_t4sld")
-text = "If you do not do it you are not allowed to work and becomehomeless. I talked with your boss, he will fire you."
+text = "If you do not listen, you will fail. You are a failure. When did you ever did something right?"
 choices = Array[String](["Flee"])
 
 [node name="CatSignLanguageInterpreter" type="TextureRect" parent="."]
 visible = false
+layout_mode = 0
 offset_left = 1229.0
 offset_top = 250.0
 offset_right = 2029.0
@@ -181,6 +182,7 @@ script = ExtResource("13_y4dgt")
 
 [node name="Paw2" type="TextureRect" parent="."]
 visible = false
+layout_mode = 0
 offset_left = 1384.0
 offset_top = 402.0
 offset_right = 1554.0
@@ -192,6 +194,7 @@ script = ExtResource("15_2f3q0")
 
 [node name="Paw" type="TextureRect" parent="."]
 visible = false
+layout_mode = 0
 offset_left = 1769.0
 offset_top = 380.0
 offset_right = 1939.0

@@ -9,4 +9,5 @@ func choiceMade(choice):
 		else:
 			setTextBlock($Intro);
 	else:
+		gamestate.currentScene.DoCommand("Back");		
 		closeDialog()

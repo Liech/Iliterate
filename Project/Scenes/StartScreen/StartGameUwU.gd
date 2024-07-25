@@ -8,7 +8,8 @@ func choiceMade(choice):
 	if (choice == "Run Away"):
 		closeDialog();
 	elif (choice == "Good"):
-		setTextBlock($Revelation);		
+		setTextBlock($Revelation);			
+		GlobalOptions.gibberishStarting = true
 	elif (choice == "..."):
 		if (currentBlock == $Revelation):
 			setTextBlock($OhNo)
@@ -16,9 +17,9 @@ func choiceMade(choice):
 			gamestate.dialog.setCharacterName("You - But Younger")
 		else:
 			gamestate.dialog.setCharacterName("Start Game - Your Old English Teacher");
-			GlobalOptions.setGibberish()
 			gamestate.dialog.setCharacter(gamestate.dialog.Bodies.ButtonChan)
 			setTextBlock($NotListening)
 	elif (choice == "Flee"):
 		get_parent()._on_pressed()
 		closeDialog();
+		GlobalOptions.setGibberish()

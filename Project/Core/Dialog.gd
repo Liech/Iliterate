@@ -80,6 +80,8 @@ func closeDialog():
 	
 
 func openDialog():
+	if (gamestate.isfading):
+		return;
 	moveBack()
 	oldSnap = gamestate.snapActive
 	dialogActive = true;

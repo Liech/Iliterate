@@ -2,6 +2,7 @@ extends Label
 class_name CloneableLabel
 
 @export var breaks = false
+@export var physic = true
 var isClone = false
 
 var englishText;
@@ -15,7 +16,8 @@ func _ready():
 	if (not isClone):
 		add_to_group("Copyable");
 		await get_tree().create_timer(0.01).timeout # wait for daddy
-		Phys.physiphy(self,false);
+		if (physic):
+			Phys.physiphy(self,false);
 
 func hasChar(str, char):
 	for i in range(len(str)):
@@ -47,6 +49,10 @@ func _process(delta):
 			shuffleAll();
 			gibberishStarted = true
 			material = load("res://Art/gibberish.tres")
+		if (randi() % 100 < shuffleprop):
+			shuffleLetter()
+	if (GlobalOptions.gibberishStarting):
+		gibberishStarted = true
 		if (randi() % 100 < shuffleprop):
 			shuffleLetter()
 	else:

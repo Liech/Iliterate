@@ -17,6 +17,7 @@ var snapPool;
 var dialog;
 var currentTab = "Gameplay"
 var Postprocessor
+var isfading = false
 
 var catExplain = false;
 
@@ -92,11 +93,13 @@ func startScene(Scene : Scenes):
 
 
 func fadeTo(sceneName : Scenes):
+	isfading = true;
 	var tween = create_tween();
 	await tween.tween_property(fader,"modulate",Color(0,0,0,100),fadeouttime).finished
 	currentScene.queue_free()
 	gamestate.startScene(sceneName);
 	var tween2 = create_tween();
 	await tween2.tween_property(fader,"modulate",Color(0,0,0,0),fadeintime).finished
+	isfading = false;
 
 

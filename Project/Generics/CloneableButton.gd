@@ -51,6 +51,10 @@ func _process(delta):
 			material = load("res://Art/gibberish.tres")
 		if (randi() % 100 < shuffleprop):
 			shuffleLetter()
+	if (GlobalOptions.gibberishStarting):
+		gibberishStarted = true
+		if (randi() % 100 < shuffleprop):
+			shuffleLetter()
 	else:
 		text = englishText
 		gibberishStarted = false

@@ -13,6 +13,7 @@ var muteAudio = false;
 var dialog = DialogSpeed.Low;
 var graphics = GraphicsQuality.High;
 var localization = Localization.English;
+var gibberishStarting = false;
 var brightness = 50
 var opacity = 50
 var masterAudio = 100
@@ -24,10 +25,12 @@ var characters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
 
 func setUwU():
 	GlobalOptions.localization = GlobalOptions.Localization.UwU;
+	gibberishStarting = false;
 	Input.set_custom_mouse_cursor(uwuPaw,0,Vector2(19,4))
 	
 func setEnglish():
 	GlobalOptions.localization = GlobalOptions.Localization.English;
+	gibberishStarting = false;
 	Input.set_custom_mouse_cursor(null)
 	
 func setGibberish():
@@ -35,6 +38,7 @@ func setGibberish():
 	Input.set_custom_mouse_cursor(null)
 	
 func setCat():
+	gibberishStarting = false;
 	GlobalOptions.localization = GlobalOptions.Localization.CatSignLanguage;
 	Input.set_custom_mouse_cursor(catPaw,0,Vector2(10,14))
 	

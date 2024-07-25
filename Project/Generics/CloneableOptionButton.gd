@@ -57,6 +57,9 @@ func _process(delta):
 		if (randi() % 100 < shuffleprop):
 			shuffleLetter()
 		
+	if (GlobalOptions.gibberishStarting):
+		if (randi() % 100 < shuffleprop):
+			shuffleLetter()
 	else:
 		for i in range(item_count):
 			set_item_text(i, englishTexts[i])

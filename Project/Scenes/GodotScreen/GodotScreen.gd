@@ -20,9 +20,9 @@ func _process(delta):
 
 
 func _on_button_pressed():
-	GlobalOptions.localization = GlobalOptions.Localization.English
-	gamestate.fadeouttime = 0
-	gamestate.fadeintime = 0
+	#GlobalOptions.localization = GlobalOptions.Localization.English
+	#gamestate.fadeouttime = 0
+	#gamestate.fadeintime = 0
 	gamestate.fadeTo(gamestate.Scenes.Options);
 	return
 	
