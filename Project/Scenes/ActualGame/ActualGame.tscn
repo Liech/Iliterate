@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://bty84m1ich0cx"]
+[gd_scene load_steps=26 format=3 uid="uid://bty84m1ich0cx"]
 
 [ext_resource type="Texture2D" uid="uid://c4jdbmn3dmdw4" path="res://Art/LevelBackground.png" id="1_g2ffx"]
 [ext_resource type="Script" path="res://Scenes/ActualGame/ActualGame.gd" id="1_unm1w"]
@@ -11,6 +11,8 @@
 [ext_resource type="Script" path="res://Scenes/Options/Potatofier.gd" id="7_2ip71"]
 [ext_resource type="Script" path="res://Generics/CmdStartGame.gd" id="8_3i3a2"]
 [ext_resource type="Script" path="res://Scenes/ActualGame/PlayerCharacter.gd" id="9_bmml5"]
+[ext_resource type="Texture2D" uid="uid://dpxsgva5qit0v" path="res://Art/Signpost.png" id="12_e5hfn"]
+[ext_resource type="Script" path="res://Scenes/ActualGame/Hint.gd" id="13_1qlun"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qt4it"]
 size = Vector2(909, 407)
@@ -42,6 +44,12 @@ size = Vector2(70, 81)
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_s01f5"]
 radius = 20.0
 height = 70.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d6nmw"]
+size = Vector2(212, 119)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0l3ij"]
+size = Vector2(31, 75)
 
 [node name="ActualGame" type="Control"]
 layout_mode = 3
@@ -213,6 +221,36 @@ texture = ExtResource("3_xrtuc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 shape = SubResource("CapsuleShape2D_s01f5")
+
+[node name="Hint" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 860.0
+offset_top = 334.0
+offset_right = 1081.0
+offset_bottom = 536.0
+texture = ExtResource("12_e5hfn")
+script = ExtResource("13_1qlun")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="Hint"]
+freeze = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hint/RigidBody2D"]
+position = Vector2(112, 65.5)
+shape = SubResource("RectangleShape2D_d6nmw")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Hint/RigidBody2D"]
+position = Vector2(96.5, 157.5)
+shape = SubResource("RectangleShape2D_0l3ij")
+
+[node name="Label" type="Label" parent="Hint"]
+layout_mode = 0
+offset_right = 222.0
+offset_bottom = 127.0
+theme = ExtResource("3_82lny")
+theme_override_font_sizes/font_size = 30
+text = "Go right"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="mouse_entered" from="Back" to="Back" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Back" to="Back" method="_on_mouse_exited"]
