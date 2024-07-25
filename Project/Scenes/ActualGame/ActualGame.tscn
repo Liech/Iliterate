@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://bty84m1ich0cx"]
+[gd_scene load_steps=31 format=3 uid="uid://bty84m1ich0cx"]
 
 [ext_resource type="Texture2D" uid="uid://c4jdbmn3dmdw4" path="res://Art/LevelBackground.png" id="1_g2ffx"]
 [ext_resource type="Script" path="res://Scenes/ActualGame/ActualGame.gd" id="1_unm1w"]
@@ -52,6 +52,11 @@ size = Vector2(80, 81)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7crxe"]
 size = Vector2(70, 81)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pb6pm"]
+shader = ExtResource("4_6nb7y")
+shader_parameter/size = Vector2(4, 4)
+shader_parameter/disabled = false
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_s01f5"]
 radius = 20.0
@@ -140,6 +145,7 @@ position = Vector2(393, 611)
 script = ExtResource("9_bmml5")
 
 [node name="Sprite2D" type="Sprite2D" parent="Player"]
+material = SubResource("ShaderMaterial_pb6pm")
 texture = ExtResource("3_xrtuc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
