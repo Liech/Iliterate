@@ -1,8 +1,5 @@
 extends SceneRoot
 
-func _process(delta):
-	if ($Player.position.y > 1080):
-		gamestate.fadeTo(gamestate.Scenes.LooseScreen);
 
 func DoCommand(command):
 	super.DoCommand(command)

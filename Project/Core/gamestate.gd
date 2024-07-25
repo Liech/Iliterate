@@ -4,8 +4,8 @@ enum Scenes {Godot, Triggerwarning, Ubiscene, Credits, StartScreen, MainMenu, Lo
 
  
 var twChoice = "Confusion";
-var fadeouttime = 2;
-var fadeintime = 2;
+var fadeouttime = 1;
+var fadeintime = 1;
 var masternode;
 var currentSceneName = "Godot";
 var currentScene;

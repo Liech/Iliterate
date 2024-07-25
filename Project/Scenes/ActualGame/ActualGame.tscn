@@ -126,6 +126,7 @@ text = "Back"
 flat = true
 script = ExtResource("5_673bu")
 breaks = true
+buildPhysic = false
 
 [node name="NinePatchRect" type="NinePatchRect" parent="Back"]
 show_behind_parent = true

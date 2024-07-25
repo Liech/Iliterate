@@ -1,11 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://u1urh4dk8tyw"]
+[gd_scene load_steps=10 format=3 uid="uid://u1urh4dk8tyw"]
 
+[ext_resource type="Script" path="res://Scenes/LooseScreen/LooseScreen.gd" id="1_yl12q"]
+[ext_resource type="Texture2D" uid="uid://4jcuthxtlifh" path="res://Art/Background/LooseScreen.png" id="2_vnr4d"]
 [ext_resource type="Texture2D" uid="uid://dxk323p2hap2c" path="res://Art/Background/Background.png" id="2_x0hu5"]
-[ext_resource type="Texture2D" uid="uid://m2dbb5s7avis" path="res://Art/Background/Mage.png" id="3_xwity"]
-[ext_resource type="Texture2D" uid="uid://bsynd6xnwhvs1" path="res://Art/Background/Title.png" id="4_d3wr2"]
-[ext_resource type="Script" path="res://Scenes/StartScreen/ToMainMenu.gd" id="5_na4fm"]
+[ext_resource type="Theme" uid="uid://d2hv2jx01084f" path="res://mainTheme.tres" id="3_uhh3c"]
+[ext_resource type="StyleBox" uid="uid://bdktf0xccluh5" path="res://Scenes/MainMenu/buttonninepatch.tres" id="4_f8b3a"]
+[ext_resource type="Script" path="res://Generics/CmdBack.gd" id="5_pmido"]
+[ext_resource type="Texture2D" uid="uid://vc0f42xth06n" path="res://Art/Button/Button.png" id="6_7qksq"]
+[ext_resource type="Script" path="res://Scenes/Options/Potatofier.gd" id="7_s8aps"]
+[ext_resource type="Script" path="res://Generics/CmdStartGame.gd" id="8_apruk"]
 
-[node name="StartScreen" type="Control"]
+[node name="LooseScreen" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -15,8 +20,9 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+script = ExtResource("1_yl12q")
 
-[node name="Mage" type="TextureRect" parent="."]
+[node name="Background" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -27,38 +33,114 @@ texture = ExtResource("2_x0hu5")
 expand_mode = 3
 stretch_mode = 4
 
-[node name="Background" type="TextureRect" parent="."]
+[node name="Mage" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -1.77777
+offset_right = 1.77783
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("3_xwity")
+texture = ExtResource("2_vnr4d")
 expand_mode = 3
 stretch_mode = 4
 
-[node name="Title" type="TextureRect" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 1.003
-offset_left = -23.0
-offset_bottom = -0.245972
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("4_d3wr2")
-expand_mode = 3
-stretch_mode = 4
-
-[node name="Button" type="Button" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="Back" type="Button" parent="."]
+offset_left = 24.0
+offset_top = 903.0
+offset_right = 503.0
+offset_bottom = 1031.0
+theme = ExtResource("3_uhh3c")
+theme_override_styles/normal = ExtResource("4_f8b3a")
+text = "Back"
 flat = true
-script = ExtResource("5_na4fm")
+script = ExtResource("5_pmido")
+breaks = true
+buildPhysic = false
 
-[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
+[node name="NinePatchRect" type="NinePatchRect" parent="Back"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_uhh3c")
+texture = ExtResource("6_7qksq")
+region_rect = Rect2(0.447113, 1.15751, 198.079, 182.684)
+patch_margin_left = 120
+patch_margin_top = 58
+patch_margin_right = 83
+patch_margin_bottom = 46
+script = ExtResource("7_s8aps")
+
+[node name="PieceFirst" type="Button" parent="Back"]
+visible = false
+layout_mode = 0
+offset_left = 248.0
+offset_right = 492.0
+offset_bottom = 128.0
+theme = ExtResource("3_uhh3c")
+theme_override_styles/normal = ExtResource("4_f8b3a")
+text = "Ck"
+flat = true
+script = ExtResource("8_apruk")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Back/PieceFirst"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -12.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_uhh3c")
+texture = ExtResource("6_7qksq")
+region_rect = Rect2(0.447113, 1.15751, 198.079, 182.684)
+patch_margin_left = 120
+patch_margin_top = 58
+patch_margin_right = 83
+patch_margin_bottom = 46
+script = ExtResource("7_s8aps")
+
+[node name="PieceSecond" type="Button" parent="Back"]
+visible = false
+layout_mode = 0
+offset_right = 260.0
+offset_bottom = 128.0
+theme = ExtResource("3_uhh3c")
+theme_override_styles/normal = ExtResource("4_f8b3a")
+text = "Ba"
+flat = true
+script = ExtResource("8_apruk")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Back/PieceSecond"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -12.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_uhh3c")
+texture = ExtResource("6_7qksq")
+region_rect = Rect2(0.447113, 1.15751, 198.079, 182.684)
+patch_margin_left = 120
+patch_margin_top = 58
+patch_margin_right = 83
+patch_margin_bottom = 46
+script = ExtResource("7_s8aps")
+
+[connection signal="mouse_entered" from="Back" to="Back" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Back" to="Back" method="_on_mouse_exited"]
+[connection signal="pressed" from="Back" to="Back" method="_on_pressed"]
+[connection signal="mouse_entered" from="Back/PieceFirst" to="Back/PieceFirst" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Back/PieceFirst" to="Back/PieceFirst" method="_on_mouse_exited"]
+[connection signal="pressed" from="Back/PieceFirst" to="Back/PieceFirst" method="_on_pressed"]
+[connection signal="mouse_entered" from="Back/PieceSecond" to="Back/PieceSecond" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Back/PieceSecond" to="Back/PieceSecond" method="_on_mouse_exited"]
+[connection signal="pressed" from="Back/PieceSecond" to="Back/PieceSecond" method="_on_pressed"]
