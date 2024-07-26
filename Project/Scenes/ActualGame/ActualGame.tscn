@@ -484,6 +484,7 @@ stretch_mode = 4
 
 [node name="RollCreditsAndWinMachine" type="TextureRect" parent="PopUp"]
 visible = false
+layout_mode = 0
 offset_left = 828.5
 offset_top = -160.0
 offset_right = 1028.5

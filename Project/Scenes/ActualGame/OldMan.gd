@@ -21,8 +21,9 @@ func secondAct():
 	gamestate.popup.setButton(1,"Ok",false);
 	gamestate.popup.setButton(2,"Ok",false);
 	gamestate.popup.get_node("OldMan").visible = true
-	gamestate.popup.get_node("Title").visible = true
 	gamestate.popup.get_node("RollCreditsAndWinMachine").visible = false
+	gamestate.popup.get_node("Title").text = "Old Man";
+	gamestate.popup.get_node("Title").visible = true
 	
 func firstAct():
 	gamestate.popup.open();
@@ -31,6 +32,7 @@ func firstAct():
 	gamestate.popup.setButton(1,"Ok",false);
 	gamestate.popup.setButton(2,"Ok",false);
 	gamestate.popup.get_node("OldMan").visible = true
+	gamestate.popup.get_node("Title").text = "Old Man";
 	gamestate.popup.get_node("Title").visible = true
 	gamestate.popup.get_node("RollCreditsAndWinMachine").visible = false
 
