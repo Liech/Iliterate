@@ -26,11 +26,13 @@ func _on_button_pressed():
 	#GlobalOptions.vsync = true
 	#GlobalOptions.graphics = GlobalOptions.GraphicsQuality.Low;
 	GlobalOptions.jumpKey = "E";
-	gamestate.fadeTo(gamestate.Scenes.MainMenu);
-	return
+	#gamestate.fadeTo(gamestate.Scenes.ActualGame);
+	#return
 	
 	if (alreadyPressed):
 		return;
+	
+	gamestate.musicPlayer.beginMusic()
 	if (not GlobalOptions.muteAudio):
 		$Audio.stream = goooo
 		$Audio.play()

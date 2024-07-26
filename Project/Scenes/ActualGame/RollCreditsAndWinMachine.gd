@@ -29,7 +29,7 @@ func _process(delta):
 	if (not visible):
 		return;
 	var dist = player.position.distance_to(position)
-	if (dist < 120):
+	if (dist < 100):
 		if (not interacted):
 			interacted = true;
 			talk();

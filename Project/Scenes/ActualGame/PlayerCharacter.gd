@@ -66,12 +66,12 @@ func doVSync():
 			if (randi() % 100 < 90):
 				pauseit = 5
 				return;
-		vsyncpos = vsyncpos + 3
+		vsyncpos = vsyncpos + 18
 		if (vsyncpos > 1080):
 			playershift = false;
 			vsyncpos = 0;
-		var amount = +0.1
-		gamestate.Postprocessor.material.set_shader_parameter("vsyncAmount", amount)
+		var amount = +0.08
+		gamestate.Postprocessor.material.set_shader_parameter("vsyncAmount", -amount)
 		gamestate.Postprocessor.material.set_shader_parameter("vsyncpos", vsyncpos)
 		if (not playershift and vsyncpos > position.y):
 			playershift = true;

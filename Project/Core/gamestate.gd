@@ -26,6 +26,7 @@ var buttonLabel;
 var popup;
 var actNumber = 0;
 var termsagreed = false
+var musicPlayer;
 
 func startScene(Scene : Scenes):
 	if (Scene == Scenes.Godot):

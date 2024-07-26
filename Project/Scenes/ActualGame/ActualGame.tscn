@@ -159,7 +159,7 @@ texture = ExtResource("5_y11hg")
 script = ExtResource("6_kob34")
 
 [node name="Player" type="CharacterBody2D" parent="."]
-position = Vector2(395, 614)
+position = Vector2(388, 620)
 script = ExtResource("9_bmml5")
 
 [node name="Sprite2D" type="Sprite2D" parent="Player"]
@@ -368,6 +368,25 @@ theme_override_font_sizes/font_size = 50
 text = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed labore et dolore magna aliquyam erat, sed labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo d"
 autowrap_mode = 3
 
+[node name="OldMan" type="TextureRect" parent="PopUp"]
+layout_mode = 0
+offset_left = 828.5
+offset_top = -160.0
+offset_right = 1028.5
+offset_bottom = 117.0
+texture = ExtResource("16_f6p2h")
+stretch_mode = 4
+
+[node name="RollCreditsAndWinMachine" type="TextureRect" parent="PopUp"]
+visible = false
+layout_mode = 0
+offset_left = 828.5
+offset_top = -160.0
+offset_right = 1028.5
+offset_bottom = 117.0
+texture = ExtResource("5_y11hg")
+stretch_mode = 4
+
 [node name="Title" type="Label" parent="PopUp"]
 layout_mode = 0
 offset_left = -38.5
@@ -470,25 +489,6 @@ patch_margin_top = 58
 patch_margin_right = 83
 patch_margin_bottom = 46
 script = ExtResource("7_2ip71")
-
-[node name="OldMan" type="TextureRect" parent="PopUp"]
-layout_mode = 0
-offset_left = 828.5
-offset_top = -160.0
-offset_right = 1028.5
-offset_bottom = 117.0
-texture = ExtResource("16_f6p2h")
-stretch_mode = 4
-
-[node name="RollCreditsAndWinMachine" type="TextureRect" parent="PopUp"]
-visible = false
-layout_mode = 0
-offset_left = 828.5
-offset_top = -160.0
-offset_right = 1028.5
-offset_bottom = 117.0
-texture = ExtResource("5_y11hg")
-stretch_mode = 4
 
 [connection signal="mouse_entered" from="Back" to="Back" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Back" to="Back" method="_on_mouse_exited"]

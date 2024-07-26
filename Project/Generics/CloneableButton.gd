@@ -24,6 +24,7 @@ func touchedGround():
 func _ready():
 	englishText = text
 	startShader = material
+	connect("pressed",_on_pressed)
 	if (not isClone):
 		if (not dormant):
 			add_to_group("Copyable");

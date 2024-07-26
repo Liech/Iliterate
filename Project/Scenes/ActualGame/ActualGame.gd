@@ -53,7 +53,7 @@ func DoCommand(command):
 		gamestate.popup.get_node("OldMan").visible = false
 		gamestate.popup.get_node("Title").visible = false
 		gamestate.popup.open();
-		gamestate.popup.setText("Are you sure?");
+		gamestate.popup.setText("Are you sure?\nYour progress is saved.");
 		gamestate.popup.setButton(0,"Yes",true);
 		gamestate.popup.setButton(1,"No",true);
 		gamestate.popup.setButton(2,"Ok",false);		
@@ -61,7 +61,7 @@ func DoCommand(command):
 	elif (command == "No"):
 		gamestate.popup.close();		
 	elif (command == "Start"):
-		if (gamestate.actNumber > 0):
+		if (gamestate.actNumber > 0 and gamestate.popup.visible and gamestate.popup.get_node("RollCreditsAndWinMachine").visible):
 			gamestate.fadeTo(gamestate.Scenes.WinScreen);
 	elif (command == "Yes"):
 		if (not gamestate.popup.get_node("OldMan").visible):

@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://bdmsibriri3e4"]
+[gd_scene load_steps=25 format=3 uid="uid://bdmsibriri3e4"]
 
 [ext_resource type="Script" path="res://Scenes/MasterScene/MasterScene.gd" id="1_tj8ov"]
 [ext_resource type="PackedScene" uid="uid://dllnxms57yayp" path="res://Scenes/GodotScreen/GodotScreen.tscn" id="2_385ln"]
@@ -17,7 +17,9 @@
 [ext_resource type="Script" path="res://Scenes/MasterScene/LowSpeedPawRotate.gd" id="10_b60xc"]
 [ext_resource type="Script" path="res://Scenes/MasterScene/ByeDialog.gd" id="11_wfmv7"]
 [ext_resource type="Texture2D" uid="uid://c2fkgtiynvecr" path="res://Art/Rocket.png" id="17_30jps"]
+[ext_resource type="AudioStream" path="res://Sound/Music/Music2.wav" id="18_gd5yu"]
 [ext_resource type="Script" path="res://Scenes/MasterScene/Rocket.gd" id="18_osg1a"]
+[ext_resource type="Script" path="res://Scenes/MasterScene/MusicPlayer.gd" id="18_r87is"]
 [ext_resource type="Script" path="res://Scenes/MasterScene/AdjustBrightness.gd" id="19_e82uy"]
 [ext_resource type="Material" uid="uid://bxr21smj0c8ja" path="res://postprocessing.tres" id="20_wmkgo"]
 [ext_resource type="Script" path="res://Scenes/MasterScene/PostProcessor.gd" id="21_i2s2l"]
@@ -344,6 +346,11 @@ offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("19_e82uy")
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("18_gd5yu")
+bus = &"Music"
+script = ExtResource("18_r87is")
+
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 z_index = 6
 layout_mode = 0
@@ -412,3 +419,4 @@ script = ExtResource("21_i2s2l")
 [connection signal="pressed" from="Dialog/Choices/Choice9" to="Dialog/Choices/Choice9" method="_on_pressed"]
 [connection signal="pressed" from="Dialog/Choices/Choice10" to="Dialog/Choices/Choice10" method="_on_pressed"]
 [connection signal="pressed" from="Dialog/Choices/Choice11" to="Dialog/Choices/Choice11" method="_on_pressed"]
+[connection signal="finished" from="AudioStreamPlayer2D" to="AudioStreamPlayer2D" method="_on_finished"]

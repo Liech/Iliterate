@@ -10,7 +10,11 @@ uniform sampler2D screen_texture : hint_screen_texture, repeat_disable, filter_n
 void fragment() {
 		vec2 pos = SCREEN_UV;
 		if (pos.y < vsyncpos/ 1080.0){
-			pos.x = pos.x-vsyncAmount;
+			float bridgeDistance = abs(pos.y - vsyncpos/ 1080.0);
+			if (bridgeDistance > 0.2) bridgeDistance = 0.2;
+			bridgeDistance = bridgeDistance*5.0;
+			float vs = vsyncAmount * (1.0-bridgeDistance);
+			pos.x = pos.x-vs;
 			if (pos.x < 0.0) pos.x += 1.0;
 			}
         COLOR = textureLod(screen_texture, pos, 0.0);
