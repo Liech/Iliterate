@@ -6,3 +6,7 @@ func DoCommand(command):
 	
 	if (command == "Back"):
 		gamestate.fadeTo(gamestate.Scenes.MainMenu);
+	elif (command == "Tutorial"):
+		pass
+	elif (command == "..."):
+		pass

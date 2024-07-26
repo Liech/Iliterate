@@ -3,7 +3,7 @@ extends SceneRoot
 func DoCommand(command):
 	super.DoCommand(command)
 	
-	if (command == "Memory"):
+	if (command == "Memories"):
 		gamestate.fadeTo(gamestate.Scenes.Memories);
 	elif (command == "About"):
 		gamestate.fadeTo(gamestate.Scenes.Credits);

@@ -7,9 +7,9 @@ var rng = RandomNumberGenerator.new()
 var isClone = false
 
 func _ready():
-	if (not isClone):
-		add_to_group("Copyable");
-
+	#if (not isClone):
+		#add_to_group("Copyable");
+	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

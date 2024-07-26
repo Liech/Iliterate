@@ -99,6 +99,16 @@ func _on_mouse_exited():
 func breakApart():
 	var c1 = Button.new()
 	var c2 = Button.new()
+	c1.set_script(load("res://Generics/CloneableButton.gd"))
+	c2.set_script(load("res://Generics/CloneableButton.gd"))
+	var half = len(text)/2
+	c1.text = text.substr(0,half);
+	if(len(text)%2):
+		half -= 1;
+	c2.text = text.substr(half);
+	if (hasBreaknames):
+		c1.text = piece1
+		c2.text = piece2
 	add_child(c2)
 	add_child(c1)
 
@@ -109,22 +119,12 @@ func breakApart():
 	var background2 = $NinePatchRect.duplicate()
 	c2.add_child(background2);
 
-	var half = len(text)/2
-	c1.text = text.substr(0,half);
-	if(len(text)%2):
-		half -= 1;
-	c2.text = text.substr(half);
-	if (hasBreaknames):
-		c1.text = piece1
-		c2.text = piece2
 	c1.position = Vector2(0,0);
 	c2.position = Vector2(size.x/2,0);
 	c1.size = Vector2(size.x/2,size.y)
 	c2.size = Vector2(size.x/2,size.y)
 	c1.theme = theme
 	c2.theme = theme
-	c1.set_script(load("res://Generics/CloneableButton.gd"))
-	c2.set_script(load("res://Generics/CloneableButton.gd"))
 	c1.connect("pressed",c1._on_pressed)
 	c2.connect("pressed",c2._on_pressed)
 	c1.name = "Piece1";
