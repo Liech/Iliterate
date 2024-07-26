@@ -149,6 +149,7 @@ offset_bottom = 1080.0
 texture = ExtResource("2_c8f7l")
 
 [node name="RollCreditsAndWinMachine" type="TextureRect" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 1258.0
 offset_top = 732.0
@@ -158,7 +159,7 @@ texture = ExtResource("5_y11hg")
 script = ExtResource("6_kob34")
 
 [node name="Player" type="CharacterBody2D" parent="."]
-position = Vector2(1293, 774)
+position = Vector2(395, 614)
 script = ExtResource("9_bmml5")
 
 [node name="Sprite2D" type="Sprite2D" parent="Player"]

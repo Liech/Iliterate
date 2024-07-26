@@ -35,6 +35,8 @@ func firstAct():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	visible = gamestate.actNumber >= 1;
+	if (not visible):
+		return;
 	var dist = player.position.distance_to(position)
 	if (dist < 120):
 		if (not interacted):
