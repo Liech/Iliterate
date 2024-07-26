@@ -9,20 +9,18 @@ func _ready():
 
 
 func talk():
-	if (gamestate.actNumber == 0):
-		firstAct();
-	else:
+	if (gamestate.actNumber == 1):
 		secondAct();
 
 func secondAct():
 	gamestate.popup.open();
-	gamestate.popup.setText("Great Job! I put it over there. Please rescue the world.");
+	gamestate.popup.setText("Please say Start to start.");
 	gamestate.popup.setButton(0,"Close",true);
 	gamestate.popup.setButton(1,"Ok",false);
 	gamestate.popup.setButton(2,"Ok",false);
-	gamestate.popup.get_node("OldMan").visible = true
-	gamestate.popup.get_node("Title").visible = true
-	gamestate.popup.get_node("RollCreditsAndWinMachine").visible = false
+	gamestate.popup.get_node("OldMan").visible = false
+	gamestate.popup.get_node("RollCreditsAndWinMachine").visible = true
+	gamestate.popup.get_node("Title").visible = false
 	
 func firstAct():
 	gamestate.popup.open();
@@ -32,12 +30,13 @@ func firstAct():
 	gamestate.popup.setButton(2,"Ok",false);
 	gamestate.popup.get_node("OldMan").visible = true
 	gamestate.popup.get_node("Title").visible = true
-	gamestate.popup.get_node("RollCreditsAndWinMachine").visible = false
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	visible = gamestate.actNumber >= 1;
 	var dist = player.position.distance_to(position)
-	if (dist < 80):
+	if (dist < 120):
 		if (not interacted):
 			interacted = true;
 			talk();

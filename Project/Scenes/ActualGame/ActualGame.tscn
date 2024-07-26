@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://bty84m1ich0cx"]
+[gd_scene load_steps=37 format=3 uid="uid://bty84m1ich0cx"]
 
 [ext_resource type="Texture2D" uid="uid://c4jdbmn3dmdw4" path="res://Art/LevelBackground.png" id="1_g2ffx"]
 [ext_resource type="Script" path="res://Scenes/ActualGame/ActualGame.gd" id="1_unm1w"]
@@ -8,7 +8,9 @@
 [ext_resource type="Shader" path="res://Scenes/ActualGame/lowgraphics.gdshader" id="4_6nb7y"]
 [ext_resource type="StyleBox" uid="uid://bdktf0xccluh5" path="res://Scenes/MainMenu/buttonninepatch.tres" id="4_q34dy"]
 [ext_resource type="Script" path="res://Generics/CmdBack.gd" id="5_673bu"]
+[ext_resource type="Texture2D" uid="uid://gnceajb3jy0n" path="res://Art/MacGuffin.png" id="5_y11hg"]
 [ext_resource type="Texture2D" uid="uid://vc0f42xth06n" path="res://Art/Button/Button.png" id="6_aby28"]
+[ext_resource type="Script" path="res://Scenes/ActualGame/RollCreditsAndWinMachine.gd" id="6_kob34"]
 [ext_resource type="Script" path="res://Scenes/Options/Potatofier.gd" id="7_2ip71"]
 [ext_resource type="Script" path="res://Generics/CmdStartGame.gd" id="8_3i3a2"]
 [ext_resource type="Script" path="res://Scenes/ActualGame/PlayerCharacter.gd" id="9_bmml5"]
@@ -148,8 +150,12 @@ texture = ExtResource("2_c8f7l")
 
 [node name="RollCreditsAndWinMachine" type="TextureRect" parent="."]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 1258.0
+offset_top = 732.0
+offset_right = 1358.0
+offset_bottom = 830.0
+texture = ExtResource("5_y11hg")
+script = ExtResource("6_kob34")
 
 [node name="Player" type="CharacterBody2D" parent="."]
 position = Vector2(1293, 774)
@@ -473,6 +479,15 @@ offset_top = -160.0
 offset_right = 1028.5
 offset_bottom = 117.0
 texture = ExtResource("16_f6p2h")
+stretch_mode = 4
+
+[node name="RollCreditsAndWinMachine" type="TextureRect" parent="PopUp"]
+visible = false
+offset_left = 828.5
+offset_top = -160.0
+offset_right = 1028.5
+offset_bottom = 117.0
+texture = ExtResource("5_y11hg")
 stretch_mode = 4
 
 [connection signal="mouse_entered" from="Back" to="Back" method="_on_mouse_entered"]

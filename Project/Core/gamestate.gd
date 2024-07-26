@@ -1,6 +1,6 @@
 extends Node
 
-enum Scenes {Godot, Triggerwarning, Ubiscene, Credits, StartScreen, MainMenu, LooseScreen, Options, Memories,ActualGame, KeyBinding}
+enum Scenes {Godot, Triggerwarning, Ubiscene, Credits, StartScreen, MainMenu, LooseScreen, Options, Memories,ActualGame, KeyBinding, WinScreen}
 
  
 var twChoice = "Confusion";
@@ -67,6 +67,12 @@ func startScene(Scene : Scenes):
 		currentScene = scene.instantiate();
 		currentScene.set_name("LooseScreen");
 		currentSceneName = "LooseScreen";
+		snapActive= true
+	elif (Scene == Scenes.WinScreen):
+		var scene = ResourceLoader.load("res://Scenes/WinScreen/WinScreen.tscn")
+		currentScene = scene.instantiate();
+		currentScene.set_name("WinScreen");
+		currentSceneName = "WinScreen";
 		snapActive= true
 	elif (Scene == Scenes.Options):
 		var scene = ResourceLoader.load("res://Scenes/Options/Options.tscn")

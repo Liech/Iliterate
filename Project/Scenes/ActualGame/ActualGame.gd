@@ -57,8 +57,12 @@ func DoCommand(command):
 		gamestate.popup.setButton(0,"Yes",true);
 		gamestate.popup.setButton(1,"No",true);
 		gamestate.popup.setButton(2,"Ok",false);		
+		gamestate.popup.get_node("RollCreditsAndWinMachine").visible = false
 	elif (command == "No"):
 		gamestate.popup.close();		
+	elif (command == "Start"):
+		if (gamestate.actNumber > 0):
+			gamestate.fadeTo(gamestate.Scenes.WinScreen);
 	elif (command == "Yes"):
 		if (not gamestate.popup.get_node("OldMan").visible):
 			gamestate.Postprocessor.material.set_shader_parameter("vsyncAmount", 0)
