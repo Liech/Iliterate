@@ -175,7 +175,8 @@ func disableAllNodes(targetNode, valu):
 			if (not w.dormant):
 				w.visible = valu
 		else:
-			w.visible = valu
+			if (w.is_in_group("Copyable")):
+				w.visible = valu
 
 		w.set_process(valu)
 

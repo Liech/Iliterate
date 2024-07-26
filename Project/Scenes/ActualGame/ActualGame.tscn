@@ -17,17 +17,12 @@
 [ext_resource type="Script" path="res://Scenes/ActualGame/OldMan.gd" id="14_u8lte"]
 [ext_resource type="Script" path="res://Scenes/ActualGame/FPS.gd" id="15_31bbh"]
 [ext_resource type="Texture2D" uid="uid://njbqasa8sot5" path="res://Art/OldMan.png" id="16_f6p2h"]
-[ext_resource type="Script" path="res://Generics/Cloneable.gd" id="18_u8j4i"]
+[ext_resource type="Script" path="res://Scenes/ActualGame/PopUp.gd" id="18_0hdya"]
 [ext_resource type="Script" path="res://Scenes/ActualGame/popupButton.gd" id="19_3mvkm"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_85ojc"]
 shader = ExtResource("4_6nb7y")
 shader_parameter/size = Vector2(30, 30)
-shader_parameter/disabled = true
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_p50hd"]
-shader = ExtResource("4_6nb7y")
-shader_parameter/size = Vector2(4, 4)
 shader_parameter/disabled = true
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qt4it"]
@@ -56,6 +51,11 @@ size = Vector2(80, 81)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7crxe"]
 size = Vector2(70, 81)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_p50hd"]
+shader = ExtResource("4_6nb7y")
+shader_parameter/size = Vector2(4, 4)
+shader_parameter/disabled = true
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_pb6pm"]
 shader = ExtResource("4_6nb7y")
@@ -91,6 +91,54 @@ offset_right = 1920.0
 offset_bottom = 1080.0
 texture = ExtResource("1_g2ffx")
 
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+freeze = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+position = Vector2(791.5, 877.5)
+shape = SubResource("RectangleShape2D_qt4it")
+debug_color = Color(0.988633, 0.105515, 1.92523e-07, 0.388235)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="RigidBody2D"]
+position = Vector2(1078, 601.5)
+shape = SubResource("RectangleShape2D_0ognq")
+debug_color = Color(0.988633, 0.105515, 1.92523e-07, 0.388235)
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="RigidBody2D"]
+position = Vector2(1658, 568.5)
+shape = SubResource("RectangleShape2D_gt8s3")
+debug_color = Color(0.988633, 0.105515, 1.92523e-07, 0.388235)
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="RigidBody2D"]
+position = Vector2(1769, 861)
+shape = SubResource("RectangleShape2D_1phar")
+debug_color = Color(0.988633, 0.105515, 1.92523e-07, 0.388235)
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="RigidBody2D"]
+position = Vector2(1465, 952)
+shape = SubResource("RectangleShape2D_j6kog")
+debug_color = Color(0.988633, 0.105515, 1.92523e-07, 0.388235)
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="RigidBody2D"]
+position = Vector2(1345, 403)
+shape = SubResource("RectangleShape2D_2dpdy")
+debug_color = Color(0.988633, 0.105515, 1.92523e-07, 0.388235)
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="RigidBody2D"]
+position = Vector2(1343, 349.5)
+shape = SubResource("RectangleShape2D_xtk0l")
+debug_color = Color(0.988633, 0.105515, 1.92523e-07, 0.388235)
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="RigidBody2D"]
+position = Vector2(1208, 488.5)
+shape = SubResource("RectangleShape2D_v8hye")
+debug_color = Color(0.988633, 0.105515, 1.92523e-07, 0.388235)
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="RigidBody2D"]
+position = Vector2(1501, 463.5)
+shape = SubResource("RectangleShape2D_7crxe")
+debug_color = Color(0.988633, 0.105515, 1.92523e-07, 0.388235)
+
 [node name="Terrain" type="TextureRect" parent="."]
 material = SubResource("ShaderMaterial_p50hd")
 layout_mode = 0
@@ -98,56 +146,13 @@ offset_right = 1920.0
 offset_bottom = 1080.0
 texture = ExtResource("2_c8f7l")
 
-[node name="RigidBody2D" type="RigidBody2D" parent="Terrain"]
-freeze = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Terrain/RigidBody2D"]
-position = Vector2(791.5, 877.5)
-shape = SubResource("RectangleShape2D_qt4it")
-debug_color = Color(0.988633, 0.105515, 1.92523e-07, 0.388235)
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Terrain/RigidBody2D"]
-position = Vector2(1078, 601.5)
-shape = SubResource("RectangleShape2D_0ognq")
-debug_color = Color(0.988633, 0.105515, 1.92523e-07, 0.388235)
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Terrain/RigidBody2D"]
-position = Vector2(1658, 568.5)
-shape = SubResource("RectangleShape2D_gt8s3")
-debug_color = Color(0.988633, 0.105515, 1.92523e-07, 0.388235)
-
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="Terrain/RigidBody2D"]
-position = Vector2(1769, 861)
-shape = SubResource("RectangleShape2D_1phar")
-debug_color = Color(0.988633, 0.105515, 1.92523e-07, 0.388235)
-
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="Terrain/RigidBody2D"]
-position = Vector2(1465, 952)
-shape = SubResource("RectangleShape2D_j6kog")
-debug_color = Color(0.988633, 0.105515, 1.92523e-07, 0.388235)
-
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="Terrain/RigidBody2D"]
-position = Vector2(1345, 403)
-shape = SubResource("RectangleShape2D_2dpdy")
-debug_color = Color(0.988633, 0.105515, 1.92523e-07, 0.388235)
-
-[node name="CollisionShape2D7" type="CollisionShape2D" parent="Terrain/RigidBody2D"]
-position = Vector2(1343, 349.5)
-shape = SubResource("RectangleShape2D_xtk0l")
-debug_color = Color(0.988633, 0.105515, 1.92523e-07, 0.388235)
-
-[node name="CollisionShape2D8" type="CollisionShape2D" parent="Terrain/RigidBody2D"]
-position = Vector2(1208, 488.5)
-shape = SubResource("RectangleShape2D_v8hye")
-debug_color = Color(0.988633, 0.105515, 1.92523e-07, 0.388235)
-
-[node name="CollisionShape2D9" type="CollisionShape2D" parent="Terrain/RigidBody2D"]
-position = Vector2(1501, 463.5)
-shape = SubResource("RectangleShape2D_7crxe")
-debug_color = Color(0.988633, 0.105515, 1.92523e-07, 0.388235)
+[node name="RollCreditsAndWinMachine" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
 [node name="Player" type="CharacterBody2D" parent="."]
-position = Vector2(1295, 768)
+position = Vector2(1293, 774)
 script = ExtResource("9_bmml5")
 
 [node name="Sprite2D" type="Sprite2D" parent="Player"]
@@ -311,12 +316,21 @@ horizontal_alignment = 2
 script = ExtResource("15_31bbh")
 
 [node name="PopUp" type="TextureRect" parent="."]
+visible = false
+layout_mode = 0
 offset_left = 519.5
 offset_top = 292.0
 offset_right = 1400.5
 offset_bottom = 789.0
-script = ExtResource("18_u8j4i")
-physify = true
+script = ExtResource("18_0hdya")
+
+[node name="ColorRect" type="ColorRect" parent="PopUp"]
+layout_mode = 0
+offset_left = -543.0
+offset_top = -312.0
+offset_right = 1467.0
+offset_bottom = 846.0
+color = Color(0, 0, 0, 0.611765)
 
 [node name="PopUp" type="NinePatchRect" parent="PopUp"]
 show_behind_parent = true
@@ -340,12 +354,23 @@ patch_margin_bottom = 46
 
 [node name="Label" type="Label" parent="PopUp"]
 layout_mode = 0
-offset_right = 907.0
-offset_bottom = 381.0
+offset_left = -15.0
+offset_top = 47.0
+offset_right = 904.0
+offset_bottom = 397.0
 theme = ExtResource("3_82lny")
 theme_override_font_sizes/font_size = 50
-text = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit"
+text = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed labore et dolore magna aliquyam erat, sed labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo d"
 autowrap_mode = 3
+
+[node name="Title" type="Label" parent="PopUp"]
+layout_mode = 0
+offset_left = -38.5
+offset_top = -79.0
+offset_right = 243.5
+offset_bottom = 9.0
+theme = ExtResource("3_82lny")
+text = "Old Man"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="PopUp"]
 layout_mode = 0
@@ -353,6 +378,7 @@ offset_left = -22.5
 offset_top = 404.0
 offset_right = 928.5
 offset_bottom = 507.0
+theme_override_constants/separation = 100
 alignment = 1
 
 [node name="Ok" type="Button" parent="PopUp/HBoxContainer"]
@@ -370,6 +396,36 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -56.0
+offset_right = 45.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_82lny")
+texture = ExtResource("6_aby28")
+region_rect = Rect2(0.447113, 1.15751, 198.079, 182.684)
+patch_margin_left = 120
+patch_margin_top = 58
+patch_margin_right = 83
+patch_margin_bottom = 46
+script = ExtResource("7_2ip71")
+
+[node name="Ok2" type="Button" parent="PopUp/HBoxContainer"]
+visible = false
+layout_mode = 2
+theme = ExtResource("3_82lny")
+theme_override_font_sizes/font_size = 70
+theme_override_styles/normal = ExtResource("4_q34dy")
+text = "Ok"
+flat = true
+script = ExtResource("19_3mvkm")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="PopUp/HBoxContainer/Ok2"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 offset_right = -12.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -382,6 +438,43 @@ patch_margin_right = 83
 patch_margin_bottom = 46
 script = ExtResource("7_2ip71")
 
+[node name="Ok3" type="Button" parent="PopUp/HBoxContainer"]
+visible = false
+layout_mode = 2
+theme = ExtResource("3_82lny")
+theme_override_font_sizes/font_size = 70
+theme_override_styles/normal = ExtResource("4_q34dy")
+text = "Ok"
+flat = true
+script = ExtResource("19_3mvkm")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="PopUp/HBoxContainer/Ok3"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -12.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_82lny")
+texture = ExtResource("6_aby28")
+region_rect = Rect2(0.447113, 1.15751, 198.079, 182.684)
+patch_margin_left = 120
+patch_margin_top = 58
+patch_margin_right = 83
+patch_margin_bottom = 46
+script = ExtResource("7_2ip71")
+
+[node name="OldMan" type="TextureRect" parent="PopUp"]
+layout_mode = 0
+offset_left = 828.5
+offset_top = -160.0
+offset_right = 1028.5
+offset_bottom = 117.0
+texture = ExtResource("16_f6p2h")
+stretch_mode = 4
+
 [connection signal="mouse_entered" from="Back" to="Back" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Back" to="Back" method="_on_mouse_exited"]
 [connection signal="pressed" from="Back" to="Back" method="_on_pressed"]
@@ -392,3 +485,5 @@ script = ExtResource("7_2ip71")
 [connection signal="mouse_exited" from="Back/PieceSecond" to="Back/PieceSecond" method="_on_mouse_exited"]
 [connection signal="pressed" from="Back/PieceSecond" to="Back/PieceSecond" method="_on_pressed"]
 [connection signal="pressed" from="PopUp/HBoxContainer/Ok" to="PopUp/HBoxContainer/Ok" method="_on_pressed"]
+[connection signal="pressed" from="PopUp/HBoxContainer/Ok2" to="PopUp/HBoxContainer/Ok2" method="_on_pressed"]
+[connection signal="pressed" from="PopUp/HBoxContainer/Ok3" to="PopUp/HBoxContainer/Ok3" method="_on_pressed"]

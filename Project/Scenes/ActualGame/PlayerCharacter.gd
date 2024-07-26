@@ -13,7 +13,8 @@ var vsyncpos = 0;
 
 func _process(delta):	
 	doVSync();
-	
+	if (gamestate.popup.visible):
+		return;
 	if (GlobalOptions.graphics == GlobalOptions.GraphicsQuality.High):
 		if (randi() % 100 < 90):
 			return;
@@ -46,17 +47,26 @@ func _process(delta):
 
 	move_and_slide()
 
+var pauseit = 0
 var playershift = false;
 func doVSync():
 	if (gamestate.isfading):
 		return;
-	var on = GlobalOptions.vsync;
+	var on = not GlobalOptions.vsync;
 	
 	if not on:
 		gamestate.Postprocessor.material.set_shader_parameter("vsyncAmount", 0)
 		gamestate.Postprocessor.material.set_shader_parameter("vsyncpos", 0)
 	else:
-		vsyncpos = vsyncpos + 8
+		
+		if (GlobalOptions.graphics == GlobalOptions.GraphicsQuality.High):
+			pauseit -= 1
+			if (pauseit > 0):
+				return
+			if (randi() % 100 < 90):
+				pauseit = 5
+				return;
+		vsyncpos = vsyncpos + 3
 		if (vsyncpos > 1080):
 			playershift = false;
 			vsyncpos = 0;

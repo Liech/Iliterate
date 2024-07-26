@@ -7,7 +7,7 @@ enum DialogSpeed{Off, Low, High}
 enum GraphicsQuality {High, Low, Potato}
 enum Localization {English, Gibberish, CatSignLanguage, UwU}
 
-var vsync = true;
+var vsync = false;
 var hints = true;
 var muteAudio = false;
 var dialog = DialogSpeed.Low;
