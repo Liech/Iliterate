@@ -160,5 +160,5 @@ func _on_pressed():
 	if (GlobalOptions.Localization.CatSignLanguage == GlobalOptions.localization):
 		if (not grounded and buildPhysic):
 			return;
-	gamestate.buttonLabel.flash(text);
-	gamestate.currentScene.DoCommand(text);
+	gamestate.buttonLabel.flash(englishText);
+	gamestate.currentScene.DoCommand(englishText);

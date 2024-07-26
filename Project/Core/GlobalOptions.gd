@@ -36,6 +36,7 @@ func setEnglish():
 	
 func setGibberish():
 	GlobalOptions.localization = GlobalOptions.Localization.Gibberish;
+	GlobalOptions.gibberishStarting = true
 	Input.set_custom_mouse_cursor(null)
 	
 func setCat():

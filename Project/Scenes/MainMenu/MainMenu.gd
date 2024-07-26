@@ -16,5 +16,9 @@ func DoCommand(command):
 	elif (command == "Start Screen"):
 		gamestate.fadeTo(gamestate.Scenes.StartScreen);
 	elif (command == "Start Game"):
-		gamestate.fadeTo(gamestate.Scenes.ActualGame);
+		if (gamestate.termsagreed):
+			gamestate.fadeTo(gamestate.Scenes.ActualGame);
+		else:
+			gamestate.fadeTo(gamestate.Scenes.TermsAndServices);
+			
 		

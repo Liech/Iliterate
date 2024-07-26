@@ -1,6 +1,6 @@
 extends Node
 
-enum Scenes {Godot, Triggerwarning, Ubiscene, Credits, StartScreen, MainMenu, LooseScreen, Options, Memories,ActualGame, KeyBinding, WinScreen}
+enum Scenes {Godot, Triggerwarning, Ubiscene, Credits, StartScreen, MainMenu, LooseScreen, Options, Memories,ActualGame, KeyBinding, WinScreen, TermsAndServices}
 
  
 var twChoice = "Confusion";
@@ -25,6 +25,7 @@ var catExplain = false;
 var buttonLabel;
 var popup;
 var actNumber = 0;
+var termsagreed = false
 
 func startScene(Scene : Scenes):
 	if (Scene == Scenes.Godot):
@@ -97,6 +98,12 @@ func startScene(Scene : Scenes):
 		currentScene = scene.instantiate();
 		currentScene.set_name("Keybindings");
 		currentSceneName = "Keybindings";
+		snapActive = true
+	elif (Scene == Scenes.TermsAndServices):
+		var scene = ResourceLoader.load("res://Scenes/TermsAndServices/TermsAndServices.tscn")
+		currentScene = scene.instantiate();
+		currentScene.set_name("TermsAndServices");
+		currentSceneName = "TermsAndServices";
 		snapActive = true
 		
 	masternode.add_child(currentScene)

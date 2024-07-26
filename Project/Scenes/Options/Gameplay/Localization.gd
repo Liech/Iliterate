@@ -26,12 +26,10 @@ func _on_item_selected(index):
 
 func setLang(index):	
 	gamestate.snapActive = true
-	if (index == 0 or (index == 3 and firstChoice)):
+	if (index == 0):
 		GlobalOptions.setEnglish()
 	elif (index == 1):
 		GlobalOptions.setUwU()
-		if (firstChoice):
-			GlobalOptions.dialog = GlobalOptions.DialogSpeed.Off # from gibberish to uwu is too confusing
 	elif (index == 2):
 		GlobalOptions.setCat()
 	elif (index == 3):
