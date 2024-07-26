@@ -88,6 +88,9 @@ func _on_mouse_entered():
 func _on_mouse_exited():
 	gamestate.catExplain = false
 
+var grounded = false;
+func touchedGround():
+	grounded = true;
 
 func breakApart():
 	var c1 = Label.new()

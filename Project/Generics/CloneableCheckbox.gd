@@ -24,7 +24,10 @@ func hasChar(str, char):
 			return true;
 	return false;
 
-	
+var grounded = false;
+func touchedGround():
+	grounded = true;
+
 func shuffleLetter():
 	var index = randi()%len(text)
 	var n_char = len(GlobalOptions.characters)

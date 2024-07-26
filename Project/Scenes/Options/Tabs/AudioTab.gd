@@ -4,6 +4,10 @@ func tabname():
 	return "Audio"
 
 func _on_pressed():
+	if (GlobalOptions.Localization.CatSignLanguage == GlobalOptions.localization):
+		if (not grounded):
+			return;
+	
 	var allNodes = []
 	gamestate.currentTab = "Audio"
 	getallnodes(gamestate.currentScene,allNodes)

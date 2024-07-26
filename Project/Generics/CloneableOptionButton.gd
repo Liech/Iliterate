@@ -10,6 +10,11 @@ var gibberishStarted = false
 var shuffleprop = 4
 var startShader;
 
+var grounded = false;
+func touchedGround():
+	grounded = true;
+
+
 func _ready():
 	englishTexts = []
 	startShader = material

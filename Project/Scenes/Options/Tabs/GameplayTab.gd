@@ -5,6 +5,10 @@ func tabname():
 	return "Gameplay"
 	
 func _on_pressed():
+	if (GlobalOptions.Localization.CatSignLanguage == GlobalOptions.localization):
+		if (not grounded):
+			return;
+	
 	var allNodes = []
 	gamestate.currentTab = "Gameplay"
 	getallnodes(gamestate.currentScene,allNodes)

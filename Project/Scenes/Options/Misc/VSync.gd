@@ -14,4 +14,8 @@ func _process(delta):
 		button_pressed  = GlobalOptions.vsync
 
 func _on_toggled(toggled_on):
+	if (GlobalOptions.Localization.CatSignLanguage == GlobalOptions.localization):
+		if (not grounded):
+			return;
+	
 	GlobalOptions.vsync = toggled_on

@@ -18,16 +18,17 @@ func physiphy(target, toss):
 	rect.size = target.size
 	col.add_child(shp)
 	
-	if (target.breaks):
-		col.set_script(load("res://Core/Breaker.gd"));
-		col.selfconnect();
+	#if (target.breaks):
+	col.set_script(load("res://Core/Breaker.gd"));
+	col.breaks = target.breaks
+	col.selfconnect();
 	
 	shp.shape = rect
 	shp.position = target.size/2.0
 	col.position = target.position
 	col.rotation = target.rotation
 	col.contact_monitor = true
-	col.max_contacts_reported = 1
+	col.max_contacts_reported = 10
 	
 	if (target.get_parent()):
 		target.get_parent().add_child(col);

@@ -992,8 +992,9 @@ theme_override_styles/normal = ExtResource("5_exebi")
 text = "Keybindings"
 flat = true
 script = ExtResource("30_qipj4")
+breaks = true
 
-[node name="NinePatchRect2" type="NinePatchRect" parent="KeybindingMisc2"]
+[node name="NinePatchRect" type="NinePatchRect" parent="KeybindingMisc2"]
 show_behind_parent = true
 layout_mode = 1
 anchors_preset = -1
