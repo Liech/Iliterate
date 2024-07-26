@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://ds1y7027xjuah"]
+[gd_scene load_steps=22 format=3 uid="uid://ds1y7027xjuah"]
 
 [ext_resource type="Script" path="res://Scenes/Memories/Memories.gd" id="1_avnhm"]
 [ext_resource type="Texture2D" uid="uid://c4jdbmn3dmdw4" path="res://Art/LevelBackground.png" id="1_udsne"]
@@ -17,6 +17,10 @@
 [ext_resource type="Script" path="res://Scenes/Memories/Tutorial.gd" id="15_ofbvt"]
 [ext_resource type="Texture2D" uid="uid://njbqasa8sot5" path="res://Art/OldMan.png" id="15_vyu53"]
 [ext_resource type="Script" path="res://Scenes/Memories/OldMansBackButton.gd" id="17_52jtc"]
+[ext_resource type="Texture2D" uid="uid://cddswonhtdrjv" path="res://Art/Keycaps/KeycapCtrl.png" id="18_bq4pw"]
+[ext_resource type="Texture2D" uid="uid://clbql2b4gmonm" path="res://Art/Keycaps/KeycapV.png" id="19_0x6qu"]
+[ext_resource type="Texture2D" uid="uid://hg6o1pdclh67" path="res://Art/Keycaps/KeycapC.png" id="20_vbujk"]
+[ext_resource type="Texture2D" uid="uid://de8ntbpfst776" path="res://Art/Keycaps/KeycapDel.png" id="21_n70ie"]
 
 [node name="Memories" type="Control"]
 layout_mode = 3
@@ -37,34 +41,6 @@ offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("1_udsne")
 script = ExtResource("2_il4sm")
-
-[node name="Back" type="Button" parent="."]
-layout_mode = 0
-offset_left = 1432.0
-offset_top = 4.0
-offset_right = 1911.0
-offset_bottom = 132.0
-theme = ExtResource("4_h3p8p")
-theme_override_styles/normal = ExtResource("5_pncrj")
-text = "Back"
-flat = true
-script = ExtResource("5_lqalk")
-
-[node name="NinePatchRect" type="NinePatchRect" parent="Back"]
-show_behind_parent = true
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme = ExtResource("4_h3p8p")
-texture = ExtResource("6_4jo0q")
-region_rect = Rect2(0.447113, 1.15751, 198.079, 182.684)
-patch_margin_left = 120
-patch_margin_top = 58
-patch_margin_right = 83
-patch_margin_bottom = 46
 
 [node name="Raincloud" type="Panel" parent="."]
 modulate = Color(1, 1, 1, 0)
@@ -107,14 +83,14 @@ texture = ExtResource("12_aq567")
 stretch_mode = 4
 script = ExtResource("13_rwnwj")
 
-[node name="PopUp" type="TextureRect" parent="."]
+[node name="Dashboard" type="TextureRect" parent="."]
 offset_left = 120.0
 offset_top = 96.0
 offset_right = 851.0
 offset_bottom = 816.0
 script = ExtResource("2_il4sm")
 
-[node name="PopUp2" type="NinePatchRect" parent="PopUp"]
+[node name="PopUp2" type="NinePatchRect" parent="Dashboard"]
 show_behind_parent = true
 layout_mode = 1
 anchors_preset = 15
@@ -206,6 +182,286 @@ patch_margin_top = 58
 patch_margin_right = 83
 patch_margin_bottom = 46
 
-[connection signal="pressed" from="Back" to="Back" method="_on_pressed"]
+[node name="TutorialPopUp" type="TextureRect" parent="."]
+visible = false
+z_index = 2
+offset_left = 321.0
+offset_top = 127.0
+offset_right = 1652.0
+offset_bottom = 954.0
+script = ExtResource("2_il4sm")
+
+[node name="ColorRect" type="ColorRect" parent="TutorialPopUp"]
+show_behind_parent = true
+offset_left = -944.0
+offset_top = -429.0
+offset_right = 1699.0
+offset_bottom = 1064.0
+color = Color(0, 0, 0, 0.611765)
+
+[node name="PopUp2" type="NinePatchRect" parent="TutorialPopUp"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -73.0
+offset_top = -33.0
+offset_right = 90.0
+offset_bottom = 31.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_h3p8p")
+texture = ExtResource("6_4jo0q")
+region_rect = Rect2(0.447113, 1.15751, 198.079, 182.684)
+patch_margin_left = 120
+patch_margin_top = 58
+patch_margin_right = 83
+patch_margin_bottom = 46
+
+[node name="Back" type="Button" parent="TutorialPopUp"]
+layout_mode = 0
+offset_left = -54.0
+offset_top = 712.0
+offset_right = 258.0
+offset_bottom = 840.0
+theme = ExtResource("4_h3p8p")
+theme_override_styles/normal = ExtResource("5_pncrj")
+text = "Back"
+flat = true
+script = ExtResource("5_lqalk")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="TutorialPopUp/Back"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_h3p8p")
+texture = ExtResource("6_4jo0q")
+region_rect = Rect2(0.447113, 1.15751, 198.079, 182.684)
+patch_margin_left = 120
+patch_margin_top = 58
+patch_margin_right = 83
+patch_margin_bottom = 46
+
+[node name="TutorialText" type="Label" parent="TutorialPopUp"]
+offset_left = -34.0
+offset_top = 9.0
+offset_right = 1369.0
+offset_bottom = 582.0
+theme = ExtResource("4_h3p8p")
+theme_override_font_sizes/font_size = 50
+text = "Save your Memories.
+
+To be able to remember the beautiful and highly professional artstyle of this game, we made it possible to save memories everywhere.
+
+Just draw a rectangle with your left mouse button and Press Ctrl+C to save the memory. Now go to Memories and paste it to the Memories dashboard. 
+Please do not paste it anywhere else. And do not capture UI elements. They are not beautiful,
+
+Why don't you try it with the beautiful Pond?"
+autowrap_mode = 3
+
+[node name="TutorialTitle" type="Label" parent="TutorialPopUp"]
+offset_left = -49.0
+offset_top = -73.0
+offset_right = 936.0
+offset_bottom = 15.0
+theme = ExtResource("4_h3p8p")
+text = "Tutorial: Making Memories"
+
+[node name="Control" type="Control" parent="TutorialPopUp"]
+anchors_preset = 0
+offset_left = 195.0
+offset_top = 154.0
+offset_right = 235.0
+offset_bottom = 194.0
+
+[node name="Ctrl" type="TextureRect" parent="TutorialPopUp/Control"]
+layout_mode = 0
+offset_left = 105.0
+offset_top = 538.0
+offset_right = 254.0
+offset_bottom = 687.0
+texture = ExtResource("18_bq4pw")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="Ctrl3" type="TextureRect" parent="TutorialPopUp/Control"]
+layout_mode = 0
+offset_left = 664.0
+offset_top = 536.0
+offset_right = 813.0
+offset_bottom = 685.0
+texture = ExtResource("19_0x6qu")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="Ctrl4" type="TextureRect" parent="TutorialPopUp/Control"]
+layout_mode = 0
+offset_left = 258.0
+offset_top = 532.0
+offset_right = 407.0
+offset_bottom = 681.0
+texture = ExtResource("20_vbujk")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="Plus3" type="Label" parent="TutorialPopUp/Control"]
+offset_left = 458.0
+offset_top = 1156.0
+offset_right = 509.0
+offset_bottom = 1244.0
+theme = ExtResource("4_h3p8p")
+text = "+"
+
+[node name="Copy" type="Label" parent="TutorialPopUp/Control"]
+offset_left = 165.0
+offset_top = 471.0
+offset_right = 341.0
+offset_bottom = 559.0
+theme = ExtResource("4_h3p8p")
+text = "Copy"
+
+[node name="Plus2" type="Label" parent="TutorialPopUp/Control"]
+offset_left = 626.0
+offset_top = 580.0
+offset_right = 677.0
+offset_bottom = 668.0
+theme = ExtResource("4_h3p8p")
+text = "+"
+
+[node name="Ctrl2" type="TextureRect" parent="TutorialPopUp/Control"]
+layout_mode = 0
+offset_left = 498.0
+offset_top = 536.0
+offset_right = 647.0
+offset_bottom = 685.0
+texture = ExtResource("18_bq4pw")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="Ctrl5" type="TextureRect" parent="TutorialPopUp/Control"]
+layout_mode = 0
+offset_left = 982.0
+offset_top = 529.0
+offset_right = 1131.0
+offset_bottom = 678.0
+texture = ExtResource("21_n70ie")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="Paste" type="Label" parent="TutorialPopUp/Control"]
+offset_left = 547.0
+offset_top = 464.0
+offset_right = 767.0
+offset_bottom = 552.0
+theme = ExtResource("4_h3p8p")
+text = "Paste"
+
+[node name="Delete" type="Label" parent="TutorialPopUp/Control"]
+offset_left = 937.0
+offset_top = 464.0
+offset_right = 1176.0
+offset_bottom = 552.0
+theme = ExtResource("4_h3p8p")
+text = "Delete"
+
+[node name="OldManDialog" type="TextureRect" parent="."]
+visible = false
+z_index = 2
+offset_left = 745.0
+offset_top = 458.0
+offset_right = 1220.0
+offset_bottom = 855.0
+script = ExtResource("2_il4sm")
+
+[node name="ColorRect" type="ColorRect" parent="OldManDialog"]
+show_behind_parent = true
+offset_left = -947.0
+offset_top = -603.0
+offset_right = 1696.0
+offset_bottom = 890.0
+color = Color(0, 0, 0, 0.611765)
+
+[node name="PopUp2" type="NinePatchRect" parent="OldManDialog"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -73.0
+offset_top = -33.0
+offset_right = 90.0
+offset_bottom = 31.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_h3p8p")
+texture = ExtResource("6_4jo0q")
+region_rect = Rect2(0.447113, 1.15751, 198.079, 182.684)
+patch_margin_left = 120
+patch_margin_top = 58
+patch_margin_right = 83
+patch_margin_bottom = 46
+
+[node name="Close" type="Button" parent="OldManDialog"]
+layout_mode = 0
+offset_left = 229.0
+offset_top = 281.0
+offset_right = 541.0
+offset_bottom = 409.0
+theme = ExtResource("4_h3p8p")
+theme_override_styles/normal = ExtResource("5_pncrj")
+text = "Close"
+flat = true
+script = ExtResource("5_lqalk")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="OldManDialog/Close"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_h3p8p")
+texture = ExtResource("6_4jo0q")
+region_rect = Rect2(0.447113, 1.15751, 198.079, 182.684)
+patch_margin_left = 120
+patch_margin_top = 58
+patch_margin_right = 83
+patch_margin_bottom = 46
+
+[node name="TutorialText" type="Label" parent="OldManDialog"]
+offset_left = -28.0
+offset_top = 18.0
+offset_right = 502.0
+offset_bottom = 329.0
+theme = ExtResource("4_h3p8p")
+theme_override_font_sizes/font_size = 50
+text = "I forgot what to write on this Button. I'm not as good with words as i once was.
+I hope you still find your way back."
+autowrap_mode = 3
+
+[node name="TutorialTitle" type="Label" parent="OldManDialog"]
+offset_left = -49.0
+offset_top = -73.0
+offset_right = 936.0
+offset_bottom = 15.0
+theme = ExtResource("4_h3p8p")
+text = "Old Man"
+
+[node name="OldMan2" type="TextureRect" parent="OldManDialog"]
+offset_left = 460.0
+offset_top = -176.0
+offset_right = 601.0
+offset_bottom = 24.0
+texture = ExtResource("15_vyu53")
+stretch_mode = 4
+
 [connection signal="pressed" from="Tutorial" to="Tutorial" method="_on_pressed"]
 [connection signal="pressed" from="???" to="???" method="_on_pressed"]
+[connection signal="pressed" from="TutorialPopUp/Back" to="TutorialPopUp/Back" method="_on_pressed"]
+[connection signal="pressed" from="OldManDialog/Close" to="OldManDialog/Close" method="_on_pressed"]

@@ -378,7 +378,6 @@ theme_override_styles/normal = ExtResource("6_kavg7")
 text = "Back"
 flat = true
 script = ExtResource("12_am8p2")
-breaks = true
 
 [node name="NinePatchRect" type="NinePatchRect" parent="Back2"]
 show_behind_parent = true

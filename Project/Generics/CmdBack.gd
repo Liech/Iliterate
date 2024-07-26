@@ -1,5 +1,6 @@
-extends CloneableButton
+extends Button
 
-#func _on_pressed():
-#	gamestate.currentScene.DoCommand("Back");
+func _on_pressed():
+	gamestate.buttonLabel.flash(text);
+	gamestate.currentScene.DoCommand(text);
 	

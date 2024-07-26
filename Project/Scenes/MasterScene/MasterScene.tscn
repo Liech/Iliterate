@@ -345,6 +345,7 @@ offset_bottom = 40.0
 script = ExtResource("19_e82uy")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
+z_index = 6
 layout_mode = 0
 offset_right = 420.0
 offset_bottom = 369.0
@@ -358,6 +359,7 @@ patch_margin_bottom = 12
 script = ExtResource("4_qrkg7")
 
 [node name="GlobalFader" type="ColorRect" parent="."]
+z_index = 9
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -373,6 +375,7 @@ color = Color(0, 0, 0, 0.0156863)
 
 [node name="ButtonPressedLabel" type="Label" parent="."]
 visible = false
+z_index = 4
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
@@ -388,6 +391,7 @@ script = ExtResource("22_kw4yp")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+z_index = 11
 material = ExtResource("20_wmkgo")
 anchors_preset = 15
 anchor_right = 1.0
