@@ -1,7 +1,7 @@
 extends SceneRoot
 
 var choseKey;
-
+var summoned;
 
 
 
@@ -11,6 +11,7 @@ func DoCommand(command):
 	if (command == "Back"):
 		gamestate.fadeTo(gamestate.Scenes.Options);
 	elif (command == "Set"):
-		GlobalOptions.jumpKey = choseKey.get_item_text(choseKey.selected)
+		GlobalOptions.jumpKey = choseKey.englishTexts[choseKey.selected]
+		print(GlobalOptions.jumpKey)
 
 		

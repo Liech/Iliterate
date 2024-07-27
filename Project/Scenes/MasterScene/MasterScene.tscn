@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://bdmsibriri3e4"]
+[gd_scene load_steps=28 format=3 uid="uid://bdmsibriri3e4"]
 
 [ext_resource type="Script" path="res://Scenes/MasterScene/MasterScene.gd" id="1_tj8ov"]
 [ext_resource type="PackedScene" uid="uid://dllnxms57yayp" path="res://Scenes/GodotScreen/GodotScreen.tscn" id="2_385ln"]
@@ -17,6 +17,8 @@
 [ext_resource type="Script" path="res://Scenes/MasterScene/LowSpeedPawRotate.gd" id="10_b60xc"]
 [ext_resource type="Script" path="res://Scenes/MasterScene/ByeDialog.gd" id="11_wfmv7"]
 [ext_resource type="Texture2D" uid="uid://c2fkgtiynvecr" path="res://Art/Rocket.png" id="17_30jps"]
+[ext_resource type="Texture2D" uid="uid://s3c6up3fpsyt" path="res://Art/Keycaps/KeycapQUwU.png" id="17_ku80a"]
+[ext_resource type="Script" path="res://Scenes/MasterScene/Demon.gd" id="18_amghe"]
 [ext_resource type="Script" path="res://Scenes/MasterScene/Rocket.gd" id="18_osg1a"]
 [ext_resource type="Script" path="res://Scenes/MasterScene/MusicPlayer.gd" id="18_r87is"]
 [ext_resource type="Script" path="res://Scenes/MasterScene/AdjustBrightness.gd" id="19_e82uy"]
@@ -58,7 +60,6 @@ offset_bottom = -940.258
 script = ExtResource("3_013t6")
 
 [node name="Dialog" type="Control" parent="."]
-visible = false
 anchors_preset = 0
 offset_left = 88.0
 offset_top = 512.0
@@ -252,6 +253,7 @@ script = ExtResource("6_gluqs")
 buildPhysic = false
 
 [node name="ButtonChan" type="Control" parent="Dialog"]
+visible = false
 anchors_preset = 0
 offset_left = -47.0
 offset_top = -250.0
@@ -340,6 +342,18 @@ offset_bottom = 593.0
 texture = ExtResource("17_30jps")
 flip_h = true
 script = ExtResource("18_osg1a")
+
+[node name="Demon" type="TextureRect" parent="Dialog"]
+visible = false
+layout_mode = 0
+offset_left = 1269.0
+offset_top = -396.0
+offset_right = 1754.0
+offset_bottom = 89.0
+texture = ExtResource("17_ku80a")
+expand_mode = 2
+stretch_mode = 4
+script = ExtResource("18_amghe")
 
 [node name="Brightness" type="Control" parent="."]
 anchors_preset = 0

@@ -3,7 +3,6 @@ extends UwUDialog
 
 
 func choiceMade(choice):
-	get_parent()._on_pressed()
 	if (currentBlock == $Intro):
 		if (choice == "Yes"):
 			setTextBlock($Happy);

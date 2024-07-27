@@ -39,7 +39,7 @@ func shuffleLetter():
 		var pos = randi()%len(englishTexts[index])
 		var n_char = len(GlobalOptions.characters)
 		var t = get_item_text(index)
-		if hasChar(GlobalOptions.characters,t[index]):
+		if hasChar(GlobalOptions.characters,t[pos]):
 			t[pos] = GlobalOptions.characters[randi()% n_char]
 		set_item_text(index,t)
 	

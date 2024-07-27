@@ -23,6 +23,15 @@ var jumpKey = "None"
 
 var characters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
 
+func isJumpPressed():
+	if (jumpKey == "W"):
+		return Input.is_key_pressed(KEY_W)
+	if (jumpKey == "E"):
+		return Input.is_key_pressed(KEY_E)
+	if (jumpKey == "Q"):
+		return Input.is_key_pressed(KEY_Q)
+	
+	return false
 
 func setUwU():
 	GlobalOptions.localization = GlobalOptions.Localization.UwU;
