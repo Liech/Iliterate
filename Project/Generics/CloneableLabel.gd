@@ -53,7 +53,7 @@ func _process(delta):
 		if (randi() % 100 < shuffleprop):
 			shuffleLetter()
 	if (GlobalOptions.gibberishStarting):
-		gibberishStarted = true
+		#gibberishStarted = true
 		if (randi() % 100 < shuffleprop):
 			shuffleLetter()
 	else:

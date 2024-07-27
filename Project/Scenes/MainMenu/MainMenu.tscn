@@ -92,6 +92,9 @@ anchors_preset = 0
 offset_top = -192.0
 offset_bottom = -192.0
 script = ExtResource("9_trqnd")
+characterName = "Start Game - parallel class"
+characterBelly = "Start Game"
+characterIcon = 1
 ears = true
 
 [node name="Graphics" type="Control" parent="Start Game/UwU"]
@@ -123,16 +126,79 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("12_fctv6")
-text = "*deeply concentrated playing* D"
-choices = Array[String](["Leave", "Listen"])
+text = "Hi. Im Start Game. I'm in your parallel class. I hope we can be friends."
+choices = Array[String](["No. Bye.", "Whats up?", "Can you let me through?"])
 
-[node name="Intro2" type="Control" parent="Start Game/UwU"]
+[node name="Sad" type="Control" parent="Start Game/UwU"]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("12_fctv6")
-text = "*deeply concentrated playing*   D"
-choices = Array[String](["Leave", "Listen"])
+text = "Naaw :("
+choices = Array[String](["continue"])
+
+[node name="Storytime" type="Control" parent="Start Game/UwU"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("12_fctv6")
+text = "I have this deep fear of falling. And i am constantly waking up in the night from a dream were i crash down and break a part."
+choices = Array[String](["That is horrible"])
+
+[node name="Storytime2" type="Control" parent="Start Game/UwU"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("12_fctv6")
+text = "Yeah. But do you know what is even more weird? Broken up lying on the ground. And i feel useful."
+choices = Array[String](["Your dreams are messed up"])
+
+[node name="Storytime3" type="Control" parent="Start Game/UwU"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("12_fctv6")
+text = "No, i think the deeper meaning is, that i cannot be useless. I serve a purpose. I am important. That is empowering. It lets me sleep more calm."
+choices = Array[String](["You look like you can handle it."])
+
+[node name="Storytime4" type="Control" parent="Start Game/UwU"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("12_fctv6")
+text = "Yeah, i try. Thanks for listening :3"
+choices = Array[String](["Have a nice day"])
+
+[node name="Pass" type="Control" parent="Start Game/UwU"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("12_fctv6")
+text = "Are you sure? Teacher Hint told us not to go outside. It is dangerous!"
+choices = Array[String](["Maybe he is right", "I don't care"])
+
+[node name="PassBye" type="Control" parent="Start Game/UwU"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("12_fctv6")
+text = "Better listen to him"
+choices = Array[String](["Yeah. Bye."])
+
+[node name="PassThrough" type="Control" parent="Start Game/UwU"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("12_fctv6")
+text = "It's your life."
+choices = Array[String](["I am an adventurer"])
 
 [node name="About" type="Button" parent="."]
 layout_mode = 0

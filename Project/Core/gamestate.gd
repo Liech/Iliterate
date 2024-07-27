@@ -1,6 +1,6 @@
 extends Node
 
-enum Scenes {Godot, Triggerwarning, Ubiscene, Credits, StartScreen, MainMenu, LooseScreen, Options, Memories,ActualGame, KeyBinding, WinScreen, TermsAndServices}
+enum Scenes {Godot, Triggerwarning, Ubiscene, Credits, StartScreen, MainMenu, LooseScreen, Options, Memories,ActualGame, KeyBinding, WinScreen, TermsAndServices, Limbo}
 
  
 var twChoice = "Confusion";
@@ -29,6 +29,7 @@ var termsagreed = false
 var musicPlayer;
 var deleteHint;
 var snapPanelCount = 0;
+var limboscene = "Start Game"
 
 func startScene(Scene : Scenes):
 	if (Scene == Scenes.Godot):
@@ -109,6 +110,12 @@ func startScene(Scene : Scenes):
 		currentScene.set_name("TermsAndServices");
 		currentSceneName = "TermsAndServices";
 		snapActive = true
+	elif (Scene == Scenes.Limbo):
+		var scene = ResourceLoader.load("res://Scenes/Limbo/Limbo.tscn")
+		currentScene = scene.instantiate();
+		currentScene.set_name("Limbo");
+		currentSceneName = "Limbo";
+		snapActive = false
 		
 	masternode.add_child(currentScene)
 	return currentScene;

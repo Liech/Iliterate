@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://ds1y7027xjuah"]
+[gd_scene load_steps=27 format=3 uid="uid://ds1y7027xjuah"]
 
 [ext_resource type="Script" path="res://Scenes/Memories/Memories.gd" id="1_avnhm"]
 [ext_resource type="Texture2D" uid="uid://c4jdbmn3dmdw4" path="res://Art/LevelBackground.png" id="1_udsne"]
@@ -21,6 +21,10 @@
 [ext_resource type="Texture2D" uid="uid://clbql2b4gmonm" path="res://Art/Keycaps/KeycapV.png" id="19_0x6qu"]
 [ext_resource type="Texture2D" uid="uid://hg6o1pdclh67" path="res://Art/Keycaps/KeycapC.png" id="20_vbujk"]
 [ext_resource type="Texture2D" uid="uid://de8ntbpfst776" path="res://Art/Keycaps/KeycapDel.png" id="21_n70ie"]
+[ext_resource type="Texture2D" uid="uid://bsrqm7fiqm5va" path="res://Art/Menu/CatSignLanguageInterpreter.png" id="22_hjvsr"]
+[ext_resource type="Script" path="res://Core/SignLanguageInstructor.gd" id="23_r5x2j"]
+[ext_resource type="Texture2D" uid="uid://c5c2vtc7dcttf" path="res://Art/Menu/CatSignLanguageInterpreterPaw.png" id="24_ypr8q"]
+[ext_resource type="Script" path="res://Core/SignLanguagePaw.gd" id="25_r2ia2"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_i61hw"]
 distance = -9.0
@@ -535,6 +539,39 @@ freeze = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Wall"]
 position = Vector2(0, 8)
 shape = SubResource("WorldBoundaryShape2D_i61hw")
+
+[node name="CatSignLanguageInterpreter" type="TextureRect" parent="."]
+visible = false
+offset_left = 1229.0
+offset_top = 250.0
+offset_right = 2029.0
+offset_bottom = 1050.0
+scale = Vector2(0.552485, 0.553739)
+pivot_offset = Vector2(400, 800)
+texture = ExtResource("22_hjvsr")
+script = ExtResource("23_r5x2j")
+
+[node name="Paw2" type="TextureRect" parent="."]
+visible = false
+offset_left = 1384.0
+offset_top = 402.0
+offset_right = 1554.0
+offset_bottom = 983.0
+scale = Vector2(0.671369, 0.48748)
+pivot_offset = Vector2(85, 581)
+texture = ExtResource("24_ypr8q")
+script = ExtResource("25_r2ia2")
+
+[node name="Paw" type="TextureRect" parent="."]
+visible = false
+offset_left = 1769.0
+offset_top = 380.0
+offset_right = 1939.0
+offset_bottom = 961.0
+scale = Vector2(0.671369, 0.48748)
+pivot_offset = Vector2(85, 581)
+texture = ExtResource("24_ypr8q")
+script = ExtResource("25_r2ia2")
 
 [connection signal="pressed" from="Tutorial" to="Tutorial" method="_on_pressed"]
 [connection signal="pressed" from="???" to="???" method="_on_pressed"]

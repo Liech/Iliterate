@@ -1,0 +1,267 @@
+[gd_scene load_steps=17 format=3 uid="uid://ccdwaajcuj8ci"]
+
+[ext_resource type="Theme" uid="uid://d2hv2jx01084f" path="res://mainTheme.tres" id="1_xn6d2"]
+[ext_resource type="Script" path="res://Scenes/Limbo/Limbo.gd" id="2_aqtp4"]
+[ext_resource type="Script" path="res://Scenes/Limbo/LimboUwU.gd" id="11_n3m1u"]
+[ext_resource type="Texture2D" uid="uid://bsrqm7fiqm5va" path="res://Art/Menu/CatSignLanguageInterpreter.png" id="12_0dyj2"]
+[ext_resource type="Texture2D" uid="uid://drqi8h3p02kye" path="res://Art/Button/LeftUwU.png" id="12_5xkt8"]
+[ext_resource type="Script" path="res://Core/SignLanguageInstructor.gd" id="13_hjmkg"]
+[ext_resource type="Texture2D" uid="uid://lonj01xgrckt" path="res://Art/Button/RightUwU.png" id="13_hxn0h"]
+[ext_resource type="Texture2D" uid="uid://c5c2vtc7dcttf" path="res://Art/Menu/CatSignLanguageInterpreterPaw.png" id="14_152di"]
+[ext_resource type="Script" path="res://Scenes/Options/TextBlock.gd" id="14_a4bts"]
+[ext_resource type="Script" path="res://Core/SignLanguagePaw.gd" id="15_1bipv"]
+[ext_resource type="Script" path="res://Scenes/Limbo/Warning.gd" id="15_21d08"]
+[ext_resource type="StyleBox" uid="uid://bdktf0xccluh5" path="res://Scenes/MainMenu/buttonninepatch.tres" id="16_buhbq"]
+[ext_resource type="Script" path="res://Generics/CloneableButton.gd" id="17_8l2ir"]
+[ext_resource type="Texture2D" uid="uid://vc0f42xth06n" path="res://Art/Button/Button.png" id="18_y0i1p"]
+[ext_resource type="Script" path="res://Scenes/Options/Potatofier.gd" id="19_noh0m"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_7ky1p"]
+distance = -9.0
+
+[node name="Limbo" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_xn6d2")
+script = ExtResource("2_aqtp4")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -2
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="CatSignLanguageInterpreter" type="TextureRect" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 1229.0
+offset_top = 250.0
+offset_right = 2029.0
+offset_bottom = 1050.0
+scale = Vector2(0.552485, 0.553739)
+pivot_offset = Vector2(400, 800)
+texture = ExtResource("12_0dyj2")
+script = ExtResource("13_hjmkg")
+
+[node name="Paw2" type="TextureRect" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 1384.0
+offset_top = 402.0
+offset_right = 1554.0
+offset_bottom = 983.0
+scale = Vector2(0.671369, 0.48748)
+pivot_offset = Vector2(85, 581)
+texture = ExtResource("14_152di")
+script = ExtResource("15_1bipv")
+
+[node name="Paw" type="TextureRect" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 1769.0
+offset_top = 380.0
+offset_right = 1939.0
+offset_bottom = 961.0
+scale = Vector2(0.671369, 0.48748)
+pivot_offset = Vector2(85, 581)
+texture = ExtResource("14_152di")
+script = ExtResource("15_1bipv")
+
+[node name="Back" type="Button" parent="."]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 904.0
+offset_right = 264.0
+offset_bottom = 1032.0
+theme = ExtResource("1_xn6d2")
+theme_override_styles/normal = ExtResource("16_buhbq")
+text = "Back"
+flat = true
+script = ExtResource("17_8l2ir")
+buildPhysic = false
+
+[node name="NinePatchRect2" type="NinePatchRect" parent="Back"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_xn6d2")
+texture = ExtResource("18_y0i1p")
+region_rect = Rect2(0.447113, 1.15751, 198.079, 182.684)
+patch_margin_left = 120
+patch_margin_top = 58
+patch_margin_right = 83
+patch_margin_bottom = 46
+script = ExtResource("19_noh0m")
+
+[node name="UwU" type="Control" parent="Back"]
+layout_mode = 3
+anchors_preset = 0
+offset_top = -192.0
+offset_bottom = -192.0
+script = ExtResource("11_n3m1u")
+characterName = "You"
+
+[node name="Graphics" type="Control" parent="Back/UwU"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Left" type="TextureRect" parent="Back/UwU/Graphics"]
+visible = false
+layout_mode = 0
+offset_left = -16.0
+offset_top = 144.0
+offset_right = 67.0
+offset_bottom = 238.0
+texture = ExtResource("12_5xkt8")
+
+[node name="Right" type="TextureRect" parent="Back/UwU/Graphics"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+offset_left = 184.0
+offset_top = 152.0
+offset_right = 266.0
+offset_bottom = 244.0
+texture = ExtResource("13_hxn0h")
+
+[node name="Intro" type="Control" parent="Back/UwU"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("14_a4bts")
+text = "Finally. Lets get out of this mess. Start something new. Now is the right time!"
+choices = Array[String](["Yeah!"])
+
+[node name="Intro2" type="Control" parent="Back/UwU"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("14_a4bts")
+text = "New Job, New Flat, New Me! Make a lot of friends"
+choices = Array[String](["continue"])
+
+[node name="Intro3" type="Control" parent="Back/UwU"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("14_a4bts")
+text = "What do you mean? Stay at home? It's nothing to worry."
+choices = Array[String](["continue"])
+
+[node name="Intro4" type="Control" parent="Back/UwU"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("14_a4bts")
+text = "I know no one in this city and im not allowed to get out? Forever?"
+choices = Array[String](["Yes"])
+
+[node name="YouSuck" type="Control" parent="Back/UwU"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("14_a4bts")
+text = "Hey, im your new boss. You suck."
+choices = Array[String](["Yes"])
+
+[node name="YouSuck3" type="Control" parent="Back/UwU"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("14_a4bts")
+text = "You chose to live like this"
+choices = Array[String](["continue"])
+
+[node name="YouSuck4" type="Control" parent="Back/UwU"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("14_a4bts")
+text = "Maybe accept it?"
+choices = Array[String](["No"])
+
+[node name="Kitten" type="Control" parent="Back/UwU"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("14_a4bts")
+text = "Just accept it"
+choices = Array[String](["mh?"])
+
+[node name="Kitten2" type="Control" parent="Back/UwU"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("14_a4bts")
+text = "Here is a kitten"
+choices = Array[String](["Awww"])
+
+[node name="Kitten3" type="Control" parent="Back/UwU"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("14_a4bts")
+text = "Its over. This jouney leads to nowhere. Wanna start a new one? You have plenty of nice ones ahead."
+choices = Array[String](["Okay.."])
+
+[node name="Ground2" type="RigidBody2D" parent="."]
+position = Vector2(888, 1088)
+freeze = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground2"]
+shape = SubResource("WorldBoundaryShape2D_7ky1p")
+
+[node name="Wall2" type="RigidBody2D" parent="."]
+position = Vector2(-16, 840)
+rotation = 1.5708
+freeze = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall2"]
+position = Vector2(0, 8)
+shape = SubResource("WorldBoundaryShape2D_7ky1p")
+
+[node name="Wall" type="RigidBody2D" parent="."]
+position = Vector2(1936, 936)
+rotation = -1.5708
+freeze = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall"]
+position = Vector2(0, 8)
+shape = SubResource("WorldBoundaryShape2D_7ky1p")
+
+[node name="Warning" type="Label" parent="."]
+offset_left = 544.0
+offset_top = 472.0
+offset_right = 1435.0
+offset_bottom = 560.0
+mouse_filter = 1
+theme = ExtResource("1_xn6d2")
+text = "You should not be here"
+script = ExtResource("15_21d08")
+
+[connection signal="mouse_entered" from="Back" to="Back" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Back" to="Back" method="_on_mouse_exited"]
+[connection signal="pressed" from="Back" to="Back" method="_on_pressed"]
+[connection signal="mouse_entered" from="Warning" to="Warning" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Warning" to="Warning" method="_on_mouse_exited"]
