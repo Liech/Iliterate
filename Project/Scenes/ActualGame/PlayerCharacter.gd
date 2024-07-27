@@ -27,6 +27,11 @@ func _process(delta):
 	var jumpPressed = false;
 	if (GlobalOptions.jumpKey == "E"):
 		jumpPressed = Input.is_key_pressed(KEY_E)
+	if (GlobalOptions.jumpKey == "W"):
+		jumpPressed = Input.is_key_pressed(KEY_W)
+	if (GlobalOptions.jumpKey == "Q"):
+		jumpPressed = Input.is_key_pressed(KEY_Q)
+		
 	if jumpPressed and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 

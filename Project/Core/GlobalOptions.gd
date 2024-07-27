@@ -19,7 +19,7 @@ var opacity = 50
 var masterAudio = 100
 var musicAudio = 80
 var effectAudio = 100
-var jumpKey = "¯\\_(ツ)_/¯"
+var jumpKey = "None"
 
 var characters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
 

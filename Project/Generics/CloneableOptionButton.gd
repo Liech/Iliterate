@@ -95,6 +95,8 @@ func cloneObject(panel, move,ppos):
 
 func _on_mouse_entered():
 	gamestate.catExplain = true
+	gamestate.snapActive = false
 
 func _on_mouse_exited():
 	gamestate.catExplain = false
+	gamestate.snapActive = true
