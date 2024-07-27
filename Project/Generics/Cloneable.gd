@@ -13,6 +13,7 @@ func _ready():
 		if (physify):
 			await get_tree().create_timer(0.01).timeout # wait for daddy
 			Phys.physiphy(self,false);
+
 	
 func cloneObject(panel, move,ppos):
 	var result = self.duplicate();

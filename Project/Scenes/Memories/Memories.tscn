@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://ds1y7027xjuah"]
+[gd_scene load_steps=23 format=3 uid="uid://ds1y7027xjuah"]
 
 [ext_resource type="Script" path="res://Scenes/Memories/Memories.gd" id="1_avnhm"]
 [ext_resource type="Texture2D" uid="uid://c4jdbmn3dmdw4" path="res://Art/LevelBackground.png" id="1_udsne"]
@@ -21,6 +21,9 @@
 [ext_resource type="Texture2D" uid="uid://clbql2b4gmonm" path="res://Art/Keycaps/KeycapV.png" id="19_0x6qu"]
 [ext_resource type="Texture2D" uid="uid://hg6o1pdclh67" path="res://Art/Keycaps/KeycapC.png" id="20_vbujk"]
 [ext_resource type="Texture2D" uid="uid://de8ntbpfst776" path="res://Art/Keycaps/KeycapDel.png" id="21_n70ie"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_i61hw"]
+distance = -9.0
 
 [node name="Memories" type="Control"]
 layout_mode = 3
@@ -66,6 +69,7 @@ script = ExtResource("9_kixef")
 
 [node name="Pond" type="TextureRect" parent="."]
 z_index = -2
+layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
 texture = ExtResource("11_fnt7t")
@@ -84,6 +88,7 @@ stretch_mode = 4
 script = ExtResource("13_rwnwj")
 
 [node name="Dashboard" type="TextureRect" parent="."]
+layout_mode = 0
 offset_left = 120.0
 offset_top = 96.0
 offset_right = 851.0
@@ -111,6 +116,7 @@ patch_margin_right = 83
 patch_margin_bottom = 46
 
 [node name="Title" type="Label" parent="."]
+layout_mode = 0
 offset_left = 81.5
 offset_top = 17.0
 offset_right = 834.5
@@ -121,6 +127,7 @@ script = ExtResource("14_esshl")
 physic = false
 
 [node name="Tutorial" type="Button" parent="."]
+layout_mode = 0
 offset_left = 544.0
 offset_top = 767.0
 offset_right = 919.0
@@ -148,6 +155,7 @@ patch_margin_right = 83
 patch_margin_bottom = 46
 
 [node name="OldMan" type="TextureRect" parent="."]
+layout_mode = 0
 offset_left = 232.0
 offset_top = 869.0
 offset_right = 373.0
@@ -156,6 +164,7 @@ texture = ExtResource("15_vyu53")
 stretch_mode = 4
 
 [node name="???" type="Button" parent="."]
+layout_mode = 0
 offset_left = 33.0
 offset_top = 930.0
 offset_right = 233.0
@@ -185,6 +194,7 @@ patch_margin_bottom = 46
 [node name="TutorialPopUp" type="TextureRect" parent="."]
 visible = false
 z_index = 2
+layout_mode = 0
 offset_left = 321.0
 offset_top = 127.0
 offset_right = 1652.0
@@ -193,6 +203,7 @@ script = ExtResource("2_il4sm")
 
 [node name="ColorRect" type="ColorRect" parent="TutorialPopUp"]
 show_behind_parent = true
+layout_mode = 0
 offset_left = -944.0
 offset_top = -429.0
 offset_right = 1699.0
@@ -248,6 +259,7 @@ patch_margin_right = 83
 patch_margin_bottom = 46
 
 [node name="TutorialText" type="Label" parent="TutorialPopUp"]
+layout_mode = 0
 offset_left = -34.0
 offset_top = 9.0
 offset_right = 1369.0
@@ -263,14 +275,21 @@ Please do not paste it anywhere else. And do not capture UI elements. They are n
 
 Why don't you try it with the beautiful Pond?"
 autowrap_mode = 3
+script = ExtResource("14_esshl")
+physic = false
+dormant = true
 
 [node name="TutorialTitle" type="Label" parent="TutorialPopUp"]
+layout_mode = 0
 offset_left = -49.0
 offset_top = -73.0
 offset_right = 936.0
 offset_bottom = 15.0
 theme = ExtResource("4_h3p8p")
 text = "Tutorial: Making Memories"
+script = ExtResource("14_esshl")
+physic = false
+dormant = true
 
 [node name="Control" type="Control" parent="TutorialPopUp"]
 anchors_preset = 0
@@ -310,28 +329,40 @@ expand_mode = 2
 stretch_mode = 4
 
 [node name="Plus3" type="Label" parent="TutorialPopUp/Control"]
+layout_mode = 0
 offset_left = 458.0
 offset_top = 1156.0
 offset_right = 509.0
 offset_bottom = 1244.0
 theme = ExtResource("4_h3p8p")
 text = "+"
+script = ExtResource("14_esshl")
+physic = false
+dormant = true
 
 [node name="Copy" type="Label" parent="TutorialPopUp/Control"]
+layout_mode = 0
 offset_left = 165.0
 offset_top = 471.0
 offset_right = 341.0
 offset_bottom = 559.0
 theme = ExtResource("4_h3p8p")
 text = "Copy"
+script = ExtResource("14_esshl")
+physic = false
+dormant = true
 
 [node name="Plus2" type="Label" parent="TutorialPopUp/Control"]
+layout_mode = 0
 offset_left = 626.0
 offset_top = 580.0
 offset_right = 677.0
 offset_bottom = 668.0
 theme = ExtResource("4_h3p8p")
 text = "+"
+script = ExtResource("14_esshl")
+physic = false
+dormant = true
 
 [node name="Ctrl2" type="TextureRect" parent="TutorialPopUp/Control"]
 layout_mode = 0
@@ -354,24 +385,33 @@ expand_mode = 2
 stretch_mode = 4
 
 [node name="Paste" type="Label" parent="TutorialPopUp/Control"]
+layout_mode = 0
 offset_left = 547.0
 offset_top = 464.0
 offset_right = 767.0
 offset_bottom = 552.0
 theme = ExtResource("4_h3p8p")
 text = "Paste"
+script = ExtResource("14_esshl")
+physic = false
+dormant = true
 
 [node name="Delete" type="Label" parent="TutorialPopUp/Control"]
+layout_mode = 0
 offset_left = 937.0
 offset_top = 464.0
 offset_right = 1176.0
 offset_bottom = 552.0
 theme = ExtResource("4_h3p8p")
 text = "Delete"
+script = ExtResource("14_esshl")
+physic = false
+dormant = true
 
 [node name="OldManDialog" type="TextureRect" parent="."]
 visible = false
 z_index = 2
+layout_mode = 0
 offset_left = 745.0
 offset_top = 458.0
 offset_right = 1220.0
@@ -380,6 +420,7 @@ script = ExtResource("2_il4sm")
 
 [node name="ColorRect" type="ColorRect" parent="OldManDialog"]
 show_behind_parent = true
+layout_mode = 0
 offset_left = -947.0
 offset_top = -603.0
 offset_right = 1696.0
@@ -435,6 +476,7 @@ patch_margin_right = 83
 patch_margin_bottom = 46
 
 [node name="TutorialText" type="Label" parent="OldManDialog"]
+layout_mode = 0
 offset_left = -28.0
 offset_top = 18.0
 offset_right = 502.0
@@ -444,22 +486,55 @@ theme_override_font_sizes/font_size = 50
 text = "I forgot what to write on this Button. I'm not as good with words as i once was.
 I hope you still find your way back."
 autowrap_mode = 3
+script = ExtResource("14_esshl")
+physic = false
+dormant = true
 
 [node name="TutorialTitle" type="Label" parent="OldManDialog"]
+layout_mode = 0
 offset_left = -49.0
 offset_top = -73.0
 offset_right = 936.0
 offset_bottom = 15.0
 theme = ExtResource("4_h3p8p")
 text = "Old Man"
+script = ExtResource("14_esshl")
+physic = false
+dormant = true
 
 [node name="OldMan2" type="TextureRect" parent="OldManDialog"]
+layout_mode = 0
 offset_left = 460.0
 offset_top = -176.0
 offset_right = 601.0
 offset_bottom = 24.0
 texture = ExtResource("15_vyu53")
 stretch_mode = 4
+
+[node name="Ground2" type="RigidBody2D" parent="."]
+position = Vector2(888, 1088)
+freeze = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground2"]
+shape = SubResource("WorldBoundaryShape2D_i61hw")
+
+[node name="Wall2" type="RigidBody2D" parent="."]
+position = Vector2(-16, 840)
+rotation = 1.5708
+freeze = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall2"]
+position = Vector2(0, 8)
+shape = SubResource("WorldBoundaryShape2D_i61hw")
+
+[node name="Wall" type="RigidBody2D" parent="."]
+position = Vector2(1936, 936)
+rotation = -1.5708
+freeze = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall"]
+position = Vector2(0, 8)
+shape = SubResource("WorldBoundaryShape2D_i61hw")
 
 [connection signal="pressed" from="Tutorial" to="Tutorial" method="_on_pressed"]
 [connection signal="pressed" from="???" to="???" method="_on_pressed"]

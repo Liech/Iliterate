@@ -26,8 +26,8 @@ func _on_button_pressed():
 	#GlobalOptions.vsync = true
 	#GlobalOptions.graphics = GlobalOptions.GraphicsQuality.Low;
 	GlobalOptions.jumpKey = "E";
-	#gamestate.fadeTo(gamestate.Scenes.ActualGame);
-	#return
+	gamestate.fadeTo(gamestate.Scenes.Options);
+	return
 	
 	if (alreadyPressed):
 		return;

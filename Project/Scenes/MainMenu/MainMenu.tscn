@@ -15,7 +15,6 @@
 [ext_resource type="Texture2D" uid="uid://drqi8h3p02kye" path="res://Art/Button/LeftUwU.png" id="10_suh4q"]
 [ext_resource type="Texture2D" uid="uid://lonj01xgrckt" path="res://Art/Button/RightUwU.png" id="11_pmm3k"]
 [ext_resource type="Texture2D" uid="uid://bsrqm7fiqm5va" path="res://Art/Menu/CatSignLanguageInterpreter.png" id="12_a2aqx"]
-[ext_resource type="Script" path="res://Generics/CmdBack.gd" id="12_am8p2"]
 [ext_resource type="Script" path="res://Scenes/Options/TextBlock.gd" id="12_fctv6"]
 [ext_resource type="Script" path="res://Core/SignLanguageInstructor.gd" id="13_cmu2o"]
 [ext_resource type="Texture2D" uid="uid://c5c2vtc7dcttf" path="res://Art/Menu/CatSignLanguageInterpreterPaw.png" id="13_r2l6x"]
@@ -24,6 +23,7 @@
 [ext_resource type="Script" path="res://Scenes/MainMenu/UwUMemories.gd" id="16_773iw"]
 [ext_resource type="Script" path="res://Scenes/MainMenu/UwUOptions.gd" id="16_ttngs"]
 [ext_resource type="Script" path="res://Scenes/MainMenu/UwUMainBack.gd" id="18_gb4q0"]
+[ext_resource type="Script" path="res://Generics/CloneableButton.gd" id="19_c045n"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_mabsu"]
 distance = -9.0
@@ -377,7 +377,8 @@ theme = ExtResource("5_1o4bo")
 theme_override_styles/normal = ExtResource("6_kavg7")
 text = "Back"
 flat = true
-script = ExtResource("12_am8p2")
+script = ExtResource("19_c045n")
+breaks = true
 
 [node name="NinePatchRect" type="NinePatchRect" parent="Back2"]
 show_behind_parent = true

@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://bdmsibriri3e4"]
+[gd_scene load_steps=26 format=3 uid="uid://bdmsibriri3e4"]
 
 [ext_resource type="Script" path="res://Scenes/MasterScene/MasterScene.gd" id="1_tj8ov"]
 [ext_resource type="PackedScene" uid="uid://dllnxms57yayp" path="res://Scenes/GodotScreen/GodotScreen.tscn" id="2_385ln"]
@@ -17,13 +17,14 @@
 [ext_resource type="Script" path="res://Scenes/MasterScene/LowSpeedPawRotate.gd" id="10_b60xc"]
 [ext_resource type="Script" path="res://Scenes/MasterScene/ByeDialog.gd" id="11_wfmv7"]
 [ext_resource type="Texture2D" uid="uid://c2fkgtiynvecr" path="res://Art/Rocket.png" id="17_30jps"]
-[ext_resource type="AudioStream" path="res://Sound/Music/Music2.wav" id="18_gd5yu"]
 [ext_resource type="Script" path="res://Scenes/MasterScene/Rocket.gd" id="18_osg1a"]
 [ext_resource type="Script" path="res://Scenes/MasterScene/MusicPlayer.gd" id="18_r87is"]
 [ext_resource type="Script" path="res://Scenes/MasterScene/AdjustBrightness.gd" id="19_e82uy"]
 [ext_resource type="Material" uid="uid://bxr21smj0c8ja" path="res://postprocessing.tres" id="20_wmkgo"]
 [ext_resource type="Script" path="res://Scenes/MasterScene/PostProcessor.gd" id="21_i2s2l"]
 [ext_resource type="Script" path="res://Scenes/MasterScene/ButtonPressedLabel.gd" id="22_kw4yp"]
+[ext_resource type="Texture2D" uid="uid://de8ntbpfst776" path="res://Art/Keycaps/KeycapDel.png" id="24_c0gms"]
+[ext_resource type="Script" path="res://Scenes/MasterScene/deleteHint.gd" id="25_8letj"]
 
 [node name="MasterScene" type="Control"]
 layout_mode = 3
@@ -75,12 +76,12 @@ offset_bottom = 632.0
 
 [node name="???" type="Button" parent="Dialog"]
 layout_mode = 0
-offset_left = 1598.0
-offset_top = 222.0
-offset_right = 1738.0
-offset_bottom = 318.0
+offset_left = 1361.0
+offset_top = 407.0
+offset_right = 1746.0
+offset_bottom = 503.0
 theme = ExtResource("4_2ub7r")
-text = "???"
+text = "Bye Dialog"
 flat = true
 script = ExtResource("6_4m13h")
 
@@ -347,7 +348,6 @@ offset_bottom = 40.0
 script = ExtResource("19_e82uy")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("18_gd5yu")
 bus = &"Music"
 script = ExtResource("18_r87is")
 
@@ -407,6 +407,18 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("21_i2s2l")
+
+[node name="deleteHint" type="TextureRect" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 1771.0
+offset_top = 928.0
+offset_right = 1919.0
+offset_bottom = 1076.0
+texture = ExtResource("24_c0gms")
+expand_mode = 2
+stretch_mode = 4
+script = ExtResource("25_8letj")
 
 [connection signal="pressed" from="Dialog/???" to="Dialog/???" method="_on_pressed"]
 [connection signal="pressed" from="Dialog/Choices/Choice2" to="Dialog/Choices/Choice2" method="_on_pressed"]

@@ -1,7 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://cyofkd801gjyg"]
+[gd_scene load_steps=7 format=3 uid="uid://cyofkd801gjyg"]
 
 [ext_resource type="Theme" uid="uid://d2hv2jx01084f" path="res://mainTheme.tres" id="1_q0ijb"]
-[ext_resource type="Script" path="res://Scenes/TriggerWarning/Audio.gd" id="2_kswra"]
 [ext_resource type="Script" path="res://Scenes/TriggerWarning/Confusion.gd" id="2_l4w44"]
 [ext_resource type="Script" path="res://Scenes/TriggerWarning/Buglessnes.gd" id="2_s3yi5"]
 [ext_resource type="Script" path="res://Scenes/TriggerWarning/TrueLove.gd" id="3_1xlc7"]
@@ -110,28 +109,6 @@ color = Color(0, 0, 0, 1)
 script = ExtResource("4_kgqfq")
 startdelay = 4
 
-[node name="Audio" type="MarginContainer" parent="VBoxContainer"]
-layout_mode = 2
-theme_override_constants/margin_left = 200
-theme_override_constants/margin_top = 15
-theme_override_constants/margin_right = 100
-theme_override_constants/margin_bottom = 15
-
-[node name="Button" type="Button" parent="VBoxContainer/Audio"]
-layout_mode = 2
-shortcut_feedback = false
-shortcut_in_tooltip = false
-text = "Audio"
-flat = true
-alignment = 0
-script = ExtResource("2_kswra")
-
-[node name="AudioFade" type="ColorRect" parent="VBoxContainer/Audio"]
-layout_mode = 2
-color = Color(0, 0, 0, 1)
-script = ExtResource("4_kgqfq")
-startdelay = 6
-
 [node name="Buglessnes" type="MarginContainer" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_constants/margin_left = 200
@@ -152,7 +129,7 @@ script = ExtResource("2_s3yi5")
 layout_mode = 2
 color = Color(0, 0, 0, 1)
 script = ExtResource("4_kgqfq")
-startdelay = 8
+startdelay = 6
 
 [node name="FadeOut" type="ColorRect" parent="."]
 layout_mode = 1
@@ -166,5 +143,4 @@ color = Color(0, 0, 0, 0.0156863)
 
 [connection signal="pressed" from="VBoxContainer/Confusion/Button" to="VBoxContainer/Confusion/Button" method="_on_pressed"]
 [connection signal="pressed" from="VBoxContainer/True Love/Button" to="VBoxContainer/True Love/Button" method="_on_pressed"]
-[connection signal="pressed" from="VBoxContainer/Audio/Button" to="VBoxContainer/Audio/Button" method="_on_pressed"]
 [connection signal="pressed" from="VBoxContainer/Buglessnes/Button" to="VBoxContainer/Buglessnes/Button" method="_on_pressed"]

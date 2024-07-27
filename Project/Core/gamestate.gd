@@ -4,7 +4,7 @@ enum Scenes {Godot, Triggerwarning, Ubiscene, Credits, StartScreen, MainMenu, Lo
 
  
 var twChoice = "Confusion";
-var fadeouttime = 1;
+var fadeouttime = 1.5;
 var fadeintime = 1;
 var masternode;
 var currentSceneName = "Godot";
@@ -27,6 +27,8 @@ var popup;
 var actNumber = 0;
 var termsagreed = false
 var musicPlayer;
+var deleteHint;
+var snapPanelCount = 0;
 
 func startScene(Scene : Scenes):
 	if (Scene == Scenes.Godot):
@@ -81,6 +83,7 @@ func startScene(Scene : Scenes):
 		currentScene = scene.instantiate();
 		currentScene.set_name("Options");
 		currentSceneName = "Options";
+		gamestate.currentTab = "Gameplay"
 		snapActive= true
 	elif (Scene == Scenes.Memories):
 		var scene = ResourceLoader.load("res://Scenes/Memories/Memories.tscn")

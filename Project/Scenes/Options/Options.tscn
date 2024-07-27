@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://bn57n5cddun8x"]
+[gd_scene load_steps=52 format=3 uid="uid://bn57n5cddun8x"]
 
 [ext_resource type="Theme" uid="uid://d2hv2jx01084f" path="res://mainTheme.tres" id="1_ipdrc"]
 [ext_resource type="Script" path="res://Scenes/Options/Options.gd" id="2_8cd1l"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" path="res://Generics/CloneablePanel.gd" id="6_xd6o6"]
 [ext_resource type="Texture2D" uid="uid://vc0f42xth06n" path="res://Art/Button/Button.png" id="7_n7v6a"]
 [ext_resource type="Texture2D" uid="uid://df7hdx5b8nrg4" path="res://Art/Menu/SliderKnob.png" id="8_lbeyj"]
+[ext_resource type="Script" path="res://Generics/CloneableButton.gd" id="8_ryuux"]
 [ext_resource type="Script" path="res://Scenes/Options/Tabs/AudioTab.gd" id="8_y7h6b"]
 [ext_resource type="Script" path="res://Scenes/Options/Tabs/GameplayTab.gd" id="9_6vc1n"]
 [ext_resource type="Texture2D" uid="uid://lvld2o43cpmo" path="res://Art/Menu/ComboKnob.png" id="9_asoxr"]
@@ -103,7 +104,7 @@ theme = ExtResource("1_ipdrc")
 theme_override_styles/normal = ExtResource("5_exebi")
 text = "Back"
 flat = true
-script = ExtResource("11_o6sco")
+script = ExtResource("8_ryuux")
 
 [node name="NinePatchRect2" type="NinePatchRect" parent="Back"]
 show_behind_parent = true
@@ -1574,6 +1575,94 @@ freeze = true
 position = Vector2(0, 8)
 shape = SubResource("WorldBoundaryShape2D_ufr3p")
 
+[node name="DoorClosed" type="TextureRect" parent="."]
+visible = false
+z_index = 2
+offset_left = 704.0
+offset_top = 392.0
+offset_right = 1179.0
+offset_bottom = 789.0
+script = ExtResource("4_8sec6")
+
+[node name="ColorRect" type="ColorRect" parent="DoorClosed"]
+show_behind_parent = true
+layout_mode = 0
+offset_left = -947.0
+offset_top = -603.0
+offset_right = 1696.0
+offset_bottom = 890.0
+color = Color(0, 0, 0, 0.611765)
+
+[node name="PopUp2" type="NinePatchRect" parent="DoorClosed"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -73.0
+offset_top = -33.0
+offset_right = 90.0
+offset_bottom = 31.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_ipdrc")
+texture = ExtResource("7_n7v6a")
+region_rect = Rect2(0.447113, 1.15751, 198.079, 182.684)
+patch_margin_left = 120
+patch_margin_top = 58
+patch_margin_right = 83
+patch_margin_bottom = 46
+
+[node name="Close" type="Button" parent="DoorClosed"]
+layout_mode = 0
+offset_left = 88.0
+offset_top = 288.0
+offset_right = 400.0
+offset_bottom = 416.0
+theme = ExtResource("1_ipdrc")
+theme_override_styles/normal = ExtResource("5_exebi")
+text = "Close"
+flat = true
+script = ExtResource("11_o6sco")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="DoorClosed/Close"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_ipdrc")
+texture = ExtResource("7_n7v6a")
+region_rect = Rect2(0.447113, 1.15751, 198.079, 182.684)
+patch_margin_left = 120
+patch_margin_top = 58
+patch_margin_right = 83
+patch_margin_bottom = 46
+
+[node name="TutorialText" type="Label" parent="DoorClosed"]
+layout_mode = 0
+offset_left = -28.0
+offset_top = 18.0
+offset_right = 502.0
+offset_bottom = 329.0
+theme = ExtResource("1_ipdrc")
+theme_override_font_sizes/font_size = 50
+text = "The club door is locked"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="TutorialTitle" type="Label" parent="DoorClosed"]
+layout_mode = 0
+offset_left = -49.0
+offset_top = -73.0
+offset_right = 936.0
+offset_bottom = 15.0
+theme = ExtResource("1_ipdrc")
+text = "Keybindings"
+
 [connection signal="mouse_entered" from="Back" to="Back" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Back" to="Back" method="_on_mouse_exited"]
 [connection signal="pressed" from="Back" to="Back" method="_on_pressed"]
@@ -1647,3 +1736,4 @@ shape = SubResource("WorldBoundaryShape2D_ufr3p")
 [connection signal="mouse_entered" from="AudioTab" to="AudioTab" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="AudioTab" to="AudioTab" method="_on_mouse_exited"]
 [connection signal="pressed" from="AudioTab" to="AudioTab" method="_on_pressed"]
+[connection signal="pressed" from="DoorClosed/Close" to="DoorClosed/Close" method="_on_pressed"]

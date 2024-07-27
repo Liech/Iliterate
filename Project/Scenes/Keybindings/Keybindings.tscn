@@ -1,9 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://iwsr5sfrgc4n"]
+[gd_scene load_steps=12 format=3 uid="uid://iwsr5sfrgc4n"]
 
 [ext_resource type="Texture2D" uid="uid://dxk323p2hap2c" path="res://Art/Background/Background.png" id="1_ahcr0"]
-[ext_resource type="Texture2D" uid="uid://m2dbb5s7avis" path="res://Art/Background/Mage.png" id="2_web3m"]
-[ext_resource type="Texture2D" uid="uid://bsynd6xnwhvs1" path="res://Art/Background/Title.png" id="3_ry5ne"]
-[ext_resource type="Script" path="res://Scenes/StartScreen/ToMainMenu.gd" id="4_oumr5"]
+[ext_resource type="Theme" uid="uid://d2hv2jx01084f" path="res://mainTheme.tres" id="2_vwegm"]
+[ext_resource type="Texture2D" uid="uid://vc0f42xth06n" path="res://Art/Button/Button.png" id="3_e4u1h"]
+[ext_resource type="Script" path="res://Generics/CloneablePanel.gd" id="4_6mj8p"]
+[ext_resource type="StyleBox" uid="uid://bdktf0xccluh5" path="res://Scenes/MainMenu/buttonninepatch.tres" id="5_70o4x"]
+[ext_resource type="Script" path="res://Generics/CloneableButton.gd" id="6_esyye"]
+[ext_resource type="Script" path="res://Scenes/Options/Potatofier.gd" id="7_mr8ag"]
+[ext_resource type="Script" path="res://Scenes/Options/OptionsBackUwU.gd" id="8_jg2tl"]
+[ext_resource type="Texture2D" uid="uid://drqi8h3p02kye" path="res://Art/Button/LeftUwU.png" id="9_piobk"]
+[ext_resource type="Texture2D" uid="uid://lonj01xgrckt" path="res://Art/Button/RightUwU.png" id="10_khxnp"]
+[ext_resource type="Script" path="res://Scenes/Options/TextBlock.gd" id="11_2u662"]
 
 [node name="StartScreen" type="Control"]
 layout_mode = 3
@@ -16,7 +23,8 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Mage" type="TextureRect" parent="."]
+[node name="Background" type="TextureRect" parent="."]
+z_index = -2
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -27,38 +35,110 @@ texture = ExtResource("1_ahcr0")
 expand_mode = 3
 stretch_mode = 4
 
-[node name="Background" type="TextureRect" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+[node name="OptionsPanel" type="NinePatchRect" parent="."]
+show_behind_parent = true
+z_index = -1
+offset_left = 70.0
+offset_top = 70.0
+offset_right = 1850.0
+offset_bottom = 1012.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_web3m")
-expand_mode = 3
-stretch_mode = 4
+theme = ExtResource("2_vwegm")
+texture = ExtResource("3_e4u1h")
+region_rect = Rect2(0.447113, 1.15751, 198.079, 182.684)
+patch_margin_left = 120
+patch_margin_top = 58
+patch_margin_right = 83
+patch_margin_bottom = 46
+script = ExtResource("4_6mj8p")
 
-[node name="Title" type="TextureRect" parent="."]
+[node name="Back" type="Button" parent="."]
+offset_left = 128.0
+offset_top = 840.0
+offset_right = 344.0
+offset_bottom = 968.0
+theme = ExtResource("2_vwegm")
+theme_override_styles/normal = ExtResource("5_70o4x")
+text = "Back"
+flat = true
+script = ExtResource("6_esyye")
+
+[node name="NinePatchRect2" type="NinePatchRect" parent="Back"]
+show_behind_parent = true
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
-anchor_bottom = 1.003
-offset_left = -23.0
-offset_bottom = -0.245972
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("3_ry5ne")
-expand_mode = 3
-stretch_mode = 4
-
-[node name="Button" type="Button" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-flat = true
-script = ExtResource("4_oumr5")
+theme = ExtResource("2_vwegm")
+texture = ExtResource("3_e4u1h")
+region_rect = Rect2(0.447113, 1.15751, 198.079, 182.684)
+patch_margin_left = 120
+patch_margin_top = 58
+patch_margin_right = 83
+patch_margin_bottom = 46
+script = ExtResource("7_mr8ag")
 
-[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
+[node name="UwU" type="Control" parent="Back"]
+anchors_preset = 0
+script = ExtResource("8_jg2tl")
+characterName = "Back - The Schoolyardkeeper"
+characterBelly = "Back"
+characterIcon = 1
+ears = true
+
+[node name="Graphics" type="Control" parent="Back/UwU"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Left" type="TextureRect" parent="Back/UwU/Graphics"]
+visible = false
+layout_mode = 0
+offset_left = -32.0
+offset_top = -48.0
+offset_right = 51.0
+offset_bottom = 46.0
+texture = ExtResource("9_piobk")
+
+[node name="Right" type="TextureRect" parent="Back/UwU/Graphics"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+offset_left = 168.0
+offset_top = -40.0
+offset_right = 250.0
+offset_bottom = 52.0
+texture = ExtResource("10_khxnp")
+
+[node name="Intro" type="Control" parent="Back/UwU"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("11_2u662")
+text = "Hi, Im the Schoolyardkeeper. Make sure to keep it clean. Do you want outside?"
+choices = Array[String](["Yes", "No"])
+
+[node name="Anger" type="Control" parent="Back/UwU"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("11_2u662")
+text = "Outside is beautiful. Don't stay in too long. Class is not that important."
+choices = Array[String](["Bye"])
+
+[node name="Happy" type="Control" parent="Back/UwU"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("11_2u662")
+text = "Make sure to talk to some folks. If you are frustrated they might help. But don't leave the schoolyard. Its dangerous!"
+choices = Array[String](["Bye"])
+
+[connection signal="mouse_entered" from="Back" to="Back" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Back" to="Back" method="_on_mouse_exited"]
+[connection signal="pressed" from="Back" to="Back" method="_on_pressed"]

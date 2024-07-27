@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bjy7qovyigokr"]
+[gd_scene load_steps=17 format=3 uid="uid://bjy7qovyigokr"]
 
 [ext_resource type="Script" path="res://Scenes/TermsAndServices/TermsAndServices.gd" id="1_c8gsr"]
 [ext_resource type="Texture2D" uid="uid://dxk323p2hap2c" path="res://Art/Background/Background.png" id="1_ry4kb"]
@@ -9,11 +9,15 @@
 [ext_resource type="Script" path="res://Scenes/Options/Potatofier.gd" id="10_o0257"]
 [ext_resource type="Script" path="res://Scenes/MainMenu/UwUMemories.gd" id="11_b3fy1"]
 [ext_resource type="Texture2D" uid="uid://drqi8h3p02kye" path="res://Art/Button/LeftUwU.png" id="12_t240l"]
+[ext_resource type="Script" path="res://Generics/CloneableButton.gd" id="12_xgsch"]
 [ext_resource type="Texture2D" uid="uid://lonj01xgrckt" path="res://Art/Button/RightUwU.png" id="13_d6qme"]
 [ext_resource type="Script" path="res://Scenes/TermsAndServices/AgreeField.gd" id="14_0y0mc"]
 [ext_resource type="Script" path="res://Scenes/Options/TextBlock.gd" id="14_nj8oo"]
 [ext_resource type="Script" path="res://Generics/Cloneable.gd" id="14_txobo"]
 [ext_resource type="Script" path="res://Generics/CloneableLabel.gd" id="15_laacn"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_vsrd3"]
+distance = -9.0
 
 [node name="TermsAndServices" type="Control"]
 layout_mode = 3
@@ -39,6 +43,7 @@ expand_mode = 3
 stretch_mode = 4
 
 [node name="Agree" type="Button" parent="."]
+layout_mode = 0
 offset_left = 1376.0
 offset_top = 864.0
 offset_right = 1855.0
@@ -116,6 +121,7 @@ text = "*deeply concentrated playing*   D"
 choices = Array[String](["Leave", "Listen"])
 
 [node name="Back" type="Button" parent="."]
+layout_mode = 0
 offset_left = 56.0
 offset_top = 872.0
 offset_right = 535.0
@@ -124,7 +130,7 @@ theme = ExtResource("6_tly00")
 theme_override_styles/normal = ExtResource("7_4o624")
 text = "Back"
 flat = true
-script = ExtResource("8_7144b")
+script = ExtResource("12_xgsch")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="Back"]
 show_behind_parent = true
@@ -203,6 +209,7 @@ script = ExtResource("14_0y0mc")
 
 [node name="AngryNote" type="Label" parent="."]
 visible = false
+layout_mode = 0
 offset_left = 752.0
 offset_top = 992.0
 offset_right = 1512.0
@@ -215,6 +222,7 @@ script = ExtResource("15_laacn")
 physic = false
 
 [node name="PopUp" type="TextureRect" parent="."]
+layout_mode = 0
 offset_left = 120.0
 offset_top = 96.0
 offset_right = 1776.0
@@ -278,6 +286,31 @@ THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR I
 autowrap_mode = 3
 script = ExtResource("15_laacn")
 physic = false
+
+[node name="Ground2" type="RigidBody2D" parent="."]
+position = Vector2(888, 1088)
+freeze = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground2"]
+shape = SubResource("WorldBoundaryShape2D_vsrd3")
+
+[node name="Wall2" type="RigidBody2D" parent="."]
+position = Vector2(-16, 840)
+rotation = 1.5708
+freeze = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall2"]
+position = Vector2(0, 8)
+shape = SubResource("WorldBoundaryShape2D_vsrd3")
+
+[node name="Wall" type="RigidBody2D" parent="."]
+position = Vector2(1936, 936)
+rotation = -1.5708
+freeze = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall"]
+position = Vector2(0, 8)
+shape = SubResource("WorldBoundaryShape2D_vsrd3")
 
 [connection signal="mouse_entered" from="Agree" to="Agree" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Agree" to="Agree" method="_on_mouse_exited"]

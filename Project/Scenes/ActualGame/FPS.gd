@@ -8,7 +8,7 @@ func _process(delta):
 	if(GlobalOptions.graphics == GlobalOptions.GraphicsQuality.High):
 		modulate = Color(255,0,0)
 		get_parent().get_node("FPS2").modulate = Color(255,0,0)
-		text = str(rng.randf_range(-0.2, 0.1)).pad_decimals(2)
+		text = str(rng.randf_range(-10.2, -40.1)).pad_decimals(2)
 	if(GlobalOptions.graphics == GlobalOptions.GraphicsQuality.Low):
 		modulate = Color(255,255,255)
 		get_parent().get_node("FPS2").modulate = Color(255,255,255)

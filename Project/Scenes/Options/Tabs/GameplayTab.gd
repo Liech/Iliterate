@@ -1,6 +1,7 @@
 extends CloneableButton
 
 
+		
 func tabname():
 	return "Gameplay"
 	

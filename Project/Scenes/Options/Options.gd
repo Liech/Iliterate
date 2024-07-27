@@ -7,6 +7,10 @@ func DoCommand(command):
 	
 	if (command == "Back"):
 		gamestate.fadeTo(gamestate.Scenes.MainMenu);
+	elif(command == "Keybindings"):
+		$DoorClosed.visible = true
+	elif(command == "Close"):
+		$DoorClosed.visible = false
 	else:
 		super.DoCommand(command)
 	
