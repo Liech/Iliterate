@@ -1,5 +1,6 @@
 extends SceneRoot
 
+
 func DoCommand(command):
 	super.DoCommand(command)
 	

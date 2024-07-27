@@ -10,9 +10,12 @@ func _ready():
 	GlobalOptions.gibberishStarting = true
 	await get_tree().create_timer(2.0*scenetime/3.0).timeout
 	gamestate.fadeTo(gamestate.Scenes.StartScreen);
-	GlobalOptions.setGibberish()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
+
+
+func _on_tree_exiting():
+	GlobalOptions.setGibberish()
