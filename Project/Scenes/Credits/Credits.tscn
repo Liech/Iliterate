@@ -210,7 +210,10 @@ script = ExtResource("4_c7j4i")
 [node name="Label" type="Label" parent="VBoxContainer/Assets/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
-text = "Font \"m6x11\" - Daniel Linssen (https://managore.itch.io/)"
+text = "Font \"m6x11\"
+Daniel Linssen (https://managore.itch.io/)
+free to use with attribution
+"
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("4_c7j4i")

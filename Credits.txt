@@ -1,8 +1,30 @@
+
+
+Font "m6x11"
+Daniel Linssen (https://managore.itch.io/)
+free to use with attribution
+
+English Theme:
+A Lucid Dream by CaliDerium
+https://opengameart.org/content/a-lucid-dream
+CC BY 3.0
+
+Cat Sign Language Theme:
+Catsong - By Kaadmy, for Pixture
+https://github.com/kaadmy/pixture/tree/master/mods/music
+CC BY-SA 4.0
+
+Gibberish Theme
+Dark Ambience Loop by Iwan Gabovitch qubodup.net
+https://opengameart.org/content/dark-ambience-loop
+CC BY 3.0
+
+UwU Theme
+Gasmask Love by Kenny Chow
+https://opengameart.org/content/gasmask-love-loop
+CC0 1.0
+
 Paw Model Reference: Nessie
 Paw Model Consultant: Racootie
+
 Everything Else: Liech
-Font Package from https://managore.itch.io/ https://managore.itch.io/m6x11 daniel linssen
-
-
-Discord Help People:
-  Keinomieli
