@@ -37,19 +37,23 @@ func setUwU():
 	GlobalOptions.localization = GlobalOptions.Localization.UwU;
 	gibberishStarting = false;
 	Input.set_custom_mouse_cursor(uwuPaw,0,Vector2(19,4))
+	gamestate.musicPlayer.fadeStreamTo(GlobalOptions.localization)
 	
 func setEnglish():
 	GlobalOptions.localization = GlobalOptions.Localization.English;
 	gibberishStarting = false;
 	Input.set_custom_mouse_cursor(null)
+	gamestate.musicPlayer.fadeStreamTo(GlobalOptions.localization)
 	
 func setGibberish():
 	GlobalOptions.localization = GlobalOptions.Localization.Gibberish;
 	GlobalOptions.gibberishStarting = true
 	Input.set_custom_mouse_cursor(null)
+	gamestate.musicPlayer.fadeStreamTo(GlobalOptions.localization)
 	
 func setCat():
 	gibberishStarting = false;
 	GlobalOptions.localization = GlobalOptions.Localization.CatSignLanguage;
 	Input.set_custom_mouse_cursor(catPaw,0,Vector2(10,14))
+	gamestate.musicPlayer.fadeStreamTo(GlobalOptions.localization)
 	

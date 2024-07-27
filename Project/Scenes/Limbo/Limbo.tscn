@@ -251,6 +251,7 @@ position = Vector2(0, 8)
 shape = SubResource("WorldBoundaryShape2D_7ky1p")
 
 [node name="Warning" type="Label" parent="."]
+layout_mode = 0
 offset_left = 544.0
 offset_top = 472.0
 offset_right = 1435.0

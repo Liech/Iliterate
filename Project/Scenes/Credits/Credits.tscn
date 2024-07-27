@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://dqbxf45lkgpgo"]
+[gd_scene load_steps=20 format=3 uid="uid://dqbxf45lkgpgo"]
 
 [ext_resource type="Theme" uid="uid://d2hv2jx01084f" path="res://mainTheme.tres" id="1_chx1x"]
 [ext_resource type="Script" path="res://Scenes/Credits/RollCredits.gd" id="2_ak1k0"]
@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://dnuo5ietwwchh" path="res://Art/Logos/EngineLogo.png" id="3_yk00n"]
 [ext_resource type="Texture2D" uid="uid://r5o3wo0f3w6y" path="res://Art/Logos/painttool.png" id="4_7yvxn"]
 [ext_resource type="Script" path="res://Generics/CloneableLabel.gd" id="4_c7j4i"]
-[ext_resource type="Texture2D" uid="uid://bljnxprblhku7" path="res://Art/Logos/FontLogo.png" id="4_uyvpy"]
 [ext_resource type="Texture2D" uid="uid://0ry0ct1dikxl" path="res://Art/Logos/AudioTool.png" id="5_1hcdi"]
 [ext_resource type="Script" path="res://Generics/Cloneable.gd" id="6_ov1yf"]
 [ext_resource type="Texture2D" uid="uid://d33dlcmqu4nb2" path="res://Art/Logos/AudioTool2.png" id="6_w3yrq"]
@@ -178,34 +177,114 @@ horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("4_c7j4i")
 
-[node name="Font" type="MarginContainer" parent="VBoxContainer"]
+[node name="Assets" type="MarginContainer" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_constants/margin_left = 200
 theme_override_constants/margin_top = 15
 theme_override_constants/margin_right = 100
 theme_override_constants/margin_bottom = 15
 
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/Font"]
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/Assets"]
 layout_mode = 2
-theme_override_constants/margin_top = 0
+theme_override_constants/margin_top = 200
+theme_override_constants/margin_bottom = 200
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Font/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Assets/MarginContainer"]
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer/Font/MarginContainer/HBoxContainer"]
+[node name="Label2" type="Label" parent="VBoxContainer/Assets/MarginContainer/VBoxContainer"]
 layout_mode = 2
-texture = ExtResource("4_uyvpy")
-stretch_mode = 2
-script = ExtResource("6_ov1yf")
+theme_override_font_sizes/font_size = 60
+text = "Assets"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("4_c7j4i")
 
-[node name="Label" type="Label" parent="VBoxContainer/Font/MarginContainer/HBoxContainer"]
+[node name="Label8" type="Label" parent="VBoxContainer/Assets/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("4_c7j4i")
+
+[node name="Label" type="Label" parent="VBoxContainer/Assets/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
-text = "Font
+text = "Font \"m6x11\" - Daniel Linssen (https://managore.itch.io/)"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("4_c7j4i")
 
-m6x11
-Daniel Linssen
-https://managore.itch.io/"
+[node name="Label3" type="Label" parent="VBoxContainer/Assets/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("4_c7j4i")
+
+[node name="English" type="Label" parent="VBoxContainer/Assets/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "English Theme:
+A Lucid Dream by CaliDerium
+https://opengameart.org/content/a-lucid-dream
+CC BY 3.0"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("4_c7j4i")
+
+[node name="Label9" type="Label" parent="VBoxContainer/Assets/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("4_c7j4i")
+
+[node name="Cat" type="Label" parent="VBoxContainer/Assets/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Cat Sign Language Theme:
+Catsong - By Kaadmy, for Pixture
+https://github.com/kaadmy/pixture/tree/master/mods/music
+CC BY-SA 4.0"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("4_c7j4i")
+
+[node name="Label10" type="Label" parent="VBoxContainer/Assets/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("4_c7j4i")
+
+[node name="Gibberish" type="Label" parent="VBoxContainer/Assets/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Gibberish Theme
+Dark Ambience Loop by Iwan Gabovitch qubodup.net
+https://opengameart.org/content/dark-ambience-loop
+CC BY 3.0"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("4_c7j4i")
+
+[node name="Label11" type="Label" parent="VBoxContainer/Assets/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("4_c7j4i")
+
+[node name="UwU" type="Label" parent="VBoxContainer/Assets/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "UwU Theme
+Gasmask Love by Kenny Chow
+https://opengameart.org/content/gasmask-love-loop
+CC0 1.0"
+horizontal_alignment = 1
+vertical_alignment = 1
 script = ExtResource("4_c7j4i")
 
 [node name="Engine" type="MarginContainer" parent="VBoxContainer"]

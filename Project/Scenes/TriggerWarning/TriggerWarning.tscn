@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://cyofkd801gjyg"]
+[gd_scene load_steps=8 format=3 uid="uid://cyofkd801gjyg"]
 
 [ext_resource type="Theme" uid="uid://d2hv2jx01084f" path="res://mainTheme.tres" id="1_q0ijb"]
+[ext_resource type="Script" path="res://Scenes/TriggerWarning/TriggerWarning.gd" id="2_fqpqa"]
 [ext_resource type="Script" path="res://Scenes/TriggerWarning/Confusion.gd" id="2_l4w44"]
 [ext_resource type="Script" path="res://Scenes/TriggerWarning/Buglessnes.gd" id="2_s3yi5"]
 [ext_resource type="Script" path="res://Scenes/TriggerWarning/TrueLove.gd" id="3_1xlc7"]
@@ -28,6 +29,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_q0ijb")
+script = ExtResource("2_fqpqa")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1

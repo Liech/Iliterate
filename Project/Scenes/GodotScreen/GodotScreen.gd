@@ -28,19 +28,19 @@ func _on_button_pressed():
 	#GlobalOptions.graphics = GlobalOptions.GraphicsQuality.Low;
 	#GlobalOptions.dialog = GlobalOptions.DialogSpeed.Off;
 	#GlobalOptions.jumpKey = "E";
-	#gamestate.fadeTo(gamestate.Scenes.MainMenu);
+	#gamestate.fadeTo(gamestate.Scenes.Options);
 	#return
 	
 	if (alreadyPressed):
 		return;
 	
-	gamestate.musicPlayer.beginMusic()
 	if (not GlobalOptions.muteAudio):
 		$Audio.stream = goooo
 		$Audio.play()
 	alreadyPressed= true;
 	$GodotSymbol.freeze = false;
 	await get_tree().create_timer(deletepindelay).timeout
+	gamestate.musicPlayer.beginMusic()
 	$PinJoint2D.queue_free();
 	await get_tree().create_timer(nextscenedelay).timeout
 	gamestate.fadeTo(gamestate.Scenes.Triggerwarning);

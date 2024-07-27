@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://c4cvg3s1katrp"
+path="res://.godot/imported/A Lucid Dream.ogg-3db571f44abb5ba09f47313264de9ddb.oggvorbisstr"
+
+[deps]
+
+source_file="res://Sound/A Lucid Dream/A Lucid Dream.ogg"
+dest_files=["res://.godot/imported/A Lucid Dream.ogg-3db571f44abb5ba09f47313264de9ddb.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

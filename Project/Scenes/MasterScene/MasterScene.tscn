@@ -361,9 +361,18 @@ offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("19_e82uy")
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+[node name="English" type="AudioStreamPlayer2D" parent="."]
 bus = &"Music"
 script = ExtResource("18_r87is")
+
+[node name="Cat" type="AudioStreamPlayer2D" parent="English"]
+bus = &"Music"
+
+[node name="Gibberish" type="AudioStreamPlayer2D" parent="English"]
+bus = &"Music"
+
+[node name="UwU" type="AudioStreamPlayer2D" parent="English"]
+bus = &"Music"
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 z_index = 6
@@ -445,4 +454,7 @@ script = ExtResource("25_8letj")
 [connection signal="pressed" from="Dialog/Choices/Choice9" to="Dialog/Choices/Choice9" method="_on_pressed"]
 [connection signal="pressed" from="Dialog/Choices/Choice10" to="Dialog/Choices/Choice10" method="_on_pressed"]
 [connection signal="pressed" from="Dialog/Choices/Choice11" to="Dialog/Choices/Choice11" method="_on_pressed"]
-[connection signal="finished" from="AudioStreamPlayer2D" to="AudioStreamPlayer2D" method="_on_finished"]
+[connection signal="finished" from="English" to="English" method="_on_finished"]
+[connection signal="finished" from="English/Cat" to="English/Cat" method="_on_finished"]
+[connection signal="finished" from="English/Gibberish" to="English/Gibberish" method="_on_finished"]
+[connection signal="finished" from="English/UwU" to="English/UwU" method="_on_finished"]
