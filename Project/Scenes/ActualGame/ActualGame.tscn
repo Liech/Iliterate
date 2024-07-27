@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://bty84m1ich0cx"]
+[gd_scene load_steps=39 format=3 uid="uid://bty84m1ich0cx"]
 
 [ext_resource type="Texture2D" uid="uid://c4jdbmn3dmdw4" path="res://Art/LevelBackground.png" id="1_g2ffx"]
 [ext_resource type="Script" path="res://Scenes/ActualGame/ActualGame.gd" id="1_unm1w"]
@@ -21,6 +21,8 @@
 [ext_resource type="Texture2D" uid="uid://njbqasa8sot5" path="res://Art/OldMan.png" id="16_f6p2h"]
 [ext_resource type="Script" path="res://Scenes/ActualGame/PopUp.gd" id="18_0hdya"]
 [ext_resource type="Script" path="res://Scenes/ActualGame/popupButton.gd" id="19_3mvkm"]
+[ext_resource type="Script" path="res://Scenes/ActualGame/JumpHint.gd" id="22_xp1ca"]
+[ext_resource type="Script" path="res://Scenes/ActualGame/WalkHint.gd" id="23_3jwtc"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_85ojc"]
 shader = ExtResource("4_6nb7y")
@@ -489,6 +491,44 @@ patch_margin_top = 58
 patch_margin_right = 83
 patch_margin_bottom = 46
 script = ExtResource("7_2ip71")
+
+[node name="JumpHint" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 764.0
+offset_top = 624.0
+offset_right = 804.0
+offset_bottom = 664.0
+script = ExtResource("22_xp1ca")
+
+[node name="Hint" type="Label" parent="JumpHint"]
+layout_mode = 0
+offset_left = -757.0
+offset_top = 141.0
+offset_right = 1158.0
+offset_bottom = 229.0
+theme = ExtResource("3_82lny")
+text = "Press \"None\" to jump"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WalkHint" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 389.0
+offset_top = 616.0
+offset_right = 429.0
+offset_bottom = 656.0
+script = ExtResource("23_3jwtc")
+
+[node name="Hint" type="Label" parent="WalkHint"]
+layout_mode = 0
+offset_left = -384.0
+offset_top = 147.0
+offset_right = 1530.0
+offset_bottom = 235.0
+theme = ExtResource("3_82lny")
+text = "Press \"None\" to jump"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="mouse_entered" from="Back" to="Back" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Back" to="Back" method="_on_mouse_exited"]
