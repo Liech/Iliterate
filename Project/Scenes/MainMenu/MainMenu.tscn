@@ -1,7 +1,8 @@
-[gd_scene load_steps=26 format=3 uid="uid://cch5ed86qkrt4"]
+[gd_scene load_steps=27 format=3 uid="uid://cch5ed86qkrt4"]
 
 [ext_resource type="Script" path="res://Scenes/MainMenu/MainMenu.gd" id="2_ckgni"]
 [ext_resource type="Script" path="res://Generics/Cloneable.gd" id="3_3uqhv"]
+[ext_resource type="Texture2D" uid="uid://dxk323p2hap2c" path="res://Art/Background/Background.png" id="3_5llj1"]
 [ext_resource type="Texture2D" uid="uid://m2dbb5s7avis" path="res://Art/Background/Mage.png" id="3_kqgqu"]
 [ext_resource type="Script" path="res://Generics/CmdStartGame.gd" id="4_583ko"]
 [ext_resource type="Theme" uid="uid://d2hv2jx01084f" path="res://mainTheme.tres" id="5_1o4bo"]
@@ -41,13 +42,26 @@ size_flags_vertical = 3
 theme = ExtResource("5_1o4bo")
 script = ExtResource("2_ckgni")
 
+[node name="Background2" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.77777
+offset_right = 1.77783
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_5llj1")
+expand_mode = 3
+stretch_mode = 4
+
 [node name="Background" type="TextureRect" parent="."]
 z_index = -2
 layout_mode = 0
 offset_left = 104.0
-offset_top = 8.0
+offset_top = 32.0
 offset_right = 1965.33
-offset_bottom = 1055.0
+offset_bottom = 1079.0
 texture = ExtResource("3_kqgqu")
 expand_mode = 3
 stretch_mode = 4
@@ -236,6 +250,9 @@ anchors_preset = 0
 offset_top = -192.0
 offset_bottom = -192.0
 script = ExtResource("14_hg802")
+characterName = "About"
+characterBelly = "About"
+characterIcon = 1
 ears = true
 
 [node name="Graphics" type="Control" parent="About/UwU"]
@@ -267,18 +284,54 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("12_fctv6")
-text = "*deeply concentrated playing* D"
-choices = Array[String](["Leave", "Listen"])
+text = "He, Im About."
+choices = Array[String](["Any Tips?", "Anything interesting out there?", "Bye"])
 
-[node name="Intro2" type="Control" parent="About/UwU"]
+[node name="Movie" type="Control" parent="About/UwU"]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("12_fctv6")
-text = "*deeply concentrated playing*   D"
-choices = Array[String](["Leave", "Listen"])
+text = "Sure, there is a movietheater i want to go. Wanna go with me?"
+choices = Array[String](["Sure", "No"])
 
-[node name="Memories2" type="Button" parent="."]
+[node name="MovieYes" type="Control" parent="About/UwU"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("12_fctv6")
+text = "Then lets go!"
+choices = Array[String](["Ok"])
+
+[node name="MovieNo" type="Control" parent="About/UwU"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("12_fctv6")
+text = "Boring :("
+choices = Array[String](["Leave"])
+
+[node name="Tipps" type="Control" parent="About/UwU"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("12_fctv6")
+text = "Everyone here is important. If you don't how to proceed just explore new areas and people. "
+choices = Array[String](["continue"])
+
+[node name="Tipps2" type="Control" parent="About/UwU"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("12_fctv6")
+text = "Except Opacity and Brightness. These Buttons are useless. The architects of this world just had no time to make them useful."
+choices = Array[String](["Thanks"])
+
+[node name="Memories" type="Button" parent="."]
 layout_mode = 0
 offset_left = 112.0
 offset_top = 248.0
@@ -291,7 +344,7 @@ flat = true
 script = ExtResource("8_8don6")
 breaks = true
 
-[node name="NinePatchRect" type="NinePatchRect" parent="Memories2"]
+[node name="NinePatchRect" type="NinePatchRect" parent="Memories"]
 show_behind_parent = true
 layout_mode = 1
 anchors_preset = 15
@@ -308,20 +361,23 @@ patch_margin_right = 83
 patch_margin_bottom = 46
 script = ExtResource("8_4c27e")
 
-[node name="UwU" type="Control" parent="Memories2"]
+[node name="UwU" type="Control" parent="Memories"]
 layout_mode = 3
 anchors_preset = 0
 offset_top = -192.0
 offset_bottom = -192.0
 script = ExtResource("16_773iw")
+characterName = "Memories - Weird fact kid"
+characterBelly = "Memories"
+characterIcon = 1
 ears = true
 
-[node name="Graphics" type="Control" parent="Memories2/UwU"]
+[node name="Graphics" type="Control" parent="Memories/UwU"]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Left" type="TextureRect" parent="Memories2/UwU/Graphics"]
+[node name="Left" type="TextureRect" parent="Memories/UwU/Graphics"]
 visible = false
 layout_mode = 0
 offset_left = -16.0
@@ -330,7 +386,7 @@ offset_right = 67.0
 offset_bottom = 238.0
 texture = ExtResource("10_suh4q")
 
-[node name="Right" type="TextureRect" parent="Memories2/UwU/Graphics"]
+[node name="Right" type="TextureRect" parent="Memories/UwU/Graphics"]
 visible = false
 layout_mode = 1
 anchors_preset = -1
@@ -340,23 +396,41 @@ offset_right = 266.0
 offset_bottom = 244.0
 texture = ExtResource("11_pmm3k")
 
-[node name="Intro" type="Control" parent="Memories2/UwU"]
+[node name="Intro" type="Control" parent="Memories/UwU"]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("12_fctv6")
-text = "*deeply concentrated playing* D"
-choices = Array[String](["Leave", "Listen"])
+text = "Did you know sometimes the graphics processor has to do so much that he is not able to keep in touch with the schedule?"
+choices = Array[String](["sure"])
 
-[node name="Intro2" type="Control" parent="Memories2/UwU"]
+[node name="Intro2" type="Control" parent="Memories/UwU"]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("12_fctv6")
-text = "*deeply concentrated playing*   D"
-choices = Array[String](["Leave", "Listen"])
+text = "If its to much most universes allow you to reduce the fidelity. But sometimes it is still out of touch."
+choices = Array[String](["sure"])
 
-[node name="Options2" type="Button" parent="."]
+[node name="Intro3" type="Control" parent="Memories/UwU"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("12_fctv6")
+text = "Then the world rips apart and you see fast moving cracks. This effect has a name. But i don't remember it."
+choices = Array[String](["me neither"])
+
+[node name="Intro4" type="Control" parent="Memories/UwU"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("12_fctv6")
+text = "Anyway. Do you now V-Sync? This Buttons Hot. And i want to date it."
+choices = Array[String](["good luck"])
+
+[node name="Options" type="Button" parent="."]
 layout_mode = 0
 offset_left = 112.0
 offset_top = 520.0
@@ -368,7 +442,7 @@ text = "Options"
 flat = true
 script = ExtResource("9_nayao")
 
-[node name="NinePatchRect" type="NinePatchRect" parent="Options2"]
+[node name="NinePatchRect" type="NinePatchRect" parent="Options"]
 show_behind_parent = true
 layout_mode = 1
 anchors_preset = 15
@@ -385,20 +459,23 @@ patch_margin_right = 83
 patch_margin_bottom = 46
 script = ExtResource("8_4c27e")
 
-[node name="UwU" type="Control" parent="Options2"]
+[node name="UwU" type="Control" parent="Options"]
 layout_mode = 3
 anchors_preset = 0
 offset_top = -192.0
 offset_bottom = -192.0
 script = ExtResource("16_ttngs")
+characterName = "Options - Doorbell"
+characterBelly = "Options"
+characterIcon = 1
 ears = true
 
-[node name="Graphics" type="Control" parent="Options2/UwU"]
+[node name="Graphics" type="Control" parent="Options/UwU"]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Left" type="TextureRect" parent="Options2/UwU/Graphics"]
+[node name="Left" type="TextureRect" parent="Options/UwU/Graphics"]
 visible = false
 layout_mode = 0
 offset_left = -16.0
@@ -407,7 +484,7 @@ offset_right = 67.0
 offset_bottom = 238.0
 texture = ExtResource("10_suh4q")
 
-[node name="Right" type="TextureRect" parent="Options2/UwU/Graphics"]
+[node name="Right" type="TextureRect" parent="Options/UwU/Graphics"]
 visible = false
 layout_mode = 1
 anchors_preset = -1
@@ -417,23 +494,15 @@ offset_right = 266.0
 offset_bottom = 244.0
 texture = ExtResource("11_pmm3k")
 
-[node name="Intro" type="Control" parent="Options2/UwU"]
+[node name="Intro" type="Control" parent="Options/UwU"]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("12_fctv6")
-text = "*deeply concentrated playing* D"
-choices = Array[String](["Leave", "Listen"])
+text = "Get Back to class. You are late!"
+choices = Array[String](["Ok"])
 
-[node name="Intro2" type="Control" parent="Options2/UwU"]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-script = ExtResource("12_fctv6")
-text = "*deeply concentrated playing*   D"
-choices = Array[String](["Leave", "Listen"])
-
-[node name="Back2" type="Button" parent="."]
+[node name="Back" type="Button" parent="."]
 layout_mode = 0
 offset_left = 112.0
 offset_top = 656.0
@@ -446,7 +515,7 @@ flat = true
 script = ExtResource("19_c045n")
 breaks = true
 
-[node name="NinePatchRect" type="NinePatchRect" parent="Back2"]
+[node name="NinePatchRect" type="NinePatchRect" parent="Back"]
 show_behind_parent = true
 layout_mode = 1
 anchors_preset = 15
@@ -463,20 +532,23 @@ patch_margin_right = 83
 patch_margin_bottom = 46
 script = ExtResource("8_4c27e")
 
-[node name="UwU" type="Control" parent="Back2"]
+[node name="UwU" type="Control" parent="Back"]
 layout_mode = 3
 anchors_preset = 0
 offset_top = -192.0
 offset_bottom = -192.0
 script = ExtResource("18_gb4q0")
+characterName = "Back - Historian"
+characterBelly = "Back"
+characterIcon = 1
 ears = true
 
-[node name="Graphics" type="Control" parent="Back2/UwU"]
+[node name="Graphics" type="Control" parent="Back/UwU"]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Left" type="TextureRect" parent="Back2/UwU/Graphics"]
+[node name="Left" type="TextureRect" parent="Back/UwU/Graphics"]
 visible = false
 layout_mode = 0
 offset_left = -16.0
@@ -485,7 +557,7 @@ offset_right = 67.0
 offset_bottom = 238.0
 texture = ExtResource("10_suh4q")
 
-[node name="Right" type="TextureRect" parent="Back2/UwU/Graphics"]
+[node name="Right" type="TextureRect" parent="Back/UwU/Graphics"]
 visible = false
 layout_mode = 1
 anchors_preset = -1
@@ -495,21 +567,31 @@ offset_right = 266.0
 offset_bottom = 244.0
 texture = ExtResource("11_pmm3k")
 
-[node name="Intro" type="Control" parent="Back2/UwU"]
+[node name="Intro" type="Control" parent="Back/UwU"]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("12_fctv6")
-text = "*deeply concentrated playing* D"
-choices = Array[String](["Leave", "Listen"])
+text = "Hey, im Back. My Family has a long line of beeing Back Button. We Back Buttons are pretty common and i have many cousins. Greet them if you see them."
+choices = Array[String](["Can you let me through?", "Any tips?", "Bye"])
 
-[node name="Intro2" type="Control" parent="Back2/UwU"]
+[node name="CanYouLetMeThrough" type="Control" parent="Back/UwU"]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("12_fctv6")
-text = "*deeply concentrated playing*   D"
-choices = Array[String](["Leave", "Listen"])
+text = "Visiting the past is important. But it is dangerous."
+choices = Array[String](["I don't care", "ok, fine :("])
+
+[node name="tip" type="Control" parent="Back/UwU"]
+layout_mode = 3
+anchors_preset = 0
+offset_top = 192.0
+offset_right = 40.0
+offset_bottom = 232.0
+script = ExtResource("12_fctv6")
+text = "Always look out for memories you might need later. Forget the rest. Carry your past around can be a burden if it does not serve a purpose."
+choices = Array[String](["Thanks"])
 
 [node name="ForRearanging" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -584,12 +666,12 @@ shape = SubResource("WorldBoundaryShape2D_mabsu")
 [connection signal="mouse_entered" from="About" to="About" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="About" to="About" method="_on_mouse_exited"]
 [connection signal="pressed" from="About" to="About" method="_on_pressed"]
-[connection signal="mouse_entered" from="Memories2" to="Memories2" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Memories2" to="Memories2" method="_on_mouse_exited"]
-[connection signal="pressed" from="Memories2" to="Memories2" method="_on_pressed"]
-[connection signal="mouse_entered" from="Options2" to="Options2" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Options2" to="Options2" method="_on_mouse_exited"]
-[connection signal="pressed" from="Options2" to="Options2" method="_on_pressed"]
-[connection signal="mouse_entered" from="Back2" to="Back2" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Back2" to="Back2" method="_on_mouse_exited"]
-[connection signal="pressed" from="Back2" to="Back2" method="_on_pressed"]
+[connection signal="mouse_entered" from="Memories" to="Memories" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Memories" to="Memories" method="_on_mouse_exited"]
+[connection signal="pressed" from="Memories" to="Memories" method="_on_pressed"]
+[connection signal="mouse_entered" from="Options" to="Options" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Options" to="Options" method="_on_mouse_exited"]
+[connection signal="pressed" from="Options" to="Options" method="_on_pressed"]
+[connection signal="mouse_entered" from="Back" to="Back" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Back" to="Back" method="_on_mouse_exited"]
+[connection signal="pressed" from="Back" to="Back" method="_on_pressed"]

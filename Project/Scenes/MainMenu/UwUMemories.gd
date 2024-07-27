@@ -3,10 +3,11 @@ extends UwUDialog
 
 
 func choiceMade(choice):
-	if (choice == "Listen"):
-		if (currentBlock == $Intro):
-			setTextBlock($Intro2);
-		else:
-			setTextBlock($Intro);
+	if (choice == "sure"):
+		nextBlock()
+	elif (choice == "continue"):
+		nextBlock()
+	elif (choice == "me neither"):
+		nextBlock()
 	else:
 		closeDialog()
