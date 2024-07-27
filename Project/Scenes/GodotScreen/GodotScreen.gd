@@ -9,6 +9,7 @@ var alreadyPressed = false
 var goooo = preload("res://Sound/Gooo.wav")
 var douh = preload("res://Sound/Douh.wav")
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -20,17 +21,20 @@ func _process(delta):
 
 
 func _on_button_pressed():
-	#GlobalOptions.localization = GlobalOptions.Localization.English
+	#GlobalOptions.localization = GlobalOptions.Localization.UwU
 	#gamestate.fadeouttime = 0
 	#gamestate.fadeintime = 0
-	GlobalOptions.vsync = true
-	GlobalOptions.graphics = GlobalOptions.GraphicsQuality.Low;
-	GlobalOptions.jumpKey = "E";
-	gamestate.fadeTo(gamestate.Scenes.ActualGame);
-	return
+	#GlobalOptions.vsync = true
+	#GlobalOptions.graphics = GlobalOptions.GraphicsQuality.Low;
+	#GlobalOptions.dialog = GlobalOptions.DialogSpeed.Off;
+	#GlobalOptions.jumpKey = "E";
+	#gamestate.fadeTo(gamestate.Scenes.MainMenu);
+	#return
 	
 	if (alreadyPressed):
 		return;
+	
+	gamestate.musicPlayer.beginMusic()
 	if (not GlobalOptions.muteAudio):
 		$Audio.stream = goooo
 		$Audio.play()

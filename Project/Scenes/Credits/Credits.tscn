@@ -16,8 +16,8 @@
 [ext_resource type="Texture2D" uid="uid://c5c2vtc7dcttf" path="res://Art/Menu/CatSignLanguageInterpreterPaw.png" id="12_ksxw6"]
 [ext_resource type="Script" path="res://Core/SignLanguagePaw.gd" id="13_j8jk4"]
 [ext_resource type="StyleBox" uid="uid://bdktf0xccluh5" path="res://Scenes/MainMenu/buttonninepatch.tres" id="14_3rfvb"]
-[ext_resource type="Script" path="res://Generics/CmdBack.gd" id="15_u7l8l"]
 [ext_resource type="Texture2D" uid="uid://vc0f42xth06n" path="res://Art/Button/Button.png" id="16_vvrhi"]
+[ext_resource type="Script" path="res://Generics/CloneableButton.gd" id="17_nvii1"]
 [ext_resource type="Script" path="res://Scenes/Options/Potatofier.gd" id="19_b8hi8"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_7ky1p"]
@@ -439,7 +439,7 @@ theme = ExtResource("1_chx1x")
 theme_override_styles/normal = ExtResource("14_3rfvb")
 text = "Back"
 flat = true
-script = ExtResource("15_u7l8l")
+script = ExtResource("17_nvii1")
 
 [node name="NinePatchRect2" type="NinePatchRect" parent="Back2"]
 show_behind_parent = true

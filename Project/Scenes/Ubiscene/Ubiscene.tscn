@@ -87,7 +87,7 @@ theme_override_constants/margin_bottom = 15
 [node name="Label" type="Label" parent="VBoxContainer/FirstLine"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 60
-text = "This Feverdream was designed, developed and produced      "
+text = "This Feverdream was designed, developed and produced     "
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("3_yi2im")
@@ -109,7 +109,7 @@ theme_override_constants/margin_bottom = 15
 [node name="Label" type="Label" parent="VBoxContainer/SecondLine"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 60
-text = "What do mean? Did you just forgot how to read?"
+text = "What do mean? Did you just forgot how to read?    "
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("3_yi2im")
@@ -157,3 +157,5 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 color = Color(0, 0, 0, 0.0156863)
+
+[connection signal="tree_exiting" from="." to="." method="_on_tree_exiting"]

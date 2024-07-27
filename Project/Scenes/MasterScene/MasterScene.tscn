@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://bdmsibriri3e4"]
+[gd_scene load_steps=28 format=3 uid="uid://bdmsibriri3e4"]
 
 [ext_resource type="Script" path="res://Scenes/MasterScene/MasterScene.gd" id="1_tj8ov"]
 [ext_resource type="PackedScene" uid="uid://dllnxms57yayp" path="res://Scenes/GodotScreen/GodotScreen.tscn" id="2_385ln"]
@@ -17,11 +17,16 @@
 [ext_resource type="Script" path="res://Scenes/MasterScene/LowSpeedPawRotate.gd" id="10_b60xc"]
 [ext_resource type="Script" path="res://Scenes/MasterScene/ByeDialog.gd" id="11_wfmv7"]
 [ext_resource type="Texture2D" uid="uid://c2fkgtiynvecr" path="res://Art/Rocket.png" id="17_30jps"]
+[ext_resource type="Texture2D" uid="uid://s3c6up3fpsyt" path="res://Art/Keycaps/KeycapQUwU.png" id="17_ku80a"]
+[ext_resource type="Script" path="res://Scenes/MasterScene/Demon.gd" id="18_amghe"]
 [ext_resource type="Script" path="res://Scenes/MasterScene/Rocket.gd" id="18_osg1a"]
+[ext_resource type="Script" path="res://Scenes/MasterScene/MusicPlayer.gd" id="18_r87is"]
 [ext_resource type="Script" path="res://Scenes/MasterScene/AdjustBrightness.gd" id="19_e82uy"]
 [ext_resource type="Material" uid="uid://bxr21smj0c8ja" path="res://postprocessing.tres" id="20_wmkgo"]
 [ext_resource type="Script" path="res://Scenes/MasterScene/PostProcessor.gd" id="21_i2s2l"]
 [ext_resource type="Script" path="res://Scenes/MasterScene/ButtonPressedLabel.gd" id="22_kw4yp"]
+[ext_resource type="Texture2D" uid="uid://de8ntbpfst776" path="res://Art/Keycaps/KeycapDel.png" id="24_c0gms"]
+[ext_resource type="Script" path="res://Scenes/MasterScene/deleteHint.gd" id="25_8letj"]
 
 [node name="MasterScene" type="Control"]
 layout_mode = 3
@@ -55,7 +60,6 @@ offset_bottom = -940.258
 script = ExtResource("3_013t6")
 
 [node name="Dialog" type="Control" parent="."]
-visible = false
 anchors_preset = 0
 offset_left = 88.0
 offset_top = 512.0
@@ -73,12 +77,12 @@ offset_bottom = 632.0
 
 [node name="???" type="Button" parent="Dialog"]
 layout_mode = 0
-offset_left = 1598.0
-offset_top = 222.0
-offset_right = 1738.0
-offset_bottom = 318.0
+offset_left = 1361.0
+offset_top = 407.0
+offset_right = 1746.0
+offset_bottom = 503.0
 theme = ExtResource("4_2ub7r")
-text = "???"
+text = "Bye Dialog"
 flat = true
 script = ExtResource("6_4m13h")
 
@@ -249,6 +253,7 @@ script = ExtResource("6_gluqs")
 buildPhysic = false
 
 [node name="ButtonChan" type="Control" parent="Dialog"]
+visible = false
 anchors_preset = 0
 offset_left = -47.0
 offset_top = -250.0
@@ -338,13 +343,30 @@ texture = ExtResource("17_30jps")
 flip_h = true
 script = ExtResource("18_osg1a")
 
+[node name="Demon" type="TextureRect" parent="Dialog"]
+visible = false
+layout_mode = 0
+offset_left = 1269.0
+offset_top = -396.0
+offset_right = 1754.0
+offset_bottom = 89.0
+texture = ExtResource("17_ku80a")
+expand_mode = 2
+stretch_mode = 4
+script = ExtResource("18_amghe")
+
 [node name="Brightness" type="Control" parent="."]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("19_e82uy")
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+bus = &"Music"
+script = ExtResource("18_r87is")
+
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
+z_index = 6
 layout_mode = 0
 offset_right = 420.0
 offset_bottom = 369.0
@@ -358,6 +380,7 @@ patch_margin_bottom = 12
 script = ExtResource("4_qrkg7")
 
 [node name="GlobalFader" type="ColorRect" parent="."]
+z_index = 9
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -373,6 +396,7 @@ color = Color(0, 0, 0, 0.0156863)
 
 [node name="ButtonPressedLabel" type="Label" parent="."]
 visible = false
+z_index = 4
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
@@ -388,6 +412,7 @@ script = ExtResource("22_kw4yp")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+z_index = 11
 material = ExtResource("20_wmkgo")
 anchors_preset = 15
 anchor_right = 1.0
@@ -396,6 +421,18 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("21_i2s2l")
+
+[node name="deleteHint" type="TextureRect" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 1771.0
+offset_top = 928.0
+offset_right = 1919.0
+offset_bottom = 1076.0
+texture = ExtResource("24_c0gms")
+expand_mode = 2
+stretch_mode = 4
+script = ExtResource("25_8letj")
 
 [connection signal="pressed" from="Dialog/???" to="Dialog/???" method="_on_pressed"]
 [connection signal="pressed" from="Dialog/Choices/Choice2" to="Dialog/Choices/Choice2" method="_on_pressed"]
@@ -408,3 +445,4 @@ script = ExtResource("21_i2s2l")
 [connection signal="pressed" from="Dialog/Choices/Choice9" to="Dialog/Choices/Choice9" method="_on_pressed"]
 [connection signal="pressed" from="Dialog/Choices/Choice10" to="Dialog/Choices/Choice10" method="_on_pressed"]
 [connection signal="pressed" from="Dialog/Choices/Choice11" to="Dialog/Choices/Choice11" method="_on_pressed"]
+[connection signal="finished" from="AudioStreamPlayer2D" to="AudioStreamPlayer2D" method="_on_finished"]

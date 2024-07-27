@@ -19,10 +19,19 @@ var opacity = 50
 var masterAudio = 100
 var musicAudio = 80
 var effectAudio = 100
-var jumpKey = "¯\\_(ツ)_/¯"
+var jumpKey = "None"
 
 var characters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
 
+func isJumpPressed():
+	if (jumpKey == "W"):
+		return Input.is_key_pressed(KEY_W)
+	if (jumpKey == "E"):
+		return Input.is_key_pressed(KEY_E)
+	if (jumpKey == "Q"):
+		return Input.is_key_pressed(KEY_Q)
+	
+	return false
 
 func setUwU():
 	GlobalOptions.localization = GlobalOptions.Localization.UwU;
@@ -36,6 +45,7 @@ func setEnglish():
 	
 func setGibberish():
 	GlobalOptions.localization = GlobalOptions.Localization.Gibberish;
+	GlobalOptions.gibberishStarting = true
 	Input.set_custom_mouse_cursor(null)
 	
 func setCat():

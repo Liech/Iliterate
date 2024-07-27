@@ -30,3 +30,7 @@ func cloneObject(panel, move,ppos):
 	if (move):
 		result.position = result.position - panel.position
 	return result
+
+var grounded = false;
+func touchedGround():
+	grounded = true;

@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://dllnxms57yayp"]
+[gd_scene load_steps=7 format=3 uid="uid://dllnxms57yayp"]
 
 [ext_resource type="Script" path="res://Scenes/GodotScreen/GodotScreen.gd" id="1_n13py"]
 [ext_resource type="Texture2D" uid="uid://bia5jsnmij008" path="res://Art/godotStartup.png" id="2_x8p1y"]
+[ext_resource type="Theme" uid="uid://d2hv2jx01084f" path="res://mainTheme.tres" id="3_vkknk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u4rb4"]
 size = Vector2(263, 259.5)
@@ -105,6 +106,15 @@ flat = true
 
 [node name="Audio" type="AudioStreamPlayer2D" parent="."]
 max_distance = 100000.0
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 836.0
+offset_top = 303.0
+offset_right = 1100.0
+offset_bottom = 391.0
+theme = ExtResource("3_vkknk")
+text = "Ready?"
 
 [connection signal="body_shape_entered" from="GodotSymbol" to="." method="_on_godot_symbol_body_shape_entered"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

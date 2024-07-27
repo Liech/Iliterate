@@ -1,5 +1,6 @@
 extends RigidBody2D
 
+var breaks = false;
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -17,9 +18,11 @@ func _on_body_entered(body):
 	if (layer == 1):
 		if (broken):
 			return;
-		broken = true
-		get_child(1).breakApart()
-		queue_free();
+		get_child(1).touchedGround();
+		if (breaks):
+			broken = true
+			get_child(1).breakApart()
+			queue_free();
 
 func selfconnect():
 	body_entered.connect(_on_body_entered)

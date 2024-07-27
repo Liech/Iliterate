@@ -1,9 +1,10 @@
 extends SceneRoot
 
+
 func DoCommand(command):
 	super.DoCommand(command)
 	
-	if (command == "Memory"):
+	if (command == "Memories"):
 		gamestate.fadeTo(gamestate.Scenes.Memories);
 	elif (command == "About"):
 		gamestate.fadeTo(gamestate.Scenes.Credits);
@@ -16,5 +17,9 @@ func DoCommand(command):
 	elif (command == "Start Screen"):
 		gamestate.fadeTo(gamestate.Scenes.StartScreen);
 	elif (command == "Start Game"):
-		gamestate.fadeTo(gamestate.Scenes.ActualGame);
+		if (gamestate.termsagreed):
+			gamestate.fadeTo(gamestate.Scenes.ActualGame);
+		else:
+			gamestate.fadeTo(gamestate.Scenes.TermsAndServices);
+			
 		

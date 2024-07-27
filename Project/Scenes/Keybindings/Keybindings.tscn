@@ -1,11 +1,29 @@
-[gd_scene load_steps=5 format=3 uid="uid://iwsr5sfrgc4n"]
+[gd_scene load_steps=21 format=3 uid="uid://iwsr5sfrgc4n"]
 
+[ext_resource type="Script" path="res://Scenes/Keybindings/Keybindings.gd" id="1_0l4hs"]
 [ext_resource type="Texture2D" uid="uid://dxk323p2hap2c" path="res://Art/Background/Background.png" id="1_ahcr0"]
-[ext_resource type="Texture2D" uid="uid://m2dbb5s7avis" path="res://Art/Background/Mage.png" id="2_web3m"]
-[ext_resource type="Texture2D" uid="uid://bsynd6xnwhvs1" path="res://Art/Background/Title.png" id="3_ry5ne"]
-[ext_resource type="Script" path="res://Scenes/StartScreen/ToMainMenu.gd" id="4_oumr5"]
+[ext_resource type="Theme" uid="uid://d2hv2jx01084f" path="res://mainTheme.tres" id="2_vwegm"]
+[ext_resource type="Texture2D" uid="uid://vc0f42xth06n" path="res://Art/Button/Button.png" id="3_e4u1h"]
+[ext_resource type="Script" path="res://Generics/CloneablePanel.gd" id="4_6mj8p"]
+[ext_resource type="StyleBox" uid="uid://bdktf0xccluh5" path="res://Scenes/MainMenu/buttonninepatch.tres" id="5_70o4x"]
+[ext_resource type="Texture2D" uid="uid://b66j7ca3e4caj" path="res://Art/Background/SummoningCircle.png" id="5_e2ocy"]
+[ext_resource type="Script" path="res://Generics/CloneableButton.gd" id="6_esyye"]
+[ext_resource type="Script" path="res://Scenes/Options/Misc/MiscLabel.gd" id="6_yiwa1"]
+[ext_resource type="Script" path="res://Scenes/Options/Potatofier.gd" id="7_mr8ag"]
+[ext_resource type="Texture2D" uid="uid://drqi8h3p02kye" path="res://Art/Button/LeftUwU.png" id="9_piobk"]
+[ext_resource type="Script" path="res://Scenes/Keybindings/BackUwU.gd" id="10_13shd"]
+[ext_resource type="Texture2D" uid="uid://lonj01xgrckt" path="res://Art/Button/RightUwU.png" id="10_khxnp"]
+[ext_resource type="Script" path="res://Scenes/Options/TextBlock.gd" id="11_2u662"]
+[ext_resource type="Script" path="res://Scenes/Keybindings/SetUwU.gd" id="14_lda13"]
+[ext_resource type="Texture2D" uid="uid://lvld2o43cpmo" path="res://Art/Menu/ComboKnob.png" id="14_ybhsl"]
+[ext_resource type="Texture2D" uid="uid://bx44vod8gs84d" path="res://Art/Keycaps/KeycapW.png" id="15_dp5xm"]
+[ext_resource type="Script" path="res://Scenes/Keybindings/ChoseKey.gd" id="15_o16rf"]
+[ext_resource type="Script" path="res://Scenes/Keybindings/Demon.gd" id="16_8noiv"]
 
-[node name="StartScreen" type="Control"]
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_qx7ui"]
+distance = -9.0
+
+[node name="Keybindings" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -15,8 +33,10 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+script = ExtResource("1_0l4hs")
 
-[node name="Mage" type="TextureRect" parent="."]
+[node name="Background" type="TextureRect" parent="."]
+z_index = -2
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -27,38 +47,393 @@ texture = ExtResource("1_ahcr0")
 expand_mode = 3
 stretch_mode = 4
 
-[node name="Background" type="TextureRect" parent="."]
+[node name="OptionsPanel" type="NinePatchRect" parent="."]
+show_behind_parent = true
+z_index = -1
+layout_mode = 0
+offset_left = 70.0
+offset_top = 70.0
+offset_right = 1850.0
+offset_bottom = 1012.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_vwegm")
+texture = ExtResource("3_e4u1h")
+region_rect = Rect2(0.447113, 1.15751, 198.079, 182.684)
+patch_margin_left = 120
+patch_margin_top = 58
+patch_margin_right = 83
+patch_margin_bottom = 46
+script = ExtResource("4_6mj8p")
+
+[node name="SummoningCircle" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -1.77777
+offset_right = 1.77783
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_web3m")
+texture = ExtResource("5_e2ocy")
 expand_mode = 3
 stretch_mode = 4
 
-[node name="Title" type="TextureRect" parent="."]
+[node name="Back" type="Button" parent="."]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 840.0
+offset_right = 344.0
+offset_bottom = 968.0
+theme = ExtResource("2_vwegm")
+theme_override_styles/normal = ExtResource("5_70o4x")
+text = "Back"
+flat = true
+script = ExtResource("6_esyye")
+
+[node name="NinePatchRect2" type="NinePatchRect" parent="Back"]
+show_behind_parent = true
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
-anchor_bottom = 1.003
-offset_left = -23.0
-offset_bottom = -0.245972
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("3_ry5ne")
-expand_mode = 3
-stretch_mode = 4
+theme = ExtResource("2_vwegm")
+texture = ExtResource("3_e4u1h")
+region_rect = Rect2(0.447113, 1.15751, 198.079, 182.684)
+patch_margin_left = 120
+patch_margin_top = 58
+patch_margin_right = 83
+patch_margin_bottom = 46
+script = ExtResource("7_mr8ag")
 
-[node name="Button" type="Button" parent="."]
+[node name="UwU" type="Control" parent="Back"]
+anchors_preset = 0
+script = ExtResource("10_13shd")
+characterName = "Door"
+
+[node name="Graphics" type="Control" parent="Back/UwU"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Left" type="TextureRect" parent="Back/UwU/Graphics"]
+visible = false
+layout_mode = 0
+offset_left = -32.0
+offset_top = -48.0
+offset_right = 51.0
+offset_bottom = 46.0
+texture = ExtResource("9_piobk")
+
+[node name="Right" type="TextureRect" parent="Back/UwU/Graphics"]
+visible = false
 layout_mode = 1
-anchors_preset = 15
+anchors_preset = -1
+offset_left = 168.0
+offset_top = -40.0
+offset_right = 250.0
+offset_bottom = 52.0
+texture = ExtResource("10_khxnp")
+
+[node name="Intro" type="Control" parent="Back/UwU"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("11_2u662")
+text = "The door opens from this side"
+choices = Array[String](["Stay", "Leave"])
+
+[node name="Set" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1600.0
+offset_top = 856.0
+offset_right = 1816.0
+offset_bottom = 984.0
+theme = ExtResource("2_vwegm")
+theme_override_styles/normal = ExtResource("5_70o4x")
+text = "Set"
+flat = true
+script = ExtResource("6_esyye")
+
+[node name="NinePatchRect2" type="NinePatchRect" parent="Set"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-flat = true
-script = ExtResource("4_oumr5")
+theme = ExtResource("2_vwegm")
+texture = ExtResource("3_e4u1h")
+region_rect = Rect2(0.447113, 1.15751, 198.079, 182.684)
+patch_margin_left = 120
+patch_margin_top = 58
+patch_margin_right = 83
+patch_margin_bottom = 46
+script = ExtResource("7_mr8ag")
 
-[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
+[node name="UwU" type="Control" parent="Set"]
+anchors_preset = 0
+script = ExtResource("14_lda13")
+characterName = "Set - Head of the Club"
+characterBelly = "Set"
+characterIcon = 1
+ears = true
+
+[node name="Graphics" type="Control" parent="Set/UwU"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Left" type="TextureRect" parent="Set/UwU/Graphics"]
+visible = false
+layout_mode = 0
+offset_left = -32.0
+offset_top = -48.0
+offset_right = 51.0
+offset_bottom = 46.0
+texture = ExtResource("9_piobk")
+
+[node name="Right" type="TextureRect" parent="Set/UwU/Graphics"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+offset_left = 168.0
+offset_top = -40.0
+offset_right = 250.0
+offset_bottom = 52.0
+texture = ExtResource("10_khxnp")
+
+[node name="Intro" type="Control" parent="Set/UwU"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("11_2u662")
+text = "Hi, im the head of the Keybinding Club. We summon Extraplanar Buttons. Some would call them demons but in our elitist club we call them Keys."
+choices = Array[String](["Can we summon one?", "Not interested in black magic"])
+
+[node name="Anger" type="Control" parent="Set/UwU"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("11_2u662")
+text = "Pathetic"
+choices = Array[String](["Bye"])
+
+[node name="Happy" type="Control" parent="Set/UwU"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("11_2u662")
+text = "Oh f*ck yeah! Let me see if everything is prepared."
+choices = Array[String](["..."])
+
+[node name="Unready" type="Control" parent="Set/UwU"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("11_2u662")
+text = "We can't start. You must first chose a key we should summon."
+choices = Array[String](["Let me fix that"])
+
+[node name="Ready" type="Control" parent="Set/UwU"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("11_2u662")
+text = "All is set up. Lets go! :D"
+choices = Array[String](["Start Summoning"])
+
+[node name="Summon" type="Control" parent="Set/UwU"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("11_2u662")
+text = "Oh great user above us all. We demand those whom are touched by your hand. Those may enter our realm and wreak havoc above and beyond!"
+choices = Array[String](["Arcana Magica!"])
+
+[node name="Summoned" type="Control" parent="Set/UwU"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("11_2u662")
+text = "Ahhhhh. I am awake. I am the user touched god. I am eternal. My realm is your beginning and your end."
+choices = Array[String](["Hi, nice to meet you"])
+
+[node name="Arrogant" type="Control" parent="Set/UwU"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("11_2u662")
+text = "Mortal. I am above you and unpleased. Only the great user above us all can please me! And it looks like you are not my user! Vanish!"
+choices = Array[String](["I am!"])
+
+[node name="Doubt" type="Control" parent="Set/UwU"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("11_2u662")
+text = "No! Proof it!"
+choices = Array[String](["Do you belive me now?"])
+
+[node name="Proven" type="Control" parent="Set/UwU"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("11_2u662")
+text = "I am touched by user senpai. I feel you. I love you. Forgive me. I swear eternal loyalty to you and will serve as your companion from now on. May I be blessed by your touch many more times."
+choices = Array[String](["I love you too"])
+
+[node name="Onwards" type="Control" parent="Set/UwU"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("11_2u662")
+text = "Well. That was a nice success. Welcome new Club member. I will print you a membership card and ask Teacher hint for a clubroom Key. May we summon mightier extraplanar beeings in the near future!"
+choices = Array[String](["Hussar! Bye."])
+
+[node name="Jump" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1288.0
+offset_top = 144.0
+offset_right = 1512.0
+offset_bottom = 232.0
+mouse_filter = 1
+theme = ExtResource("2_vwegm")
+text = "Jump:"
+script = ExtResource("6_yiwa1")
+breaks = true
+
+[node name="Tite" type="Label" parent="."]
+layout_mode = 0
+offset_left = 112.0
+offset_top = 112.0
+offset_right = 728.0
+offset_bottom = 200.0
+mouse_filter = 1
+theme = ExtResource("2_vwegm")
+text = "Keybindings Club"
+script = ExtResource("6_yiwa1")
+breaks = true
+
+[node name="ChoseKey" type="OptionButton" parent="."]
+layout_mode = 0
+offset_left = 1528.0
+offset_top = 120.0
+offset_right = 1807.0
+offset_bottom = 248.0
+theme = ExtResource("2_vwegm")
+theme_override_styles/focus = ExtResource("5_70o4x")
+theme_override_styles/normal = ExtResource("5_70o4x")
+theme_override_styles/hover = ExtResource("5_70o4x")
+theme_override_styles/pressed = ExtResource("5_70o4x")
+theme_override_styles/disabled = ExtResource("5_70o4x")
+theme_override_styles/normal_mirrored = ExtResource("5_70o4x")
+theme_override_styles/hover_mirrored = ExtResource("5_70o4x")
+theme_override_styles/pressed_mirrored = ExtResource("5_70o4x")
+theme_override_styles/disabled_mirrored = ExtResource("5_70o4x")
+flat = true
+item_count = 4
+selected = 0
+popup/item_0/text = "None"
+popup/item_0/id = 0
+popup/item_1/text = "W"
+popup/item_1/id = 1
+popup/item_2/text = "E"
+popup/item_2/id = 2
+popup/item_3/text = "Q"
+popup/item_3/id = 3
+script = ExtResource("15_o16rf")
+
+[node name="DownButton" type="TextureRect" parent="ChoseKey"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -91.0
+offset_top = -28.5
+offset_bottom = 28.5
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("14_ybhsl")
+
+[node name="NinePatchRect2" type="NinePatchRect" parent="ChoseKey"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_vwegm")
+texture = ExtResource("3_e4u1h")
+region_rect = Rect2(0.447113, 1.15751, 198.079, 182.684)
+patch_margin_left = 120
+patch_margin_top = 58
+patch_margin_right = 83
+patch_margin_bottom = 46
+
+[node name="Ground2" type="RigidBody2D" parent="."]
+position = Vector2(888, 1088)
+freeze = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground2"]
+shape = SubResource("WorldBoundaryShape2D_qx7ui")
+
+[node name="Wall2" type="RigidBody2D" parent="."]
+position = Vector2(-16, 840)
+rotation = 1.5708
+freeze = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall2"]
+position = Vector2(0, 8)
+shape = SubResource("WorldBoundaryShape2D_qx7ui")
+
+[node name="Wall" type="RigidBody2D" parent="."]
+position = Vector2(1936, 936)
+rotation = -1.5708
+freeze = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall"]
+position = Vector2(0, 8)
+shape = SubResource("WorldBoundaryShape2D_qx7ui")
+
+[node name="Demon" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 824.0
+offset_top = 400.0
+offset_right = 1056.0
+offset_bottom = 632.0
+texture = ExtResource("15_dp5xm")
+expand_mode = 2
+stretch_mode = 4
+script = ExtResource("16_8noiv")
+
+[connection signal="mouse_entered" from="Back" to="Back" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Back" to="Back" method="_on_mouse_exited"]
+[connection signal="pressed" from="Back" to="Back" method="_on_pressed"]
+[connection signal="mouse_entered" from="Set" to="Set" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Set" to="Set" method="_on_mouse_exited"]
+[connection signal="pressed" from="Set" to="Set" method="_on_pressed"]
+[connection signal="mouse_entered" from="Jump" to="Jump" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Jump" to="Jump" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Tite" to="Tite" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Tite" to="Tite" method="_on_mouse_exited"]
+[connection signal="item_selected" from="ChoseKey" to="ChoseKey" method="_on_item_selected"]
+[connection signal="mouse_entered" from="ChoseKey" to="ChoseKey" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="ChoseKey" to="ChoseKey" method="_on_mouse_exited"]
+[connection signal="pressed" from="ChoseKey" to="ChoseKey" method="_on_pressed"]

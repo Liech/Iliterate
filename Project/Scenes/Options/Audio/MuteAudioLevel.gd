@@ -17,4 +17,8 @@ func _process(delta):
 
 
 func _on_toggled(toggled_on):
+	if (GlobalOptions.Localization.CatSignLanguage == GlobalOptions.localization):
+		if (not grounded):
+			return;
+	
 	GlobalOptions.muteAudio = toggled_on

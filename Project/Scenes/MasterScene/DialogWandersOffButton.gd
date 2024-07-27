@@ -14,3 +14,6 @@ func _process(delta):
 
 func _on_pressed():
 	gamestate.dialog.closeDialog()
+	if (gamestate.currentScene.name != "Options"):
+		gamestate.fadeTo(gamestate.Scenes.Options);
+

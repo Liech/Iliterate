@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://bty84m1ich0cx"]
+[gd_scene load_steps=39 format=3 uid="uid://bty84m1ich0cx"]
 
 [ext_resource type="Texture2D" uid="uid://c4jdbmn3dmdw4" path="res://Art/LevelBackground.png" id="1_g2ffx"]
 [ext_resource type="Script" path="res://Scenes/ActualGame/ActualGame.gd" id="1_unm1w"]
@@ -21,10 +21,17 @@
 [ext_resource type="Texture2D" uid="uid://njbqasa8sot5" path="res://Art/OldMan.png" id="16_f6p2h"]
 [ext_resource type="Script" path="res://Scenes/ActualGame/PopUp.gd" id="18_0hdya"]
 [ext_resource type="Script" path="res://Scenes/ActualGame/popupButton.gd" id="19_3mvkm"]
+[ext_resource type="Script" path="res://Scenes/ActualGame/JumpHint.gd" id="22_xp1ca"]
+[ext_resource type="Script" path="res://Scenes/ActualGame/WalkHint.gd" id="23_3jwtc"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_85ojc"]
 shader = ExtResource("4_6nb7y")
 shader_parameter/size = Vector2(30, 30)
+shader_parameter/disabled = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_p50hd"]
+shader = ExtResource("4_6nb7y")
+shader_parameter/size = Vector2(4, 4)
 shader_parameter/disabled = true
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qt4it"]
@@ -53,11 +60,6 @@ size = Vector2(80, 81)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7crxe"]
 size = Vector2(70, 81)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_p50hd"]
-shader = ExtResource("4_6nb7y")
-shader_parameter/size = Vector2(4, 4)
-shader_parameter/disabled = true
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_pb6pm"]
 shader = ExtResource("4_6nb7y")
@@ -92,6 +94,13 @@ layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
 texture = ExtResource("1_g2ffx")
+
+[node name="Terrain" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_p50hd")
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("2_c8f7l")
 
 [node name="RigidBody2D" type="RigidBody2D" parent="."]
 freeze = true
@@ -141,13 +150,6 @@ position = Vector2(1501, 463.5)
 shape = SubResource("RectangleShape2D_7crxe")
 debug_color = Color(0.988633, 0.105515, 1.92523e-07, 0.388235)
 
-[node name="Terrain" type="TextureRect" parent="."]
-material = SubResource("ShaderMaterial_p50hd")
-layout_mode = 0
-offset_right = 1920.0
-offset_bottom = 1080.0
-texture = ExtResource("2_c8f7l")
-
 [node name="RollCreditsAndWinMachine" type="TextureRect" parent="."]
 visible = false
 layout_mode = 0
@@ -159,7 +161,7 @@ texture = ExtResource("5_y11hg")
 script = ExtResource("6_kob34")
 
 [node name="Player" type="CharacterBody2D" parent="."]
-position = Vector2(395, 614)
+position = Vector2(388, 620)
 script = ExtResource("9_bmml5")
 
 [node name="Sprite2D" type="Sprite2D" parent="Player"]
@@ -180,8 +182,6 @@ theme_override_styles/normal = ExtResource("4_q34dy")
 text = "Back"
 flat = true
 script = ExtResource("5_673bu")
-breaks = true
-buildPhysic = false
 
 [node name="NinePatchRect" type="NinePatchRect" parent="Back"]
 show_behind_parent = true
@@ -370,6 +370,25 @@ theme_override_font_sizes/font_size = 50
 text = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed labore et dolore magna aliquyam erat, sed labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo d"
 autowrap_mode = 3
 
+[node name="OldMan" type="TextureRect" parent="PopUp"]
+layout_mode = 0
+offset_left = 828.5
+offset_top = -160.0
+offset_right = 1028.5
+offset_bottom = 117.0
+texture = ExtResource("16_f6p2h")
+stretch_mode = 4
+
+[node name="RollCreditsAndWinMachine" type="TextureRect" parent="PopUp"]
+visible = false
+layout_mode = 0
+offset_left = 828.5
+offset_top = -160.0
+offset_right = 1028.5
+offset_bottom = 117.0
+texture = ExtResource("5_y11hg")
+stretch_mode = 4
+
 [node name="Title" type="Label" parent="PopUp"]
 layout_mode = 0
 offset_left = -38.5
@@ -473,23 +492,43 @@ patch_margin_right = 83
 patch_margin_bottom = 46
 script = ExtResource("7_2ip71")
 
-[node name="OldMan" type="TextureRect" parent="PopUp"]
-layout_mode = 0
-offset_left = 828.5
-offset_top = -160.0
-offset_right = 1028.5
-offset_bottom = 117.0
-texture = ExtResource("16_f6p2h")
-stretch_mode = 4
+[node name="JumpHint" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 764.0
+offset_top = 624.0
+offset_right = 804.0
+offset_bottom = 664.0
+script = ExtResource("22_xp1ca")
 
-[node name="RollCreditsAndWinMachine" type="TextureRect" parent="PopUp"]
-visible = false
-offset_left = 828.5
-offset_top = -160.0
-offset_right = 1028.5
-offset_bottom = 117.0
-texture = ExtResource("5_y11hg")
-stretch_mode = 4
+[node name="Hint" type="Label" parent="JumpHint"]
+layout_mode = 0
+offset_left = -757.0
+offset_top = 141.0
+offset_right = 1158.0
+offset_bottom = 229.0
+theme = ExtResource("3_82lny")
+text = "Press \"None\" to jump"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WalkHint" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 389.0
+offset_top = 616.0
+offset_right = 429.0
+offset_bottom = 656.0
+script = ExtResource("23_3jwtc")
+
+[node name="Hint" type="Label" parent="WalkHint"]
+layout_mode = 0
+offset_left = -384.0
+offset_top = 147.0
+offset_right = 1530.0
+offset_bottom = 235.0
+theme = ExtResource("3_82lny")
+text = "Press \"None\" to jump"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="mouse_entered" from="Back" to="Back" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Back" to="Back" method="_on_mouse_exited"]

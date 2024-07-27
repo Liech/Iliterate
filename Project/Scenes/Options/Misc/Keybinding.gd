@@ -11,7 +11,3 @@ func _ready():
 func _process(delta):
 	super(delta)
 	pass
-
-
-func _on_pressed():
-	pass # Replace with function body.

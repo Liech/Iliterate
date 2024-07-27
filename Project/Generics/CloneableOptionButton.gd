@@ -10,6 +10,11 @@ var gibberishStarted = false
 var shuffleprop = 4
 var startShader;
 
+var grounded = false;
+func touchedGround():
+	grounded = true;
+
+
 func _ready():
 	englishTexts = []
 	startShader = material
@@ -34,7 +39,7 @@ func shuffleLetter():
 		var pos = randi()%len(englishTexts[index])
 		var n_char = len(GlobalOptions.characters)
 		var t = get_item_text(index)
-		if hasChar(GlobalOptions.characters,t[index]):
+		if hasChar(GlobalOptions.characters,t[pos]):
 			t[pos] = GlobalOptions.characters[randi()% n_char]
 		set_item_text(index,t)
 	
@@ -90,6 +95,8 @@ func cloneObject(panel, move,ppos):
 
 func _on_mouse_entered():
 	gamestate.catExplain = true
+	gamestate.snapActive = false
 
 func _on_mouse_exited():
 	gamestate.catExplain = false
+	gamestate.snapActive = true

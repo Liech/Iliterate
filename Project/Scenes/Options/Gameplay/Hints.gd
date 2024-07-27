@@ -15,4 +15,8 @@ func _process(delta):
 
 
 func _on_toggled(toggled_on):
+	if (GlobalOptions.Localization.CatSignLanguage == GlobalOptions.localization):
+		if (not grounded):
+			return;
+
 	GlobalOptions.hints = toggled_on

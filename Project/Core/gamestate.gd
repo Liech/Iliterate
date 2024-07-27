@@ -1,10 +1,10 @@
 extends Node
 
-enum Scenes {Godot, Triggerwarning, Ubiscene, Credits, StartScreen, MainMenu, LooseScreen, Options, Memories,ActualGame, KeyBinding, WinScreen}
+enum Scenes {Godot, Triggerwarning, Ubiscene, Credits, StartScreen, MainMenu, LooseScreen, Options, Memories,ActualGame, KeyBinding, WinScreen, TermsAndServices, Limbo}
 
  
 var twChoice = "Confusion";
-var fadeouttime = 1;
+var fadeouttime = 1.5;
 var fadeintime = 1;
 var masternode;
 var currentSceneName = "Godot";
@@ -25,6 +25,11 @@ var catExplain = false;
 var buttonLabel;
 var popup;
 var actNumber = 0;
+var termsagreed = false
+var musicPlayer;
+var deleteHint;
+var snapPanelCount = 0;
+var limboscene = "Start Game"
 
 func startScene(Scene : Scenes):
 	if (Scene == Scenes.Godot):
@@ -79,6 +84,7 @@ func startScene(Scene : Scenes):
 		currentScene = scene.instantiate();
 		currentScene.set_name("Options");
 		currentSceneName = "Options";
+		gamestate.currentTab = "Gameplay"
 		snapActive= true
 	elif (Scene == Scenes.Memories):
 		var scene = ResourceLoader.load("res://Scenes/Memories/Memories.tscn")
@@ -98,6 +104,18 @@ func startScene(Scene : Scenes):
 		currentScene.set_name("Keybindings");
 		currentSceneName = "Keybindings";
 		snapActive = true
+	elif (Scene == Scenes.TermsAndServices):
+		var scene = ResourceLoader.load("res://Scenes/TermsAndServices/TermsAndServices.tscn")
+		currentScene = scene.instantiate();
+		currentScene.set_name("TermsAndServices");
+		currentSceneName = "TermsAndServices";
+		snapActive = true
+	elif (Scene == Scenes.Limbo):
+		var scene = ResourceLoader.load("res://Scenes/Limbo/Limbo.tscn")
+		currentScene = scene.instantiate();
+		currentScene.set_name("Limbo");
+		currentSceneName = "Limbo";
+		snapActive = false
 		
 	masternode.add_child(currentScene)
 	return currentScene;
