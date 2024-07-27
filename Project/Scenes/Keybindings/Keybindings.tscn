@@ -1,16 +1,23 @@
-[gd_scene load_steps=12 format=3 uid="uid://iwsr5sfrgc4n"]
+[gd_scene load_steps=17 format=3 uid="uid://iwsr5sfrgc4n"]
 
 [ext_resource type="Texture2D" uid="uid://dxk323p2hap2c" path="res://Art/Background/Background.png" id="1_ahcr0"]
 [ext_resource type="Theme" uid="uid://d2hv2jx01084f" path="res://mainTheme.tres" id="2_vwegm"]
 [ext_resource type="Texture2D" uid="uid://vc0f42xth06n" path="res://Art/Button/Button.png" id="3_e4u1h"]
 [ext_resource type="Script" path="res://Generics/CloneablePanel.gd" id="4_6mj8p"]
 [ext_resource type="StyleBox" uid="uid://bdktf0xccluh5" path="res://Scenes/MainMenu/buttonninepatch.tres" id="5_70o4x"]
+[ext_resource type="Texture2D" uid="uid://b66j7ca3e4caj" path="res://Art/Background/SummoningCircle.png" id="5_e2ocy"]
 [ext_resource type="Script" path="res://Generics/CloneableButton.gd" id="6_esyye"]
+[ext_resource type="Script" path="res://Scenes/Options/Misc/MiscLabel.gd" id="6_yiwa1"]
 [ext_resource type="Script" path="res://Scenes/Options/Potatofier.gd" id="7_mr8ag"]
 [ext_resource type="Script" path="res://Scenes/Options/OptionsBackUwU.gd" id="8_jg2tl"]
 [ext_resource type="Texture2D" uid="uid://drqi8h3p02kye" path="res://Art/Button/LeftUwU.png" id="9_piobk"]
 [ext_resource type="Texture2D" uid="uid://lonj01xgrckt" path="res://Art/Button/RightUwU.png" id="10_khxnp"]
 [ext_resource type="Script" path="res://Scenes/Options/TextBlock.gd" id="11_2u662"]
+[ext_resource type="Texture2D" uid="uid://lvld2o43cpmo" path="res://Art/Menu/ComboKnob.png" id="14_ybhsl"]
+[ext_resource type="Texture2D" uid="uid://s3c6up3fpsyt" path="res://Art/Keycaps/KeycapQUwU.png" id="15_xnmey"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_qx7ui"]
+distance = -9.0
 
 [node name="StartScreen" type="Control"]
 layout_mode = 3
@@ -52,6 +59,19 @@ patch_margin_top = 58
 patch_margin_right = 83
 patch_margin_bottom = 46
 script = ExtResource("4_6mj8p")
+
+[node name="SummoningCircle" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.77777
+offset_right = 1.77783
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_e2ocy")
+expand_mode = 3
+stretch_mode = 4
 
 [node name="Back" type="Button" parent="."]
 offset_left = 128.0
@@ -139,6 +159,213 @@ script = ExtResource("11_2u662")
 text = "Make sure to talk to some folks. If you are frustrated they might help. But don't leave the schoolyard. Its dangerous!"
 choices = Array[String](["Bye"])
 
+[node name="Set" type="Button" parent="."]
+offset_left = 1600.0
+offset_top = 856.0
+offset_right = 1816.0
+offset_bottom = 984.0
+theme = ExtResource("2_vwegm")
+theme_override_styles/normal = ExtResource("5_70o4x")
+text = "Set"
+flat = true
+script = ExtResource("6_esyye")
+
+[node name="NinePatchRect2" type="NinePatchRect" parent="Set"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_vwegm")
+texture = ExtResource("3_e4u1h")
+region_rect = Rect2(0.447113, 1.15751, 198.079, 182.684)
+patch_margin_left = 120
+patch_margin_top = 58
+patch_margin_right = 83
+patch_margin_bottom = 46
+script = ExtResource("7_mr8ag")
+
+[node name="UwU" type="Control" parent="Set"]
+anchors_preset = 0
+script = ExtResource("8_jg2tl")
+characterName = "Back - The Schoolyardkeeper"
+characterBelly = "Back"
+characterIcon = 1
+ears = true
+
+[node name="Graphics" type="Control" parent="Set/UwU"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Left" type="TextureRect" parent="Set/UwU/Graphics"]
+visible = false
+layout_mode = 0
+offset_left = -32.0
+offset_top = -48.0
+offset_right = 51.0
+offset_bottom = 46.0
+texture = ExtResource("9_piobk")
+
+[node name="Right" type="TextureRect" parent="Set/UwU/Graphics"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+offset_left = 168.0
+offset_top = -40.0
+offset_right = 250.0
+offset_bottom = 52.0
+texture = ExtResource("10_khxnp")
+
+[node name="Intro" type="Control" parent="Set/UwU"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("11_2u662")
+text = "Hi, Im the Schoolyardkeeper. Make sure to keep it clean. Do you want outside?"
+choices = Array[String](["Yes", "No"])
+
+[node name="Anger" type="Control" parent="Set/UwU"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("11_2u662")
+text = "Outside is beautiful. Don't stay in too long. Class is not that important."
+choices = Array[String](["Bye"])
+
+[node name="Happy" type="Control" parent="Set/UwU"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("11_2u662")
+text = "Make sure to talk to some folks. If you are frustrated they might help. But don't leave the schoolyard. Its dangerous!"
+choices = Array[String](["Bye"])
+
+[node name="Jump" type="Label" parent="."]
+offset_left = 1096.0
+offset_top = 144.0
+offset_right = 1320.0
+offset_bottom = 232.0
+mouse_filter = 1
+theme = ExtResource("2_vwegm")
+text = "Jump:"
+script = ExtResource("6_yiwa1")
+breaks = true
+
+[node name="Tite" type="Label" parent="."]
+offset_left = 112.0
+offset_top = 112.0
+offset_right = 728.0
+offset_bottom = 200.0
+mouse_filter = 1
+theme = ExtResource("2_vwegm")
+text = "Keybindings Club"
+script = ExtResource("6_yiwa1")
+breaks = true
+
+[node name="ChoseKey" type="OptionButton" parent="."]
+offset_left = 1328.0
+offset_top = 104.0
+offset_right = 1800.0
+offset_bottom = 278.0
+theme = ExtResource("2_vwegm")
+theme_override_styles/focus = ExtResource("5_70o4x")
+theme_override_styles/normal = ExtResource("5_70o4x")
+theme_override_styles/hover = ExtResource("5_70o4x")
+theme_override_styles/pressed = ExtResource("5_70o4x")
+theme_override_styles/disabled = ExtResource("5_70o4x")
+theme_override_styles/normal_mirrored = ExtResource("5_70o4x")
+theme_override_styles/hover_mirrored = ExtResource("5_70o4x")
+theme_override_styles/pressed_mirrored = ExtResource("5_70o4x")
+theme_override_styles/disabled_mirrored = ExtResource("5_70o4x")
+flat = true
+item_count = 2
+selected = 0
+popup/item_0/text = "¯\\_(ツ)_/¯"
+popup/item_0/id = 0
+popup/item_1/text = "Q"
+popup/item_1/id = 1
+
+[node name="DownButton" type="TextureRect" parent="ChoseKey"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -91.0
+offset_top = -28.5
+offset_bottom = 28.5
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("14_ybhsl")
+
+[node name="NinePatchRect2" type="NinePatchRect" parent="ChoseKey"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_vwegm")
+texture = ExtResource("3_e4u1h")
+region_rect = Rect2(0.447113, 1.15751, 198.079, 182.684)
+patch_margin_left = 120
+patch_margin_top = 58
+patch_margin_right = 83
+patch_margin_bottom = 46
+
+[node name="Ground2" type="RigidBody2D" parent="."]
+position = Vector2(888, 1088)
+freeze = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground2"]
+shape = SubResource("WorldBoundaryShape2D_qx7ui")
+
+[node name="Wall2" type="RigidBody2D" parent="."]
+position = Vector2(-16, 840)
+rotation = 1.5708
+freeze = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall2"]
+position = Vector2(0, 8)
+shape = SubResource("WorldBoundaryShape2D_qx7ui")
+
+[node name="Wall" type="RigidBody2D" parent="."]
+position = Vector2(1936, 936)
+rotation = -1.5708
+freeze = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall"]
+position = Vector2(0, 8)
+shape = SubResource("WorldBoundaryShape2D_qx7ui")
+
+[node name="Demon" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 824.0
+offset_top = 400.0
+offset_right = 1056.0
+offset_bottom = 632.0
+texture = ExtResource("15_xnmey")
+expand_mode = 2
+stretch_mode = 4
+
 [connection signal="mouse_entered" from="Back" to="Back" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Back" to="Back" method="_on_mouse_exited"]
 [connection signal="pressed" from="Back" to="Back" method="_on_pressed"]
+[connection signal="mouse_entered" from="Set" to="Set" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Set" to="Set" method="_on_mouse_exited"]
+[connection signal="pressed" from="Set" to="Set" method="_on_pressed"]
+[connection signal="mouse_entered" from="Jump" to="Jump" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Jump" to="Jump" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Tite" to="Tite" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Tite" to="Tite" method="_on_mouse_exited"]
+[connection signal="item_selected" from="ChoseKey" to="ChoseKey" method="_on_item_selected"]
+[connection signal="mouse_entered" from="ChoseKey" to="ChoseKey" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="ChoseKey" to="ChoseKey" method="_on_mouse_exited"]
+[connection signal="pressed" from="ChoseKey" to="ChoseKey" method="_on_pressed"]
