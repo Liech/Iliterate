@@ -85,6 +85,8 @@ theme = ExtResource("4_2ub7r")
 text = "Bye Dialog"
 flat = true
 script = ExtResource("6_4m13h")
+buildPhysic = false
+dormant = true
 
 [node name="NinePatchRect2" type="NinePatchRect" parent="Dialog/???"]
 show_behind_parent = true

@@ -283,7 +283,7 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("11_2u662")
-text = "No! Proof it!"
+text = "No! Proof it! Show me you are the user in command of us keys!"
 choices = Array[String](["Do you belive me now?"])
 
 [node name="Proven" type="Control" parent="Set/UwU"]

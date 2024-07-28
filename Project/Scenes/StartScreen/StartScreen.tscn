@@ -242,6 +242,7 @@ shape = SubResource("WorldBoundaryShape2D_i1i8j")
 
 [node name="Particle" type="TextureRect" parent="."]
 z_index = -1
+layout_mode = 0
 offset_left = 648.0
 offset_top = 212.0
 offset_right = 688.0
@@ -251,6 +252,7 @@ script = ExtResource("18_7rwxu")
 
 [node name="Particle2" type="TextureRect" parent="."]
 z_index = -1
+layout_mode = 0
 offset_left = 832.0
 offset_top = 485.0
 offset_right = 872.0
@@ -260,6 +262,7 @@ script = ExtResource("18_7rwxu")
 
 [node name="Particle3" type="TextureRect" parent="."]
 z_index = -1
+layout_mode = 0
 offset_left = 1137.0
 offset_top = 131.0
 offset_right = 1177.0
@@ -269,6 +272,7 @@ script = ExtResource("18_7rwxu")
 
 [node name="Particle4" type="TextureRect" parent="."]
 z_index = -1
+layout_mode = 0
 offset_left = 796.0
 offset_top = 745.0
 offset_right = 836.0
@@ -278,6 +282,7 @@ script = ExtResource("18_7rwxu")
 
 [node name="Particle6" type="TextureRect" parent="."]
 z_index = -1
+layout_mode = 0
 offset_left = 1542.0
 offset_top = 217.0
 offset_right = 1582.0
@@ -287,6 +292,7 @@ script = ExtResource("18_7rwxu")
 
 [node name="Particle7" type="TextureRect" parent="."]
 z_index = -1
+layout_mode = 0
 offset_left = 216.0
 offset_top = 957.0
 offset_right = 256.0
@@ -296,6 +302,7 @@ script = ExtResource("18_7rwxu")
 
 [node name="Particle8" type="TextureRect" parent="."]
 z_index = -1
+layout_mode = 0
 offset_left = 212.0
 offset_top = 542.0
 offset_right = 252.0
@@ -305,6 +312,7 @@ script = ExtResource("18_7rwxu")
 
 [node name="Particle10" type="TextureRect" parent="."]
 z_index = -1
+layout_mode = 0
 offset_left = 475.0
 offset_top = 353.0
 offset_right = 515.0
@@ -314,6 +322,7 @@ script = ExtResource("18_7rwxu")
 
 [node name="Particle11" type="TextureRect" parent="."]
 z_index = -1
+layout_mode = 0
 offset_left = 1310.0
 offset_top = 635.0
 offset_right = 1350.0
@@ -323,6 +332,7 @@ script = ExtResource("18_7rwxu")
 
 [node name="Particle12" type="TextureRect" parent="."]
 z_index = -1
+layout_mode = 0
 offset_left = 1592.0
 offset_top = 908.0
 offset_right = 1632.0
@@ -332,6 +342,7 @@ script = ExtResource("18_7rwxu")
 
 [node name="Particle13" type="TextureRect" parent="."]
 z_index = -1
+layout_mode = 0
 offset_left = 1592.0
 offset_top = 450.0
 offset_right = 1632.0
@@ -341,6 +352,7 @@ script = ExtResource("18_7rwxu")
 
 [node name="Particle14" type="TextureRect" parent="."]
 z_index = -1
+layout_mode = 0
 offset_left = 1274.0
 offset_top = 397.0
 offset_right = 1314.0
@@ -350,6 +362,7 @@ script = ExtResource("18_7rwxu")
 
 [node name="Particle9" type="TextureRect" parent="."]
 z_index = -1
+layout_mode = 0
 offset_left = 659.0
 offset_top = 472.0
 offset_right = 699.0
@@ -359,6 +372,7 @@ script = ExtResource("18_7rwxu")
 
 [node name="Particle5" type="TextureRect" parent="."]
 z_index = -1
+layout_mode = 0
 offset_left = 1281.0
 offset_top = 762.0
 offset_right = 1321.0
