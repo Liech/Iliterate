@@ -1,5 +1,15 @@
 extends "res://Generics/Cloneable.gd"
 
+var miau1 = preload("res://Sound/Miau/Miau1.wav")
+var miau2 = preload("res://Sound/Miau/Miau2.wav")
+var miau3 = preload("res://Sound/Miau/Miau3.wav")
+var miau4 = preload("res://Sound/Miau/Miau4.wav")
+var miau5 = preload("res://Sound/Miau/Miau5.wav")
+var miau6 = preload("res://Sound/Miau/Miau6.wav")
+var miau7 = preload("res://Sound/Miau/Miau7.wav")
+var miau8 = preload("res://Sound/Miau/Miau8.wav")
+var miau9 = preload("res://Sound/Miau/Miau9.wav")
+var allmiau;
 
 var targetrot;
 var targetrotthreshold = 0.1;
@@ -10,6 +20,7 @@ var explainDuration = 1500
 
 func _ready():
 	super()
+	createMiauSound()
 	targetrot = 0
 	
 func pawMovement(delta):
@@ -20,6 +31,9 @@ func pawMovement(delta):
 	if (now-explainStartTime>explainDuration):
 		return
 		
+	if (not $Miau.playing):
+		$Miau.stream = allmiau[randi()%len(allmiau)]
+		$Miau.play()
 
 	if (abs(targetrot-rotation) < targetrotthreshold):
 		targetrot = randf() - 0.5
@@ -76,3 +90,14 @@ func _process(delta):
 		
 		
 		
+
+func createMiauSound():
+	allmiau = [miau1,miau2,miau3,miau4,miau5,miau6,miau7,miau8,miau9]
+	var c1 = AudioStreamPlayer2D.new()
+	c1.bus = "Effect"
+	c1.stream = load("res://Sound/10 Clicks and Switches/click.1.ogg")
+	c1.name = "Miau"
+	c1.volume_db = 5
+	add_child(c1)
+	
+	pass
