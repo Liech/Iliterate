@@ -57,6 +57,9 @@ func shuffleAll():
 		set_item_text(index,word)
 	
 func _process(delta):
+	
+	if (GlobalOptions.localization == GlobalOptions.Localization.CatSignLanguage and not grounded):	
+		get_popup().visible = false
 	if (GlobalOptions.localization == GlobalOptions.Localization.Gibberish):		
 		if (not gibberishStarted):
 			shuffleAll();

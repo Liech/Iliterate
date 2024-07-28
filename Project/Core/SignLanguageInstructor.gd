@@ -41,9 +41,8 @@ func doCatThings():
 		var out = space_state.intersect_point(params,1)
 		for result in out:
 			var col  : RigidBody2D= result.collider;
-			if (col.get_child_count() >=2):
-				if (not col.get_child(1).visible):
-					continue
+			if (not col.breakerActive):
+				continue;
 			col.freeze = false
 			col.angular_velocity = (randf() -0.5) * 9
 			col.linear_velocity = Vector2((randf() -0.5) * 8,(randf() -0.5) * 8)

@@ -36,15 +36,6 @@ func setLang(index):
 		GlobalOptions.setGibberish()
 	firstChoice = false;
 		
-func _on_mouse_entered():
-	super()
-	#gamestate.snapActive = false
-
-
-func _on_mouse_exited():
-	super()
-	#gamestate.snapActive = true
-
 
 func _on_pressed():
 	pass # Replace with function body.

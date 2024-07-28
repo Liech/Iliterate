@@ -28,7 +28,7 @@ func _on_button_pressed():
 	#GlobalOptions.graphics = GlobalOptions.GraphicsQuality.Low;
 	#GlobalOptions.dialog = GlobalOptions.DialogSpeed.Off;
 	#GlobalOptions.jumpKey = "E";
-	#gamestate.fadeTo(gamestate.Scenes.Credits);
+	#gamestate.fadeTo(gamestate.Scenes.Options);
 	#return
 	
 	if (alreadyPressed):
