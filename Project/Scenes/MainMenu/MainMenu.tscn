@@ -1,11 +1,13 @@
-[gd_scene load_steps=27 format=3 uid="uid://cch5ed86qkrt4"]
+[gd_scene load_steps=31 format=3 uid="uid://cch5ed86qkrt4"]
 
 [ext_resource type="Script" path="res://Scenes/MainMenu/MainMenu.gd" id="2_ckgni"]
 [ext_resource type="Script" path="res://Generics/Cloneable.gd" id="3_3uqhv"]
 [ext_resource type="Texture2D" uid="uid://dxk323p2hap2c" path="res://Art/Background/Background.png" id="3_5llj1"]
 [ext_resource type="Texture2D" uid="uid://m2dbb5s7avis" path="res://Art/Background/Mage.png" id="3_kqgqu"]
 [ext_resource type="Script" path="res://Generics/CmdStartGame.gd" id="4_583ko"]
+[ext_resource type="Texture2D" uid="uid://bsynd6xnwhvs1" path="res://Art/Background/Title.png" id="4_t2nwc"]
 [ext_resource type="Theme" uid="uid://d2hv2jx01084f" path="res://mainTheme.tres" id="5_1o4bo"]
+[ext_resource type="Script" path="res://Scenes/MainMenu/wobble.gd" id="6_buflo"]
 [ext_resource type="StyleBox" uid="uid://bdktf0xccluh5" path="res://Scenes/MainMenu/buttonninepatch.tres" id="6_kavg7"]
 [ext_resource type="Script" path="res://Generics/CmdAbout.gd" id="7_fbqfy"]
 [ext_resource type="Texture2D" uid="uid://vc0f42xth06n" path="res://Art/Button/Button.png" id="7_vc7f2"]
@@ -25,6 +27,8 @@
 [ext_resource type="Script" path="res://Scenes/MainMenu/UwUOptions.gd" id="16_ttngs"]
 [ext_resource type="Script" path="res://Scenes/MainMenu/UwUMainBack.gd" id="18_gb4q0"]
 [ext_resource type="Script" path="res://Generics/CloneableButton.gd" id="19_c045n"]
+[ext_resource type="Texture2D" uid="uid://cdo5x6axme8ev" path="res://Art/Particle.png" id="26_g1gkr"]
+[ext_resource type="Script" path="res://Scenes/MainMenu/Particle.gd" id="27_wkskh"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_mabsu"]
 distance = -9.0
@@ -55,14 +59,30 @@ grow_vertical = 2
 texture = ExtResource("3_5llj1")
 expand_mode = 3
 stretch_mode = 4
+script = ExtResource("3_3uqhv")
 
-[node name="Background" type="TextureRect" parent="."]
+[node name="title" type="TextureRect" parent="."]
+z_index = -2
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.77777
+offset_right = 1.77783
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_t2nwc")
+expand_mode = 3
+stretch_mode = 4
+script = ExtResource("6_buflo")
+
+[node name="mage" type="TextureRect" parent="."]
 z_index = -2
 layout_mode = 0
-offset_left = 104.0
-offset_top = 32.0
-offset_right = 1965.33
-offset_bottom = 1079.0
+offset_left = 324.0
+offset_top = 34.0
+offset_right = 2185.33
+offset_bottom = 1081.0
 texture = ExtResource("3_kqgqu")
 expand_mode = 3
 stretch_mode = 4
@@ -660,6 +680,146 @@ freeze = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Wall"]
 position = Vector2(0, 8)
 shape = SubResource("WorldBoundaryShape2D_mabsu")
+
+[node name="Particle" type="TextureRect" parent="."]
+z_index = -1
+layout_mode = 0
+offset_left = 648.0
+offset_top = 212.0
+offset_right = 688.0
+offset_bottom = 252.0
+texture = ExtResource("26_g1gkr")
+script = ExtResource("27_wkskh")
+
+[node name="Particle2" type="TextureRect" parent="."]
+z_index = -1
+layout_mode = 0
+offset_left = 832.0
+offset_top = 485.0
+offset_right = 872.0
+offset_bottom = 525.0
+texture = ExtResource("26_g1gkr")
+script = ExtResource("27_wkskh")
+
+[node name="Particle3" type="TextureRect" parent="."]
+z_index = -1
+layout_mode = 0
+offset_left = 1137.0
+offset_top = 131.0
+offset_right = 1177.0
+offset_bottom = 171.0
+texture = ExtResource("26_g1gkr")
+script = ExtResource("27_wkskh")
+
+[node name="Particle4" type="TextureRect" parent="."]
+z_index = -1
+layout_mode = 0
+offset_left = 796.0
+offset_top = 745.0
+offset_right = 836.0
+offset_bottom = 785.0
+texture = ExtResource("26_g1gkr")
+script = ExtResource("27_wkskh")
+
+[node name="Particle6" type="TextureRect" parent="."]
+z_index = -1
+layout_mode = 0
+offset_left = 1542.0
+offset_top = 217.0
+offset_right = 1582.0
+offset_bottom = 257.0
+texture = ExtResource("26_g1gkr")
+script = ExtResource("27_wkskh")
+
+[node name="Particle7" type="TextureRect" parent="."]
+z_index = -1
+layout_mode = 0
+offset_left = 216.0
+offset_top = 957.0
+offset_right = 256.0
+offset_bottom = 997.0
+texture = ExtResource("26_g1gkr")
+script = ExtResource("27_wkskh")
+
+[node name="Particle8" type="TextureRect" parent="."]
+z_index = -1
+layout_mode = 0
+offset_left = 212.0
+offset_top = 542.0
+offset_right = 252.0
+offset_bottom = 582.0
+texture = ExtResource("26_g1gkr")
+script = ExtResource("27_wkskh")
+
+[node name="Particle10" type="TextureRect" parent="."]
+z_index = -1
+layout_mode = 0
+offset_left = 475.0
+offset_top = 353.0
+offset_right = 515.0
+offset_bottom = 393.0
+texture = ExtResource("26_g1gkr")
+script = ExtResource("27_wkskh")
+
+[node name="Particle11" type="TextureRect" parent="."]
+z_index = -1
+layout_mode = 0
+offset_left = 1310.0
+offset_top = 635.0
+offset_right = 1350.0
+offset_bottom = 675.0
+texture = ExtResource("26_g1gkr")
+script = ExtResource("27_wkskh")
+
+[node name="Particle12" type="TextureRect" parent="."]
+z_index = -1
+layout_mode = 0
+offset_left = 1592.0
+offset_top = 908.0
+offset_right = 1632.0
+offset_bottom = 948.0
+texture = ExtResource("26_g1gkr")
+script = ExtResource("27_wkskh")
+
+[node name="Particle13" type="TextureRect" parent="."]
+z_index = -1
+layout_mode = 0
+offset_left = 1592.0
+offset_top = 450.0
+offset_right = 1632.0
+offset_bottom = 490.0
+texture = ExtResource("26_g1gkr")
+script = ExtResource("27_wkskh")
+
+[node name="Particle14" type="TextureRect" parent="."]
+z_index = -1
+layout_mode = 0
+offset_left = 1274.0
+offset_top = 397.0
+offset_right = 1314.0
+offset_bottom = 437.0
+texture = ExtResource("26_g1gkr")
+script = ExtResource("27_wkskh")
+
+[node name="Particle9" type="TextureRect" parent="."]
+z_index = -1
+layout_mode = 0
+offset_left = 659.0
+offset_top = 472.0
+offset_right = 699.0
+offset_bottom = 512.0
+texture = ExtResource("26_g1gkr")
+script = ExtResource("27_wkskh")
+
+[node name="Particle5" type="TextureRect" parent="."]
+z_index = -1
+layout_mode = 0
+offset_left = 1281.0
+offset_top = 762.0
+offset_right = 1321.0
+offset_bottom = 802.0
+texture = ExtResource("26_g1gkr")
+script = ExtResource("27_wkskh")
 
 [connection signal="mouse_entered" from="Start Game" to="Start Game" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Start Game" to="Start Game" method="_on_mouse_exited"]

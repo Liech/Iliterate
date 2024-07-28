@@ -1,12 +1,14 @@
-[gd_scene load_steps=18 format=3 uid="uid://b45vfqcxcwe4q"]
+[gd_scene load_steps=22 format=3 uid="uid://b45vfqcxcwe4q"]
 
 [ext_resource type="Script" path="res://Scenes/StartScreen/StartScreen.gd" id="1_t28ft"]
 [ext_resource type="Texture2D" uid="uid://dxk323p2hap2c" path="res://Art/Background/Background.png" id="2_krb0y"]
+[ext_resource type="Script" path="res://Generics/Cloneable.gd" id="3_u5etr"]
 [ext_resource type="Texture2D" uid="uid://m2dbb5s7avis" path="res://Art/Background/Mage.png" id="3_vsfb3"]
 [ext_resource type="Texture2D" uid="uid://bsynd6xnwhvs1" path="res://Art/Background/Title.png" id="4_7evq1"]
 [ext_resource type="Theme" uid="uid://d2hv2jx01084f" path="res://mainTheme.tres" id="4_kk7bs"]
 [ext_resource type="Script" path="res://Scenes/StartScreen/ToMainMenu.gd" id="5_ylrcl"]
 [ext_resource type="Texture2D" uid="uid://vc0f42xth06n" path="res://Art/Button/Button.png" id="6_6o6uj"]
+[ext_resource type="Script" path="res://Scenes/MainMenu/wobble.gd" id="6_27aob"]
 [ext_resource type="Script" path="res://Scenes/StartScreen/StartGameUwU.gd" id="6_mgiyc"]
 [ext_resource type="Script" path="res://Scenes/Options/Potatofier.gd" id="7_h3rom"]
 [ext_resource type="Texture2D" uid="uid://drqi8h3p02kye" path="res://Art/Button/LeftUwU.png" id="7_ksgfq"]
@@ -16,6 +18,8 @@
 [ext_resource type="Script" path="res://Core/SignLanguageInstructor.gd" id="13_y4dgt"]
 [ext_resource type="Texture2D" uid="uid://c5c2vtc7dcttf" path="res://Art/Menu/CatSignLanguageInterpreterPaw.png" id="14_27kdo"]
 [ext_resource type="Script" path="res://Core/SignLanguagePaw.gd" id="15_2f3q0"]
+[ext_resource type="Texture2D" uid="uid://cdo5x6axme8ev" path="res://Art/Particle.png" id="17_3xvbw"]
+[ext_resource type="Script" path="res://Scenes/MainMenu/Particle.gd" id="18_7rwxu"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_i1i8j"]
 distance = -9.0
@@ -33,6 +37,7 @@ size_flags_vertical = 3
 script = ExtResource("1_t28ft")
 
 [node name="Mage" type="TextureRect" parent="."]
+z_index = -1
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -42,8 +47,10 @@ grow_vertical = 2
 texture = ExtResource("2_krb0y")
 expand_mode = 3
 stretch_mode = 4
+script = ExtResource("3_u5etr")
 
 [node name="Background" type="TextureRect" parent="."]
+z_index = -1
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -53,6 +60,7 @@ grow_vertical = 2
 texture = ExtResource("3_vsfb3")
 expand_mode = 3
 stretch_mode = 4
+script = ExtResource("3_u5etr")
 
 [node name="Title" type="TextureRect" parent="."]
 layout_mode = 1
@@ -66,6 +74,7 @@ grow_vertical = 2
 texture = ExtResource("4_7evq1")
 expand_mode = 3
 stretch_mode = 4
+script = ExtResource("6_27aob")
 
 [node name="Start Game" type="Button" parent="."]
 layout_mode = 1
@@ -230,5 +239,131 @@ freeze = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Wall"]
 position = Vector2(0, 8)
 shape = SubResource("WorldBoundaryShape2D_i1i8j")
+
+[node name="Particle" type="TextureRect" parent="."]
+z_index = -1
+offset_left = 648.0
+offset_top = 212.0
+offset_right = 688.0
+offset_bottom = 252.0
+texture = ExtResource("17_3xvbw")
+script = ExtResource("18_7rwxu")
+
+[node name="Particle2" type="TextureRect" parent="."]
+z_index = -1
+offset_left = 832.0
+offset_top = 485.0
+offset_right = 872.0
+offset_bottom = 525.0
+texture = ExtResource("17_3xvbw")
+script = ExtResource("18_7rwxu")
+
+[node name="Particle3" type="TextureRect" parent="."]
+z_index = -1
+offset_left = 1137.0
+offset_top = 131.0
+offset_right = 1177.0
+offset_bottom = 171.0
+texture = ExtResource("17_3xvbw")
+script = ExtResource("18_7rwxu")
+
+[node name="Particle4" type="TextureRect" parent="."]
+z_index = -1
+offset_left = 796.0
+offset_top = 745.0
+offset_right = 836.0
+offset_bottom = 785.0
+texture = ExtResource("17_3xvbw")
+script = ExtResource("18_7rwxu")
+
+[node name="Particle6" type="TextureRect" parent="."]
+z_index = -1
+offset_left = 1542.0
+offset_top = 217.0
+offset_right = 1582.0
+offset_bottom = 257.0
+texture = ExtResource("17_3xvbw")
+script = ExtResource("18_7rwxu")
+
+[node name="Particle7" type="TextureRect" parent="."]
+z_index = -1
+offset_left = 216.0
+offset_top = 957.0
+offset_right = 256.0
+offset_bottom = 997.0
+texture = ExtResource("17_3xvbw")
+script = ExtResource("18_7rwxu")
+
+[node name="Particle8" type="TextureRect" parent="."]
+z_index = -1
+offset_left = 212.0
+offset_top = 542.0
+offset_right = 252.0
+offset_bottom = 582.0
+texture = ExtResource("17_3xvbw")
+script = ExtResource("18_7rwxu")
+
+[node name="Particle10" type="TextureRect" parent="."]
+z_index = -1
+offset_left = 475.0
+offset_top = 353.0
+offset_right = 515.0
+offset_bottom = 393.0
+texture = ExtResource("17_3xvbw")
+script = ExtResource("18_7rwxu")
+
+[node name="Particle11" type="TextureRect" parent="."]
+z_index = -1
+offset_left = 1310.0
+offset_top = 635.0
+offset_right = 1350.0
+offset_bottom = 675.0
+texture = ExtResource("17_3xvbw")
+script = ExtResource("18_7rwxu")
+
+[node name="Particle12" type="TextureRect" parent="."]
+z_index = -1
+offset_left = 1592.0
+offset_top = 908.0
+offset_right = 1632.0
+offset_bottom = 948.0
+texture = ExtResource("17_3xvbw")
+script = ExtResource("18_7rwxu")
+
+[node name="Particle13" type="TextureRect" parent="."]
+z_index = -1
+offset_left = 1592.0
+offset_top = 450.0
+offset_right = 1632.0
+offset_bottom = 490.0
+texture = ExtResource("17_3xvbw")
+script = ExtResource("18_7rwxu")
+
+[node name="Particle14" type="TextureRect" parent="."]
+z_index = -1
+offset_left = 1274.0
+offset_top = 397.0
+offset_right = 1314.0
+offset_bottom = 437.0
+texture = ExtResource("17_3xvbw")
+script = ExtResource("18_7rwxu")
+
+[node name="Particle9" type="TextureRect" parent="."]
+z_index = -1
+offset_left = 659.0
+offset_top = 472.0
+offset_right = 699.0
+offset_bottom = 512.0
+texture = ExtResource("17_3xvbw")
+script = ExtResource("18_7rwxu")
+
+[node name="Particle5" type="TextureRect" parent="."]
+z_index = -1
+offset_left = 1281.0
+offset_top = 762.0
+offset_right = 1321.0
+offset_bottom = 802.0
+texture = ExtResource("17_3xvbw")
+script = ExtResource("18_7rwxu")
 
 [connection signal="pressed" from="Start Game" to="Start Game" method="_on_pressed"]
