@@ -16,7 +16,7 @@ func talk():
 
 func secondAct():
 	gamestate.popup.open();
-	gamestate.popup.setText("Great Job! I put it over there. Please rescue the world.");
+	gamestate.popup.setText("Nice! I put it over there. Please rescue the world.");
 	gamestate.popup.setButton(0,"Close",true);
 	gamestate.popup.setButton(1,"Ok",false);
 	gamestate.popup.setButton(2,"Ok",false);

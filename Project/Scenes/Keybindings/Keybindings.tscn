@@ -142,7 +142,7 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("11_2u662")
-text = "The door opens from this side"
+text = "Just a Door"
 choices = Array[String](["Stay", "Leave"])
 
 [node name="Set" type="Button" parent="."]

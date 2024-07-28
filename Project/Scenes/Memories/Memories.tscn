@@ -245,6 +245,8 @@ theme_override_styles/normal = ExtResource("5_pncrj")
 text = "Back"
 flat = true
 script = ExtResource("5_lqalk")
+buildPhysic = false
+dormant = true
 
 [node name="NinePatchRect" type="NinePatchRect" parent="TutorialPopUp/Back"]
 show_behind_parent = true
