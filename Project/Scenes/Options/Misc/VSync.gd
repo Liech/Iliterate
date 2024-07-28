@@ -17,5 +17,6 @@ func _on_toggled(toggled_on):
 	if (GlobalOptions.Localization.CatSignLanguage == GlobalOptions.localization):
 		if (not grounded):
 			return;
+	$Click.play()
 	
 	GlobalOptions.vsync = toggled_on

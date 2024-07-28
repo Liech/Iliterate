@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://bty84m1ich0cx"]
+[gd_scene load_steps=40 format=3 uid="uid://bty84m1ich0cx"]
 
 [ext_resource type="Texture2D" uid="uid://c4jdbmn3dmdw4" path="res://Art/LevelBackground.png" id="1_g2ffx"]
 [ext_resource type="Script" path="res://Scenes/ActualGame/ActualGame.gd" id="1_unm1w"]
@@ -21,6 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://njbqasa8sot5" path="res://Art/OldMan.png" id="16_f6p2h"]
 [ext_resource type="Script" path="res://Scenes/ActualGame/PopUp.gd" id="18_0hdya"]
 [ext_resource type="Script" path="res://Scenes/ActualGame/popupButton.gd" id="19_3mvkm"]
+[ext_resource type="Script" path="res://Generics/CloneableLabel.gd" id="21_cvyq7"]
 [ext_resource type="Script" path="res://Scenes/ActualGame/JumpHint.gd" id="22_xp1ca"]
 [ext_resource type="Script" path="res://Scenes/ActualGame/WalkHint.gd" id="23_3jwtc"]
 
@@ -369,6 +370,9 @@ theme = ExtResource("3_82lny")
 theme_override_font_sizes/font_size = 50
 text = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed labore et dolore magna aliquyam erat, sed labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo d"
 autowrap_mode = 3
+script = ExtResource("21_cvyq7")
+physic = false
+dormant = true
 
 [node name="OldMan" type="TextureRect" parent="PopUp"]
 layout_mode = 0
@@ -397,6 +401,9 @@ offset_right = 243.5
 offset_bottom = 9.0
 theme = ExtResource("3_82lny")
 text = "Old Man"
+script = ExtResource("21_cvyq7")
+physic = false
+dormant = true
 
 [node name="HBoxContainer" type="HBoxContainer" parent="PopUp"]
 layout_mode = 0
@@ -415,6 +422,8 @@ theme_override_styles/normal = ExtResource("4_q34dy")
 text = "Ok"
 flat = true
 script = ExtResource("19_3mvkm")
+buildPhysic = false
+dormant = true
 
 [node name="NinePatchRect" type="NinePatchRect" parent="PopUp/HBoxContainer/Ok"]
 show_behind_parent = true
@@ -445,6 +454,8 @@ theme_override_styles/normal = ExtResource("4_q34dy")
 text = "Ok"
 flat = true
 script = ExtResource("19_3mvkm")
+buildPhysic = false
+dormant = true
 
 [node name="NinePatchRect" type="NinePatchRect" parent="PopUp/HBoxContainer/Ok2"]
 show_behind_parent = true
@@ -473,6 +484,8 @@ theme_override_styles/normal = ExtResource("4_q34dy")
 text = "Ok"
 flat = true
 script = ExtResource("19_3mvkm")
+buildPhysic = false
+dormant = true
 
 [node name="NinePatchRect" type="NinePatchRect" parent="PopUp/HBoxContainer/Ok3"]
 show_behind_parent = true

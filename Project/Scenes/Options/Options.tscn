@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=3 uid="uid://bn57n5cddun8x"]
+[gd_scene load_steps=53 format=3 uid="uid://bn57n5cddun8x"]
 
 [ext_resource type="Theme" uid="uid://d2hv2jx01084f" path="res://mainTheme.tres" id="1_ipdrc"]
 [ext_resource type="Script" path="res://Scenes/Options/Options.gd" id="2_8cd1l"]
@@ -50,6 +50,7 @@
 [ext_resource type="Script" path="res://Scenes/Options/Tabs/UwUTab.gd" id="35_nltyf"]
 [ext_resource type="Script" path="res://Scenes/Options/UwUBrightness.gd" id="38_ajklg"]
 [ext_resource type="Script" path="res://Scenes/Options/UwUOpacity.gd" id="39_gvmn3"]
+[ext_resource type="Script" path="res://Generics/CloneableLabel.gd" id="51_nuqnm"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ufr3p"]
 distance = -9.0
@@ -1592,6 +1593,7 @@ offset_left = -947.0
 offset_top = -603.0
 offset_right = 1696.0
 offset_bottom = 890.0
+mouse_force_pass_scroll_events = false
 color = Color(0, 0, 0, 0.611765)
 
 [node name="PopUp2" type="NinePatchRect" parent="DoorClosed"]
@@ -1625,6 +1627,8 @@ theme_override_styles/normal = ExtResource("5_exebi")
 text = "Close"
 flat = true
 script = ExtResource("11_o6sco")
+buildPhysic = false
+dormant = true
 
 [node name="NinePatchRect" type="NinePatchRect" parent="DoorClosed/Close"]
 show_behind_parent = true
@@ -1654,6 +1658,9 @@ text = "The club door is locked"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
+script = ExtResource("51_nuqnm")
+physic = false
+dormant = true
 
 [node name="TutorialTitle" type="Label" parent="DoorClosed"]
 layout_mode = 0
@@ -1663,6 +1670,9 @@ offset_right = 936.0
 offset_bottom = 15.0
 theme = ExtResource("1_ipdrc")
 text = "Keybindings"
+script = ExtResource("51_nuqnm")
+physic = false
+dormant = true
 
 [connection signal="mouse_entered" from="Back" to="Back" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Back" to="Back" method="_on_mouse_exited"]

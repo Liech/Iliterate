@@ -16,8 +16,10 @@ func _process(delta):
 		selected = 1; 
 	if (GlobalOptions.dialog == GlobalOptions.DialogSpeed.Off and selected != 2):
 		selected = 2; 
+	
 
 func _on_item_selected(index):
+	$Click.play()
 	gamestate.snapActive = true
 	if (index == 0):
 		GlobalOptions.dialog = GlobalOptions.DialogSpeed.High;
@@ -37,4 +39,5 @@ func _on_mouse_exited():
 
 
 func _on_pressed():
+	$Click.play()
 	pass # Replace with function body.

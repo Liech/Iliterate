@@ -15,7 +15,8 @@ func _ready():
 	englishText = text
 	startShader = material
 	if (not isClone):
-		add_to_group("Copyable");
+		if (not dormant):
+			add_to_group("Copyable");
 		await get_tree().create_timer(0.01).timeout # wait for daddy
 		if (physic):
 			Phys.physiphy(self,false);

@@ -14,7 +14,7 @@ var isClone = false
 
 var englishText;
 var gibberishStarted = false
-var shuffleprop = 4
+var shuffleprop = 3
 var startShader;
 
 var grounded = false;
@@ -25,6 +25,7 @@ func _ready():
 	englishText = text
 	startShader = material
 	connect("pressed",_on_pressed)
+	createClickSound()
 	if (not isClone):
 		if (not dormant):
 			add_to_group("Copyable");
@@ -158,8 +159,18 @@ func breakApart():
 
 
 func _on_pressed():
+	$Click.play()
 	if (GlobalOptions.Localization.CatSignLanguage == GlobalOptions.localization):
 		if (not grounded and buildPhysic):
 			return;
 	gamestate.buttonLabel.flash(englishText);
 	gamestate.currentScene.DoCommand(englishText);
+
+func createClickSound():
+	var c1 = AudioStreamPlayer2D.new()
+	c1.bus = "Effect"
+	c1.stream = load("res://Sound/10 Clicks and Switches/click.1.ogg")
+	c1.name = "Click"
+	add_child(c1)
+	
+	pass

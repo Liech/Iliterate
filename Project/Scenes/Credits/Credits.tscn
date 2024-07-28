@@ -1,14 +1,13 @@
-[gd_scene load_steps=20 format=3 uid="uid://dqbxf45lkgpgo"]
+[gd_scene load_steps=19 format=3 uid="uid://dqbxf45lkgpgo"]
 
 [ext_resource type="Theme" uid="uid://d2hv2jx01084f" path="res://mainTheme.tres" id="1_chx1x"]
-[ext_resource type="Script" path="res://Scenes/Credits/RollCredits.gd" id="2_ak1k0"]
 [ext_resource type="Texture2D" uid="uid://ca7h18o5s5j82" path="res://Art/Logos/JamHost.png" id="2_ia30n"]
 [ext_resource type="Script" path="res://Scenes/Credits/EscapeChangeScene.gd" id="2_jyfd5"]
+[ext_resource type="Script" path="res://Scenes/Credits/scroll.gd" id="3_q6dom"]
 [ext_resource type="Texture2D" uid="uid://dnuo5ietwwchh" path="res://Art/Logos/EngineLogo.png" id="3_yk00n"]
 [ext_resource type="Texture2D" uid="uid://r5o3wo0f3w6y" path="res://Art/Logos/painttool.png" id="4_7yvxn"]
 [ext_resource type="Script" path="res://Generics/CloneableLabel.gd" id="4_c7j4i"]
 [ext_resource type="Texture2D" uid="uid://0ry0ct1dikxl" path="res://Art/Logos/AudioTool.png" id="5_1hcdi"]
-[ext_resource type="Script" path="res://Generics/Cloneable.gd" id="6_ov1yf"]
 [ext_resource type="Texture2D" uid="uid://d33dlcmqu4nb2" path="res://Art/Logos/AudioTool2.png" id="6_w3yrq"]
 [ext_resource type="Texture2D" uid="uid://bsrqm7fiqm5va" path="res://Art/Menu/CatSignLanguageInterpreter.png" id="10_tu7sf"]
 [ext_resource type="Script" path="res://Core/SignLanguageInstructor.gd" id="11_xr7n1"]
@@ -42,119 +41,140 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -2.0
-offset_top = 911.0
-offset_right = -2.0
-offset_bottom = 4945.0
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("2_ak1k0")
+[node name="scroll" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 992.0
+offset_top = 936.0
+offset_right = 1032.0
+offset_bottom = 976.0
+script = ExtResource("3_q6dom")
 
-[node name="Me" type="MarginContainer" parent="VBoxContainer"]
+[node name="Me" type="MarginContainer" parent="scroll"]
 layout_mode = 2
+offset_left = -992.0
+offset_top = -72.0
+offset_right = 928.0
+offset_bottom = 292.0
 theme_override_constants/margin_left = 200
 theme_override_constants/margin_top = 15
 theme_override_constants/margin_right = 100
 theme_override_constants/margin_bottom = 15
 
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/Me"]
+[node name="MarginContainer" type="MarginContainer" parent="scroll/Me"]
 layout_mode = 2
-theme_override_constants/margin_top = 200
-theme_override_constants/margin_bottom = 200
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_bottom = 100
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Me/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="scroll/Me/MarginContainer"]
 layout_mode = 2
 
-[node name="Label2" type="Label" parent="VBoxContainer/Me/MarginContainer/VBoxContainer"]
+[node name="Label2" type="Label" parent="scroll/Me/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 60
 text = "Game Development"
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("4_c7j4i")
+physic = false
+dormant = true
 
-[node name="Label3" type="Label" parent="VBoxContainer/Me/MarginContainer/VBoxContainer"]
+[node name="Label3" type="Label" parent="scroll/Me/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("4_c7j4i")
+physic = false
+dormant = true
 
-[node name="Label" type="Label" parent="VBoxContainer/Me/MarginContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="scroll/Me/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
 text = "Liech - Nicolas Harttig"
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("4_c7j4i")
+physic = false
+dormant = true
 
-[node name="Thanks" type="MarginContainer" parent="VBoxContainer"]
+[node name="Thanks" type="MarginContainer" parent="scroll"]
 layout_mode = 2
+offset_left = -992.0
+offset_top = 296.0
+offset_right = 928.0
+offset_bottom = 718.0
 theme_override_constants/margin_left = 200
 theme_override_constants/margin_top = 15
 theme_override_constants/margin_right = 100
 theme_override_constants/margin_bottom = 15
 
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/Thanks"]
+[node name="MarginContainer" type="MarginContainer" parent="scroll/Thanks"]
 layout_mode = 2
-theme_override_constants/margin_top = 200
-theme_override_constants/margin_bottom = 200
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_bottom = 100
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Thanks/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="scroll/Thanks/MarginContainer"]
 layout_mode = 2
 
-[node name="Label2" type="Label" parent="VBoxContainer/Thanks/MarginContainer/VBoxContainer"]
+[node name="Label2" type="Label" parent="scroll/Thanks/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 60
 text = "Thanks to"
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("4_c7j4i")
+physic = false
+dormant = true
 
-[node name="Label3" type="Label" parent="VBoxContainer/Thanks/MarginContainer/VBoxContainer"]
+[node name="Label3" type="Label" parent="scroll/Thanks/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 60
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("4_c7j4i")
+physic = false
+dormant = true
 
-[node name="Label4" type="Label" parent="VBoxContainer/Thanks/MarginContainer/VBoxContainer"]
+[node name="Label4" type="Label" parent="scroll/Thanks/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
 text = "Racootie (Paw Model Consultant)"
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("4_c7j4i")
+physic = false
+dormant = true
 
-[node name="Label" type="Label" parent="VBoxContainer/Thanks/MarginContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="scroll/Thanks/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
 text = "Keinomieli (Discord Help)"
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("4_c7j4i")
+physic = false
+dormant = true
 
-[node name="Cat" type="MarginContainer" parent="VBoxContainer"]
+[node name="Cat" type="MarginContainer" parent="scroll"]
 layout_mode = 2
+offset_left = -992.0
+offset_top = 722.0
+offset_right = 928.0
+offset_bottom = 1104.0
 theme_override_constants/margin_left = 200
 theme_override_constants/margin_top = 15
 theme_override_constants/margin_right = 100
 theme_override_constants/margin_bottom = 15
 
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/Cat"]
+[node name="MarginContainer" type="MarginContainer" parent="scroll/Cat"]
 layout_mode = 2
-theme_override_constants/margin_top = 200
-theme_override_constants/margin_bottom = 200
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_bottom = 100
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Cat/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="scroll/Cat/MarginContainer"]
 layout_mode = 2
 
-[node name="Label2" type="Label" parent="VBoxContainer/Cat/MarginContainer/VBoxContainer"]
+[node name="Label2" type="Label" parent="scroll/Cat/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 60
 text = "Paw Model Reference"
@@ -162,14 +182,14 @@ horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("4_c7j4i")
 
-[node name="Label3" type="Label" parent="VBoxContainer/Cat/MarginContainer/VBoxContainer"]
+[node name="Label3" type="Label" parent="scroll/Cat/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 60
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("4_c7j4i")
 
-[node name="Label" type="Label" parent="VBoxContainer/Cat/MarginContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="scroll/Cat/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
 text = "Nessi"
@@ -177,22 +197,27 @@ horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("4_c7j4i")
 
-[node name="Assets" type="MarginContainer" parent="VBoxContainer"]
+[node name="Assets" type="MarginContainer" parent="scroll"]
 layout_mode = 2
+offset_left = -992.0
+offset_top = 984.0
+offset_right = 928.0
+offset_bottom = 2911.0
 theme_override_constants/margin_left = 200
 theme_override_constants/margin_top = 15
 theme_override_constants/margin_right = 100
 theme_override_constants/margin_bottom = 15
 
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/Assets"]
+[node name="MarginContainer" type="MarginContainer" parent="scroll/Assets"]
 layout_mode = 2
 theme_override_constants/margin_top = 200
 theme_override_constants/margin_bottom = 200
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Assets/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="scroll/Assets/MarginContainer"]
 layout_mode = 2
+theme_override_constants/separation = 20
 
-[node name="Label2" type="Label" parent="VBoxContainer/Assets/MarginContainer/VBoxContainer"]
+[node name="Label2" type="Label" parent="scroll/Assets/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 60
 text = "Assets"
@@ -200,14 +225,14 @@ horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("4_c7j4i")
 
-[node name="Label8" type="Label" parent="VBoxContainer/Assets/MarginContainer/VBoxContainer"]
+[node name="Label8" type="Label" parent="scroll/Assets/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 60
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("4_c7j4i")
 
-[node name="Label" type="Label" parent="VBoxContainer/Assets/MarginContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="scroll/Assets/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
 text = "Font \"m6x11\"
@@ -218,14 +243,14 @@ horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("4_c7j4i")
 
-[node name="Label3" type="Label" parent="VBoxContainer/Assets/MarginContainer/VBoxContainer"]
+[node name="Label3" type="Label" parent="scroll/Assets/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 60
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("4_c7j4i")
 
-[node name="English" type="Label" parent="VBoxContainer/Assets/MarginContainer/VBoxContainer"]
+[node name="English" type="Label" parent="scroll/Assets/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
 text = "English Theme:
@@ -236,14 +261,14 @@ horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("4_c7j4i")
 
-[node name="Label9" type="Label" parent="VBoxContainer/Assets/MarginContainer/VBoxContainer"]
+[node name="Label9" type="Label" parent="scroll/Assets/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 60
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("4_c7j4i")
 
-[node name="Cat" type="Label" parent="VBoxContainer/Assets/MarginContainer/VBoxContainer"]
+[node name="Cat" type="Label" parent="scroll/Assets/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
 text = "Cat Sign Language Theme:
@@ -254,14 +279,14 @@ horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("4_c7j4i")
 
-[node name="Label10" type="Label" parent="VBoxContainer/Assets/MarginContainer/VBoxContainer"]
+[node name="Label10" type="Label" parent="scroll/Assets/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 60
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("4_c7j4i")
 
-[node name="Gibberish" type="Label" parent="VBoxContainer/Assets/MarginContainer/VBoxContainer"]
+[node name="Gibberish" type="Label" parent="scroll/Assets/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
 text = "Gibberish Theme
@@ -272,14 +297,14 @@ horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("4_c7j4i")
 
-[node name="Label11" type="Label" parent="VBoxContainer/Assets/MarginContainer/VBoxContainer"]
+[node name="Label11" type="Label" parent="scroll/Assets/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 60
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("4_c7j4i")
 
-[node name="UwU" type="Label" parent="VBoxContainer/Assets/MarginContainer/VBoxContainer"]
+[node name="UwU" type="Label" parent="scroll/Assets/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
 text = "UwU Theme
@@ -290,26 +315,47 @@ horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("4_c7j4i")
 
-[node name="Engine" type="MarginContainer" parent="VBoxContainer"]
+[node name="Label12" type="Label" parent="scroll/Assets/MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 60
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("4_c7j4i")
+
+[node name="UwU2" type="Label" parent="scroll/Assets/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Button Sounds
+StarNinjas
+https://opengameart.org/content/10-clicks-and-switches
+CCO"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("4_c7j4i")
+
+[node name="Engine" type="MarginContainer" parent="scroll"]
+layout_mode = 2
+offset_left = -992.0
+offset_top = 2847.0
+offset_right = 928.0
+offset_bottom = 3277.0
 theme_override_constants/margin_left = 200
 theme_override_constants/margin_top = 15
 theme_override_constants/margin_right = 100
 theme_override_constants/margin_bottom = 15
 
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/Engine"]
+[node name="MarginContainer" type="MarginContainer" parent="scroll/Engine"]
 layout_mode = 2
 theme_override_constants/margin_top = 0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Engine/MarginContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="scroll/Engine/MarginContainer"]
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer/Engine/MarginContainer/HBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="scroll/Engine/MarginContainer/HBoxContainer"]
 layout_mode = 2
 texture = ExtResource("3_yk00n")
-script = ExtResource("6_ov1yf")
 
-[node name="Label" type="Label" parent="VBoxContainer/Engine/MarginContainer/HBoxContainer"]
+[node name="Label" type="Label" parent="scroll/Engine/MarginContainer/HBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
 text = "Game Engine
@@ -318,27 +364,32 @@ Godot 4.2.2
 https://godotengine.org/
 Free (MIT)"
 script = ExtResource("4_c7j4i")
+physic = false
+dormant = true
 
-[node name="Paint" type="MarginContainer" parent="VBoxContainer"]
+[node name="Paint" type="MarginContainer" parent="scroll"]
 layout_mode = 2
+offset_left = -992.0
+offset_top = 3281.0
+offset_right = 928.0
+offset_bottom = 3711.0
 theme_override_constants/margin_left = 200
 theme_override_constants/margin_top = 15
 theme_override_constants/margin_right = 100
 theme_override_constants/margin_bottom = 15
 
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/Paint"]
+[node name="MarginContainer" type="MarginContainer" parent="scroll/Paint"]
 layout_mode = 2
 theme_override_constants/margin_top = 0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Paint/MarginContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="scroll/Paint/MarginContainer"]
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer/Paint/MarginContainer/HBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="scroll/Paint/MarginContainer/HBoxContainer"]
 layout_mode = 2
 texture = ExtResource("4_7yvxn")
-script = ExtResource("6_ov1yf")
 
-[node name="Label" type="Label" parent="VBoxContainer/Paint/MarginContainer/HBoxContainer"]
+[node name="Label" type="Label" parent="scroll/Paint/MarginContainer/HBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
 text = "Drawing
@@ -347,27 +398,32 @@ Gimp
 https://www.gimp.org/
 Free (GPL)"
 script = ExtResource("4_c7j4i")
+physic = false
+dormant = true
 
-[node name="Audio1" type="MarginContainer" parent="VBoxContainer"]
+[node name="Audio1" type="MarginContainer" parent="scroll"]
 layout_mode = 2
+offset_left = -992.0
+offset_top = 3715.0
+offset_right = 928.0
+offset_bottom = 4145.0
 theme_override_constants/margin_left = 200
 theme_override_constants/margin_top = 15
 theme_override_constants/margin_right = 100
 theme_override_constants/margin_bottom = 15
 
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/Audio1"]
+[node name="MarginContainer" type="MarginContainer" parent="scroll/Audio1"]
 layout_mode = 2
 theme_override_constants/margin_top = 0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Audio1/MarginContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="scroll/Audio1/MarginContainer"]
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer/Audio1/MarginContainer/HBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="scroll/Audio1/MarginContainer/HBoxContainer"]
 layout_mode = 2
 texture = ExtResource("5_1hcdi")
-script = ExtResource("6_ov1yf")
 
-[node name="Label" type="Label" parent="VBoxContainer/Audio1/MarginContainer/HBoxContainer"]
+[node name="Label" type="Label" parent="scroll/Audio1/MarginContainer/HBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
 text = "Audio Recording & Cutting
@@ -376,27 +432,32 @@ Audacity
 https://www.audacityteam.org/
 Free (GPL)"
 script = ExtResource("4_c7j4i")
+physic = false
+dormant = true
 
-[node name="Audio2" type="MarginContainer" parent="VBoxContainer"]
+[node name="Audio2" type="MarginContainer" parent="scroll"]
 layout_mode = 2
+offset_left = -992.0
+offset_top = 4149.0
+offset_right = 928.0
+offset_bottom = 4579.0
 theme_override_constants/margin_left = 200
 theme_override_constants/margin_top = 15
 theme_override_constants/margin_right = 100
 theme_override_constants/margin_bottom = 15
 
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/Audio2"]
+[node name="MarginContainer" type="MarginContainer" parent="scroll/Audio2"]
 layout_mode = 2
 theme_override_constants/margin_top = 0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Audio2/MarginContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="scroll/Audio2/MarginContainer"]
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer/Audio2/MarginContainer/HBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="scroll/Audio2/MarginContainer/HBoxContainer"]
 layout_mode = 2
 texture = ExtResource("6_w3yrq")
-script = ExtResource("6_ov1yf")
 
-[node name="Label" type="Label" parent="VBoxContainer/Audio2/MarginContainer/HBoxContainer"]
+[node name="Label" type="Label" parent="scroll/Audio2/MarginContainer/HBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
 text = "Music, Sound & Voicedistortion
@@ -405,27 +466,32 @@ LMMS
 https://lmms.io/
 Free (GPL)"
 script = ExtResource("4_c7j4i")
+physic = false
+dormant = true
 
-[node name="Host" type="MarginContainer" parent="VBoxContainer"]
+[node name="Host" type="MarginContainer" parent="scroll"]
 layout_mode = 2
+offset_left = -992.0
+offset_top = 4583.0
+offset_right = 928.0
+offset_bottom = 5013.0
 theme_override_constants/margin_left = 200
 theme_override_constants/margin_top = 15
 theme_override_constants/margin_right = 100
 theme_override_constants/margin_bottom = 15
 
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/Host"]
+[node name="MarginContainer" type="MarginContainer" parent="scroll/Host"]
 layout_mode = 2
 theme_override_constants/margin_top = 0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Host/MarginContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="scroll/Host/MarginContainer"]
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer/Host/MarginContainer/HBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="scroll/Host/MarginContainer/HBoxContainer"]
 layout_mode = 2
 texture = ExtResource("2_ia30n")
-script = ExtResource("6_ov1yf")
 
-[node name="Label" type="Label" parent="VBoxContainer/Host/MarginContainer/HBoxContainer"]
+[node name="Label" type="Label" parent="scroll/Host/MarginContainer/HBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
 text = "Game Jam Host
@@ -436,44 +502,56 @@ Probably also Free.
 But a Human. Humans are handled 
 differently than Software"
 script = ExtResource("4_c7j4i")
+physic = false
+dormant = true
 
-[node name="Thanks for playing" type="MarginContainer" parent="VBoxContainer"]
+[node name="Thanks for playing" type="MarginContainer" parent="scroll"]
 layout_mode = 2
+offset_left = -992.0
+offset_top = 5017.0
+offset_right = 928.0
+offset_bottom = 6181.0
 theme_override_constants/margin_left = 200
 theme_override_constants/margin_top = 15
 theme_override_constants/margin_right = 100
 theme_override_constants/margin_bottom = 15
 
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/Thanks for playing"]
+[node name="MarginContainer" type="MarginContainer" parent="scroll/Thanks for playing"]
 layout_mode = 2
 theme_override_constants/margin_top = 500
 theme_override_constants/margin_bottom = 500
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Thanks for playing/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="scroll/Thanks for playing/MarginContainer"]
 layout_mode = 2
 
-[node name="Label2" type="Label" parent="VBoxContainer/Thanks for playing/MarginContainer/VBoxContainer"]
+[node name="Label2" type="Label" parent="scroll/Thanks for playing/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 60
 text = "Thank you for playing"
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("4_c7j4i")
+physic = false
+dormant = true
 
-[node name="Label3" type="Label" parent="VBoxContainer/Thanks for playing/MarginContainer/VBoxContainer"]
+[node name="Label3" type="Label" parent="scroll/Thanks for playing/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("4_c7j4i")
+physic = false
+dormant = true
 
-[node name="Label" type="Label" parent="VBoxContainer/Thanks for playing/MarginContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="scroll/Thanks for playing/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
 text = "hope it was fun :3"
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("4_c7j4i")
+physic = false
+dormant = true
 
 [node name="CatSignLanguageInterpreter" type="TextureRect" parent="."]
 visible = false

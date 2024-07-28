@@ -9,6 +9,7 @@ func _on_pressed():
 	if (GlobalOptions.Localization.CatSignLanguage == GlobalOptions.localization):
 		if (not grounded):
 			return;
+	$Click.play()
 	
 	var allNodes = []
 	gamestate.currentTab = "Misc"

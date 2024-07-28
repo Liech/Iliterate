@@ -4,6 +4,11 @@ Font "m6x11"
 Daniel Linssen (https://managore.itch.io/)
 free to use with attribution
 
+Button Sounds:
+StarNinjas
+https://opengameart.org/content/10-clicks-and-switches
+CCO
+
 English Theme:
 A Lucid Dream by CaliDerium
 https://opengameart.org/content/a-lucid-dream
@@ -23,6 +28,7 @@ UwU Theme
 Gasmask Love by Kenny Chow
 https://opengameart.org/content/gasmask-love-loop
 CC0 1.0
+
 
 Paw Model Reference: Nessie
 Paw Model Consultant: Racootie

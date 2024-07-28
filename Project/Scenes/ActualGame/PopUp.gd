@@ -13,8 +13,10 @@ func close():
 
 func setText(text):
 	$Label.text = text
+	$Label.englishText = text
 
 func setButton(index, text, vis):
 	$HBoxContainer.get_child(index).text = text;
+	$HBoxContainer.get_child(index).englishText = text;
 	$HBoxContainer.get_child(index).visible = vis;
 	

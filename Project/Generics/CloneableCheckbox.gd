@@ -13,6 +13,7 @@ var startShader;
 func _ready():
 	englishText = text
 	startShader = material
+	createClickSound()
 	if (not isClone):
 		add_to_group("Copyable");
 		await get_tree().create_timer(0.01).timeout # wait for daddy
@@ -86,3 +87,12 @@ func _on_mouse_entered():
 
 func _on_mouse_exited():
 	gamestate.catExplain = false
+
+func createClickSound():
+	var c1 = AudioStreamPlayer2D.new()
+	c1.bus = "Effect"
+	c1.stream = load("res://Sound/10 Clicks and Switches/click.2.ogg")
+	c1.name = "Click"
+	add_child(c1)
+	
+	pass

@@ -317,7 +317,12 @@ CC BY 3.0
 UwU Theme
 Gasmask Love by Kenny Chow
 https://opengameart.org/content/gasmask-love-loop
-CC0 1.0"
+CC0 1.0
+
+Button Sounds
+StarNinjas
+https://opengameart.org/content/10-clicks-and-switches
+CCO"
 autowrap_mode = 3
 script = ExtResource("15_laacn")
 physic = false

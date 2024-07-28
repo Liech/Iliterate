@@ -8,8 +8,9 @@ class_name Cloneable
 var isClone = false
 
 func _ready():
-	if (not isClone):
-		add_to_group("Copyable");
+	if (not isClone):	
+		if(not dormant):
+			add_to_group("Copyable");
 		if (physify):
 			await get_tree().create_timer(0.01).timeout # wait for daddy
 			Phys.physiphy(self,false);

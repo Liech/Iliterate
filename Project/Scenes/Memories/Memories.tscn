@@ -462,6 +462,8 @@ theme_override_styles/normal = ExtResource("5_pncrj")
 text = "Close"
 flat = true
 script = ExtResource("5_lqalk")
+buildPhysic = false
+dormant = true
 
 [node name="NinePatchRect" type="NinePatchRect" parent="OldManDialog/Close"]
 show_behind_parent = true
@@ -542,6 +544,7 @@ shape = SubResource("WorldBoundaryShape2D_i61hw")
 
 [node name="CatSignLanguageInterpreter" type="TextureRect" parent="."]
 visible = false
+layout_mode = 0
 offset_left = 1229.0
 offset_top = 250.0
 offset_right = 2029.0
@@ -553,6 +556,7 @@ script = ExtResource("23_r5x2j")
 
 [node name="Paw2" type="TextureRect" parent="."]
 visible = false
+layout_mode = 0
 offset_left = 1384.0
 offset_top = 402.0
 offset_right = 1554.0
@@ -564,6 +568,7 @@ script = ExtResource("25_r2ia2")
 
 [node name="Paw" type="TextureRect" parent="."]
 visible = false
+layout_mode = 0
 offset_left = 1769.0
 offset_top = 380.0
 offset_right = 1939.0

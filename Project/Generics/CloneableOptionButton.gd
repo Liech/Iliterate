@@ -16,6 +16,8 @@ func touchedGround():
 
 
 func _ready():
+	createClickSound()
+	adjustPopUp();
 	englishTexts = []
 	startShader = material
 	for i in range(item_count):
@@ -95,8 +97,31 @@ func cloneObject(panel, move,ppos):
 
 func _on_mouse_entered():
 	gamestate.catExplain = true
-	gamestate.snapActive = false
+	#gamestate.snapActive = false
 
 func _on_mouse_exited():
 	gamestate.catExplain = false
+	#gamestate.snapActive = true
+
+func createClickSound():
+	var c1 = AudioStreamPlayer2D.new()
+	c1.bus = "Effect"
+	c1.stream = load("res://Sound/10 Clicks and Switches/click.4.ogg")
+	c1.name = "Click"
+	add_child(c1)
+	
+	pass
+
+func popupClosed():
 	gamestate.snapActive = true
+	$Click.play()
+
+func popupOpen():
+	gamestate.snapActive = false
+	$Click.play()
+
+func adjustPopUp():
+	var popup = get_popup()
+	popup.connect("popup_hide",popupClosed)
+	popup.connect("about_to_popup",popupOpen)
+	pass

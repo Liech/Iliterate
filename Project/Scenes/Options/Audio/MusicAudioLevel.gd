@@ -18,8 +18,10 @@ func _on_value_changed(value):
 	GlobalOptions.musicAudio = value
 
 func _on_drag_started():
+	$Click.play()
 	gamestate.snapActive = false
 
 
 func _on_drag_ended(value_changed):
+	$Click.play()
 	gamestate.snapActive = true
