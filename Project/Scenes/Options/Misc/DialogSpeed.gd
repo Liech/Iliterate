@@ -30,12 +30,12 @@ func _on_item_selected(index):
 		
 func _on_mouse_entered():
 	super()
-	gamestate.snapActive = false
+	#gamestate.snapActive = false
 
 
 func _on_mouse_exited():
 	super()
-	gamestate.snapActive = true
+	#gamestate.snapActive = true
 
 
 func _on_pressed():
