@@ -9,7 +9,7 @@ func _ready():
 
 
 func talk():
-	if (gamestate.actNumber == 1):
+	if (gamestate.actNumber >= 1):
 		secondAct();
 
 func secondAct():
